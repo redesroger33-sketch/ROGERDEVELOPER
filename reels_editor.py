@@ -165,18 +165,67 @@ def map_to_wall(frac, spans):
     return spans[-1][1]
 
 
+# Palabras que no deben quedar colgando al final de un bloque en pantalla.
+ORPHANS = {
+    "a", "al", "ante", "con", "contra", "de", "del", "desde", "e", "el", "en",
+    "entre", "hacia", "hasta", "la", "las", "lo", "los", "mi", "mis", "ni",
+    "o", "para", "por", "que", "se", "según", "si", "sin", "sobre",
+    "su", "sus", "tu", "tus", "un", "una", "unas", "unos", "y",
+}
+END_PUNCT = (".", "?", "!", ":", "…")
+
+
+def _bare(w):
+    return w.strip("¡!¿?.,;:«»\"'()-…").lower()
+
+
+def _ends_sentence(w):
+    return w.rstrip('"\'»)').endswith(END_PUNCT)
+
+
 def chunk_words(text):
-    words, chunks, cur = text.split(), [], []
-    for wd in words:
-        trial = cur + [wd]
-        if len(trial) > MAX_WORDS or len(" ".join(trial)) > MAX_CHARS:
-            if cur:
-                chunks.append(cur)
-            cur = [wd]
-        else:
-            cur = trial
+    """Agrupa el texto en bloques cortos para pantalla.
+
+    Reglas: corta en fin de oracion, no supera MAX_WORDS/MAX_CHARS, y nunca
+    deja una preposicion o articulo colgando al final de un bloque.
+    """
+    # 1. Separa en oraciones (conserva la puntuacion).
+    sentences, cur = [], []
+    for wd in text.split():
+        cur.append(wd)
+        if _ends_sentence(wd):
+            sentences.append(cur)
+            cur = []
     if cur:
-        chunks.append(cur)
+        sentences.append(cur)
+
+    chunks = []
+    for sent in sentences:
+        # 2. Empaqueta por longitud dentro de cada oracion.
+        packed, cur = [], []
+        for wd in sent:
+            trial = cur + [wd]
+            if cur and (len(trial) > MAX_WORDS or len(" ".join(trial)) > MAX_CHARS):
+                packed.append(cur)
+                cur = [wd]
+            else:
+                cur = trial
+        if cur:
+            packed.append(cur)
+
+        # 3. Empuja las palabras huerfanas al bloque siguiente.
+        for i in range(len(packed) - 1):
+            while len(packed[i]) > 1 and _bare(packed[i][-1]) in ORPHANS:
+                packed[i + 1].insert(0, packed[i].pop())
+
+        # 4. Un bloque final de una sola palabra se une al anterior.
+        if len(packed) > 1 and len(packed[-1]) == 1:
+            merged = packed[-2] + packed[-1]
+            if len(" ".join(merged)) <= MAX_CHARS + 8:
+                packed[-2] = merged
+                packed.pop()
+
+        chunks.extend(packed)
     return chunks
 
 
