@@ -318,25 +318,124 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 # -----------------------------------------------------------------------------
 # Render
 # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# Efectos de video
+# -----------------------------------------------------------------------------
+# look: (grade, zoom inicial, zoom final)
 LOOKS = {
-    "punch": ("eq=contrast=1.10:saturation=1.14:brightness=0.012", 0.070),
-    "warm":  ("eq=contrast=1.07:saturation=1.22:gamma_r=1.03:gamma_b=0.985", 0.045),
-    "clean": ("eq=contrast=1.05:saturation=1.08", 0.035),
-    "close": ("eq=contrast=1.08:saturation=1.12", -0.055),
+    "punch": ("eq=contrast=1.12:saturation=1.20:brightness=0.015", 1.00, 1.14),
+    "warm":  ("eq=contrast=1.10:saturation=1.28:gamma_r=1.04:gamma_b=0.98", 1.03, 1.16),
+    "clean": ("eq=contrast=1.08:saturation=1.14", 1.02, 1.13),
+    "close": ("eq=contrast=1.10:saturation=1.18", 1.18, 1.00),
 }
 
+PUNCH_AMP = 0.13       # cuanto salta el zoom en cada golpe
+PUNCH_MAX = 5          # golpes por clip
+PUNCH_GAP = 1.40       # separacion minima entre golpes (s)
+SHAKE_PX = 6.0         # amplitud del micro-shake en el golpe
 
-def build_filter(part, dur, ass_path):
-    eq, zoom = LOOKS[part["look"]]
-    fin, fout = 0.35, 0.45
 
-    # zoompan anima por fotograma (crop evalua w/h solo al inicializar)
-    nframes = max(1, int(round(dur * 30)))
-    if zoom >= 0:
-        zexpr = f"1+{zoom}*on/{nframes}"          # push in
-    else:
-        z = abs(zoom)
-        zexpr = f"{1 + z}-{z}*on/{nframes}"       # pull out
+def emphasis_times(part, pauses):
+    """Tiempos (relativos al clip) donde golpea el zoom.
+
+    Prioriza las palabras en MAYUSCULAS; si quedan pocas, rellena con los
+    inicios de bloque de subtitulo para mantener un golpe cada ~3.5 s.
+    """
+    cut0, cut1 = part["cut"]
+    dur = cut1 - cut0
+    lo, hi = 0.25, dur - 0.9
+
+    caps, starts = [], []
+    for phrase in part["phrases"]:
+        for chunk in word_times(phrase, pauses):
+            if chunk:
+                t0 = chunk[0][1] - cut0
+                if lo < t0 < hi:
+                    starts.append(round(t0, 3))
+            for wd, ws, _ in chunk:
+                bare = _bare(wd)
+                if len(bare) >= 2 and wd.strip("¡!¿?.,;:«»\"'()-…").isupper():
+                    t = ws - cut0
+                    if lo < t < hi:
+                        caps.append(round(t, 3))
+
+    target = max(3, min(PUNCH_MAX, int(dur / 3.5)))
+
+    # Reparte por ventanas para que los golpes cubran todo el clip y no se
+    # apilen al principio. En cada ventana gana una palabra en MAYUSCULAS;
+    # si no hay, el inicio de un bloque de subtitulo.
+    caps_set = set(caps)
+    kept = []
+    for k in range(target):
+        w0 = lo + (hi - lo) * k / target
+        w1 = lo + (hi - lo) * (k + 1) / target
+        pool = [t for t in caps if w0 <= t < w1] or [t for t in starts if w0 <= t < w1]
+        if not pool:
+            continue
+        mid = (w0 + w1) / 2
+        best = min(pool, key=lambda t: (t not in caps_set, abs(t - mid)))
+        if all(abs(best - x) >= PUNCH_GAP for x in kept):
+            kept.append(best)
+    kept.sort()
+    return kept
+
+
+def zoom_keys(dur, z0, z1, punches):
+    """Curva de zoom: rampa base + un salto rapido en cada palabra enfatizada."""
+    def base(t):
+        return z0 + (z1 - z0) * min(max(t / dur, 0.0), 1.0)
+
+    keys = {0.0: base(0.0), dur: base(dur)}
+    for t in punches:
+        for tt, zz in (
+            (t - 0.03, base(t - 0.03)),          # arranca desde la base
+            (t + 0.09, base(t) + PUNCH_AMP),     # golpe
+            (t + 0.26, base(t) + PUNCH_AMP),     # sostiene
+            (t + 0.60, base(t + 0.60)),          # regresa
+        ):
+            if 0.0 < tt < dur:
+                keys[round(tt, 3)] = round(zz, 4)
+    return sorted(keys.items())
+
+
+def zoom_expr(keys):
+    """Convierte la curva en una expresion lineal por tramos para zoompan."""
+    expr = f"{keys[-1][1]:.4f}"
+    for (t0, v0), (t1, v1) in reversed(list(zip(keys, keys[1:]))):
+        span = max(t1 - t0, 1e-4)
+        seg = f"({v0:.4f}+({v1 - v0:.4f})*(ot-{t0:.3f})/{span:.4f})"
+        expr = f"if(lt(ot,{t1:.3f}),{seg},{expr})"
+    return expr
+
+
+def shake_expr(punches):
+    """Micro-sacudida horizontal durante cada golpe."""
+    if not punches:
+        return ""
+    terms = [
+        f"if(between(ot,{t:.3f},{t + 0.24:.3f}),"
+        f"{SHAKE_PX:.1f}*sin((ot-{t:.3f})*95)*(1-(ot-{t:.3f})/0.24),0)"
+        for t in punches
+    ]
+    return "+" + "+".join(terms)
+
+
+def flash_expr(punches, amount=0.10):
+    """Destello breve en cada golpe."""
+    if not punches:
+        return "0"
+    cond = "+".join(f"between(t,{t + 0.05:.3f},{t + 0.12:.3f})" for t in punches)
+    return f"if(gt({cond},0),{amount},0)"
+
+
+def build_filter(part, dur, ass_path, pauses):
+    grade, z0, z1 = LOOKS[part["look"]]
+    fin, fout = 0.30, 0.45
+
+    punches = emphasis_times(part, pauses)
+    zexpr = zoom_expr(zoom_keys(dur, z0, z1, punches))
+    sexpr = shake_expr(punches)
+    fexpr = flash_expr(punches)
 
     ass = ass_path.replace("\\", "/").replace(":", r"\:")
     fonts = os.path.dirname(FONT_FILE)
@@ -348,11 +447,13 @@ def build_filter(part, dur, ass_path):
         f"crop={W}:{H},gblur=sigma=42,eq=brightness=-0.13:saturation=1.30,"
         f"setsar=1[bgv];"
         # Primer plano: pre-escalado 2x para que el zoom no tiemble
-        f"[fg]scale={VID_W*2}:{VID_H*2},"
-        f"zoompan=z='{zexpr}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
-        f"s={VID_W}x{VID_H}:fps=30,{eq},setsar=1[fgv];"
-        # Composicion
-        f"[bgv][fgv]overlay=x=0:y={VID_Y}:shortest=1,vignette=angle=PI/5[comp];"
+        f"[fg]scale={VID_W * 2}:{VID_H * 2},"
+        f"zoompan=z='{zexpr}':d=1:"
+        f"x='iw/2-(iw/zoom/2){sexpr}':y='ih/2-(ih/zoom/2)':"
+        f"s={VID_W}x{VID_H}:fps=30,{grade},setsar=1[fgv];"
+        # Composicion + destello en los golpes
+        f"[bgv][fgv]overlay=x=0:y={VID_Y}:shortest=1,vignette=angle=PI/5,"
+        f"eq=brightness='{fexpr}':eval=frame[comp];"
         # Filete superior/inferior del bloque de video
         f"[comp]drawbox=x=0:y={VID_Y - 3}:w={W}:h=3:color=white@0.30:t=fill,"
         f"drawbox=x=0:y={VID_Y + VID_H}:w={W}:h=3:color=white@0.30:t=fill[framed];"
@@ -394,7 +495,7 @@ def main():
         out = os.path.join(OUTDIR, f"{idx:02d}_{part['name']}.mp4")
         fc_path = os.path.join(WORKDIR, f"{idx:02d}.filter")
         with open(fc_path, "w", encoding="utf-8") as f:
-            f.write(build_filter(part, dur, ass_path))
+            f.write(build_filter(part, dur, ass_path, pauses))
 
         print(f"[{idx}/5] {part['name']}  {cut0:.2f}s-{cut1:.2f}s ({dur:.2f}s, {n_ev} eventos)")
         subprocess.run([
