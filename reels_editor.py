@@ -23,6 +23,7 @@ import imageio_ffmpeg
 
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
+CRF = next((a.split("=")[1] for a in sys.argv[1:] if a.startswith("--crf=")), "19")
 INPUT = ARGS[0] if ARGS else "Roger.1.mp4"
 OUTDIR = "reels_output"
 WORKDIR = "_work"
@@ -530,8 +531,8 @@ def render_full(pauses):
             FFMPEG, "-y", "-v", "error", "-stats",
             "-ss", str(cut0), "-t", str(dur), "-i", INPUT,
             "-filter_complex_script", fc, "-map", "[v]", "-an",
-            "-c:v", "libx264", "-profile:v", "high", "-crf", "19",
-            "-preset", "medium", "-r", "30", "-g", "60",
+            "-c:v", "libx264", "-profile:v", "high", "-crf", CRF,
+            "-preset", "slow", "-r", "30", "-g", "60",
             "-pix_fmt", "yuv420p", "-colorspace", "bt709", piece,
         ], check=True)
         pieces.append(piece)
