@@ -22,7 +22,8 @@ import numpy as np
 import imageio_ffmpeg
 
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
-INPUT = sys.argv[1] if len(sys.argv) > 1 else "Roger.1.mp4"
+ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
+INPUT = ARGS[0] if ARGS else "Roger.1.mp4"
 OUTDIR = "reels_output"
 WORKDIR = "_work"
 
@@ -266,7 +267,7 @@ def esc(s):
     return s.replace("\\", "").replace("{", "(").replace("}", ")")
 
 
-def build_ass(part, idx, pauses, path):
+def build_ass(part, idx, pauses, path, badge=True):
     cut0, cut1 = part["cut"]
     head = f"""[Script Info]
 ScriptType: v4.00+
@@ -285,7 +286,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = []
     # Badge de parte
-    ev.append(f"Dialogue: 0,{ass_time(0)},{ass_time(min(3.2, cut1 - cut0))},Badge,,0,0,0,,"
+    if badge:
+        ev.append(f"Dialogue: 0,{ass_time(0)},{ass_time(min(3.2, cut1 - cut0))},Badge,,0,0,0,,"
               f"{{\\pos({W//2},150)\\an8\\fad(300,400)\\alpha&H40&}}PARTE {idx} / 5")
 
     for phrase in part["phrases"]:
@@ -428,8 +430,19 @@ def flash_expr(punches, amount=0.10):
     return f"if(gt({cond},0),{amount},0)"
 
 
-def build_filter(part, dur, ass_path, pauses):
-    grade, z0, z1 = LOOKS[part["look"]]
+FULL_GRADE = LOOKS["punch"][0]   # un solo grade en el video completo
+FULL_ZOOM = 1.045               # base plana: las uniones no saltan
+
+
+def build_filter(part, dur, ass_path, pauses, offset=0.0, total=None,
+                 fade_in=True, fade_out=True, with_audio=True, flat=False):
+    if flat:
+        # Video completo: mismo grade y misma base de zoom en cada tramo,
+        # para que las uniones sean invisibles.
+        grade, z0, z1 = FULL_GRADE, FULL_ZOOM, FULL_ZOOM
+    else:
+        grade, z0, z1 = LOOKS[part["look"]]
+    total = total if total is not None else dur
     fin, fout = 0.30, 0.45
 
     punches = emphasis_times(part, pauses)
@@ -439,6 +452,19 @@ def build_filter(part, dur, ass_path, pauses):
 
     ass = ass_path.replace("\\", "/").replace(":", r"\:")
     fonts = os.path.dirname(FONT_FILE)
+
+    fades = []
+    if fade_in:
+        fades.append(f"fade=t=in:st=0:d={fin}")
+    if fade_out:
+        fades.append(f"fade=t=out:st={dur - fout:.2f}:d={fout}")
+    fade_chain = ("," .join(fades) + ",") if fades else ""
+
+    audio_chain = (
+        f";[0:a]highpass=f=95,afftdn=nr=10:nf=-28,"
+        f"loudnorm=I=-14:TP=-1.5:LRA=11,"
+        f"afade=t=in:st=0:d=0.25,afade=t=out:st={dur - 0.4:.2f}:d=0.4[a]"
+    ) if with_audio else ""
 
     return (
         # Fondo: rellena 9:16, desenfoque fuerte y oscurecido
@@ -458,18 +484,81 @@ def build_filter(part, dur, ass_path, pauses):
         f"[comp]drawbox=x=0:y={VID_Y - 3}:w={W}:h=3:color=white@0.30:t=fill,"
         f"drawbox=x=0:y={VID_Y + VID_H}:w={W}:h=3:color=white@0.30:t=fill[framed];"
         # Barra de progreso
-        f"[framed]drawbox=x=0:y={H - 12}:w='{W}*t/{dur}':h=12:"
+        f"[framed]drawbox=x=0:y={H - 12}:w='{W}*({offset}+t)/{total}':h=12:"
         f"color=0xFFE500@0.95:t=fill[bar];"
         # Subtitulos karaoke
         f"[bar]ass='{ass}':fontsdir='{fonts}'[subbed];"
         # Fundidos
-        f"[subbed]fade=t=in:st=0:d={fin},fade=t=out:st={dur - fout:.2f}:d={fout},"
-        f"format=yuv420p[v];"
-        # Audio: limpia rumor del auto, nivela y funde
-        f"[0:a]highpass=f=95,afftdn=nr=10:nf=-28,"
-        f"loudnorm=I=-14:TP=-1.5:LRA=11,"
-        f"afade=t=in:st=0:d=0.25,afade=t=out:st={dur - 0.4:.2f}:d=0.4[a]"
+        f"[subbed]{fade_chain}format=yuv420p[v]"
+        + audio_chain
     )
+
+
+
+# -----------------------------------------------------------------------------
+# Video completo (una sola pieza)
+# -----------------------------------------------------------------------------
+def render_full(pauses):
+    """Renderiza el video entero en vertical, con el mismo tratamiento.
+
+    Cada tramo se codifica por separado (mantiene pequenas las expresiones de
+    zoom) y luego se concatenan sin recodificar. El audio se procesa una sola
+    vez sobre el total: hacerlo por tramo daria saltos de volumen en cada union.
+    """
+    total = round(PARTS[-1]["cut"][1] - PARTS[0]["cut"][0], 3)
+    parts_list = os.path.join(WORKDIR, "full_concat.txt")
+    pieces = []
+
+    for idx, part in enumerate(PARTS, 1):
+        cut0, cut1 = part["cut"]
+        dur = round(cut1 - cut0, 3)
+        ass_path = os.path.abspath(os.path.join(WORKDIR, f"full_{idx:02d}.ass"))
+        build_ass(part, idx, pauses, ass_path, badge=False)
+
+        fc = os.path.join(WORKDIR, f"full_{idx:02d}.filter")
+        with open(fc, "w", encoding="utf-8") as f:
+            f.write(build_filter(
+                part, dur, ass_path, pauses,
+                offset=round(cut0, 3), total=total,
+                fade_in=(idx == 1), fade_out=(idx == len(PARTS)),
+                with_audio=False, flat=True,
+            ))
+
+        piece = os.path.join(WORKDIR, f"full_{idx:02d}.mp4")
+        print(f"  tramo {idx}/{len(PARTS)}  {cut0:.2f}-{cut1:.2f}s")
+        subprocess.run([
+            FFMPEG, "-y", "-v", "error", "-stats",
+            "-ss", str(cut0), "-t", str(dur), "-i", INPUT,
+            "-filter_complex_script", fc, "-map", "[v]", "-an",
+            "-c:v", "libx264", "-profile:v", "high", "-crf", "19",
+            "-preset", "medium", "-r", "30", "-g", "60",
+            "-pix_fmt", "yuv420p", "-colorspace", "bt709", piece,
+        ], check=True)
+        pieces.append(piece)
+
+    with open(parts_list, "w", encoding="utf-8") as f:
+        for pc in pieces:
+            f.write(f"file '{os.path.abspath(pc)}'\n")
+
+    silent = os.path.join(WORKDIR, "full_video.mp4")
+    subprocess.run([FFMPEG, "-y", "-v", "error", "-f", "concat", "-safe", "0",
+                    "-i", parts_list, "-c", "copy", silent], check=True)
+
+    out = os.path.join(OUTDIR, "00_Roger_completo.mp4")
+    print("  montando audio (procesado una sola vez sobre el total)")
+    subprocess.run([
+        FFMPEG, "-y", "-v", "error", "-stats",
+        "-i", silent, "-i", INPUT,
+        "-filter_complex",
+        f"[1:a]highpass=f=95,afftdn=nr=10:nf=-28,"
+        f"loudnorm=I=-14:TP=-1.5:LRA=11,"
+        f"afade=t=in:st=0:d=0.4,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]",
+        "-map", "0:v", "-c:v", "copy", "-map", "[a]",
+        "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+        "-movflags", "+faststart", "-shortest", out,
+    ], check=True)
+    print(f"  -> {out}")
+    return out
 
 
 def main():
@@ -485,6 +574,11 @@ def main():
                        check=True)
     pauses = speech_pauses(wav)
     print(f"Pausas de voz detectadas: {len(pauses)}")
+
+    if "--full" in sys.argv:
+        print("Renderizando el video completo...")
+        render_full(pauses)
+        return
 
     for idx, part in enumerate(PARTS, 1):
         cut0, cut1 = part["cut"]
