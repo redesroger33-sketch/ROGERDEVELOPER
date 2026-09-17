@@ -45,52 +45,56 @@ CLR_BADGE = "&H9BE7FF&"
 PARTS = [
     {
         "name": "parte_1_cinco_minutos",
-        "cut": (0.00, 12.90),
-        "look": "punch",       # zoom lento + contraste
+        "cut": (0.00, 17.80),
+        "look": "punch",
         "phrases": [
-            (0.64,  5.80, "Cuando te faltan 5 MINUTOS para llegar..."),
-            (6.12,  9.98, "no cuando estás a media hora o una hora,"),
-            (10.36, 12.74, "dices: ¡Ya estoy saliendo! y ni sales de tu casa."),
+            (0.64, 10.50, "Cuando te falten CINCO MINUTOS para llegar a una reunión, "
+                          "que realmente sean los cinco minutos que te faltan. "
+                          "No que estás a media hora,"),
+            (11.14, 17.22, "a una hora. A ver: ya estoy saliendo, ya estoy saliendo... "
+                           "¡y ni sales de tu casa y ya estás saliendo!"),
         ],
     },
     {
         "name": "parte_2_si_eres_cristiano",
-        "cut": (12.90, 29.73),
+        "cut": (17.80, 31.60),
         "look": "warm",
         "phrases": [
-            (13.10, 17.22, "Esas cosas, si eres CRISTIANO, ¡NO deberías hacerlas!"),
-            (19.14, 23.10, "Este SUCULENTO ají de gallina..."),
-            (23.10, 28.72, "lo cocinó mi esposo o lo mandaste a comprar."),
+            (18.38, 30.94, "Esas cosas, si eres CRISTIANO, cristiana, ¡NO deberías hacerlo! "
+                           "¿Correcto? Este SUCULENTO ají de gallina lo cocinó "
+                           "mi esposo, mi esposa..."),
         ],
     },
     {
-        "name": "parte_3_dile_que_no_estoy",
-        "cut": (29.73, 46.90),
+        "name": "parte_3_di_siempre_la_verdad",
+        "cut": (31.60, 46.90),
         "look": "clean",
         "phrases": [
-            (30.06, 34.72, "Tú siempre tienes que decir la VERDAD."),
-            (35.14, 43.18, "Hijo, dile al cobrador: ¡DILE QUE NO ESTOY!"),
-            (43.60, 46.78, "¿Qué le estás ENSEÑANDO a tu hijo?"),
+            (31.92, 34.72, "o lo mandaste a comprar al mejor restaurante."),
+            (35.14, 46.78, "Tú siempre tienes que decir la VERDAD. "
+                           "Hijo, dile al panadero, al gasfitero, al lechero:"),
         ],
     },
     {
-        "name": "parte_4_formando_valores",
+        "name": "parte_4_que_le_ensenas",
         "cut": (46.90, 65.93),
         "look": "warm",
         "phrases": [
-            (47.02, 53.16, "¿Cómo estamos FORMANDO en VALORES a nuestros hijos?"),
-            (53.16, 57.02, "Que tu SÍ sea SÍ y tu NO sea NO."),
-            (57.02, 65.30, "Lanzas una palabra con VERACIDAD y VELOCIDAD."),
+            (47.02, 62.44, "«DILE QUE NO ESTOY». ¿Qué estás ENSEÑANDO a tu hijo? "
+                           "¿Cómo estamos FORMANDO en VALORES a nuestros hijos? "
+                           "Que tu SÍ sea SÍ y tu NO sea NO. Si lanzas una palabra"),
+            (62.64, 65.30, "con VERACIDAD, que sea tal cual lo estás"),
         ],
     },
     {
         "name": "parte_5_tu_palabra_tiene_poder",
         "cut": (65.93, 81.48),
-        "look": "close",       # cierre: zoom out + fundido
+        "look": "close",
         "phrases": [
-            (66.56, 70.20, "Enseñemos a nuestro entorno a ser EJEMPLO y TESTIMONIO."),
-            (71.22, 75.02, "¡Tu palabra TIENE PODER!"),
-            (76.16, 79.08, "¡BENDICIONES!"),
+            (66.56, 72.38, "viviendo en ese momento. Enseñemos a nuestros hijos"),
+            (73.20, 79.08, "y a nuestro entorno a ser siempre EJEMPLO y TESTIMONIO "
+                           "desde la palabra. ¡Tu palabra TIENE PODER!"),
+            (80.08, 80.88, "¡BENDICIONES!"),
         ],
     },
 ]
@@ -140,7 +144,13 @@ def speech_spans(t0, t1, pauses):
         cur = max(cur, pe)
     if cur < t1:
         spans.append((cur, t1))
-    return spans or [(t0, t1)]
+    if not spans:
+        return [(t0, t1)]
+    # Si "voz detectada" cubre menos de la mitad del tramo, el umbral fue
+    # demasiado agresivo (habla de bajo volumen): reparte sobre todo el tramo.
+    if sum(e - s for s, e in spans) < 0.55 * (t1 - t0):
+        return [(t0, t1)]
+    return spans
 
 
 def map_to_wall(frac, spans):

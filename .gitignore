@@ -2,4 +2,6 @@ output_segments/
 reels_output/
 _work/
 *.mp4
+*.tar.bz2
+sherpa-onnx-*/
 __pycache__/
