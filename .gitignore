@@ -1,3 +1,5 @@
 output_segments/
+reels_output/
+_work/
 *.mp4
 __pycache__/
