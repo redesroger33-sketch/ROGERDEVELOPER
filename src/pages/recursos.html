@@ -1,0 +1,155 @@
+<section class="section" style="padding-bottom:16px">
+  <div class="wrap">
+    <p class="eyebrow">Biblioteca</p>
+    <h1>Recursos para analizar antes de firmar</h1>
+    <p class="lead prose">Todo lo que uso para evaluar una propiedad, ordenado por el tipo de duda que resuelve. Las plantillas se descargan y se abren en Excel o Google Sheets con las fórmulas ya puestas; las herramientas corren en el navegador.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:8px" data-library>
+  <div class="wrap">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr-only" for="buscar">Buscar en la biblioteca</label>
+      <input id="buscar" type="search" placeholder="Buscar: cap rate, arras, vacancia…" data-search>
+    </div>
+
+    <div class="filters mt-24">
+      <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" id="zonas" data-filter="zonas" aria-pressed="false">Zonas y precios</button>
+      <button class="chip" type="button" id="casos" data-filter="casos" aria-pressed="false">Casos con números</button>
+      <button class="chip" type="button" id="errores" data-filter="errores" aria-pressed="false">Errores</button>
+      <button class="chip" type="button" id="mercado" data-filter="mercado" aria-pressed="false">Mercado y crédito</button>
+      <button class="chip" type="button" id="plantillas" data-filter="plantillas" aria-pressed="false">Descargables</button>
+    </div>
+    <p class="result-count" data-count aria-live="polite">—</p>
+
+    <div class="grid grid--3">
+
+      <article class="card card--link" data-cats="casos plantillas">
+        <div class="tag-row"><span class="tag">Plantilla</span><span class="tag">CSV · Excel y Sheets</span></div>
+        <h3>Plantilla de análisis de renta</h3>
+        <p>Trece datos de entrada y veintitrés cálculos automáticos: cuota del crédito, NOI, cap rate, cash-on-cash, DSCR, GRM, ocupación mínima y años para recuperar el capital. Las fórmulas vienen escritas.</p>
+        <div class="card__foot"><span>Casos con números</span><a class="card__cta" href="assets/descargas/plantilla-analisis-renta.csv" download>Descargar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="zonas plantillas">
+        <div class="tag-row"><span class="tag">Plantilla</span><span class="tag">CSV · Excel y Sheets</span></div>
+        <h3>Comparativo de zonas</h3>
+        <p>Una fila por distrito: precio por m², renta por m², yield bruto anual calculado y precio estimado para el metraje que buscas. Incluye las cinco cosas que hay que mirar además del precio.</p>
+        <div class="card__foot"><span>Zonas y precios</span><a class="card__cta" href="assets/descargas/plantilla-comparativo-zonas.csv" download>Descargar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="errores plantillas">
+        <div class="tag-row"><span class="tag">Guion</span><span class="tag">Para imprimir</span></div>
+        <h3>Guion de visita a una propiedad</h3>
+        <p>Qué revisar en la calle, en la estructura y en el edificio, las ocho preguntas que hay que hacerle al propietario y los cinco números con los que tienes que salir de la visita.</p>
+        <div class="card__foot"><span>Errores</span><a class="card__cta" href="assets/descargas/guion-visita-propiedad.md" download>Descargar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="errores">
+        <div class="tag-row"><span class="tag">Herramienta</span><span class="tag">52 puntos</span></div>
+        <h3>Checklist de verificación antes de firmar</h3>
+        <p>Registros, cargas, licencias, área ocupada contra área registrada, deudas de predial y arbitrios, situación del inquilino. Marca lo verificado y tu navegador guarda el avance.</p>
+        <div class="card__foot"><span>Errores</span><a class="card__cta" href="checklist.html">Abrir</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="casos">
+        <div class="tag-row"><span class="tag">Calculadora</span><span class="tag">6 métricas</span></div>
+        <h3>Análisis de propiedad en renta</h3>
+        <p>La versión interactiva de la plantilla: cambias un dato y las seis métricas se recalculan al instante, con un veredicto que te dice qué renta o qué precio necesitarías para que cierre.</p>
+        <div class="card__foot"><span>Casos con números</span><a class="card__cta" href="calculadoras.html#renta">Usar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="mercado">
+        <div class="tag-row"><span class="tag">Calculadora</span><span class="tag">Amortización</span></div>
+        <h3>Cuota real del crédito hipotecario</h3>
+        <p>Separa capital e interés de lo demás (predial, seguros, mantenimiento) y muestra la tabla año por año, para que veas cuánto de tu cuota es interés al inicio.</p>
+        <div class="card__foot"><span>Mercado y crédito</span><a class="card__cta" href="calculadoras.html#hipoteca">Usar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="mercado">
+        <div class="tag-row"><span class="tag">Calculadora</span><span class="tag">Dos restricciones</span></div>
+        <h3>Capacidad de compra</h3>
+        <p>Cruza cuota máxima sobre ingreso con el ahorro disponible y te dice cuál de los dos te limita. Incluye el efecto del financiamiento máximo del banco.</p>
+        <div class="card__foot"><span>Mercado y crédito</span><a class="card__cta" href="calculadoras.html#capacidad">Usar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="mercado casos">
+        <div class="tag-row"><span class="tag">Calculadora</span><span class="tag">Simulación mensual</span></div>
+        <h3>Rentar e invertir vs. comprar</h3>
+        <p>Corre los dos escenarios mes a mes con el capital alternativo invertido, y te da el año exacto en que comprar pasa adelante. Incluye tabla de patrimonio año por año.</p>
+        <div class="card__foot"><span>Mercado y crédito</span><a class="card__cta" href="calculadoras.html#versus">Usar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="casos">
+        <div class="tag-row"><span class="tag">Calculadora</span><span class="tag">Regla del 70 %</span></div>
+        <h3>Comprar, remodelar y vender</h3>
+        <p>Oferta máxima, utilidad después de intereses y costo de tenencia, ROI anualizado y el precio de venta en el que empatas sin ganar nada.</p>
+        <div class="card__foot"><span>Casos con números</span><a class="card__cta" href="calculadoras.html#flip">Usar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="casos errores">
+        <div class="tag-row"><span class="tag">Artículo</span><span class="tag">12 min</span></div>
+        <h3>Cómo analizar una propiedad de renta en 15 minutos</h3>
+        <p>El orden en que hay que calcular las seis métricas, qué descarta una propiedad de inmediato y un ejemplo completo con números de principio a fin.</p>
+        <div class="card__foot"><span>Casos con números</span><a class="card__cta" href="articulos/analizar-propiedad-renta.html">Leer</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="errores">
+        <div class="tag-row"><span class="tag">Artículo</span><span class="tag">10 min</span></div>
+        <h3>Los 7 errores que más caro le salen a un comprador primerizo</h3>
+        <p>Cada error con el costo estimado en dinero y la verificación concreta que lo evita. El primero es el que se paga más caro y se comete más seguido.</p>
+        <div class="card__foot"><span>Errores</span><a class="card__cta" href="articulos/errores-comprador-primerizo.html">Leer</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="zonas mercado">
+        <div class="tag-row"><span class="tag">Artículo</span><span class="tag">9 min</span></div>
+        <h3>9 usos de IA en bienes raíces que sí ahorran horas</h3>
+        <p>Prompts listos para copiar, y lo que hay que verificar a mano en cada uno. La IA no tasa propiedades ni lee registros públicos: acelera el trabajo previo.</p>
+        <div class="card__foot"><span>Herramientas</span><a class="card__cta" href="articulos/ia-para-bienes-raices.html">Leer</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="zonas errores mercado casos">
+        <div class="tag-row"><span class="tag">Referencia</span><span class="tag">42 términos</span></div>
+        <h3>Glosario inmobiliario</h3>
+        <p>De arras a yield, pasando por cap rate, DSCR, LTV, GRM, minuta, plusvalía y saneamiento. Cada término con la fórmula cuando la tiene y un ejemplo con números.</p>
+        <div class="card__foot"><span>Referencia</span><a class="card__cta" href="glosario.html">Consultar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="zonas">
+        <div class="tag-row"><span class="tag">Método</span><span class="tag">Lectura corta</span></div>
+        <h3>Cómo leer una zona en cuatro datos</h3>
+        <p>Yield bruto, relación entre avisos publicados y ventas cerradas, obra pública confirmada y días promedio de alquiler. Está dentro de la plantilla de comparativo de zonas.</p>
+        <div class="card__foot"><span>Zonas y precios</span><a class="card__cta" href="assets/descargas/plantilla-comparativo-zonas.csv" download>Descargar</a></div>
+      </article>
+
+      <article class="card card--link" data-cats="mercado">
+        <div class="tag-row"><span class="tag">Referencia</span><span class="tag">Metodología</span></div>
+        <h3>Supuestos de cálculo, a la vista</h3>
+        <p>Qué fórmula usa cada calculadora, cómo se convierten las tasas anuales a mensuales y qué cosas deliberadamente no incluyen (impuestos, que cambian por país).</p>
+        <div class="card__foot"><span>Mercado y crédito</span><a class="card__cta" href="calculadoras.html#metodologia">Ver</a></div>
+      </article>
+
+    </div>
+
+    <p class="empty-state hidden" data-empty>No hay recursos con ese término. Prueba con <em>cap rate</em>, <em>arras</em>, <em>vacancia</em> o <em>zonas</em>.</p>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="band">
+      <div class="grid grid--2" style="gap:32px;align-items:center">
+        <div>
+          <h2 class="mt-0">¿Te falta el paso siguiente?</h2>
+          <p>Los recursos de arriba te dicen si una propiedad sirve. El Mapa de Inversión Inmobiliaria Lima te dice dónde buscarla: comparativo de precio por m² y proyección por distrito, actualizado cada trimestre, más el proceso de compra completo.</p>
+        </div>
+        <div>
+          <a class="btn btn--primary btn--block" href="producto.html">Ver qué incluye El Mapa</a>
+          <a class="btn btn--ghost btn--block mt-24" href="contacto.html">Prefiero escribirte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

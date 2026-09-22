@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GA Desarrolladores">
+  <rect width="64" height="64" rx="14" fill="#3F342D"/>
+  <path d="M14 34 32 18l18 16v14a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2V34Z" fill="#C47758"/>
+  <path d="M27 50V38h10v12" fill="#F5F1E8"/>
+  <circle cx="32" cy="14" r="4" fill="#C5A46D"/>
+</svg>

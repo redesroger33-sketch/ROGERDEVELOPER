@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es-PE" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadoras inmobiliarias — hipoteca, renta, capacidad de compra</title>
+<meta name="description" content="Cinco calculadoras que corren en tu navegador: cuota hipotecaria con tabla de amortización, flujo de caja de una renta, capacidad de compra, rentar vs. comprar y remodelar para vender.">
+<meta name="author" content="Roger Guevara — GA Desarrolladores Inmobiliarios">
+<meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#241E1A" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GA Desarrolladores Inmobiliarios">
+<meta property="og:title" content="Calculadoras inmobiliarias — hipoteca, renta, capacidad de compra">
+<meta property="og:description" content="Cinco calculadoras que corren en tu navegador: cuota hipotecaria con tabla de amortización, flujo de caja de una renta, capacidad de compra, rentar vs. comprar y remodelar para vender.">
+<meta property="og:locale" content="es_PE">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+/* Evita el parpadeo de tema: se aplica antes de pintar. */
+(function(){try{var t=localStorage.getItem('rg-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">GA</span>
+        <span>GA Desarrolladores
+          <span class="brand__sub">Recursos de inversión</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="calculadoras.html" aria-current="page">Calculadoras</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="glosario.html">Glosario</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary btn--sm hide-sm" href="producto.html">El Mapa</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Cambiar de tema">
+          <svg data-icon="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg data-icon="sun" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__panel" id="nav-panel">
+      <a href="index.html">Inicio</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="calculadoras.html" aria-current="page">Calculadoras</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="glosario.html">Glosario</a>
+      <a href="producto.html"><strong>El Mapa de Inversión Inmobiliaria</strong></a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="section" style="padding-bottom:24px">
+  <div class="wrap">
+    <p class="eyebrow">Herramientas</p>
+    <h1>Calculadoras inmobiliarias</h1>
+    <p class="lead prose">Cinco calculadoras con la matemática completa: sistema francés para el crédito, simulación mes a mes para el comparativo y todos los gastos que normalmente quedan fuera de una cuota "estimada". Corren en tu navegador, no guardan nada y no piden registro.</p>
+    <div class="field" style="max-width:260px;margin-top:24px">
+      <label for="moneda">Moneda de todos los resultados</label>
+      <select id="moneda" class="plain">
+        <option value="PEN">Soles — S/</option>
+        <option value="USD">Dólares — US$</option>
+        <option value="MXN">Pesos mexicanos</option>
+        <option value="COP">Pesos colombianos</option>
+        <option value="CLP">Pesos chilenos</option>
+        <option value="ARS">Pesos argentinos</option>
+        <option value="EUR">Euros</option>
+      </select>
+    </div>
+    <div class="filters mt-24">
+      <a class="chip" href="#hipoteca">1 · Hipoteca</a>
+      <a class="chip" href="#renta">2 · Renta</a>
+      <a class="chip" href="#capacidad">3 · Capacidad de compra</a>
+      <a class="chip" href="#versus">4 · Rentar vs. comprar</a>
+      <a class="chip" href="#flip">5 · Remodelar y vender</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. HIPOTECA ============ -->
+<section class="section section--alt" id="hipoteca">
+  <div class="wrap">
+    <p class="eyebrow">Calculadora 1</p>
+    <h2>Cuota real del crédito hipotecario</h2>
+    <p class="lead prose">La cuota que te dice el banco es capital más interés. Lo que sale de tu cuenta cada mes incluye predial, seguro y mantenimiento. Esta calcula las dos cosas por separado.</p>
+
+    <div class="calc mt-32" data-calc id="form-hipoteca">
+      <div class="panel">
+        <h3>Datos del crédito</h3>
+        <div class="field">
+          <label for="h-precio">Precio de la propiedad</label>
+          <div class="input-affix"><span>Precio</span><input id="h-precio" type="number" min="0" step="1000" value="420000" data-default="420000"></div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="h-enganche">Cuota inicial</label>
+            <div class="input-affix"><input id="h-enganche" type="number" min="0" max="100" step="1" value="20" data-default="20"><span class="suffix">%</span></div>
+            <span class="hint">En Perú, el mínimo suele ser 10 % para vivienda y 20–30 % para inversión.</span>
+          </div>
+          <div class="field">
+            <label for="h-tasa">Tasa efectiva anual</label>
+            <div class="input-affix"><input id="h-tasa" type="number" min="0" max="60" step="0.05" value="9.5" data-default="9.5"><span class="suffix">%</span></div>
+            <span class="hint">Pide la TCEA, no la tasa nominal: incluye comisiones y seguros obligatorios.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="h-plazo">Plazo del crédito</label>
+          <div class="input-affix"><input id="h-plazo" type="number" min="1" max="40" step="1" value="20" data-default="20"><span class="suffix">años</span></div>
+        </div>
+
+        <h3 class="mt-32">Lo que no aparece en la cuota</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="h-predial">Predial y arbitrios (al año)</label>
+            <div class="input-affix"><span>Año</span><input id="h-predial" type="number" min="0" step="50" value="1100" data-default="1100"></div>
+          </div>
+          <div class="field">
+            <label for="h-seguro">Seguros (al año)</label>
+            <div class="input-affix"><span>Año</span><input id="h-seguro" type="number" min="0" step="50" value="1400" data-default="1400"></div>
+            <span class="hint">Desgravamen más todo riesgo del inmueble.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="h-hoa">Mantenimiento del edificio (al mes)</label>
+          <div class="input-affix"><span>Mes</span><input id="h-hoa" type="number" min="0" step="10" value="250" data-default="250"></div>
+        </div>
+        <button class="btn btn--ghost btn--sm mt-24" type="button" data-calc-reset="form-hipoteca">Volver a los valores de ejemplo</button>
+      </div>
+
+      <div class="panel panel--out">
+        <div class="out-big">
+          <div class="label">Sale de tu cuenta cada mes</div>
+          <div class="value" id="h-out-pago">—</div>
+        </div>
+        <dl class="out-list">
+          <div class="metric-row"><dt>Capital e interés</dt><dd id="h-out-capint">—</dd></div>
+          <div class="metric-row"><dt>Predial, seguro y mantenimiento</dt><dd id="h-out-extras">—</dd></div>
+          <div class="metric-row"><dt>Monto financiado</dt><dd id="h-out-prestamo">—</dd></div>
+          <div class="metric-row"><dt>Cuota inicial que pones</dt><dd id="h-out-enganche">—</dd></div>
+          <div class="metric-row"><dt>Intereses en todo el plazo</dt><dd id="h-out-interes">—</dd></div>
+          <div class="metric-row"><dt>Total pagado al banco</dt><dd id="h-out-total">—</dd></div>
+          <div class="metric-row"><dt>Intereses sobre el capital prestado</dt><dd id="h-out-costo">—</dd></div>
+        </dl>
+        <div class="verdict" id="h-veredicto"></div>
+      </div>
+    </div>
+
+    <h3 class="mt-40">Cómo se reparte cada año</h3>
+    <p class="prose">Al principio casi todo es interés. Por eso un abono a capital en los primeros años vale mucho más que el mismo abono al final.</p>
+    <div class="table-scroll mt-24">
+      <table>
+        <caption class="sr-only">Amortización anual del crédito</caption>
+        <thead><tr><th scope="col">Año</th><th scope="col">A capital</th><th scope="col">A intereses</th><th scope="col">Saldo</th></tr></thead>
+        <tbody id="h-tabla"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RENTA ============ -->
+<section class="section" id="renta">
+  <div class="wrap">
+    <p class="eyebrow">Calculadora 2</p>
+    <h2>¿Esta propiedad deja dinero en alquiler?</h2>
+    <p class="lead prose">La pregunta no es cuánto renta, es cuánto queda. Vacancia, administración, mantenimiento y predial se comen entre 25 % y 40 % de la renta bruta. Esta calculadora te da las seis métricas con las que un inversionista decide.</p>
+
+    <div class="calc mt-32" data-calc id="form-renta">
+      <div class="panel">
+        <h3>Compra y financiamiento</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="r-precio">Precio de compra</label>
+            <div class="input-affix"><span>Precio</span><input id="r-precio" type="number" min="0" step="1000" value="420000" data-default="420000"></div>
+          </div>
+          <div class="field">
+            <label for="r-cierre">Gastos de cierre</label>
+            <div class="input-affix"><input id="r-cierre" type="number" min="0" max="20" step="0.1" value="3.5" data-default="3.5"><span class="suffix">%</span></div>
+            <span class="hint">Notaría, registros, tasación, alcabala si aplica.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="r-remodelacion">Remodelación inicial</label>
+            <div class="input-affix"><span>Total</span><input id="r-remodelacion" type="number" min="0" step="500" value="15000" data-default="15000"></div>
+          </div>
+          <div class="field">
+            <label for="r-enganche">Cuota inicial</label>
+            <div class="input-affix"><input id="r-enganche" type="number" min="0" max="100" step="1" value="25" data-default="25"><span class="suffix">%</span></div>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="r-tasa">Tasa efectiva anual</label>
+            <div class="input-affix"><input id="r-tasa" type="number" min="0" max="60" step="0.05" value="10" data-default="10"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="r-plazo">Plazo</label>
+            <div class="input-affix"><input id="r-plazo" type="number" min="1" max="40" step="1" value="20" data-default="20"><span class="suffix">años</span></div>
+          </div>
+        </div>
+
+        <h3 class="mt-32">Ingreso y gastos de operación</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="r-renta">Renta mensual</label>
+            <div class="input-affix"><span>Mes</span><input id="r-renta" type="number" min="0" step="50" value="2600" data-default="2600"></div>
+          </div>
+          <div class="field">
+            <label for="r-vacancia">Vacancia</label>
+            <div class="input-affix"><input id="r-vacancia" type="number" min="0" max="100" step="0.5" value="8" data-default="8"><span class="suffix">%</span></div>
+            <span class="hint">8 % es casi un mes vacío al año. No pongas cero.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="r-admin">Administración</label>
+            <div class="input-affix"><input id="r-admin" type="number" min="0" max="100" step="0.5" value="8" data-default="8"><span class="suffix">%</span></div>
+            <span class="hint">Si administras tú, ponlo igual: tu tiempo cuesta.</span>
+          </div>
+          <div class="field">
+            <label for="r-mantenimiento">Mantenimiento y reparaciones</label>
+            <div class="input-affix"><input id="r-mantenimiento" type="number" min="0" max="100" step="0.5" value="7" data-default="7"><span class="suffix">%</span></div>
+            <span class="hint">Porcentaje de la renta bruta anual.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="r-predial">Predial y arbitrios (al año)</label>
+            <div class="input-affix"><span>Año</span><input id="r-predial" type="number" min="0" step="50" value="1100" data-default="1100"></div>
+          </div>
+          <div class="field">
+            <label for="r-seguro">Seguros (al año)</label>
+            <div class="input-affix"><span>Año</span><input id="r-seguro" type="number" min="0" step="50" value="1400" data-default="1400"></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-hoa">Mantenimiento del edificio (al mes)</label>
+          <div class="input-affix"><span>Mes</span><input id="r-hoa" type="number" min="0" step="10" value="250" data-default="250"></div>
+        </div>
+        <button class="btn btn--ghost btn--sm mt-24" type="button" data-calc-reset="form-renta">Volver a los valores de ejemplo</button>
+      </div>
+
+      <div class="panel panel--out">
+        <div class="out-big">
+          <div class="label">Flujo de caja mensual</div>
+          <div class="value" id="r-out-flujo">—</div>
+        </div>
+        <dl class="out-list">
+          <div class="metric-row"><dt>Capital que necesitas para entrar</dt><dd id="r-out-capital">—</dd></div>
+          <div class="metric-row"><dt>NOI (ingreso operativo neto anual)</dt><dd id="r-out-noi">—</dd></div>
+          <div class="metric-row"><dt>Cap rate</dt><dd id="r-out-caprate">—</dd></div>
+          <div class="metric-row"><dt>Cash-on-cash</dt><dd id="r-out-coc">—</dd></div>
+          <div class="metric-row"><dt>DSCR (cobertura de la deuda)</dt><dd id="r-out-dscr">—</dd></div>
+          <div class="metric-row"><dt>Renta ÷ precio (regla del 1 %)</dt><dd id="r-out-regla1">—</dd></div>
+          <div class="metric-row"><dt>GRM (años de renta bruta)</dt><dd id="r-out-grm">—</dd></div>
+          <div class="metric-row"><dt>Gastos de operación al mes</dt><dd id="r-out-opex">—</dd></div>
+          <div class="metric-row"><dt>Cuota del crédito</dt><dd id="r-out-hipoteca">—</dd></div>
+          <div class="metric-row"><dt>Ocupación mínima para no perder</dt><dd id="r-out-breakeven">—</dd></div>
+        </dl>
+        <div class="verdict" id="r-veredicto"></div>
+      </div>
+    </div>
+
+    <div class="grid grid--3 mt-40">
+      <div class="card card--flat"><h4 class="mt-0">Cap rate</h4><p>NOI ÷ precio. Mide la propiedad sin crédito, así que sirve para comparar dos inmuebles entre sí. Contrástalo con el promedio de la zona, no con un número universal.</p></div>
+      <div class="card card--flat"><h4 class="mt-0">Cash-on-cash</h4><p>Flujo anual ÷ capital que pusiste. Mide tu retorno real. Por debajo de lo que rinde un depósito a plazo, el riesgo no se está pagando.</p></div>
+      <div class="card card--flat"><h4 class="mt-0">DSCR</h4><p>NOI ÷ servicio de la deuda. Debajo de 1 la propiedad no paga su propio crédito. Los bancos suelen exigir 1.25 en créditos de inversión.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. CAPACIDAD ============ -->
+<section class="section section--alt" id="capacidad">
+  <div class="wrap">
+    <p class="eyebrow">Calculadora 3</p>
+    <h2>Hasta cuánto puedes comprar hoy</h2>
+    <p class="lead prose">Dos cosas te limitan: lo que puedes pagar al mes y lo que tienes ahorrado. Esta calculadora evalúa las dos restricciones y te dice cuál es la que manda, porque casi nunca es la que uno cree.</p>
+
+    <div class="calc mt-32" data-calc id="form-capacidad">
+      <div class="panel">
+        <h3>Tus números</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="c-ingreso">Ingreso mensual bruto</label>
+            <div class="input-affix"><span>Mes</span><input id="c-ingreso" type="number" min="0" step="100" value="9000" data-default="9000"></div>
+            <span class="hint">Suma el ingreso de quienes van en el crédito.</span>
+          </div>
+          <div class="field">
+            <label for="c-deudas">Cuotas de deuda que ya pagas</label>
+            <div class="input-affix"><span>Mes</span><input id="c-deudas" type="number" min="0" step="50" value="900" data-default="900"></div>
+            <span class="hint">Tarjetas, vehicular, préstamos personales.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-ahorro">Ahorro disponible para la compra</label>
+          <div class="input-affix"><span>Total</span><input id="c-ahorro" type="number" min="0" step="1000" value="95000" data-default="95000"></div>
+          <span class="hint">Cubre la cuota inicial más los gastos de cierre, no solo la inicial.</span>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="c-tasa">Tasa efectiva anual</label>
+            <div class="input-affix"><input id="c-tasa" type="number" min="0" max="60" step="0.05" value="9.5" data-default="9.5"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="c-plazo">Plazo</label>
+            <div class="input-affix"><input id="c-plazo" type="number" min="1" max="40" step="1" value="20" data-default="20"><span class="suffix">años</span></div>
+          </div>
+        </div>
+
+        <h3 class="mt-32">Criterios del banco</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="c-dti">Cuota máxima sobre tu ingreso</label>
+            <div class="input-affix"><input id="c-dti" type="number" min="5" max="70" step="1" value="35" data-default="35"><span class="suffix">%</span></div>
+            <span class="hint">Incluye tus deudas actuales. La banca peruana suele trabajar entre 30 % y 40 %.</span>
+          </div>
+          <div class="field">
+            <label for="c-ltv">Financiamiento máximo</label>
+            <div class="input-affix"><input id="c-ltv" type="number" min="10" max="100" step="1" value="80" data-default="80"><span class="suffix">%</span></div>
+            <span class="hint">80 % equivale a 20 % de inicial.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-cierre">Gastos de cierre</label>
+          <div class="input-affix"><input id="c-cierre" type="number" min="0" max="20" step="0.1" value="3.5" data-default="3.5"><span class="suffix">%</span></div>
+        </div>
+        <button class="btn btn--ghost btn--sm mt-24" type="button" data-calc-reset="form-capacidad">Volver a los valores de ejemplo</button>
+      </div>
+
+      <div class="panel panel--out">
+        <div class="out-big">
+          <div class="label">Precio máximo de propiedad</div>
+          <div class="value" id="c-out-precio">—</div>
+        </div>
+        <dl class="out-list">
+          <div class="metric-row"><dt>Crédito que te darían</dt><dd id="c-out-prestamo">—</dd></div>
+          <div class="metric-row"><dt>Cuota inicial necesaria</dt><dd id="c-out-enganche">—</dd></div>
+          <div class="metric-row"><dt>Equivale a</dt><dd id="c-out-engpct">—</dd></div>
+          <div class="metric-row"><dt>Gastos de cierre</dt><dd id="c-out-cierre">—</dd></div>
+          <div class="metric-row"><dt>Cuota mensual resultante</dt><dd id="c-out-pago">—</dd></div>
+          <div class="metric-row"><dt>Cuota máxima que soportas</dt><dd id="c-out-pagomax">—</dd></div>
+          <div class="metric-row"><dt>Compromiso sobre tu ingreso</dt><dd id="c-out-dti">—</dd></div>
+          <div class="metric-row"><dt>Te queda de ahorro</dt><dd id="c-out-sobrante">—</dd></div>
+        </dl>
+        <div class="verdict" id="c-veredicto"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. RENTAR VS COMPRAR ============ -->
+<section class="section" id="versus">
+  <div class="wrap">
+    <p class="eyebrow">Calculadora 4</p>
+    <h2>Rentar e invertir la diferencia, o comprar</h2>
+    <p class="lead prose">Comparar la cuota contra el alquiler no sirve de nada: ignora la inicial, los gastos de cierre, el predial, la comisión de venta y lo que rendiría ese capital invertido en otra cosa. Esta simulación corre los dos escenarios mes a mes y los compara por patrimonio final.</p>
+
+    <div class="calc mt-32" data-calc id="form-versus">
+      <div class="panel">
+        <h3>Escenario comprar</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="v-precio">Precio de la propiedad</label>
+            <div class="input-affix"><span>Precio</span><input id="v-precio" type="number" min="0" step="1000" value="420000" data-default="420000"></div>
+          </div>
+          <div class="field">
+            <label for="v-enganche">Cuota inicial</label>
+            <div class="input-affix"><input id="v-enganche" type="number" min="0" max="100" step="1" value="20" data-default="20"><span class="suffix">%</span></div>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="v-tasa">Tasa efectiva anual</label>
+            <div class="input-affix"><input id="v-tasa" type="number" min="0" max="60" step="0.05" value="9.5" data-default="9.5"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="v-plazo">Plazo del crédito</label>
+            <div class="input-affix"><input id="v-plazo" type="number" min="1" max="40" step="1" value="20" data-default="20"><span class="suffix">años</span></div>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="v-cierre">Gastos de cierre al comprar</label>
+            <div class="input-affix"><input id="v-cierre" type="number" min="0" max="20" step="0.1" value="3.5" data-default="3.5"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="v-venta">Costo de vender al final</label>
+            <div class="input-affix"><input id="v-venta" type="number" min="0" max="20" step="0.1" value="4" data-default="4"><span class="suffix">%</span></div>
+            <span class="hint">Comisión del corredor más gastos e impuesto a la ganancia si aplica.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="v-apreciacion">Apreciación anual esperada</label>
+            <div class="input-affix"><input id="v-apreciacion" type="number" min="-10" max="30" step="0.1" value="4" data-default="4"><span class="suffix">%</span></div>
+            <span class="hint">Usa el dato histórico de tu distrito, no el del folleto del proyecto.</span>
+          </div>
+          <div class="field">
+            <label for="v-tenencia">Costo anual de tener la propiedad</label>
+            <div class="input-affix"><input id="v-tenencia" type="number" min="0" max="10" step="0.1" value="1.2" data-default="1.2"><span class="suffix">%</span></div>
+            <span class="hint">Predial, arbitrios, seguros y mantenimiento sobre el valor.</span>
+          </div>
+        </div>
+
+        <h3 class="mt-32">Escenario rentar</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="v-renta">Alquiler mensual equivalente</label>
+            <div class="input-affix"><span>Mes</span><input id="v-renta" type="number" min="0" step="50" value="2400" data-default="2400"></div>
+          </div>
+          <div class="field">
+            <label for="v-suberenta">Aumento anual del alquiler</label>
+            <div class="input-affix"><input id="v-suberenta" type="number" min="0" max="30" step="0.1" value="4" data-default="4"><span class="suffix">%</span></div>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="v-rendimiento">Rendimiento de tu inversión alternativa</label>
+            <div class="input-affix"><input id="v-rendimiento" type="number" min="0" max="40" step="0.1" value="7" data-default="7"><span class="suffix">%</span></div>
+            <span class="hint">Lo que realmente conseguirías, después de impuestos.</span>
+          </div>
+          <div class="field">
+            <label for="v-horizonte">Años que te quedarías</label>
+            <div class="input-affix"><input id="v-horizonte" type="number" min="1" max="40" step="1" value="10" data-default="10"><span class="suffix">años</span></div>
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--sm mt-24" type="button" data-calc-reset="form-versus">Volver a los valores de ejemplo</button>
+      </div>
+
+      <div class="panel panel--out">
+        <div class="out-big">
+          <div class="label" id="v-out-titulo">Diferencia de patrimonio</div>
+          <div class="value" id="v-out-dif">—</div>
+        </div>
+        <dl class="out-list">
+          <div class="metric-row"><dt>Patrimonio si compras</dt><dd id="v-out-patc">—</dd></div>
+          <div class="metric-row"><dt>Patrimonio si rentas e inviertes</dt><dd id="v-out-patr">—</dd></div>
+          <div class="metric-row"><dt>Valor de la propiedad al final</dt><dd id="v-out-valor">—</dd></div>
+          <div class="metric-row"><dt>Saldo del crédito al final</dt><dd id="v-out-saldo">—</dd></div>
+          <div class="metric-row"><dt>Equity neto después de vender</dt><dd id="v-out-equity">—</dd></div>
+          <div class="metric-row"><dt>Inversiones del comprador</dt><dd id="v-out-cuentac">—</dd></div>
+          <div class="metric-row"><dt>Capital inicial que inmoviliza comprar</dt><dd id="v-out-cash">—</dd></div>
+          <div class="metric-row"><dt>Cuota del crédito</dt><dd id="v-out-pago">—</dd></div>
+          <div class="metric-row"><dt>Total desembolsado comprando</dt><dd id="v-out-gastoc">—</dd></div>
+          <div class="metric-row"><dt>Total desembolsado rentando</dt><dd id="v-out-gastor">—</dd></div>
+        </dl>
+        <div class="verdict" id="v-veredicto"></div>
+      </div>
+    </div>
+
+    <h3 class="mt-40">Patrimonio año por año</h3>
+    <div class="table-scroll mt-24">
+      <table>
+        <caption class="sr-only">Comparativo de patrimonio entre comprar y rentar</caption>
+        <thead><tr><th scope="col">Año</th><th scope="col">Comprar</th><th scope="col">Rentar e invertir</th><th scope="col">Diferencia</th></tr></thead>
+        <tbody id="v-tabla"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. FLIP ============ -->
+<section class="section section--alt" id="flip">
+  <div class="wrap">
+    <p class="eyebrow">Calculadora 5</p>
+    <h2>Comprar, remodelar y vender</h2>
+    <p class="lead prose">La utilidad de una remodelación se define el día que ofertas, no el día que vendes. La regla del 70 % te da el techo de lo que puedes pagar; el resto de la calculadora te dice si después de todos los costos queda algo.</p>
+
+    <div class="calc mt-32" data-calc id="form-flip">
+      <div class="panel">
+        <h3>Valor y obra</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="f-arv">Valor de venta después de remodelar</label>
+            <div class="input-affix"><span>ARV</span><input id="f-arv" type="number" min="0" step="1000" value="520000" data-default="520000"></div>
+            <span class="hint">Sácalo de ventas cerradas comparables, no de avisos publicados.</span>
+          </div>
+          <div class="field">
+            <label for="f-regla">Regla que aplicas</label>
+            <div class="input-affix"><input id="f-regla" type="number" min="50" max="95" step="1" value="70" data-default="70"><span class="suffix">%</span></div>
+            <span class="hint">70 % es el estándar. Sube a 75 % solo en mercados muy líquidos.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="f-remodelacion">Presupuesto de remodelación</label>
+            <div class="input-affix"><span>Obra</span><input id="f-remodelacion" type="number" min="0" step="1000" value="65000" data-default="65000"></div>
+          </div>
+          <div class="field">
+            <label for="f-compra">Precio de compra que estás evaluando</label>
+            <div class="input-affix"><span>Compra</span><input id="f-compra" type="number" min="0" step="1000" value="290000" data-default="290000"></div>
+          </div>
+        </div>
+
+        <h3 class="mt-32">Costos de la operación</h3>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="f-cierrecompra">Gastos al comprar</label>
+            <div class="input-affix"><input id="f-cierrecompra" type="number" min="0" max="20" step="0.1" value="3.5" data-default="3.5"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="f-cierreventa">Gastos al vender</label>
+            <div class="input-affix"><input id="f-cierreventa" type="number" min="0" max="20" step="0.1" value="5" data-default="5"><span class="suffix">%</span></div>
+            <span class="hint">Comisión, publicidad, impuestos de la venta.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="f-meses">Meses hasta vender</label>
+            <div class="input-affix"><input id="f-meses" type="number" min="1" max="60" step="1" value="8" data-default="8"><span class="suffix">meses</span></div>
+            <span class="hint">Obra más tiempo en el mercado. Sé pesimista.</span>
+          </div>
+          <div class="field">
+            <label for="f-mantenimiento">Costo de tener la propiedad (al mes)</label>
+            <div class="input-affix"><span>Mes</span><input id="f-mantenimiento" type="number" min="0" step="50" value="600" data-default="600"></div>
+            <span class="hint">Predial, arbitrios, mantenimiento, servicios, vigilancia.</span>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="f-financiado">Parte de la compra financiada</label>
+            <div class="input-affix"><input id="f-financiado" type="number" min="0" max="100" step="1" value="60" data-default="60"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="f-tasadinero">Costo anual de ese dinero</label>
+            <div class="input-affix"><input id="f-tasadinero" type="number" min="0" max="80" step="0.1" value="14" data-default="14"><span class="suffix">%</span></div>
+            <span class="hint">El crédito puente o el préstamo de un socio siempre cuesta más que una hipoteca.</span>
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--sm mt-24" type="button" data-calc-reset="form-flip">Volver a los valores de ejemplo</button>
+      </div>
+
+      <div class="panel panel--out">
+        <div class="out-big">
+          <div class="label">Oferta máxima según la regla</div>
+          <div class="value" id="f-out-mao">—</div>
+        </div>
+        <dl class="out-list">
+          <div class="metric-row"><dt>Utilidad con el precio que evalúas</dt><dd id="f-out-utilidad">—</dd></div>
+          <div class="metric-row"><dt>Margen sobre el valor de venta</dt><dd id="f-out-margen">—</dd></div>
+          <div class="metric-row"><dt>Retorno sobre tu capital</dt><dd id="f-out-roi">—</dd></div>
+          <div class="metric-row"><dt>Retorno anualizado</dt><dd id="f-out-roianual">—</dd></div>
+          <div class="metric-row"><dt>Capital propio comprometido</dt><dd id="f-out-capital">—</dd></div>
+          <div class="metric-row"><dt>Costo total de la operación</dt><dd id="f-out-costototal">—</dd></div>
+          <div class="metric-row"><dt>Intereses del financiamiento</dt><dd id="f-out-interes">—</dd></div>
+          <div class="metric-row"><dt>Costo de tenencia en el periodo</dt><dd id="f-out-tenencia">—</dd></div>
+          <div class="metric-row"><dt>Gastos de venta</dt><dd id="f-out-costoventa">—</dd></div>
+          <div class="metric-row"><dt>Precio de venta en el que empatas</dt><dd id="f-out-equilibrio">—</dd></div>
+        </dl>
+        <div class="verdict" id="f-veredicto"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOTA METODOLÓGICA ============ -->
+<section class="section" id="metodologia">
+  <div class="wrap prose">
+    <h2>Cómo calculan estas herramientas</h2>
+    <p>Todo está a la vista en <code>assets/js/calculadoras.js</code>, y estos son los supuestos que conviene conocer antes de tomar una decisión con los resultados:</p>
+    <ul>
+      <li><strong>Crédito:</strong> sistema francés de cuota fija. La cuota sale de <code>P · i / (1 − (1 + i)⁻ⁿ)</code>, con <code>i</code> = tasa anual ÷ 12 y <code>n</code> = meses. Es la fórmula estándar de la banca; una tasa variable o un crédito con periodo de gracia dará números distintos.</li>
+      <li><strong>Tasa:</strong> se ingresa como tasa anual y se divide entre 12. Si tu banco cotiza TCEA, úsala: ya incluye comisiones y seguros obligatorios.</li>
+      <li><strong>Cap rate:</strong> NOI anual ÷ (precio + remodelación inicial). Se calcula sin considerar el crédito, que es lo que permite comparar propiedades entre sí.</li>
+      <li><strong>Rentar vs. comprar:</strong> simulación mes a mes. En cada mes, quien desembolsa menos invierte la diferencia al rendimiento alternativo, y el patrimonio final del comprador incluye el valor de venta menos los costos de venta y el saldo del crédito.</li>
+      <li><strong>Apreciación y rendimiento:</strong> se convierten a tasa mensual equivalente con <code>(1 + r)^(1/12) − 1</code>, no dividiendo entre 12.</li>
+      <li><strong>Lo que no incluyen:</strong> impuesto a la renta por alquiler, impuesto a la ganancia de capital y beneficios tributarios, porque cambian por país y por situación personal. Consúltalos con tu contador antes de cerrar.</li>
+    </ul>
+    <p class="disclaimer">Estas calculadoras son herramientas de análisis, no asesoría financiera. Verifica las tasas y los gastos con tu banco y tu notaría antes de firmar cualquier documento.</p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">GA</span>
+          <span>GA Desarrolladores<span class="brand__sub">Roger Guevara</span></span>
+        </a>
+        <p class="disclaimer mt-24">Recursos de análisis para compra e inversión inmobiliaria en Perú y Latinoamérica. Las calculadoras corren en tu navegador: ningún dato que escribas sale de tu equipo ni se guarda en un servidor.</p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+        <ul>
+          <li><a href="calculadoras.html#hipoteca">Calculadora de hipoteca</a></li>
+          <li><a href="calculadoras.html#renta">Análisis de renta</a></li>
+          <li><a href="calculadoras.html#capacidad">Capacidad de compra</a></li>
+          <li><a href="calculadoras.html#versus">Rentar vs. comprar</a></li>
+          <li><a href="calculadoras.html#flip">Remodelar y vender</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contenido</h4>
+        <ul>
+          <li><a href="recursos.html">Biblioteca de recursos</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="checklist.html">Checklist de compra</a></li>
+          <li><a href="glosario.html">Glosario</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>GA Desarrolladores</h4>
+        <ul>
+          <li><a href="producto.html">El Mapa de Inversión</a></li>
+          <li><a href="contacto.html">Contacto y asesoría</a></li>
+          <li><a href="contacto.html#redes">Redes sociales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> GA Desarrolladores Inmobiliarios · Roger Guevara</span>
+      <span>Información educativa. No constituye asesoría financiera, legal ni tributaria.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/calculadoras.js"></script>
+</body>
+</html>

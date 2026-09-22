@@ -1,0 +1,14 @@
+{
+  "name": "ga-desarrolladores-sitio",
+  "version": "1.0.0",
+  "description": "Sitio de recursos de inversión inmobiliaria de GA Desarrolladores Inmobiliarios (Roger Guevara)",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.js",
+    "validar": "node tools/build.js && node tools/validar.js",
+    "servir": "node tools/build.js && npx --yes http-server . -p 8080 -c-1 -o"
+  },
+  "keywords": ["bienes-raices", "inmobiliaria", "calculadoras", "peru"],
+  "author": "Roger Guevara",
+  "license": "UNLICENSED"
+}

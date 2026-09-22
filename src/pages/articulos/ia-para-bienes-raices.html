@@ -1,0 +1,86 @@
+<article>
+<div class="wrap article-head">
+  <div class="prose">
+    <p class="eyebrow"><a href="../articulos.html">Artículos</a> · Herramientas</p>
+    <h1>9 usos de IA en bienes raíces que sí ahorran horas</h1>
+    <p class="article-meta"><span>Lectura de 9 minutos</span><span>·</span><span>Prompts listos para copiar</span><span>·</span><span>Roger Guevara</span></p>
+    <p class="lead">La IA no tasa propiedades, no lee Registros Públicos y no sabe el precio por m² de tu distrito. Lo que sí hace bien es el trabajo de preparación: ordenar información dispersa, redactar, comparar textos largos y generar las preguntas que se te pasarían. Estos son los nueve usos en los que me ahorra horas reales, con el prompt y con lo que hay que verificar a mano en cada uno.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="prose article-body">
+
+    <div class="callout callout--accent">
+      <span class="callout__title">Regla que aplica a los nueve</span>
+      <p>La IA redacta y estructura; los datos duros los pones tú. Si le pides un precio por m², una tasa vigente o una norma municipal, te va a dar algo que suena correcto y puede no serlo. Dale tú los datos y usa la IA para trabajar con ellos.</p>
+    </div>
+
+    <h2>1. Convertir una ficha de propiedad en datos comparables</h2>
+    <p>Los avisos vienen en prosa, con la información que le conviene al vendedor. Pegar tres o cuatro avisos y pedir una tabla normalizada convierte media hora de copiar y pegar en dos minutos.</p>
+    <div class="prompt-box" id="p1">Te voy a pegar el texto de varios avisos de venta de departamentos. Extrae para cada uno: precio pedido, área en m², número de dormitorios, número de baños, si tiene estacionamiento, antigüedad, piso, cuota de mantenimiento si la menciona, y distrito. Calcula el precio por m² de cada uno. Devuélvelo como tabla ordenada por precio por m² de menor a mayor. Si un dato no está en el aviso, escribe "no informado" en vez de estimarlo.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p1">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> el área, siempre. Es el dato que más se infla en los avisos y el que cambia todo el precio por m².</p>
+
+    <h2>2. Armar la lista de preguntas para el propietario</h2>
+    <p>Sirve porque las preguntas que importan dependen del tipo de propiedad, y en la visita uno siempre olvida dos o tres.</p>
+    <div class="prompt-box" id="p2">Voy a visitar un departamento de 72 m² en un edificio de 2008, quinto piso sin ascensor de emergencia, en Lima. Es para comprarlo y alquilarlo. Genera 15 preguntas para hacerle al propietario y al corredor, ordenadas por lo que más puede cambiar el precio que voy a ofrecer. Para cada pregunta, dime en una línea qué respuesta sería una señal de alarma.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p2">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> nada, pero cruza el resultado con el <a href="../checklist.html">checklist de 52 puntos</a>, que cubre lo registral y lo municipal que la IA no conoce de tu jurisdicción.</p>
+
+    <h2>3. Revisar un contrato buscando lo que falta</h2>
+    <p>Este es el uso con mejor retorno, y hay que entender bien el límite: la IA es buena detectando <em>ausencias</em> y ambigüedades en un texto largo; no sustituye a tu abogado para decidir si una cláusula es válida en tu país.</p>
+    <div class="prompt-box" id="p3">Te voy a pegar un contrato de arras de compraventa de un inmueble en Perú. No me digas si es legal ni me des asesoría legal. Solo dime: (1) qué cláusulas habituales en este tipo de contrato NO aparecen en el texto; (2) qué términos quedan ambiguos o admiten más de una interpretación; (3) qué obligaciones están definidas solo para una de las partes y no para la otra; (4) qué plazos se mencionan sin consecuencia en caso de incumplimiento. Cita el fragmento exacto en cada punto.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p3">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> todo lo que salga se lo llevas a tu abogado como lista de puntos a revisar. La salida de la IA es la agenda de la reunión, no la conclusión.</p>
+
+    <h2>4. Traducir el tarifario del banco a una tasa comparable</h2>
+    <p>Las cotizaciones de crédito llegan con comisiones, portes y seguros dispersos en tres páginas. Pedirle a la IA que arme el cuadro comparable es directo.</p>
+    <div class="prompt-box" id="p4">Te voy a pegar tres cotizaciones de crédito hipotecario. Arma una tabla con: banco, tasa nominal, TCEA declarada, plazo, monto financiado, cuota mensual declarada, seguro de desgravamen mensual, seguro del inmueble mensual, comisiones y portes, y "costo total del crédito" sumando todas las cuotas. Marca qué conceptos aparecen en una cotización y no en las otras. No estimes ningún número que no esté en el texto: si falta, escribe "no informado".</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p4">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> recalcula la cuota con la <a href="../calculadoras.html#hipoteca">calculadora de hipoteca</a>. Si la cuota que declara el banco no coincide con la fórmula, hay un concepto escondido y hay que preguntar cuál.</p>
+
+    <h2>5. Redactar el aviso de alquiler para cada plataforma</h2>
+    <div class="prompt-box" id="p5">Tengo un departamento en alquiler con estos datos: [pega los datos]. Escribe tres versiones del aviso: una de 40 palabras para portal inmobiliario, una de 80 palabras para Facebook Marketplace y una de 25 palabras para WhatsApp. Sin adjetivos vacíos como "hermoso" o "exclusivo": solo datos concretos y lo que diferencia al inmueble. La primera línea de cada versión debe ser el dato más fuerte.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p5">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> que ningún dato esté exagerado. Un aviso que promete lo que el inmueble no tiene filtra visitas equivocadas y te hace perder más tiempo del que ahorraste.</p>
+
+    <h2>6. Ordenar el análisis de una zona que ya investigaste</h2>
+    <p>El trabajo de campo es tuyo: hablar con corredores, mirar avisos, caminar la zona. La IA sirve para estructurar lo que ya tienes y encontrar lo que te falta.</p>
+    <div class="prompt-box" id="p6">Estos son mis apuntes de investigación sobre un distrito de Lima: [pega tus apuntes]. Organízalos en cuatro bloques: oferta y precios, demanda de alquiler, infraestructura y proyectos, riesgos. Al final, lista qué datos me faltan para poder decidir si comprar ahí, ordenados por importancia. No agregues información que no esté en mis apuntes, ni siquiera si crees que es correcta.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p6">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> la última instrucción es la que importa. Si aparece un dato que tú no escribiste, bórralo.</p>
+
+    <h2>7. Generar los guiones de contenido de la semana</h2>
+    <p>Un análisis bien hecho da para un video largo y cuatro cortes. Pedirle los cortes a la IA evita rehacer el guion cuatro veces.</p>
+    <div class="prompt-box" id="p7">Este es el análisis que hice de una propiedad: [pega el análisis con los números]. Genera: (1) un gancho de 15 segundos que abra con una cifra concreta, sin saludo ni introducción; (2) la estructura de un video de 6 a 8 minutos con máximo 3 ideas; (3) cuatro cortes de 30 a 45 segundos, cada uno con un solo dato y que se entienda sin ver el video largo; (4) el texto de un carrusel de 5 láminas con la tabla de números. Todo en español de Latinoamérica, sin lenguaje de anuncio.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p7">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> los números del guion contra tu hoja de cálculo. Un decimal mal copiado en un video que se queda publicado cuesta más que el tiempo que ahorraste.</p>
+
+    <h2>8. Preparar las respuestas a objeciones reales</h2>
+    <div class="prompt-box" id="p8">Estas son las cinco objeciones que más me escriben por mensaje directo: [pégalas tal como te las escriben]. Para cada una, dame una respuesta de máximo 60 palabras que (1) reconozca lo válido de la objeción, (2) responda con un dato o un cálculo concreto y (3) proponga un paso siguiente pequeño. Sin frases de venta y sin prometer resultados.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p8">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> que el dato concreto sea tuyo y sea cierto. Es lo único que sostiene la respuesta.</p>
+
+    <h2>9. Auditar tu propia hoja de cálculo</h2>
+    <p>El uso menos obvio y uno de los más útiles: pedirle que busque los supuestos que te olvidaste.</p>
+    <div class="prompt-box" id="p9">Esta es mi hoja de cálculo para analizar una propiedad de renta, con las fórmulas: [pega el contenido]. Revisa: (1) qué gastos habituales de una propiedad en alquiler no estoy considerando; (2) qué supuestos están puestos en un valor demasiado optimista; (3) si alguna fórmula cuenta dos veces el mismo concepto; (4) qué métrica de decisión me falta. No cambies mis números, solo señala los problemas y explica por qué.</div>
+    <p><button class="btn btn--ghost btn--sm" type="button" data-copy="#p9">Copiar prompt</button></p>
+    <p><strong>Verifica a mano:</strong> contrasta el resultado con la <a href="../assets/descargas/plantilla-analisis-renta.csv" download>plantilla de análisis de renta</a>, que ya trae los 23 cálculos y los seis grupos de gastos.</p>
+
+    <h2>Los tres usos en los que la IA te va a costar dinero</h2>
+    <ol>
+      <li><strong>Pedirle precios de mercado o precio por m².</strong> Va a producir una cifra plausible para tu distrito y no tiene forma de saberla. Si construyes tu oferta sobre ese número, el error se paga completo.</li>
+      <li><strong>Preguntarle si algo es legal o cuál es la norma vigente.</strong> Las normas municipales y registrales cambian, varían por distrito y la IA no sabe qué está vigente hoy donde tú compras. Úsala para preparar preguntas, nunca para responderlas.</li>
+      <li><strong>Pedirle que proyecte plusvalía.</strong> Te va a dar un porcentaje anual con tono de certeza. Nadie sabe ese número; el histórico del distrito es el único dato defendible, y ese lo consigues en el mercado, no en un chat.</li>
+    </ol>
+
+    <div class="callout">
+      <span class="callout__title">La división del trabajo</span>
+      <p>La IA se lleva la redacción, la estructura, la comparación de textos largos y la generación de preguntas. Tú te quedas con los datos de mercado, la verificación registral, la medición del área y la decisión. Cuando esa línea se cruza es cuando la herramienta empieza a costar dinero en vez de ahorrar tiempo.</p>
+    </div>
+
+    <p class="disclaimer">Los prompts están escritos para asistentes de propósito general y funcionan mejor cuando tú aportas los datos. Contenido educativo; no constituye asesoría legal, financiera ni tributaria.</p>
+  </div>
+</div>
+</article>

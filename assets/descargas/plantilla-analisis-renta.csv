@@ -1,0 +1,43 @@
+GA Desarrolladores Inmobiliarios - Plantilla de analisis de renta,,
+"Instrucciones: escribe solo en la columna VALOR (celdas B4 a B16). El resto se calcula solo.",,
+CONCEPTO,VALOR,NOTA
+Precio de compra,420000,Precio negociado final
+Gastos de cierre,14700,Notaria + registros + tasacion + alcabala
+Remodelacion inicial,15000,Lo que hay que invertir antes de alquilar
+Cuota inicial,105000,Lo que pones de tu bolsillo
+Tasa efectiva anual del credito,0.10,Usa la TCEA en decimal: 10% = 0.10
+Plazo del credito en anios,20,
+Renta mensual,2600,Renta de mercado verificada en avisos de la zona
+Vacancia,0.08,8% = casi un mes vacio al anio
+Administracion,0.08,Ponlo aunque administres tu
+Mantenimiento y reparaciones,0.07,Porcentaje de la renta bruta anual
+Predial y arbitrios al anio,1100,
+Seguros al anio,1400,
+Mantenimiento del edificio al mes,250,
+,,
+RESULTADOS,,
+Monto financiado,=B4-B7,Precio menos cuota inicial
+Tasa mensual,=B8/12,
+Meses del credito,=B9*12,
+Cuota mensual del credito,=B19*B20/(1-(1+B20)^-B21),Sistema frances
+Renta bruta anual,=B10*12,
+Perdida por vacancia,=B23*B11,
+Renta efectiva,=B23-B24,
+Administracion,=B25*B12,
+Mantenimiento,=B23*B13,
+Mantenimiento del edificio anual,=B16*12,
+Gastos de operacion totales,=B26+B27+B14+B15+B28,
+NOI - ingreso operativo neto,=B25-B29,Lo que deja la propiedad sin credito
+Servicio de la deuda anual,=B22*12,
+Flujo de caja anual,=B30-B31,Lo que te queda en el bolsillo
+Flujo de caja mensual,=B32/12,Si es negativo estas subsidiando la propiedad
+Capital total invertido,=B7+B5+B6,Inicial + cierre + remodelacion
+,,
+METRICAS DE DECISION,,
+Cap rate,=B30/(B4+B6),Comparalo con el promedio de la zona
+Cash-on-cash,=B32/B34,Tu retorno real sobre el dinero que pusiste
+DSCR,=B30/B31,Debajo de 1.25 el banco se pone nervioso
+Renta sobre precio - regla del 1%,=B10/B4,0.007 o mas es aceptable en Latinoamerica
+GRM,=B4/B23,Anios de renta bruta para pagar el precio
+Ocupacion minima para no perder,=(B29+B31)/B23,Por debajo de esto pierdes dinero
+Anios para recuperar el capital,=B34/B32,"Solo con flujo, sin contar plusvalia"

@@ -1,0 +1,233 @@
+<!-- ====================== PORTADA ====================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow">GA Desarrolladores Inmobiliarios</p>
+        <h1>Antes de comprar, <em>corre los números</em>.</h1>
+        <p class="lead">Recursos gratuitos para analizar una propiedad como se analiza un negocio: cuota real, flujo de caja, retorno sobre el capital y los documentos que hay que revisar antes de firmar arras. Sin adjetivos, con calculadoras que puedes usar ahora mismo.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="calculadoras.html">Abrir las calculadoras</a>
+          <a class="btn btn--ghost" href="recursos.html">Ver la biblioteca</a>
+        </div>
+        <div class="hero__meta">
+          <span><i class="dot" aria-hidden="true"></i> 5 calculadoras</span>
+          <span><i class="dot" aria-hidden="true"></i> 52 puntos de verificación</span>
+          <span><i class="dot" aria-hidden="true"></i> 42 términos en el glosario</span>
+          <span><i class="dot" aria-hidden="true"></i> Todo corre en tu navegador</span>
+        </div>
+      </div>
+
+      <!-- Análisis rápido: 6 campos, 4 números -->
+      <div class="metric-card" data-calc>
+        <h3>Análisis rápido de una renta</h3>
+        <p class="metric-card__note">Cambia los valores y mira qué pasa. Moneda:
+          <label class="sr-only" for="moneda">Moneda</label>
+          <select id="moneda" class="inline-select">
+            <option value="PEN">Soles (S/)</option>
+            <option value="USD">Dólares (US$)</option>
+            <option value="MXN">Pesos MX</option>
+            <option value="COP">Pesos CO</option>
+            <option value="CLP">Pesos CL</option>
+            <option value="ARS">Pesos AR</option>
+            <option value="EUR">Euros</option>
+          </select>
+        </p>
+
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="q-precio">Precio de la propiedad</label>
+            <div class="input-affix"><span>Total</span><input id="q-precio" type="number" min="0" step="1000" value="420000" data-default="420000"></div>
+          </div>
+          <div class="field">
+            <label for="q-renta">Renta mensual</label>
+            <div class="input-affix"><span>Mes</span><input id="q-renta" type="number" min="0" step="50" value="2600" data-default="2600"></div>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="q-enganche">Inicial</label>
+            <div class="input-affix"><input id="q-enganche" type="number" min="0" max="100" step="1" value="20" data-default="20"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="q-gastos">Gastos sobre la renta</label>
+            <div class="input-affix"><input id="q-gastos" type="number" min="0" max="100" step="1" value="35" data-default="35"><span class="suffix">%</span></div>
+          </div>
+        </div>
+        <div class="field-row field-row--2">
+          <div class="field">
+            <label for="q-tasa">Tasa anual del crédito</label>
+            <div class="input-affix"><input id="q-tasa" type="number" min="0" max="60" step="0.05" value="9.5" data-default="9.5"><span class="suffix">%</span></div>
+          </div>
+          <div class="field">
+            <label for="q-plazo">Plazo</label>
+            <div class="input-affix"><input id="q-plazo" type="number" min="1" max="40" step="1" value="20" data-default="20"><span class="suffix">años</span></div>
+          </div>
+        </div>
+
+        <dl class="mt-0">
+          <div class="metric-row"><dt>Cuota del crédito</dt><dd id="q-out-cuota">—</dd></div>
+          <div class="metric-row"><dt>Flujo mensual después de todo</dt><dd id="q-out-flujo">—</dd></div>
+          <div class="metric-row"><dt>Cap rate (sin crédito)</dt><dd id="q-out-caprate">—</dd></div>
+          <div class="metric-row"><dt>Retorno sobre tu inicial</dt><dd id="q-out-coc">—</dd></div>
+          <div class="metric-row"><dt>Renta ÷ precio (regla del 1 %)</dt><dd id="q-out-regla1">—</dd></div>
+        </dl>
+        <p class="metric-card__note mt-24 mb-0" id="q-nota">—</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== HERRAMIENTAS ====================== -->
+<section class="section section--alt">
+  <div class="wrap">
+    <p class="eyebrow">Herramientas</p>
+    <h2>Cinco calculadoras que responden las cinco preguntas</h2>
+    <p class="lead prose">Ninguna pide registro y ninguna manda datos a un servidor: la matemática corre en tu navegador. Todas aceptan soles, dólares y las principales monedas de la región.</p>
+
+    <div class="grid grid--3 mt-32">
+      <article class="card card--link">
+        <div class="card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/></svg>
+        </div>
+        <h3>¿Cuánto pago al mes?</h3>
+        <p>Cuota real del crédito con predial, seguro y mantenimiento incluidos, más la tabla de amortización año por año y cuánto del total se va en intereses.</p>
+        <div class="card__foot"><span>Hipoteca</span><a class="card__cta" href="calculadoras.html#hipoteca">Calcular</a></div>
+      </article>
+
+      <article class="card card--link">
+        <div class="card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l5-5 4 3 4-6 5 4"/><path d="M3 21h18"/></svg>
+        </div>
+        <h3>¿Deja dinero en alquiler?</h3>
+        <p>NOI, cap rate, cash-on-cash, DSCR, GRM y punto de equilibrio de vacancia. Trece campos de entrada porque son los trece que cambian el resultado.</p>
+        <div class="card__foot"><span>Renta</span><a class="card__cta" href="calculadoras.html#renta">Analizar</a></div>
+      </article>
+
+      <article class="card card--link">
+        <div class="card__icon card__icon--sage" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>¿Hasta cuánto puedo comprar?</h3>
+        <p>Cruza tu capacidad de pago con el ahorro que tienes y te dice cuál de los dos te está limitando, que casi nunca es el que crees.</p>
+        <div class="card__foot"><span>Capacidad</span><a class="card__cta" href="calculadoras.html#capacidad">Ver mi techo</a></div>
+      </article>
+
+      <article class="card card--link">
+        <div class="card__icon card__icon--sage" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v4M16 17v4"/><path d="M3 7h10l-3-3M21 17H11l3 3"/></svg>
+        </div>
+        <h3>¿Rento o compro?</h3>
+        <p>Simulación mes a mes de los dos escenarios, con el capital invertido en la alternativa. Te da el año exacto en que comprar supera a rentar.</p>
+        <div class="card__foot"><span>Comparativo</span><a class="card__cta" href="calculadoras.html#versus">Comparar</a></div>
+      </article>
+
+      <article class="card card--link">
+        <div class="card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3l7 7-4 1-1 4-7-7"/><path d="M9 8 3 14v7h7l6-6"/></svg>
+        </div>
+        <h3>¿Cuánto ofrezco por una para remodelar?</h3>
+        <p>Regla del 70 %, oferta máxima, utilidad después de todos los costos y el precio de venta en el que empatas sin ganar nada.</p>
+        <div class="card__foot"><span>Remodelar</span><a class="card__cta" href="calculadoras.html#flip">Calcular oferta</a></div>
+      </article>
+
+      <article class="card card--link card--flat">
+        <div class="card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9"/></svg>
+        </div>
+        <h3>Checklist de 52 puntos</h3>
+        <p>Registros, cargas, licencias, área ocupada contra área registrada, deudas de predial y arbitrios. Marca lo que ya verificaste y el navegador guarda tu avance.</p>
+        <div class="card__foot"><span>Verificación</span><a class="card__cta" href="checklist.html">Abrir checklist</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PILARES / RECURSOS ====================== -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Biblioteca</p>
+    <h2>Cuatro temas, todo lo demás es ruido</h2>
+    <p class="lead prose">Los recursos están organizados por los mismos cuatro temas que trabajo en el contenido. Si sabes cuál es tu duda, entras directo.</p>
+
+    <div class="grid grid--4 mt-32">
+      <article class="card">
+        <span class="pill pill--accent">Zonas y precios</span>
+        <h3 class="mt-24">Dónde comprar</h3>
+        <p>Cómo comparar precio por m² entre distritos, qué señales anticipan plusvalía y cómo detectar que una zona ya subió todo lo que iba a subir.</p>
+        <div class="card__foot"><span>8 recursos</span><a class="card__cta" href="recursos.html#zonas">Ver</a></div>
+      </article>
+      <article class="card">
+        <span class="pill pill--accent">Casos con números</span>
+        <h3 class="mt-24">Cuánto deja</h3>
+        <p>Análisis completos de propiedades reales: precio, renta, gastos, crédito y el retorno que quedó al final, con la hoja de cálculo para replicarlo.</p>
+        <div class="card__foot"><span>6 recursos</span><a class="card__cta" href="recursos.html#casos">Ver</a></div>
+      </article>
+      <article class="card">
+        <span class="pill pill--sage">Errores</span>
+        <h3 class="mt-24">Qué no hacer</h3>
+        <p>Los errores que se pagan en dinero: arras sin verificar registros, área que no coincide, obras sin licencia, cuota que no incluye lo que falta.</p>
+        <div class="card__foot"><span>7 recursos</span><a class="card__cta" href="recursos.html#errores">Ver</a></div>
+      </article>
+      <article class="card">
+        <span class="pill pill--sage">Mercado</span>
+        <h3 class="mt-24">Qué está pasando</h3>
+        <p>Cómo leer una tasa de referencia, qué mirar en un crédito hipotecario y cómo traducir una noticia de mercado a tu decisión de compra.</p>
+        <div class="card__foot"><span>5 recursos</span><a class="card__cta" href="recursos.html#mercado">Ver</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ARTÍCULOS ====================== -->
+<section class="section section--alt">
+  <div class="wrap">
+    <p class="eyebrow">Para leer</p>
+    <h2>Artículos con números, no con opiniones</h2>
+    <div class="grid grid--3 mt-32">
+      <article class="card card--link">
+        <div class="tag-row"><span class="tag">Análisis</span><span class="tag">12 min</span></div>
+        <h3>Cómo analizar una propiedad de renta en 15 minutos</h3>
+        <p>Las seis métricas que deciden si sirve o no, en el orden en que hay que calcularlas, con un ejemplo completo de principio a fin.</p>
+        <div class="card__foot"><span>Casos con números</span><a class="card__cta" href="articulos/analizar-propiedad-renta.html">Leer</a></div>
+      </article>
+      <article class="card card--link">
+        <div class="tag-row"><span class="tag">Errores</span><span class="tag">10 min</span></div>
+        <h3>Los 7 errores que más caro le salen a un comprador primerizo</h3>
+        <p>Cada error con su costo estimado en dinero y la verificación concreta que lo evita antes de firmar.</p>
+        <div class="card__foot"><span>Errores</span><a class="card__cta" href="articulos/errores-comprador-primerizo.html">Leer</a></div>
+      </article>
+      <article class="card card--link">
+        <div class="tag-row"><span class="tag">Productividad</span><span class="tag">9 min</span></div>
+        <h3>9 usos de IA en bienes raíces que sí ahorran horas</h3>
+        <p>Prompts listos para copiar, con lo que hay que verificar a mano en cada uno. La IA no tasa propiedades ni lee registros públicos.</p>
+        <div class="card__foot"><span>Herramientas</span><a class="card__cta" href="articulos/ia-para-bienes-raices.html">Leer</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PRODUCTO ====================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="band">
+      <div class="grid grid--2" style="gap:32px;align-items:center">
+        <div>
+          <p class="eyebrow" style="color:var(--champagne)">El Mapa de Inversión Inmobiliaria</p>
+          <h2 class="mt-0">Todo lo del mes, ordenado y con la data de zonas actualizada</h2>
+          <p>Cuatro módulos: diagnóstico de presupuesto y capacidad de crédito, comparativo de precio por m² y proyección por distrito, proceso de compra paso a paso y la plantilla de cálculo de retorno para una propiedad específica.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="producto.html">Ver qué incluye</a>
+            <a class="btn btn--ghost" href="recursos.html">Antes, lo gratuito</a>
+          </div>
+        </div>
+        <dl class="stack band__list">
+          <div class="metric-row"><dt>Módulo 1 — Diagnóstico</dt><dd>Presupuesto real</dd></div>
+          <div class="metric-row"><dt>Módulo 2 — Zonas</dt><dd>8 a 10 distritos</dd></div>
+          <div class="metric-row"><dt>Módulo 3 — Proceso</dt><dd>Arras a partida</dd></div>
+          <div class="metric-row"><dt>Módulo 4 — Retorno</dt><dd>Plantilla editable</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
