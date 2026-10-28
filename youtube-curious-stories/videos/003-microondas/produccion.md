@@ -8,7 +8,7 @@ Guion: [`../../guiones/03-percy-spencer-microondas.md`](../../guiones/03-percy-s
 |---|---|
 | 1. Guion | ✅ Listo |
 | 2. Miniatura | ✅ Lista: `miniatura-youtube-1280x720.jpg` |
-| 3. Imágenes de escenas | 🟡 9 de 10 (falta rehacer la 02 con R-0G3R) |
+| 3. Imágenes de escenas | ✅ 10 de 10 |
 | 4. Voz del robot (ElevenLabs) | ⏳ Pendiente (lo haces tú) |
 | 5. Edición (CapCut) | ⏳ Pendiente (lo haces tú, con la guía de abajo) |
 | 6. Subida a YouTube | ⏳ Pendiente (lo haces tú) |
@@ -21,7 +21,7 @@ Todas en 16:9. Las que están listas se abren en Canva en alta calidad con el en
 |---|---|---|---|
 | 00 | **Miniatura**: R-0G3R sorprendido con el chocolate y el microondas, texto "¿UN CHOCOLATE?" | — | ✅ `imagenes/00-miniatura.png` (Gemini) |
 | 01 | Chocolate derritiéndose en primer plano | 0:00 Gancho | ✅ [Abrir en Canva](https://www.canva.com/M/MAHZV8uFeiA) |
-| 02 | R-0G3R junto a un microondas | 0:15 Apertura | 🔁 Rehacer en Gemini con la hoja de personaje. Versión anterior: [Canva](https://www.canva.com/M/MAHZVyvrZsA) |
+| 02 | R-0G3R pensativo mirando un microondas con pizza | 0:15 Apertura | ✅ `imagenes/02-apertura-robot.png` (Gemini) |
 | 03 | Niño caminando a la fábrica en un pueblo de Maine | 0:35 Acto 1 | ✅ [Abrir en Canva](https://www.canva.com/M/MAHZV7qMncs) |
 | 04 | Joven instalando electricidad en una fábrica de papel | 1:30 Acto 1 | ✅ `imagenes/04-electricidad-fabrica.png` (Gemini) |
 | 05 | Operador de radio de la Marina estudiando de noche | 2:00 Acto 2 | ✅ `imagenes/05-marina-radio.png` (Gemini) |
