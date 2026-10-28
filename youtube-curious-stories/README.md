@@ -13,6 +13,7 @@ Historias reales contadas por un narrador robot, en tono cómico y con un mensaj
 | Personaje robot (R-0G3R) | ✅ Listo | `personaje-robot.md` |
 | Guion del video 1 (James Dyson) | ✅ Listo | `guiones/01-james-dyson-5127-prototipos.md` |
 | Guion del video 2 (Dean Douthat, el ingeniero accidental) | ✅ Listo | `guiones/02-dean-douthat-ingeniero-accidental.md` |
+| Guion del video 3 (Percy Spencer, el microondas) | ✅ Listo | `guiones/03-percy-spencer-microondas.md` |
 
 **Herramientas de imagen:** Canva es la principal porque es rápida y las imágenes quedan editables en tu cuenta. Nano Banana (por Buzzy) solo para estilos especiales, y se descarta si no sale en unos 3 minutos.
 
@@ -109,4 +110,4 @@ Recomendación: videos en español y el nombre en inglés como marca. Más adela
 
 ## Siguiente paso
 
-Producir el video 1 (voz, imágenes, edición y miniatura) y escribir los guiones 2 y 3.
+Producir los videos 1 a 3: voz, imágenes, edición y miniaturas.
