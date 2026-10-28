@@ -10,8 +10,8 @@ Historias reales contadas por un narrador robot, en tono cómico y con un mensaj
 | Banner | ✅ Listo | Subido al canal |
 | Descripción del canal | ✅ Lista | Abajo en este archivo |
 | Marca de agua (JPEG, 1024×1024, 351 KB) | ✅ Lista | `marca-de-agua/curious-stories-marca-de-agua.jpg` |
-| Personaje robot | ⏳ Pendiente | Paso 3 |
-| Guion del primer video | ⏳ Pendiente | Paso 4 |
+| Personaje robot (R-0G3R) | ✅ Listo | `personaje-robot.md` |
+| Guion del video 1 (James Dyson) | ✅ Listo | `guiones/01-james-dyson-5127-prototipos.md` |
 
 **Herramientas de imagen:** Canva es la principal porque es rápida y las imágenes quedan editables en tu cuenta. Nano Banana (por Buzzy) solo para estilos especiales, y se descarta si no sale en unos 3 minutos.
 
@@ -87,7 +87,7 @@ Real-life comebacks, epic fails and unbelievable moments, with a laugh and a rea
 
 Tener 3 videos listos antes de publicar el primero. Temas:
 
-- Fracasos que terminaron en éxito (ej.: Colonel Sanders, rechazado más de 1000 veces antes de KFC).
+- Fracasos que terminaron en éxito (ej.: James Dyson y sus 5127 prototipos). Ojo: los "1009 rechazos" del Coronel Sanders son una leyenda sin fuente confiable.
 - Historias absurdas pero reales: récords raros, errores famosos.
 - Personas comunes que se recuperaron después de perderlo todo.
 
@@ -108,4 +108,4 @@ Recomendación: videos en español y el nombre en inglés como marca. Más adela
 
 ## Siguiente paso
 
-Crear el personaje robot completo (nombre, personalidad, frases) y el guion del primer video.
+Producir el video 1 (voz, imágenes, edición y miniatura) y escribir los guiones 2 y 3.
