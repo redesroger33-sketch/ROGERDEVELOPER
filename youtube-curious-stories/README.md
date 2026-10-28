@@ -12,6 +12,7 @@ Historias reales contadas por un narrador robot, en tono cómico y con un mensaj
 | Marca de agua (JPEG, 1024×1024, 351 KB) | ✅ Lista | `marca-de-agua/curious-stories-marca-de-agua.jpg` |
 | Personaje robot (R-0G3R) | ✅ Listo | `personaje-robot.md` |
 | Guion del video 1 (James Dyson) | ✅ Listo | `guiones/01-james-dyson-5127-prototipos.md` |
+| Guion del video 2 (Dean Douthat, el ingeniero accidental) | ✅ Listo | `guiones/02-dean-douthat-ingeniero-accidental.md` |
 
 **Herramientas de imagen:** Canva es la principal porque es rápida y las imágenes quedan editables en tu cuenta. Nano Banana (por Buzzy) solo para estilos especiales, y se descarta si no sale en unos 3 minutos.
 
