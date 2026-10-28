@@ -7,8 +7,8 @@ Guion: [`../../guiones/03-percy-spencer-microondas.md`](../../guiones/03-percy-s
 | Paso | Estado |
 |---|---|
 | 1. Guion | ✅ Listo |
-| 2. Miniatura | ✅ Lista |
-| 3. Imágenes de escenas | 🟡 3 de 10 (se acabaron los créditos de Canva) |
+| 2. Miniatura | 🟡 Rehacer con R-0G3R en Gemini |
+| 3. Imágenes de escenas | 🟡 9 de 10 (falta rehacer la 02 con R-0G3R) |
 | 4. Voz del robot (ElevenLabs) | ⏳ Pendiente (lo haces tú) |
 | 5. Edición (CapCut) | ⏳ Pendiente (lo haces tú, con la guía de abajo) |
 | 6. Subida a YouTube | ⏳ Pendiente (lo haces tú) |
@@ -19,17 +19,17 @@ Todas en 16:9. Las que están listas se abren en Canva en alta calidad con el en
 
 | # | Escena | Momento del guion | Estado |
 |---|---|---|---|
-| 00 | **Miniatura**: el robot asustado con el chocolate y el microondas gigante, texto "¿UN CHOCOLATE?" | — | ✅ [Abrir en Canva](https://www.canva.com/M/MAHZVwJt_B0) |
+| 00 | **Miniatura**: el robot asustado con el chocolate y el microondas gigante, texto "¿UN CHOCOLATE?" | — | 🔁 Rehacer en Gemini con la hoja de personaje. Versión anterior: [Canva](https://www.canva.com/M/MAHZVwJt_B0) |
 | 01 | Chocolate derritiéndose en primer plano | 0:00 Gancho | ✅ [Abrir en Canva](https://www.canva.com/M/MAHZV8uFeiA) |
-| 02 | R-0G3R junto a un microondas | 0:15 Apertura | ✅ [Abrir en Canva](https://www.canva.com/M/MAHZVyvrZsA) |
+| 02 | R-0G3R junto a un microondas | 0:15 Apertura | 🔁 Rehacer en Gemini con la hoja de personaje. Versión anterior: [Canva](https://www.canva.com/M/MAHZVyvrZsA) |
 | 03 | Niño caminando a la fábrica en un pueblo de Maine | 0:35 Acto 1 | ✅ [Abrir en Canva](https://www.canva.com/M/MAHZV7qMncs) |
-| 04 | Joven instalando electricidad en una fábrica de papel | 1:30 Acto 1 | ⏳ Falta |
-| 05 | Operador de radio de la Marina estudiando de noche | 2:00 Acto 2 | ⏳ Falta |
-| 06 | Pantalla de radar y fabricación de magnetrones | 3:00 Acto 2 | ⏳ Falta |
-| 07 | Ingeniero sorprendido con el chocolate derretido en el bolsillo | 3:45 Acto 3 | ⏳ Falta |
-| 08 | Palomitas reventando junto al magnetrón | 4:15 Acto 3 | ⏳ Falta |
-| 09 | El microondas gigante de 1947 al lado de un chef | 4:45 Acto 3 | ⏳ Falta |
-| 10 | R-0G3R en primer plano, sonrisa tranquila | 5:30 Conclusión | ⏳ Falta |
+| 04 | Joven instalando electricidad en una fábrica de papel | 1:30 Acto 1 | ✅ `imagenes/04-electricidad-fabrica.png` (Gemini) |
+| 05 | Operador de radio de la Marina estudiando de noche | 2:00 Acto 2 | ✅ `imagenes/05-marina-radio.png` (Gemini) |
+| 06 | Pantalla de radar y fabricación de magnetrones | 3:00 Acto 2 | ✅ `imagenes/06-radar-magnetrones.png` (Gemini) |
+| 07 | Ingeniero sorprendido con el chocolate derretido en el bolsillo | 3:45 Acto 3 (y unos segundos en el gancho, 0:00) | ✅ `imagenes/07-chocolate-derretido.png` (Gemini) |
+| 08 | Palomitas reventando junto al magnetrón | 4:15 Acto 3 (corte seco desde la 07) | ✅ `imagenes/08-palomitas.png` (Gemini) |
+| 09 | El microondas gigante de 1947 al lado de un chef | 4:45 Acto 3 (zoom de abajo hacia arriba) | ✅ `imagenes/09-microondas-gigante.png` (Gemini) |
+| 10 | R-0G3R en primer plano con una palomita | 5:30 Conclusión | ✅ `imagenes/10-conclusion-robot.png` (Gemini) |
 
 ### Prompts de las imágenes que faltan
 
