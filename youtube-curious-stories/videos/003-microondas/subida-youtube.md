@@ -59,7 +59,7 @@ historias reales, microondas, quien invento el microondas, percy spencer, invent
 | Categoría | Educación |
 | Comentarios | Permitidos |
 | Pantalla final (últimos 15 segundos) | Botón de suscribirse + "Video más reciente" |
-| Tarjeta | En 2:15 ("el momento del accidente"), una encuesta: "¿Sabías que el microondas se inventó por accidente?" Sí / No |
+| Tarjetas | Ninguna por ahora (es el primer video). Cuando subas el 001, agrega una tarjeta de video en 3:25 que lleve al 001. YouTube ya no tiene tarjetas de encuesta. |
 | Visibilidad | Programado |
 
 ## Comentario fijado (publícalo tú apenas salga el video)
