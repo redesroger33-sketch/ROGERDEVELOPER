@@ -99,3 +99,30 @@ Stylized digital illustration close-up portrait: a humanoid cyborg narrator, lef
 - **Contenido alterado o sintético:** "No", porque las escenas son ilustraciones claramente animadas y no imitan fotos reales de Percy Spencer.
 - **Público:** "No, no es contenido para niños".
 - **Pantalla final (últimos 20 segundos):** pon el video 001 (Dyson) y el botón de suscribirse.
+
+## Versión 2: 10 imágenes nuevas, sin repetir ninguna
+
+En la primera versión del video varias imágenes se repetían (la 02 salía 3 veces). Con estas 10 nuevas, más la 01 y la 03 mejoradas en CapCut, cada momento del video tiene su propia imagen.
+
+| Párrafo | Momento | Imagen |
+|---|---|---|
+| 1 (inicio) | "Un humano metió un chocolate…" | 01 chocolate en primer plano |
+| 1 (final) | "…calientas tu café de ayer en treinta segundos" | **11 café en el microondas** |
+| 2 | "Iniciando análisis…" | 02 R-0G3R y el microondas |
+| 3 | "nueve de cada diez… pizza" | **12 R-0G3R analiza una pizza** |
+| 4 | "Sujeto: Percy Spencer. 1894…" | 03 pueblo de Maine |
+| 5 | "su papá murió… lo criaron sus tíos" | **13 bebé con sus tíos** |
+| 6 | "A los 12 años dejó la escuela…" | **14 niño en la fábrica** |
+| 7 | "Probabilidad… casi cero" | **15 R-0G3R en alerta roja** |
+| 8 | "aprendió solo… fábrica de papel" | 04 electricidad |
+| 9 y 10 | "En 1912… Marina" / "disciplina" | 05 Marina |
+| 11 | "En 1925… Raytheon" | **16 entrada a la empresa** |
+| 12 | "Los aliados necesitaban radares…" | 06 radar y magnetrones |
+| 13 | "encontró la forma de fabricarlos en masa" | **17 Percy enseña su método** |
+| 14 a 16 | "el momento del accidente…" | 07 chocolate derretido |
+| 17 | "trajo maíz para palomitas…" | 08 palomitas |
+| 18 | "Conclusión de mis sensores… hambre" | **18 R-0G3R escanea palomitas** |
+| 19 y 20 | "patente… Radarange… 300 kilos" | 09 microondas gigante |
+| 21 | "lo hicieron más pequeño… todas las cocinas" | **19 cocina familiar de los 70** |
+| 22 a 25 | "Conclusión del sistema…" | 10 R-0G3R con la palomita |
+| 26 a 28 | "la próxima vez que se te derrita algo…" y cierre | **20 niña de hoy con chocolate derretido** |
