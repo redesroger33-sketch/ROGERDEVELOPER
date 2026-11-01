@@ -1,4 +1,4 @@
-{"canal":"cocina","banda":"EL SECRETO DE GASTÓN ACURIO","titulo":["LOMO SALTADO","¡NO ES LA CARNE!"],"programa":["STICKMAN","COCINA"],
+{"canal":"cocina","banda":"EL SECRETO DEL GRAN CHEF","titulo":["LOMO SALTADO","¡NO ES LA CARNE!"],"programa":["STICKMAN","COCINA"],
  "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"lomo_saltado_0","marco":"E63946",
  "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
  "fx":["alert:rosita"],"sello":{"texto":"WOK","size":100,"x":880,"y":800},"franja":"ES EL CALOR: ¡FUEGO MÁXIMO!"}

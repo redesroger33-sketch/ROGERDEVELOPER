@@ -29,7 +29,7 @@ Cifras con estudio, revista y año. Nunca decir que se dejen medicamentos ni pro
 El aviso "Información educativa · No reemplaza tu consulta médica" sale en pantalla todo el video.
 
 **Cocina:** recetas peruanas reales con cantidades; los tips de chefs (Gastón Acurio, Virgilio Martínez, Pía León, Mitsuharu Tsumura,
-Javier Wong, Rafael Osterling, Marisol Ruiz…) solo si están publicados en medios (El Comercio, RPP, La República, Infobae, sitios oficiales), citando medio y año.
+Javier Wong, Rafael Osterling, Marisol Ruiz…) solo si están publicados en medios (El Comercio, RPP, La República, Infobae, sitios oficiales), verificados en el medio. El nombre del chef solo se dice en la voz: nunca se escribe en pantalla, miniatura, título, descripción ni hashtags (pedido de Roger).
 
 ## Render
 ```bash

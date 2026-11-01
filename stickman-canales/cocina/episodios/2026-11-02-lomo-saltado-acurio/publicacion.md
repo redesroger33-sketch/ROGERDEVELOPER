@@ -1,20 +1,20 @@
-# Stickman Cocina — Lomo saltado con el secreto de Gastón Acurio (02 NOV 2026)
+# Stickman Cocina — Lomo saltado con el secreto del gran chef (02 NOV 2026)
 
-**Título:** Lomo saltado: el secreto de Gastón Acurio NO es la carne 🔥 #Shorts
+**Título:** Lomo saltado: el secreto del gran chef NO es la carne 🔥 #Shorts
 
 **Descripción:**
 El rey del wok peruano paso a paso, para 4 personas: insumos, el jugo de vinagre y sillao, sartén de fierro, carne por tandas y el truco de las papas en dos texturas. Con el Chef Tito, Rosita y Beto.
 
-**Receta (4 personas, según Gastón Acurio en RPP, 2018):** lomo fino en tiras gruesas (sal y pimienta), 2 cebollas rojas grandes y 4 tomates chicos en tiras gruesas, 1 ají amarillo en tiras delgadas, 4 tallos de cebolla china, 1 cda de ajo molido, hojas de 8 tallos de culantro, 8 cdas de vinagre + 4 de sillao, papas amarillas fritas y arroz blanco.
+**Receta (4 personas, receta del chef):** lomo fino en tiras gruesas (sal y pimienta), 2 cebollas rojas grandes y 4 tomates chicos en tiras gruesas, 1 ají amarillo en tiras delgadas, 4 tallos de cebolla china, 1 cda de ajo molido, hojas de 8 tallos de culantro, 8 cdas de vinagre + 4 de sillao, papas amarillas fritas y arroz blanco.
 1) Aceite a fuego máximo; al primer humo, la mitad de la carne con un poco del jugo. Retira y repite.
 2) Cebolla 1 minuto y retira; tomate 2 minutos y retira (por mitades).
 3) Aceite, ajo, toda la carne con su jugo, la cebolla y el resto del vinagre con sillao.
 4) Tomate y ají amarillo un par de minutos; al final cebolla china y culantro. Prueba la sal.
 Papas: la mitad mezcladas y la otra mitad encima.
 
-**Hashtags:** #StickmanCocina #LomoSaltado #ComidaPeruana #GastonAcurio #RecetasPeruanas #Perú #Shorts
+**Hashtags:** #StickmanCocina #LomoSaltado #ComidaPeruana #RecetasPeruanas #Perú #Shorts
 
-**Fuentes:**
+**Fuentes (solo para ti, no pegar en la publicación):**
 - El Comercio (blog Sobremesa), "¡Qué buen lomo!", con Gastón Acurio, 30/05/2014: "lo más importante… no es ni la carne ni la sazón. Es el calor"; sartén de acero o fierro, no teflón; tandas para dos; carne contra la hebra; papas aparte para que queden crocantes.
 - RPP, "La receta de Gastón: Gastón Acurio comparte su secreto para preparar el lomo saltado", 05/09/2018: cantidades, sartén de fondo delgado, saltado por tandas, papas en dos texturas.
 

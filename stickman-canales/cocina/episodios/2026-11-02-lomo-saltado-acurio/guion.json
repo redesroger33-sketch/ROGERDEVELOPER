@@ -6,7 +6,7 @@
  "seccion": "CLÁSICO PERUANO",
  "titular": [
   "LOMO SALTADO:",
-  "¡EL SECRETO DE ACURIO!"
+  "¡EL SECRETO DEL CHEF!"
  ],
  "locutor": "tito",
  "elenco": [
@@ -61,7 +61,7 @@
   },
   {
    "quien": "tito",
-   "texto": "Te falta el secreto de *Gastón Acurio*: no es la carne ni la sazón… ¡es el *calor!*",
+   "texto": "Te falta el secreto de un *gran chef peruano*: no es la carne ni la sazón… ¡es el *calor!*",
    "voz": "Te falta el secreto de Gastón Acurio: no es la carne ni la sazón... ¡es el calor!",
    "expr": {
     "tito": "happy",
@@ -75,15 +75,14 @@
    "temblor": true,
    "pantalla": "foto:wok_fuego_0|¡FUEGO MÁXIMO!",
    "tarjeta": {
-    "label": "SECRETO DE GASTÓN ACURIO",
+    "label": "EL SECRETO DEL GRAN CHEF",
     "valor": "¡EL CALOR!",
-    "nota": "El Comercio, 2014",
     "delay": 2.0
    }
   },
   {
    "quien": "rosita",
-   "texto": "Insumos para *cuatro*, como en la receta de Gastón:",
+   "texto": "Insumos para *cuatro*, como en la receta del gran chef:",
    "voz": "Insumos para cuatro, como en la receta de Gastón:",
    "expr": {
     "rosita": "happy",
@@ -132,7 +131,6 @@
    "tarjeta": {
     "label": "VINAGRE + SILLAO",
     "valor": "8 + 4 CDAS",
-    "nota": "Receta de Gastón Acurio (RPP, 2018)",
     "delay": 1.5
    }
   },
@@ -280,7 +278,7 @@
   },
   {
    "quien": "tito",
-   "texto": "Truco de Gastón: *mitad mezcladas*, *mitad encima*. Unas chupan jugo y otras quedan *crocantes*.",
+   "texto": "Truco del chef: *mitad mezcladas*, *mitad encima*. Unas chupan jugo y otras quedan *crocantes*.",
    "voz": "Truco de Gastón: mitad mezcladas, mitad encima. Unas chupan jugo y otras quedan crocantes.",
    "expr": {
     "tito": "happy",
@@ -292,7 +290,6 @@
    "tarjeta": {
     "label": "DOS TEXTURAS",
     "valor": "½ MEZCLADAS · ½ ENCIMA",
-    "nota": "Consejo de Gastón Acurio (RPP, 2018)",
     "delay": 1.2
    }
   },
