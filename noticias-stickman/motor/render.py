@@ -580,7 +580,7 @@ def draw_character(c, who, t, st):
     cfg = CAST[who]
     x = cfg["x"]
     talking = st.get("talking", False)
-    bob = 4 * math.sin(t * 3.1 + x) + (6 * abs(math.sin(t * 9)) if st.get("jump") else 0)
+    bob = 4 * math.sin(t * 3.1 + x) - (16 * abs(math.sin(t * 7 + x)) if st.get("jump") else 0)
     hy = HEAD_Y + bob
     col = cfg["body"]
     # sombra
@@ -733,7 +733,33 @@ def fx_stars(c, x, hy, t, local):
         fill_stroke(c, YELLOW, INK, 3)
 
 
-FX = {"ja": fx_ja, "alert": fx_alert, "plop": fx_plop, "sweat": fx_sweat, "money": fx_money, "stars": fx_stars}
+def confetti(c, t, start, n=70, seed=3):
+    rnd = random.Random(seed)
+    cols = [TEAL, PINK, YELLOW, hx("2B6BE0"), hx("FF7A1A"), hx("9B4DFF")]
+    lt = t - start
+    if lt < 0 or lt > 3.5:
+        return
+    for i in range(n):
+        x0 = rnd.uniform(0, W)
+        vy = rnd.uniform(380, 700)
+        y = -40 + vy * lt - rnd.uniform(0, 300)
+        x = x0 + 40 * math.sin(lt * rnd.uniform(2, 5) + i)
+        if y < -40 or y > H:
+            continue
+        c.save()
+        c.translate(x, y)
+        c.rotate(lt * rnd.uniform(3, 9) + i)
+        c.rectangle(-11, -6, 22, 12)
+        c.set_source_rgba(*rnd.choice(cols))
+        c.fill()
+        c.restore()
+
+
+def fx_confeti(c, x, hy, t, local):
+    confetti(c, t, t - local, 60, 11)
+
+
+FX = {"confeti": fx_confeti, "ja": fx_ja, "alert": fx_alert, "plop": fx_plop, "sweat": fx_sweat, "money": fx_money, "stars": fx_stars}
 
 
 # ---------------------------------------------------------------- globo y tarjetas
@@ -931,7 +957,8 @@ def draw_intro(c, ep, t):
             font(c, size)
         text_center(c, line, 0, 36, size, col, outline=WHITE, ow=18)
         c.restore()
-    draw_character(c, "paco", t, {"pose": "rest", "expr": "happy", "talking": t > 0.6, "mic": True})
+    draw_character(c, "paco", t, {"pose": "rest", "expr": "happy", "talking": t > 0.6, "mic": True, "jump": True})
+    confetti(c, t, 0.2, 80, 5)
 
 
 def draw_thumb_icon(c, x, y, s, col):
@@ -1107,6 +1134,9 @@ def state_for(ep, timeline, t):
             states[w]["pose"] = p
         speaking_until = cur[0] + VOZ_OFFSET + sc.get("habla", (cur[1] - cur[0]) * 0.82)
         states[sc["quien"]]["talking"] = t < speaking_until
+        for w_ in states:
+            if states[w_]["expr"] in ("happy", "laugh"):
+                states[w_]["jump"] = True
         if states[sc["quien"]]["pose"] == "rest" and sc["quien"] != "paco":
             states[sc["quien"]]["pose"] = "talk"
     return cur, local, states
@@ -1150,6 +1180,7 @@ def render_frame(ctx, bg, ep, timeline, total, t):
         draw_outro(c, ep, t, t - (total - OUTRO))
         for w in ("chato", "lucha"):
             fx_stars(c, CAST[w]["x"], heads[w], t, 0)
+        confetti(c, t, total - OUTRO + 1.0, 90, 9)
     if t < INTRO + 0.15:
         c.set_source_rgba(1, 1, 1, 1 - (t - INTRO) / 0.15)
         c.paint()
@@ -1163,7 +1194,7 @@ SR = 48000
 def synth_audio(ep, timeline, total, path):
     n = int(total * SR) + SR
     music = np.zeros(n)
-    bpm = 112
+    bpm = 124
     beat = 60 / bpm
     tt = np.arange(n) / SR
 
@@ -1218,8 +1249,11 @@ def synth_audio(ep, timeline, total, path):
         if b % 2 == 0:
             for k_, f in enumerate(chords[bar]):
                 note(f * 2, st + k_ * 0.03, beat * 1.5, 0.07, "pluck")
-        if b % 4 == 3:
-            note(chords[bar][2] * 4, st + beat / 2, 0.3, 0.05, "pluck")
+        mel = [4, 2, 0, 2, 4, 4, 5, 4]
+        scale = [523.3, 587.3, 659.3, 698.5, 784.0, 880.0]
+        if (b // 16) % 2 == 1:
+            for h, deg in enumerate(mel[(b % 4) * 2:(b % 4) * 2 + 2]):
+                note(scale[deg] * (1 if bar != 2 else 0.89), st + h * beat / 2, beat * 0.45, 0.06, "pluck")
     music *= 0.5
 
     sfx = np.zeros(n)
@@ -1270,6 +1304,28 @@ def synth_audio(ep, timeline, total, path):
             tcur += r.uniform(0.11, 0.16)
         return out
 
+    def rimshot(at):
+        for j, d in enumerate((0.0, 0.13)):
+            x = np.arange(int(0.12 * SR)) / SR
+            add(np.sin(2 * np.pi * (180 - 60 * x / 0.12) * x) * np.exp(-x * 25), at + d, 0.5)
+            add(rng.standard_normal(len(x)) * np.exp(-x * 40), at + d, 0.15)
+        m = int(0.9 * SR)
+        x = np.arange(m) / SR
+        nz = rng.standard_normal(m)
+        nz = np.diff(np.concatenate([[0], nz]))
+        add(nz * np.exp(-x * 4) * (0.6 + 0.4 * np.sin(2 * np.pi * 6000 * x)), at + 0.3, 0.22)
+
+    def aplausos(at, dur=2.0):
+        m = int(dur * SR)
+        out = np.zeros(m)
+        r = np.random.default_rng(5)
+        for _ in range(int(dur * 60)):
+            i0 = r.integers(0, m - 3000)
+            L = 2400
+            out[i0:i0 + L] += r.standard_normal(L) * np.exp(-np.arange(L) / SR * 120) * r.uniform(0.3, 1)
+        out *= np.minimum(1, np.linspace(3, 0, m))
+        add(np.diff(np.concatenate([[0], out])), at, 0.5)
+
     # intro sting
     for i, f in enumerate((523.3, 659.3, 784.0, 1046.5)):
         add(ding(f), 0.05 + i * 0.09, 0.22)
@@ -1286,6 +1342,12 @@ def synth_audio(ep, timeline, total, path):
         if "tarjeta" in sc:
             add(whoosh(), a + sc["tarjeta"].get("delay", 0.5), 0.3)
             add(ding(1568), a + sc["tarjeta"].get("delay", 0.5) + 0.15, 0.12)
+        for snd in sc.get("sonido", []):
+            if snd == "rimshot":
+                add_t = a + VOZ_OFFSET + sc.get("habla", 1.5) + 0.02
+                rimshot(add_t)
+            if snd == "aplausos":
+                aplausos(a + 0.3, 1.8)
         for f in sc.get("fx", []):
             if f.startswith("plop"):
                 add(boing(), a + 0.05, 0.4)
@@ -1297,6 +1359,7 @@ def synth_audio(ep, timeline, total, path):
                     add(ding(2093), a + 0.3 + j * 0.25, 0.08)
     o = total - OUTRO
     add(whoosh(), o, 0.3)
+    aplausos(o + 0.2, 2.5)
     for i, tp in enumerate((1.1, 2.0, 2.9)):
         add(pop(), o + tp, 0.4)
         add(ding(1318 + i * 220), o + tp + 0.03, 0.18)
@@ -1323,7 +1386,7 @@ def tts_line(who, texto, path, length_scale):
     name = VOCES[who]
     d = os.path.join(VOICE_DIR, "vits-piper-" + name)
     subprocess.run(["python3", "-m", "piper", "-m", f"{d}/{name}.onnx", "-c", f"{d}/{name}.onnx.json",
-                    "--length-scale", str(length_scale), "-f", path],
+                    "--length-scale", str(length_scale), "--noise-scale", "0.8", "--noise-w-scale", "0.95", "-f", path],
                    input=texto.encode("utf-8"), check=True, capture_output=True)
     with wave.open(path) as w:
         x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32767
@@ -1359,6 +1422,22 @@ def build_voices(ep, tmp):
     print(f"Voces listas (velocidad x{1 / factor:.2f})")
 
 
+def camera(timeline, t):
+    for (a, b, sc) in timeline:
+        if a <= t < b:
+            local = t - a
+            z, dx, dy = 1.0, 0.0, 0.0
+            zx = 540 + (CAST[sc["quien"]]["x"] - 540) * 0.5
+            if sc.get("zoom"):
+                k = ease_out(local / 0.25) if local < b - a - 0.25 else ease_out((b - a - local) / 0.25)
+                z = 1.0 + 0.1 * k
+            if sc.get("temblor") and local < 0.6:
+                amp = 14 * (1 - local / 0.6)
+                dx, dy = amp * math.sin(local * 90), amp * math.cos(local * 77)
+            return z, dx, dy, zx
+    return 1.0, 0.0, 0.0, 540
+
+
 # ---------------------------------------------------------------- main
 def main():
     gpath = sys.argv[1]
@@ -1391,10 +1470,25 @@ def main():
            "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     nframes = int(round(total * FPS))
+    out_s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
+    octx = cairo.Context(out_s)
     for i in range(nframes):
-        render_frame(ctx, bg, ep, timeline, total, i / FPS)
+        tt = i / FPS
+        render_frame(ctx, bg, ep, timeline, total, tt)
         surf.flush()
-        p.stdin.write(bytes(surf.get_data()))
+        z, dx, dy, zx = camera(timeline, tt)
+        if z == 1.0 and dx == 0 and dy == 0:
+            p.stdin.write(bytes(surf.get_data()))
+            continue
+        octx.save()
+        octx.translate(zx + dx, 900 + dy)
+        octx.scale(z, z)
+        octx.translate(-zx, -900)
+        octx.set_source_surface(surf, 0, 0)
+        octx.paint()
+        octx.restore()
+        out_s.flush()
+        p.stdin.write(bytes(out_s.get_data()))
     p.stdin.close()
     p.wait()
     # miniatura = frame del titular

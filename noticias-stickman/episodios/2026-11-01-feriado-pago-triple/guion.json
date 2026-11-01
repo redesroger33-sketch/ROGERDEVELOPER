@@ -1,6 +1,6 @@
 {
   "id": "2026-11-01-feriado-pago-triple",
-  "archivo": "NoticiasStickman_2026-11-01_feriado_pago_triple_CON_VOCES.mp4",
+  "archivo": "NoticiasStickman_2026-11-01_feriado_pago_triple_HUMOR.mp4",
   "fecha": "01 NOV 2026",
   "seccion": "PERÚ · TRABAJO",
   "titular": [
@@ -12,8 +12,8 @@
   "escenas": [
     {
       "quien": "paco",
-      "dur": 3.6,
-      "texto": "¡Buenos días, *Stickmatas!* Hoy *1 de noviembre* es feriado.",
+      "texto": "¡Buenos días, *Stickmatas!* Hoy es *feriado*... y tengo una noticia buena y una mala.",
+      "voz": "¡Buenos días, Stickmatas! Hoy es feriado... y tengo una noticia buena, y una mala.",
       "expr": {
         "paco": "happy",
         "chato": "happy",
@@ -23,13 +23,12 @@
         "chato": "wave",
         "lucha": "wave"
       },
-      "pantalla": "calendario",
-      "voz": "¡Buenos días, Stickmatas! Hoy, uno de noviembre, es feriado."
+      "pantalla": "calendario"
     },
     {
       "quien": "chato",
-      "dur": 2.4,
-      "texto": "¡Fin de semana *largo*, causa!",
+      "texto": "¡Ya armé la *parrillada* para el fin de semana largo, causa!",
+      "voz": "¡Ya armé la parrillada para el fin de semana largo, causa!",
       "expr": {
         "chato": "laugh",
         "lucha": "neutral"
@@ -43,8 +42,8 @@
     },
     {
       "quien": "paco",
-      "dur": 3.8,
-      "texto": "Nada de eso: cayó *domingo*. El *lunes* se trabaja.",
+      "texto": "La mala: cayó *domingo*. El *lunes* se trabaja.",
+      "voz": "La mala: cayó domingo. El lunes se trabaja.",
       "expr": {
         "paco": "serious",
         "chato": "surprised",
@@ -54,63 +53,60 @@
       "fx": [
         "plop:chato"
       ],
+      "temblor": true,
       "tarjeta": {
         "label": "LUNES 2 DE NOVIEMBRE",
         "valor": "SE TRABAJA",
-        "delay": 1.2
-      },
-      "voz": "Nada de eso: cayó domingo. El lunes se trabaja."
+        "delay": 0.9
+      }
     },
     {
       "quien": "chato",
-      "dur": 2.4,
-      "texto": "¿Y si hoy me toca *chambear*?",
+      "texto": "¿Hasta el *feriado* descansa en domingo?",
+      "voz": "¿Hasta el feriado descansa en domingo?",
       "expr": {
         "chato": "worried",
-        "lucha": "neutral"
+        "lucha": "laugh",
+        "paco": "laugh"
       },
       "pose": {
-        "chato": "think"
+        "chato": "shrug"
       },
       "fx": [
-        "sweat:chato"
-      ]
+        "sweat:chato",
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.9
     },
     {
       "quien": "lucha",
-      "dur": 3.3,
-      "texto": "Tranqui, la ley te cubre: *D. Leg. 713*.",
+      "texto": "La buena: si trabajas hoy, la ley te paga *triple*.",
+      "voz": "La buena: si trabajas hoy, la ley te paga triple.",
       "expr": {
         "lucha": "happy",
-        "chato": "neutral"
+        "chato": "surprised"
+      },
+      "pose": {
+        "lucha": "point"
       },
       "pantalla": "ley",
       "tarjeta": {
         "label": "BASE LEGAL",
         "valor": "D. LEG. 713",
         "nota": "Régimen laboral privado",
-        "delay": 0.9
-      },
-      "voz": "Tranqui, la ley te cubre: decreto setecientos trece."
-    },
-    {
-      "quien": "lucha",
-      "dur": 3.2,
-      "texto": "Si trabajas hoy sin *otro día* de descanso...",
-      "expr": {
-        "lucha": "serious",
-        "chato": "surprised"
-      },
-      "pose": {
-        "lucha": "point"
+        "delay": 0.8
       }
     },
     {
       "quien": "lucha",
-      "dur": 3.6,
-      "texto": "...cobras *triple:* tu día más *100% extra*.",
+      "texto": "Tu día, más el feriado, más *100% extra*, si no te dan otro descanso.",
+      "voz": "Tu día, más el feriado, más cien por ciento extra, si no te dan otro descanso.",
       "expr": {
-        "lucha": "happy",
+        "lucha": "serious",
         "chato": "alert"
       },
       "pantalla": "x3",
@@ -120,36 +116,41 @@
       "tarjeta": {
         "label": "PAGO POR TRABAJAR HOY",
         "valor": "x3",
-        "delay": 0.8
-      },
-      "voz": "cobras triple: tu día, más cien por ciento extra."
+        "delay": 0.6
+      }
     },
     {
       "quien": "chato",
-      "dur": 3.2,
-      "texto": "¿Gano *S/ 60*? ¡Hoy serían *S/ 180!*",
+      "texto": "¿*S/ 60* al día? ¡Hoy son *S/ 180!* ¡Jefe, quiero *doble turno!*",
+      "voz": "¿Sesenta soles al día? ¡Hoy son ciento ochenta! ¡Jefe, quiero doble turno!",
       "expr": {
-        "chato": "happy",
-        "lucha": "happy"
+        "chato": "laugh",
+        "lucha": "happy",
+        "paco": "happy"
       },
       "pose": {
         "chato": "up"
       },
       "fx": [
-        "money:chato"
+        "money:chato",
+        "confeti:chato"
       ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8,
       "tarjeta": {
         "label": "EJEMPLO",
         "valor": "S/ 60 → S/ 180",
         "nota": "Sueldo diario x3",
-        "delay": 0.9
-      },
-      "voz": "¿Gano sesenta soles? ¡Hoy serían ciento ochenta!"
+        "delay": 0.6
+      }
     },
     {
       "quien": "lucha",
-      "dur": 3.2,
       "texto": "Si no te pagan así, revisa tu *boleta*.",
+      "voz": "Si no te pagan así, revisa tu boleta.",
       "expr": {
         "lucha": "serious",
         "chato": "neutral"
@@ -161,19 +162,27 @@
     },
     {
       "quien": "paco",
-      "dur": 3.0,
-      "texto": "¡Nos vemos mañana, *Stickmatas!*",
+      "texto": "¡Y la parrillada, para la *noche*, Chato! ¡Nos vemos mañana, *Stickmatas!*",
+      "voz": "¡Y la parrillada, para la noche, Chato! ¡Nos vemos mañana, Stickmatas!",
       "expr": {
         "paco": "happy",
-        "chato": "happy",
-        "lucha": "happy"
+        "chato": "laugh",
+        "lucha": "laugh"
       },
       "pose": {
-        "chato": "wave",
+        "chato": "up",
         "lucha": "wave"
       },
-      "pantalla": "compartir"
+      "pantalla": "compartir",
+      "fx": [
+        "ja:chato"
+      ]
     }
   ],
-  "duracion_max": 38.4
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "paco": 0.88,
+    "chato": 0.95,
+    "lucha": 1.0
+  }
 }
