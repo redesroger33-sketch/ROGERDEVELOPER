@@ -45,6 +45,9 @@ RED = hx("F2283C")
 YELLOW = hx("FFD23F")
 
 INTRO = 2.0
+VOICE_DIR = os.environ.get("NS_VOCES", "/tmp")
+VOCES = {"paco": "es_MX-ald-medium", "chato": "es_MX-claude-high", "lucha": "es_AR-daniela-high"}
+VOZ_OFFSET = 0.15
 OUTRO = 4.5
 
 CAST = {
@@ -801,7 +804,7 @@ def draw_bubble(c, scene, local, dur):
     c.show_text(cfg["name"])
     # karaoke
     total = sum(len(l) for l in lines)
-    prog = clamp((local - 0.1) / max(dur * 0.78, 0.5))
+    prog = clamp((local - VOZ_OFFSET) / max(scene.get("habla", dur * 0.78) * 0.95, 0.5))
     shown = math.ceil(prog * total)
     n = 0
     font(c, size)
@@ -1102,7 +1105,7 @@ def state_for(ep, timeline, t):
             states[w]["expr"] = e
         for w, p in sc.get("pose", {}).items():
             states[w]["pose"] = p
-        speaking_until = cur[0] + 0.1 + (cur[1] - cur[0]) * 0.82
+        speaking_until = cur[0] + VOZ_OFFSET + sc.get("habla", (cur[1] - cur[0]) * 0.82)
         states[sc["quien"]]["talking"] = t < speaking_until
         if states[sc["quien"]]["pose"] == "rest" and sc["quien"] != "paco":
             states[sc["quien"]]["pose"] = "talk"
@@ -1220,6 +1223,7 @@ def synth_audio(ep, timeline, total, path):
     music *= 0.5
 
     sfx = np.zeros(n)
+    voice = np.zeros(n)
 
     def add(sig, at, amp=1.0):
         i0 = int(at * SR)
@@ -1272,7 +1276,13 @@ def synth_audio(ep, timeline, total, path):
     add(whoosh(), INTRO - 0.2, 0.25)
     for (a, b, sc) in timeline:
         add(pop(), a, 0.35)
-        add(blip_talk((b - a) * 0.8), a + 0.1, 0.035)
+        if "_audio" in sc:
+            vo = sc["_audio"] / (np.max(np.abs(sc["_audio"])) + 1e-9)
+            i0 = int((a + VOZ_OFFSET) * SR)
+            m = min(len(vo), n - i0)
+            voice[i0:i0 + m] += vo[:m]
+        else:
+            add(blip_talk((b - a) * 0.8), a + 0.1, 0.035)
         if "tarjeta" in sc:
             add(whoosh(), a + sc["tarjeta"].get("delay", 0.5), 0.3)
             add(ding(1568), a + sc["tarjeta"].get("delay", 0.5) + 0.15, 0.12)
@@ -1290,7 +1300,10 @@ def synth_audio(ep, timeline, total, path):
     for i, tp in enumerate((1.1, 2.0, 2.9)):
         add(pop(), o + tp, 0.4)
         add(ding(1318 + i * 220), o + tp + 0.03, 0.18)
-    mix = music + sfx
+    # ducking: baja la música cuando alguien habla
+    env = np.convolve(np.abs(voice), np.ones(4800) / 4800, mode="same")
+    duck = 1 - 0.55 * np.clip(env * 12, 0, 1)
+    mix = music * 0.55 * duck + sfx * 0.6 + voice * 0.95
     fade = int(0.6 * SR)
     end = int(total * SR)
     mix = mix[:end]
@@ -1305,11 +1318,54 @@ def synth_audio(ep, timeline, total, path):
         w.writeframes(pcm.tobytes())
 
 
+# ---------------------------------------------------------------- voces
+def tts_line(who, texto, path, length_scale):
+    name = VOCES[who]
+    d = os.path.join(VOICE_DIR, "vits-piper-" + name)
+    subprocess.run(["python3", "-m", "piper", "-m", f"{d}/{name}.onnx", "-c", f"{d}/{name}.onnx.json",
+                    "--length-scale", str(length_scale), "-f", path],
+                   input=texto.encode("utf-8"), check=True, capture_output=True)
+    with wave.open(path) as w:
+        x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32767
+        sr = w.getframerate()
+    # recorta silencios de bordes
+    idx = np.where(np.abs(x) > 0.02)[0]
+    if len(idx):
+        x = x[max(0, idx[0] - int(0.02 * sr)): idx[-1] + int(0.05 * sr)]
+    if sr != SR:
+        tt = np.arange(int(len(x) * SR / sr)) / SR
+        x = np.interp(tt, np.arange(len(x)) / sr, x)
+    return x
+
+
+def build_voices(ep, tmp):
+    escala = {w: 1.0 for w in VOCES}
+    escala.update(ep.get("velocidad_voz", {}))
+    target = ep.get("duracion_max", 38.8)
+    factor = 1.0
+    for _ in range(4):
+        total = INTRO + OUTRO
+        for i, sc in enumerate(ep["escenas"]):
+            texto = sc.get("voz", sc["texto"].replace("*", ""))
+            x = tts_line(sc["quien"], texto, os.path.join(tmp, f"v{i}.wav"), escala[sc["quien"]] * factor)
+            sc["_audio"] = x
+            sc["habla"] = len(x) / SR
+            sc["dur"] = sc["habla"] + VOZ_OFFSET + sc.get("pausa", 0.3)
+            total += sc["dur"]
+        if total <= target:
+            break
+        factor *= max(0.8, (target - INTRO - OUTRO - 0.4 * len(ep["escenas"])) /
+                      (total - INTRO - OUTRO - 0.4 * len(ep["escenas"])))
+    print(f"Voces listas (velocidad x{1 / factor:.2f})")
+
+
 # ---------------------------------------------------------------- main
 def main():
     gpath = sys.argv[1]
     ep = json.load(open(gpath, encoding="utf-8"))
     outdir = os.path.dirname(os.path.abspath(gpath))
+    if "--sin-voz" not in sys.argv:
+        build_voices(ep, "/tmp")
     timeline, total = build_timeline(ep)
     bg = build_background()
     surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
