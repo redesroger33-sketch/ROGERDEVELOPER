@@ -48,6 +48,8 @@ INTRO = 2.0
 VOICE_DIR = os.environ.get("NS_VOCES", "/tmp")
 VOCES = {"paco": "es_MX-ald-medium", "chato": "es_MX-claude-high", "lucha": "es_AR-daniela-high"}
 VOZ_OFFSET = 0.15
+# Tono: semitonos hacia arriba por personaje (voces más alegres y agudas)
+TONO = {"paco": 3.0, "chato": 4.0, "lucha": 3.0}
 OUTRO = 4.5
 
 CAST = {
@@ -1382,12 +1384,22 @@ def synth_audio(ep, timeline, total, path):
 
 
 # ---------------------------------------------------------------- voces
-def tts_line(who, texto, path, length_scale):
+def tts_line(who, texto, path, length_scale, tono=None):
     name = VOCES[who]
     d = os.path.join(VOICE_DIR, "vits-piper-" + name)
     subprocess.run(["python3", "-m", "piper", "-m", f"{d}/{name}.onnx", "-c", f"{d}/{name}.onnx.json",
                     "--length-scale", str(length_scale), "--noise-scale", "0.8", "--noise-w-scale", "0.95", "-f", path],
                    input=texto.encode("utf-8"), check=True, capture_output=True)
+    semis = TONO.get(who, 0)
+    if semis:
+        with wave.open(path) as w:
+            sr0 = w.getframerate()
+        f = 2 ** (semis / 12)
+        shifted = path.replace(".wav", "_tono.wav")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", path, "-af",
+                        f"asetrate={int(sr0 * f)},aresample={sr0},atempo={1 / f:.5f},"
+                        "equalizer=f=3000:t=q:w=1:g=3,volume=1.1", shifted], check=True)
+        path = shifted
     with wave.open(path) as w:
         x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32767
         sr = w.getframerate()
