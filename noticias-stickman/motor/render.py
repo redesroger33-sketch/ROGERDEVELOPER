@@ -191,7 +191,106 @@ def draw_screen(c, kind, t, local):
     c.translate(cx, cy)
     c.scale(0.6 + 0.4 * k, 0.6 + 0.4 * k)
     c.translate(-cx, -cy)
-    if kind in ("calendario", "lunes"):
+    if kind.startswith("texto:"):
+        partes = kind[6:].split("|")
+        cols = [YELLOW, WHITE, TEAL]
+        for i, ln in enumerate(partes):
+            size = 120 if i == 0 else 54
+            font(c, size)
+            while tw(c, ln) > w - 60:
+                size -= 4
+                font(c, size)
+            text_center(c, ln, cx, cy - 20 + (i * 90 if i else 0) - (40 if len(partes) > 1 else -40), size, cols[i % 3])
+    elif kind.startswith("fecha:"):
+        num, dia, cinta = (kind[6:].split(":") + ["", "", ""])[:3]
+        rrect(c, cx - 150, cy - 160, 300, 320, 22)
+        fill_stroke(c, WHITE, INK, 7)
+        c.save()
+        rrect(c, cx - 150, cy - 160, 300, 82, 22)
+        c.clip()
+        c.set_source_rgba(*RED)
+        c.paint()
+        c.restore()
+        text_center(c, "NOVIEMBRE", cx, cy - 104, 34, WHITE)
+        text_center(c, num, cx, cy + 70, 150, NAVY)
+        text_center(c, dia, cx, cy + 128, 34, hx("5A6070"), F_XBOLD)
+        if cinta:
+            c.save()
+            c.translate(cx + 165, cy - 150)
+            c.rotate(0.3)
+            font(c, 26)
+            wv = tw(c, cinta) + 40
+            rrect(c, -wv / 2, -26, wv, 52, 12)
+            fill_stroke(c, TEAL, INK, 5)
+            c.set_source_rgba(*NAVY)
+            c.move_to(-tw(c, cinta) / 2, 10)
+            c.show_text(cinta)
+            c.restore()
+    elif kind == "colegio":
+        c.move_to(cx - 200, cy - 20)
+        c.line_to(cx, cy - 150)
+        c.line_to(cx + 200, cy - 20)
+        c.close_path()
+        fill_stroke(c, RED, INK, 6)
+        c.rectangle(cx - 180, cy - 20, 360, 180)
+        fill_stroke(c, hx("F4E3C1"), INK, 6)
+        for k in (-1, 1):
+            for j in (0, 1):
+                c.rectangle(cx + k * 110 - 30, cy + 10 + j * 70, 60, 45)
+                fill_stroke(c, hx("6EC8FF"), INK, 4)
+        rrect(c, cx - 35, cy + 70, 70, 90, 6)
+        fill_stroke(c, hx("8A5A3C"), INK, 4)
+        text_center(c, "COAR", cx, cy - 45, 46, WHITE)
+        c.set_source_rgba(*INK)
+        c.set_line_width(5)
+        c.move_to(cx, cy - 150)
+        c.line_to(cx, cy - 210)
+        c.stroke()
+        c.rectangle(cx, cy - 210, 60, 36)
+        c.set_source_rgba(*RED)
+        c.fill()
+        c.rectangle(cx + 20, cy - 210, 20, 36)
+        c.set_source_rgba(*WHITE)
+        c.fill()
+    elif kind == "calabaza":
+        for dx in (-70, 0, 70):
+            c.save()
+            c.translate(cx + dx * 0.9, cy + 10)
+            c.scale(0.75, 1)
+            c.arc(0, 0, 120, 0, 2 * math.pi)
+            c.restore()
+            fill_stroke(c, hx("FF8A1F"), INK, 6)
+        rrect(c, cx - 14, cy - 140, 28, 40, 6)
+        fill_stroke(c, hx("3E8E41"), INK, 4)
+        for k in (-1, 1):
+            c.move_to(cx + k * 55 - 25, cy - 10)
+            c.line_to(cx + k * 55 + 25, cy - 10)
+            c.line_to(cx + k * 55, cy - 50)
+            c.close_path()
+            c.set_source_rgba(*YELLOW)
+            c.fill()
+        text_center(c, "25", cx, cy + 90, 90, YELLOW, outline=INK, ow=8)
+    elif kind == "mano":
+        # mano gigante caricaturesca (sin gore realista)
+        sh = 6 * math.sin(t * 4)
+        c.save()
+        c.translate(cx, cy + 30 + sh)
+        rrect(c, -110, -60, 220, 200, 60)
+        fill_stroke(c, hx("F2C29B"), INK, 6)
+        for i, (fx_, fh) in enumerate(((-90, 150), (-35, 190), (20, 200), (75, 170))):
+            rrect(c, fx_ - 24, -60 - fh, 48, fh + 30, 24)
+            fill_stroke(c, hx("F2C29B"), INK, 6)
+            rrect(c, fx_ - 16, -60 - fh + 4, 32, 30, 14)
+            fill_stroke(c, PINK, INK, 3)
+            if i in (1, 3):
+                c.rectangle(fx_ - 26, -60 - fh * 0.45, 52, 14)
+                fill_stroke(c, YELLOW, INK, 3)
+        rrect(c, -150, 10, 80, 44, 22)
+        fill_stroke(c, hx("F2C29B"), INK, 6)
+        rrect(c, -100, 130, 200, 40, 10)
+        fill_stroke(c, RED, INK, 5)
+        c.restore()
+    elif kind in ("calendario", "lunes"):
         num, dia, cinta = ("1", "DOMINGO", "FERIADO") if kind == "calendario" else ("2", "LUNES", "SE TRABAJA")
         rrect(c, cx - 150, cy - 160, 300, 320, 22)
         fill_stroke(c, WHITE, INK, 7)

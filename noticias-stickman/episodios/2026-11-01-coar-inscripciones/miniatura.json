@@ -1,0 +1,3 @@
+{"banda":"PERÚ · EDUCACIÓN","titulo":["¡ABREN LOS","COAR 2027!"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"paco":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["alert:chato"],"sello":{"texto":"GRATIS","size":80},"franja":"2,698 VACANTES · 2 AL 24 NOV"}

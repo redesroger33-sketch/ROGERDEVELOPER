@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA MUNDIAL","titulo":["HEIDI KLUM SE","VOLVIÓ UNA MANO"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"maskaly":{"pose":"rest","expr":"surprised"},"lucha":{"pose":"up","expr":"laugh"}},
+ "fx":["alert:chato","ja:lucha"],"sello":{"texto":"25","size":130},"franja":"5 A 6 HORAS PARA VESTIRSE"}
