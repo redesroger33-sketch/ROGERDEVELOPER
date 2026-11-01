@@ -1,0 +1,334 @@
+{
+ "id": "2026-11-02-lomo-saltado-acurio",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-02_lomo_saltado_secreto_Acurio.mp4",
+ "fecha": "02 NOV 2026",
+ "seccion": "CLÁSICO PERUANO",
+ "titular": [
+  "LOMO SALTADO:",
+  "¡EL SECRETO DE ACURIO!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "STICKMAN",
+  "COCINA"
+ ],
+ "pantalla_inicial": "foto:lomo_saltado_0|LOMO SALTADO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Soy el *Chef Tito* y hoy: el rey del wok peruano, ¡el *lomo saltado!*",
+   "voz": "¡Hola, cocineros! Soy el Chef Tito y hoy: el rey del wok peruano, ¡el lomo saltado!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:lomo_saltado_0|LOMO SALTADO"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, a mí siempre me sale como *guiso aguado*.",
+   "voz": "Chef, a mí siempre me sale como guiso aguado.",
+   "expr": {
+    "beto": "worried",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Te falta el secreto de *Gastón Acurio*: no es la carne ni la sazón… ¡es el *calor!*",
+   "voz": "Te falta el secreto de Gastón Acurio: no es la carne ni la sazón... ¡es el calor!",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fuego": true,
+   "temblor": true,
+   "pantalla": "foto:wok_fuego_0|¡FUEGO MÁXIMO!",
+   "tarjeta": {
+    "label": "SECRETO DE GASTÓN ACURIO",
+    "valor": "¡EL CALOR!",
+    "nota": "El Comercio, 2014",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Insumos para *cuatro*, como en la receta de Gastón:",
+   "voz": "Insumos para cuatro, como en la receta de Gastón:",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:carne_res_0|LOMO FINO DE RES"
+  },
+  {
+   "quien": "rosita",
+   "texto": "*Lomo fino* en tiras gruesas, *2 cebollas rojas* grandes, *4 tomates* chicos y *1 ají amarillo*.",
+   "voz": "Lomo fino en tiras gruesas, dos cebollas rojas grandes, cuatro tomates chicos y un ají amarillo.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:carne_res_0,cebolla_roja_0,tomate_1,aji_amarillo_2|LOMO FINO|2 CEBOLLAS ROJAS|4 TOMATES|1 AJÍ AMARILLO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Más *cebolla china*, *culantro*, *1 cucharada de ajo* molido, *papas amarillas* fritas y *arroz blanco*.",
+   "voz": "Más cebolla china, culantro, una cucharada de ajo molido, papas amarillas fritas y arroz blanco.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:culantro_1,ajo_0,papas_amarillas_fritas_0,arroz_blanco_0|CULANTRO|AJO|PAPAS AMARILLAS|ARROZ BLANCO"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *jugo*: *8 cucharadas de vinagre* con *4 de sillao*. Hay quien suma *salsa de ostión*.",
+   "voz": "El jugo: ocho cucharadas de vinagre con cuatro de sillao. Hay quien suma salsa de ostión.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "pantalla": "foto:sillao_1|EL JUGO DEL SALTADO",
+   "tarjeta": {
+    "label": "VINAGRE + SILLAO",
+    "valor": "8 + 4 CDAS",
+    "nota": "Receta de Gastón Acurio (RPP, 2018)",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y qué *sartén* uso? La mía es de *teflón*…",
+   "voz": "¿Y qué sartén uso? La mía es de teflón...",
+   "expr": {
+    "beto": "surprised",
+    "tito": "alert"
+   },
+   "fx": [
+    "alert:tito"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Nada de teflón! *Fierro o acero*, como las sartenes de *chifa*. O una de *fondo delgado*.",
+   "voz": "¡Nada de teflón! Fierro o acero, como las sartenes de chifa. O una de fondo delgado.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:cocina_chef_1|FIERRO O ACERO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Regla de oro: *todo cortado* antes de prender el fuego. ¡Esto va *rapidísimo*!",
+   "voz": "Regla de oro: todo cortado antes de prender el fuego. ¡Esto va rapidísimo!",
+   "expr": {
+    "rosita": "serious",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:cebolla_roja_2,tomate_3,aji_amarillo_0|TIRAS GRUESAS|TOMATE EN GAJOS|AJÍ EN TIRAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "La carne: córtala *contra la hebra*, en tiras gruesas, y sazónala con *sal y pimienta*.",
+   "voz": "La carne: córtala contra la hebra, en tiras gruesas, y sazónala con sal y pimienta.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:carne_res_0|CONTRA LA HEBRA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: fuego *al máximo*. Al *primer humo*, entra la *mitad de la carne* con un chorrito del jugo.",
+   "voz": "Paso uno: fuego al máximo. Al primer humo, entra la mitad de la carne con un chorrito del jugo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 1: SELLAR LA CARNE"
+  },
+  {
+   "quien": "tito",
+   "texto": "¿La mitad? Si echas todo, la sartén se *enfría* y la carne *hierve*. ¡Ahí nace tu guiso aguado, Beto!",
+   "voz": "¿La mitad? Si echas todo, la sartén se enfría y la carne hierve. ¡Ahí nace tu guiso aguado, Beto!",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried",
+    "rosita": "laugh"
+   },
+   "fuego": true,
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: la cebolla, *un minuto* y fuera. El tomate, *dos minutos* y fuera. Siempre por *tandas*.",
+   "voz": "Paso dos: la cebolla, un minuto y fuera. El tomate, dos minutos y fuera. Siempre por tandas.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 2: POR TANDAS|Cebolla: 1 minuto y retira|Tomate: 2 minutos y retira|Repite con la otra mitad"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, con este fuego ya no necesito *gimnasio*: ya *sudé!*",
+   "voz": "¡Chef, con este fuego ya no necesito gimnasio: ya sudé!",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "sweat:beto",
+    "ja:rosita"
+   ],
+   "fuego": true,
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.7
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: el *ajo*, regresa *toda la carne* con su jugo, la cebolla y el resto del vinagre con sillao.",
+   "voz": "Paso tres: el ajo, regresa toda la carne con su jugo, la cebolla y el resto del vinagre con sillao.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:ajo_0|PASO 3: TODO AL WOK"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: tomate y *ají amarillo*, un par de minutos. Al final, *cebolla china* y *culantro*. ¡Prueba la sal!",
+   "voz": "Paso cuatro: tomate y ají amarillo, un par de minutos. Al final, cebolla china y culantro. ¡Prueba la sal!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:tomate_1,aji_amarillo_0,culantro_1|TOMATE|AJÍ AMARILLO|CULANTRO AL FINAL"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y las *papas*, chef? ¿Las mezclo o no?",
+   "voz": "¿Y las papas, chef? ¿Las mezclo o no?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "pantalla": "foto:papas_amarillas_fritas_0|LAS PAPAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Truco de Gastón: *mitad mezcladas*, *mitad encima*. Unas chupan jugo y otras quedan *crocantes*.",
+   "voz": "Truco de Gastón: mitad mezcladas, mitad encima. Unas chupan jugo y otras quedan crocantes.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh"
+   },
+   "fx": [
+    "stars:rosita"
+   ],
+   "tarjeta": {
+    "label": "DOS TEXTURAS",
+    "valor": "½ MEZCLADAS · ½ ENCIMA",
+    "nota": "Consejo de Gastón Acurio (RPP, 2018)",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, esto ya *huele a domingo* en casa de mi abuela!",
+   "voz": "¡Chef, esto ya huele a domingo en casa de mi abuela!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Con su *arroz blanco*, ¡a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "Con su arroz blanco, ¡a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:lomo_saltado_3|¡A LA MESA!"
+  }
+ ]
+}

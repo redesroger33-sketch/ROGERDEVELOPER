@@ -1,0 +1,310 @@
+{
+ "id": "2026-11-02-caminar-despues-de-comer",
+ "canal": "doctor",
+ "archivo": "StickmanDoctor_2026-11-02_caminar_despues_de_comer.mp4",
+ "fecha": "02 NOV 2026",
+ "seccion": "HÁBITO NATURAL",
+ "titular": [
+  "10 MINUTOS QUE",
+  "BAJAN TU AZÚCAR"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "STICKMAN",
+  "DOCTOR"
+ ],
+ "pantalla_inicial": "foto:malecon_miraflores_4|CAMINAR ES MEDICINA",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Soy el *Doctor Bruno*: hoy, un hábito *natural* que baja tu azúcar… ¡y es *gratis!*",
+   "voz": "¡Hola, familia sana! Soy el Doctor Bruno: hoy, un hábito natural que baja tu azúcar... ¡y es gratis!",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "pantalla": "foto:malecon_miraflores_4|CAMINAR ES MEDICINA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Gratis, doctor? ¿Es una *pastilla nueva*? ¿Un *té milagroso*?",
+   "voz": "¿Gratis, doctor? ¿Es una pastilla nueva? ¿Un té milagroso?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Nada de eso, doctora Vita! Es *caminar*… pero en el momento justo: *después de comer*.",
+   "voz": "¡Nada de eso, doctora Vita! Es caminar... pero en el momento justo: después de comer.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "pantalla": "foto:parque_kennedy_3|DESPUÉS DE COMER"
+  },
+  {
+   "quien": "vita",
+   "texto": "Explícalo fácil: me como mi *arroz con lomo*… ¿qué pasa adentro?",
+   "voz": "Explícalo fácil: me como mi arroz con lomo... ¿qué pasa adentro?",
+   "expr": {
+    "vita": "serious",
+    "bruno": "neutral"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:lomo_saltado_0|DESPUÉS DEL ALMUERZO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "El arroz y la papa se vuelven *glucosa*, el azúcar de la sangre. Por eso, después de comer, *sube*.",
+   "voz": "El arroz y la papa se vuelven glucosa, el azúcar de la sangre. Por eso, después de comer, sube.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "neutral"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:arroz_blanco_3|ARROZ Y PAPA = GLUCOSA"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y si después me tiro al *sillón*…",
+   "voz": "Y si después me tiro al sillón...",
+   "expr": {
+    "vita": "worried",
+    "bruno": "worried"
+   },
+   "fx": [
+    "sweat:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "…se queda *alta más tiempo*. Pero al caminar, tus *músculos* jalan esa glucosa como *combustible*.",
+   "voz": "...se queda alta más tiempo. Pero al caminar, tus músculos jalan esa glucosa como combustible.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:caminando_gente_0|TUS MÚSCULOS USAN EL AZÚCAR"
+  },
+  {
+   "quien": "vita",
+   "texto": "Lo dice la ciencia: una revisión de *siete estudios* en *Sports Medicine* comparó estar sentado, de pie y caminar.",
+   "voz": "Lo dice la ciencia: una revisión de siete estudios en Sports Medicine comparó estar sentado, de pie y caminar.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "SPORTS MEDICINE · 2022",
+    "valor": "7 ESTUDIOS",
+    "nota": "Sentado vs. de pie vs. caminar suave",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Ganó *caminar suave*: bajó más el azúcar y la *insulina*.",
+   "voz": "Ganó caminar suave: bajó más el azúcar y la insulina.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "fx": [
+    "stars:vita"
+   ],
+   "pantalla": "lista:EL RESULTADO|Caminar suave: el que más baja|De pie: ayuda un poco|Sentado: el azúcar sigue alta"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Otro estudio, en *Diabetologia*, con *41 adultos* con diabetes tipo 2, comparó dos consejos:",
+   "voz": "Otro estudio, en Diabetologia, con cuarenta y un adultos con diabetes tipo dos, comparó dos consejos:",
+   "expr": {
+    "bruno": "serious",
+    "vita": "neutral"
+   },
+   "pantalla": "foto:glucometro_4|MEDIR LA GLUCOSA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "*30 minutos* en cualquier momento, o *10 minutos* después de cada comida.",
+   "voz": "Treinta minutos en cualquier momento, o diez minutos después de cada comida.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "MISMO TIEMPO TOTAL",
+    "valor": "30 MIN vs 3 × 10",
+    "nota": "Diabetologia 2016",
+    "delay": 0.8
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Ganaron los *10 minutos*! El azúcar bajó *12 %* más.",
+   "voz": "¡Ganaron los diez minutos! El azúcar bajó doce por ciento más.",
+   "expr": {
+    "vita": "alert",
+    "bruno": "happy"
+   },
+   "fx": [
+    "alert:vita"
+   ],
+   "tarjeta": {
+    "label": "10 MIN DESPUÉS DE CADA COMIDA",
+    "valor": "−12 % AZÚCAR",
+    "delay": 0.9
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y después de la *cena*, la baja fue de *22 %*.",
+   "voz": "Y después de la cena, la baja fue de veintidós por ciento.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "DESPUÉS DE LA CENA",
+    "valor": "−22 %",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "O sea… ¿mi *siesta* después del almuerzo ya fue?",
+   "voz": "O sea... ¿mi siesta después del almuerzo ya fue?",
+   "expr": {
+    "vita": "worried",
+    "bruno": "laugh"
+   },
+   "fx": [
+    "sweat:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡La siesta puede esperar *diez minutitos*, doctora!",
+   "voz": "¡La siesta puede esperar diez minutitos, doctora!",
+   "expr": {
+    "bruno": "laugh",
+    "vita": "laugh"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "ja:vita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.7
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Cómo hacerlo en Lima, *sin gimnasio*?",
+   "voz": "¿Cómo hacerlo en Lima, sin gimnasio?",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pantalla": "foto:malecon_miraflores_2|SIN GIMNASIO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu *receta natural*:",
+   "voz": "Diez minutos después de almorzar y de cenar, a paso suave, que puedas conversar. Y si pasas horas sentado, muévete cada media hora.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:TU RECETA NATURAL|Camina 10 min tras almorzar y cenar|Paso suave: puedes conversar|Oficina: una vuelta o escaleras|Sentado mucho: muévete cada 30 min"
+  },
+  {
+   "quien": "vita",
+   "texto": "La *OMS* pide *150 minutos* a la semana. ¡Diez minutos, tres veces al día, ya son *210*!",
+   "voz": "La OMS pide ciento cincuenta minutos a la semana. ¡Diez minutos, tres veces al día, ya son doscientos diez!",
+   "expr": {
+    "vita": "happy",
+    "bruno": "surprised"
+   },
+   "fx": [
+    "confeti:vita"
+   ],
+   "tarjeta": {
+    "label": "META DE LA OMS",
+    "valor": "150 MIN / SEMANA",
+    "nota": "3 × 10 min al día = 210 min",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Si tomas medicinas, esto *suma*, pero *no reemplaza* a tu médico. Si te duele el pecho, *para* y consulta.",
+   "voz": "Si tomas medicinas, esto suma, pero no reemplaza a tu médico. Si te duele el pecho, para y consulta.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Compártelo con quien se sienta *apenas almuerza*. ¡Y a *caminar*, familia!",
+   "voz": "Compártelo con quien se sienta apenas almuerza. ¡Y a caminar, familia!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:parque_kennedy_1|¡A CAMINAR!"
+  }
+ ]
+}

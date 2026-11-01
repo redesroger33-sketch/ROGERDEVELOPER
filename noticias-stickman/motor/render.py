@@ -49,10 +49,15 @@ LOCUTOR = "paco"
 ELENCO = ["chato", "paco", "lucha"]
 PROGRAMA = ["NOTICIAS", "STICKMAN"]
 VOICE_DIR = os.environ.get("NS_VOCES", "/tmp")
-VOCES = {"maskaly": "es_MX-ald-medium", "paco": "es_MX-ald-medium", "chato": "es_MX-claude-high", "lucha": "es_AR-daniela-high"}
+VOCES = {"maskaly": "es_MX-ald-medium", "paco": "es_MX-ald-medium", "chato": "es_MX-claude-high", "lucha": "es_AR-daniela-high",
+         # Stickman Doctor
+         "bruno": "es_MX-ald-medium", "vita": "es_AR-daniela-high",
+         # Stickman Cocina
+         "tito": "es_MX-ald-medium", "rosita": "es_AR-daniela-high", "beto": "es_MX-claude-high"}
 VOZ_OFFSET = 0.15
-# Tono: semitonos hacia arriba por personaje (voces más alegres y agudas)
-TONO = {"maskaly": "mezcla", "paco": 3.0, "chato": 4.0, "lucha": 3.0}
+# Tono: semitonos por personaje (positivo = más aguda, negativo = más gruesa)
+TONO = {"maskaly": "mezcla", "paco": 3.0, "chato": 4.0, "lucha": 3.0,
+        "bruno": -2.5, "vita": 5.0, "tito": 1.0, "rosita": 3.0, "beto": 2.5}
 OUTRO = 4.5
 
 CAST = {
@@ -60,7 +65,29 @@ CAST = {
     "maskaly": {"x": 540, "body": hx("E8175D"), "led": hx("FF2E63"), "name": "MASKALY", "iris": hx("5B3A29")},
     "paco": {"x": 540, "body": hx("2B6BE0"), "led": hx("FFD23F"), "name": "PACO", "iris": hx("3A6FB0")},
     "lucha": {"x": 890, "body": hx("9B4DFF"), "led": hx("FF4FA3"), "name": "LUCHA", "iris": hx("2E8B57")},
+    # Stickman Doctor: dos médicos coloridos con bata, espejo frontal y estetoscopio
+    "bruno": {"x": 300, "body": hx("0FA3B1"), "led": hx("3DFF9A"), "name": "DR. BRUNO", "iris": hx("2F4F7F")},
+    "vita": {"x": 780, "body": hx("FF4F9A"), "led": hx("FFD23F"), "name": "DRA. VITA", "iris": hx("2E8B57")},
+    # Stickman Cocina: el chef y dos comensales que preguntan
+    "tito": {"x": 540, "body": hx("E63946"), "led": hx("FFD23F"), "name": "CHEF TITO", "iris": hx("5B3A29")},
+    "rosita": {"x": 190, "body": hx("FF9F1C"), "led": hx("FF4FA3"), "name": "ROSITA", "iris": hx("6B3E1F")},
+    "beto": {"x": 890, "body": hx("2EC4B6"), "led": hx("2B6BE0"), "name": "BETO", "iris": hx("3A6FB0")},
 }
+
+# Ajustes por canal (el guion elige con "canal": "noticias" | "doctor" | "cocina")
+CANALES = {
+    "noticias": {"fondo": "noticias", "gracias": "¡GRACIAS, STICKMATAS!", "campana": "Activa la campana para la noticia de mañana",
+                 "bpm": 124, "aviso": None},
+    "doctor": {"fondo": "consultorio", "gracias": "¡GRACIAS, FAMILIA SANA!", "campana": "Activa la campana: mañana otro consejo natural",
+               "bpm": 104, "aviso": "Información educativa · No reemplaza tu consulta médica"},
+    "cocina": {"fondo": "cocina", "gracias": "¡GRACIAS, COCINEROS!", "campana": "Activa la campana: mañana otra receta peruana",
+               "bpm": 116, "aviso": None},
+}
+CANAL = CANALES["noticias"]
+SCREEN = (52, 458, 560, 372)          # x, y, ancho, alto de la pantalla grande
+FOTOS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "stickman-canales", "fotos")
+_FOTO_CACHE = {}
+_CREDITOS = None
 HEAD_Y, HEAD_R = 1010, 118
 SHOULDER_Y, HIP_Y, FOOT_Y = 1175, 1430, 1700
 
@@ -134,6 +161,10 @@ def parse_words(texto):
 
 # ---------------------------------------------------------------- fondo
 def build_background():
+    if CANAL["fondo"] == "consultorio":
+        return build_consultorio()
+    if CANAL["fondo"] == "cocina":
+        return build_cocina()
     s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
     c = cairo.Context(s)
     c.set_source_rgba(*WALL)
@@ -175,9 +206,385 @@ def build_background():
     return s
 
 
+# ---------------------------------------------------------------- fotos reales (Wikimedia Commons, licencias libres)
+def creditos():
+    global _CREDITOS
+    if _CREDITOS is None:
+        p = os.path.join(FOTOS_DIR, "creditos.json")
+        _CREDITOS = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    return _CREDITOS
+
+
+def foto_surface(key):
+    """Carga fotos/<key>.jpg como superficie cairo (cacheada)."""
+    if key in _FOTO_CACHE:
+        return _FOTO_CACHE[key]
+    from PIL import Image
+    path = os.path.join(FOTOS_DIR, key + ".jpg")
+    if not os.path.exists(path):
+        print("AVISO: falta la foto", path)
+        _FOTO_CACHE[key] = None
+        return None
+    im = Image.open(path).convert("RGBA")
+    r, g, b, a = im.split()
+    data = bytearray(Image.merge("RGBA", (b, g, r, a)).tobytes())
+    surf = cairo.ImageSurface.create_for_data(data, cairo.FORMAT_ARGB32, im.width, im.height, im.width * 4)
+    _FOTO_CACHE[key] = (surf, data)
+    return _FOTO_CACHE[key]
+
+
+def credito_corto(key):
+    cr = creditos().get(key)
+    if not cr:
+        return ""
+    autor = (cr.get("autor") or "").strip() or "Wikimedia Commons"
+    if len(autor) > 34:
+        autor = autor[:32] + "…"
+    return f"Foto: {autor} · {cr.get('lic', '')}"
+
+
+def draw_foto(c, key, x, y, w, h, t=0.0, zoom=0.0, credito=True, radio=18):
+    """Dibuja la foto recortada (cover) en el rectángulo, con zoom lento opcional."""
+    fs = foto_surface(key)
+    c.save()
+    rrect(c, x, y, w, h, radio)
+    c.clip()
+    if fs is None:
+        c.set_source_rgba(*hx("2A2F3F"))
+        c.paint()
+        text_center(c, key.upper(), x + w / 2, y + h / 2, 34, WHITE)
+    else:
+        surf = fs[0]
+        iw, ih = surf.get_width(), surf.get_height()
+        s = max(w / iw, h / ih) * (1.0 + zoom)
+        c.translate(x + w / 2, y + h / 2)
+        c.scale(s, s)
+        c.translate(-iw / 2, -ih / 2)
+        c.set_source_surface(surf, 0, 0)
+        c.paint()
+    c.restore()
+    if credito and fs is not None:
+        txt = credito_corto(key)
+        if txt:
+            font(c, 17, F_SEMI)
+            tw_ = tw(c, txt) + 18
+            rrect(c, x + w - tw_ - 8, y + h - 34, tw_, 26, 8)
+            c.set_source_rgba(0, 0, 0, 0.55)
+            c.fill()
+            c.set_source_rgba(1, 1, 1, 0.92)
+            c.move_to(x + w - tw_ + 1, y + h - 15)
+            c.show_text(txt)
+
+
+def build_consultorio():
+    """Consultorio luminoso: pared menta con azulejos, cruz verde, planta y camilla."""
+    s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
+    c = cairo.Context(s)
+    g = cairo.LinearGradient(0, 0, 0, 1390)
+    g.add_color_stop_rgba(0, *hx("DDF4F7"))
+    g.add_color_stop_rgba(1, *hx("BFE7EC"))
+    c.set_source(g)
+    c.paint()
+    c.set_source_rgba(1, 1, 1, 0.55)
+    c.set_line_width(2)
+    for yy in range(900, 1390, 70):
+        c.move_to(0, yy)
+        c.line_to(W, yy)
+        c.stroke()
+    for xx in range(0, W, 70):
+        c.move_to(xx, 900)
+        c.line_to(xx, 1390)
+        c.stroke()
+    # piso vinílico
+    c.set_source_rgba(*hx("8FB8C9"))
+    c.rectangle(0, 1390, W, H - 1390)
+    c.fill()
+    c.set_source_rgba(1, 1, 1, 0.25)
+    for xx in range(-900, W + 200, 120):
+        c.move_to(xx, H)
+        c.line_to(xx + 420, 1390)
+        c.stroke()
+    c.set_source_rgba(*INK)
+    c.rectangle(0, 1380, W, 16)
+    c.fill()
+    # planta
+    rrect(c, 20, 1250, 110, 140, 14)
+    fill_stroke(c, hx("F2C14E"), INK, 6)
+    for (dx, dy, a) in ((-30, -60, -0.5), (10, -90, 0.0), (45, -55, 0.55), (-5, -40, -0.2)):
+        c.save()
+        c.translate(75 + dx, 1250 + dy)
+        c.rotate(a)
+        c.scale(0.45, 1)
+        c.arc(0, 0, 55, 0, 2 * math.pi)
+        c.restore()
+        fill_stroke(c, hx("2FBF71"), INK, 5)
+    # botiquín con cruz
+    rrect(c, 950, 1120, 110, 100, 14)
+    fill_stroke(c, WHITE, INK, 6)
+    c.set_source_rgba(*hx("2FBF71"))
+    c.rectangle(992, 1135, 26, 70)
+    c.rectangle(970, 1157, 70, 26)
+    c.fill()
+    # marco de la pantalla (monitor del consultorio)
+    x0, y0, w, h = SCREEN
+    rrect(c, x0 - 10, y0 - 10, w + 20, h + 20, 30)
+    fill_stroke(c, NAVY, hx("0FA3B1"), 10)
+    return s
+
+
+def build_cocina():
+    """Cocina de verdad: foto real de cocina (si existe) + azulejos y repisas."""
+    s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
+    c = cairo.Context(s)
+    c.set_source_rgba(*hx("F6EBDD"))
+    c.paint()
+    fondo = foto_surface("cocina_fondo")
+    if fondo is not None:
+        draw_foto(c, "cocina_fondo", 0, 0, W, 1450, credito=False, radio=0)
+        c.set_source_rgba(1, 0.97, 0.92, 0.35)
+        c.rectangle(0, 0, W, 1450)
+        c.fill()
+    else:
+        # azulejos tipo metro
+        c.set_source_rgba(1, 1, 1, 0.9)
+        for yy in range(0, 1450, 44):
+            off = 45 if (yy // 44) % 2 else 0
+            for xx in range(-off, W, 90):
+                rrect(c, xx + 3, yy + 3, 84, 38, 6)
+                c.fill()
+        # repisa con frascos
+        c.set_source_rgba(*hx("8A5A3C"))
+        c.rectangle(0, 920, W, 20)
+        c.fill()
+        cols = [hx("FFD23F"), hx("E63946"), hx("2FBF71"), hx("FF9F1C"), hx("9B4DFF")]
+        for i, xx in enumerate(range(40, W, 150)):
+            rrect(c, xx, 840, 70, 80, 12)
+            fill_stroke(c, cols[i % 5], INK, 4)
+            rrect(c, xx + 8, 826, 54, 18, 5)
+            fill_stroke(c, hx("C9CED6"), INK, 3)
+    # mesón de acero y madera (los personajes cocinan detrás)
+    c.set_source_rgba(*hx("B9C2CC"))
+    c.rectangle(0, 1450, W, 50)
+    c.fill()
+    c.set_source_rgba(*INK)
+    c.rectangle(0, 1445, W, 8)
+    c.fill()
+    c.set_source_rgba(*hx("9A6B4F"))
+    c.rectangle(0, 1500, W, H - 1500)
+    c.fill()
+    c.set_source_rgba(1, 1, 1, 0.12)
+    c.set_line_width(4)
+    for yy in range(1530, H, 60):
+        c.move_to(0, yy)
+        c.line_to(W, yy)
+        c.stroke()
+    # marco de la pantalla (pizarra del chef)
+    x0, y0, w, h = SCREEN
+    rrect(c, x0 - 10, y0 - 10, w + 20, h + 20, 30)
+    fill_stroke(c, hx("3B2A20"), hx("E63946"), 10)
+    return s
+
+
+def draw_meson(c, t, fuego):
+    """Primer plano de la cocina: wok sobre la hornilla, tabla con cebolla y ají."""
+    # tabla de picar
+    rrect(c, 640, 1462, 300, 46, 12)
+    fill_stroke(c, hx("D9A066"), INK, 5)
+    for i in range(5):
+        c.save()
+        c.translate(680 + i * 26, 1474)
+        c.scale(1, 0.5)
+        c.arc(0, 0, 14, math.pi, 2 * math.pi)
+        c.restore()
+        c.set_source_rgba(*hx("9B3D8F"))
+        c.set_line_width(5)
+        c.stroke()
+    for i in range(3):
+        rrect(c, 830 + i * 24, 1468, 16, 30, 6)
+        fill_stroke(c, hx("FFC300"), INK, 3)
+    # hornilla
+    rrect(c, 330, 1466, 300, 36, 10)
+    fill_stroke(c, hx("2A2F3F"), INK, 5)
+    if fuego:
+        rnd = random.Random(int(t * 12))
+        for i in range(9):
+            fx_ = 360 + i * 30
+            fh = 60 + 50 * abs(math.sin(t * 9 + i * 1.7)) + rnd.uniform(0, 25)
+            c.move_to(fx_ - 16, 1466)
+            c.curve_to(fx_ - 18, 1466 - fh * 0.5, fx_ - 2, 1466 - fh * 0.7, fx_, 1466 - fh)
+            c.curve_to(fx_ + 2, 1466 - fh * 0.7, fx_ + 18, 1466 - fh * 0.5, fx_ + 16, 1466)
+            c.close_path()
+            g = cairo.LinearGradient(0, 1466, 0, 1466 - fh)
+            g.add_color_stop_rgba(0, *hx("FFD23F"))
+            g.add_color_stop_rgba(1, *hx("FF3D00", 0.85))
+            c.set_source(g)
+            c.fill()
+    # wok
+    wy = 1440 + (4 * math.sin(t * 14) if fuego else 0)
+    c.save()
+    c.translate(480, wy)
+    c.scale(1, 0.42)
+    c.arc(0, 0, 150, 0, math.pi)
+    c.restore()
+    fill_stroke(c, hx("3A3F4B"), INK, 6)
+    c.save()
+    c.translate(480, wy)
+    c.scale(1, 0.12)
+    c.arc(0, 0, 150, 0, 2 * math.pi)
+    c.restore()
+    fill_stroke(c, hx("5A3A22"), INK, 5)
+    rrect(c, 625, wy - 12, 120, 20, 10)
+    fill_stroke(c, hx("8A5A3C"), INK, 4)
+    # vapor
+    c.set_source_rgba(1, 1, 1, 0.55)
+    c.set_line_width(7)
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
+    for i in range(3):
+        ph = (t * 0.8 + i * 0.33) % 1.0
+        sx = 430 + i * 50
+        c.move_to(sx, wy - 30 - ph * 160)
+        c.curve_to(sx + 20, wy - 60 - ph * 160, sx - 20, wy - 90 - ph * 160, sx, wy - 120 - ph * 160)
+        c.set_source_rgba(1, 1, 1, 0.5 * (1 - ph))
+        c.stroke()
+
+
+def draw_aviso(c):
+    if not CANAL.get("aviso"):
+        return
+    font(c, 24, F_XBOLD)
+    s = CANAL["aviso"]
+    w = tw(c, s) + 40
+    rrect(c, 540 - w / 2, H - 70, w, 44, 22)
+    c.set_source_rgba(*hx("1C2130", 0.82))
+    c.fill()
+    c.set_source_rgba(1, 1, 1, 0.95)
+    c.move_to(540 - w / 2 + 20, H - 40)
+    c.show_text(s)
+
+
+def draw_etiqueta(c, txt, x, y, size=34, fondo=None, color=WHITE):
+    font(c, size)
+    w = tw(c, txt) + 36
+    rrect(c, x, y, w, size + 22, (size + 22) / 2)
+    c.set_source_rgba(*(fondo or hx("1C2130", 0.85)))
+    c.fill()
+    c.set_source_rgba(*color)
+    c.move_to(x + 18, y + size + 4)
+    c.show_text(txt)
+    return w
+
+
+def draw_screen_fotos(c, kind, t, local):
+    x0, y0, w, h = SCREEN
+    tipo, _, resto = kind.partition(":")
+    partes = resto.split("|")
+    if tipo == "foto":
+        key = partes[0]
+        k = ease_out_back(local / 0.35)
+        c.save()
+        cx, cy = x0 + w / 2, y0 + h / 2
+        c.translate(cx, cy)
+        c.scale(0.85 + 0.15 * k, 0.85 + 0.15 * k)
+        c.translate(-cx, -cy)
+        draw_foto(c, key, x0, y0, w, h, t, zoom=0.07 * clamp(local / 6.0))
+        if len(partes) > 1 and partes[1]:
+            size = 44
+            font(c, size)
+            while tw(c, partes[1]) > w - 80:
+                size -= 3
+                font(c, size)
+            draw_etiqueta(c, partes[1], x0 + 22, y0 + 20, size, hx("E63946" if CANAL["fondo"] == "cocina" else "0FA3B1"))
+        c.restore()
+    elif tipo == "fotos":
+        keys = partes[0].split(",")
+        labels = partes[1:] + [""] * len(keys)
+        n = len(keys)
+        cols = 2 if n == 4 else n
+        rows = 2 if n == 4 else 1
+        gap = 16
+        cw = (w - gap * (cols + 1)) / cols
+        ch = (h - gap * (rows + 1)) / rows
+        c.save()
+        rrect(c, x0, y0, w, h, 18)
+        c.set_source_rgba(*hx("1C2130"))
+        c.fill()
+        c.restore()
+        for i, key in enumerate(keys):
+            st = i * 0.35
+            if local < st:
+                continue
+            k = ease_out_back((local - st) / 0.3)
+            col, row = i % cols, i // cols
+            x = x0 + gap + col * (cw + gap)
+            y = y0 + gap + row * (ch + gap)
+            c.save()
+            c.translate(x + cw / 2, y + ch / 2)
+            c.scale(k, k)
+            c.translate(-(x + cw / 2), -(y + ch / 2))
+            draw_foto(c, key, x, y, cw, ch, t, zoom=0.04 * clamp((local - st) / 5), credito=False, radio=14)
+            if labels[i]:
+                size = 30 if n >= 3 else 36
+                font(c, size)
+                while tw(c, labels[i]) > cw - 50:
+                    size -= 2
+                    font(c, size)
+                lw = tw(c, labels[i]) + 30
+                rrect(c, x + (cw - lw) / 2, y + ch - size - 30, lw, size + 18, (size + 18) / 2)
+                c.set_source_rgba(*hx("FFD23F"))
+                c.fill()
+                c.set_source_rgba(*NAVY)
+                c.move_to(x + (cw - lw) / 2 + 15, y + ch - 22)
+                c.show_text(labels[i])
+            c.restore()
+        # créditos de todas las fotos en una línea
+        txt = "Fotos: Wikimedia Commons (licencias libres, créditos en la descripción)"
+        font(c, 16, F_SEMI)
+        c.set_source_rgba(1, 1, 1, 0.75)
+        c.move_to(x0 + w - tw(c, txt) - 20, y0 + h - 4)
+        c.show_text(txt)
+    else:  # lista: TITULO|item|item...
+        titulo, items = partes[0], partes[1:]
+        rrect(c, x0, y0, w, h, 18)
+        c.set_source_rgba(*hx("FFF8EC"))
+        c.fill()
+        acento = hx("E63946") if CANAL["fondo"] == "cocina" else hx("0FA3B1")
+        rrect(c, x0, y0, w, 74, 18)
+        c.set_source_rgba(*acento)
+        c.fill()
+        text_center(c, titulo, x0 + w / 2, y0 + 52, 40, WHITE)
+        n = max(1, len(items))
+        lh = min(70, (h - 100) / n)
+        size = min(38, int(lh * 0.62))
+        for i, it in enumerate(items):
+            st = 0.2 + i * 0.45
+            if local < st:
+                continue
+            k = ease_out_back((local - st) / 0.25)
+            y = y0 + 96 + i * lh
+            c.save()
+            c.translate(x0 + 40, y + lh / 2)
+            c.scale(k, k)
+            c.arc(0, 0, lh * 0.36, 0, 2 * math.pi)
+            c.set_source_rgba(*acento)
+            c.fill()
+            text_center(c, str(i + 1), 0, lh * 0.15, int(lh * 0.42), WHITE)
+            c.restore()
+            fs = size
+            font(c, fs, F_XBOLD)
+            while tw(c, it) > w - 120:
+                fs -= 2
+                font(c, fs, F_XBOLD)
+            c.set_source_rgba(*NAVY)
+            c.move_to(x0 + 82, y + lh / 2 + fs * 0.35)
+            c.show_text(it)
+
+
 # ---------------------------------------------------------------- pantalla
 def draw_screen(c, kind, t, local):
-    x0, y0, w, h = 52, 458, 560, 372
+    x0, y0, w, h = SCREEN
+    if kind.startswith(("foto:", "fotos:", "lista:")):
+        draw_screen_fotos(c, kind, t, local)
+        return
     c.save()
     rrect(c, x0 + 10, y0 + 10, w - 20, h - 20, 18)
     c.clip()
@@ -444,6 +851,121 @@ def draw_mic(c, x, y, ang):
     c.restore()
 
 
+PROPS = {"paco": "mic", "maskaly": "mic", "tito": "cucharon"}
+
+
+def draw_bata(c, who, x, sy, bob):
+    """Bata blanca de doctor o chaqueta de chef, con el color del personaje en el cuello."""
+    col = CAST[who]["body"]
+    hip = HIP_Y + bob * 0.3 + 40
+    c.move_to(x - 70, sy - 8)
+    c.line_to(x + 70, sy - 8)
+    c.line_to(x + 95, hip)
+    c.line_to(x - 95, hip)
+    c.close_path()
+    fill_stroke(c, WHITE, INK, 6)
+    if who == "tito":
+        for k in range(3):
+            for side in (-1, 1):
+                c.arc(x + side * 26, sy + 50 + k * 60, 8, 0, 2 * math.pi)
+                fill_stroke(c, hx("C9CED6"), INK, 3)
+        rrect(c, x - 95, hip - 20, 190, 20, 6)
+        fill_stroke(c, col, INK, 4)
+        return
+    # cuello en V con el color del uniforme (scrubs)
+    c.move_to(x - 34, sy - 8)
+    c.line_to(x, sy + 60)
+    c.line_to(x + 34, sy - 8)
+    c.close_path()
+    fill_stroke(c, col, INK, 4)
+    # solapas
+    c.set_source_rgba(*INK)
+    c.set_line_width(4)
+    for side in (-1, 1):
+        c.move_to(x + side * 34, sy - 8)
+        c.line_to(x + side * 10, sy + 120)
+        c.stroke()
+    # bolsillo con lapiceros
+    rrect(c, x + 30, sy + 110, 46, 40, 6)
+    fill_stroke(c, WHITE, INK, 4)
+    for k, cc in enumerate((hx("2B6BE0"), RED)):
+        c.rectangle(x + 38 + k * 14, sy + 96, 7, 22)
+        c.set_source_rgba(*cc)
+        c.fill()
+    # credencial
+    rrect(c, x - 82, sy + 100, 56, 40, 6)
+    fill_stroke(c, col, INK, 3)
+    rrect(c, x - 76, sy + 106, 18, 18, 3)
+    c.set_source_rgba(1, 1, 1, 0.9)
+    c.fill()
+
+
+def draw_mandil(c, who, x, sy, bob):
+    col = hx("FFFFFF") if who == "rosita" else hx("F4E3C1")
+    hip = HIP_Y + bob * 0.3 + 30
+    c.move_to(x - 45, sy + 30)
+    c.line_to(x + 45, sy + 30)
+    c.line_to(x + 75, hip)
+    c.line_to(x - 75, hip)
+    c.close_path()
+    fill_stroke(c, col, INK, 5)
+    rrect(c, x - 30, sy + 120, 60, 40, 8)
+    fill_stroke(c, CAST[who]["body"], INK, 3)
+    c.set_source_rgba(*INK)
+    c.set_line_width(3)
+    c.move_to(x - 45, sy + 30)
+    c.line_to(x - 20, sy - 12)
+    c.move_to(x + 45, sy + 30)
+    c.line_to(x + 20, sy - 12)
+    c.stroke()
+
+
+def draw_estetoscopio(c, who, x, sy, t):
+    """Estetoscopio colgado del cuello (aparato del cuello)."""
+    tubo = hx("1E2230")
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
+    c.set_source_rgba(*tubo)
+    c.set_line_width(9)
+    c.move_to(x - 48, sy - 14)
+    c.curve_to(x - 70, sy + 70, x - 30, sy + 130, x + 4, sy + 140)
+    c.stroke()
+    c.move_to(x + 48, sy - 14)
+    c.curve_to(x + 62, sy + 50, x + 30, sy + 110, x + 4, sy + 140)
+    c.stroke()
+    c.set_source_rgba(*METAL)
+    c.set_line_width(6)
+    for side in (-1, 1):
+        c.move_to(x + side * 48, sy - 14)
+        c.line_to(x + side * 40, sy - 40)
+        c.stroke()
+    c.set_source_rgba(*tubo)
+    c.set_line_width(8)
+    sw = 4 * math.sin(t * 2.3)
+    c.move_to(x + 4, sy + 140)
+    c.line_to(x + 4 + sw, sy + 190)
+    c.stroke()
+    c.arc(x + 4 + sw, sy + 210, 24, 0, 2 * math.pi)
+    fill_stroke(c, hx("C9CED6"), INK, 5)
+    c.arc(x + 4 + sw, sy + 210, 12, 0, 2 * math.pi)
+    c.set_source_rgba(*CAST[who]["body"])
+    c.fill()
+
+
+def draw_cucharon(c, x, y, ang):
+    c.save()
+    c.translate(x, y)
+    c.rotate(ang)
+    rrect(c, -8, -150, 16, 170, 8)
+    fill_stroke(c, hx("C68B59"), INK, 4)
+    c.save()
+    c.translate(0, -170)
+    c.scale(1, 1.3)
+    c.arc(0, 0, 30, 0, 2 * math.pi)
+    c.restore()
+    fill_stroke(c, hx("D9A066"), INK, 5)
+    c.restore()
+
+
 def draw_face(c, cx, cy, r, who, expr, talking, t):
     cfg = CAST[who]
     # base
@@ -668,6 +1190,130 @@ def draw_hair(c, who, cx, cy, r, t):
         c.stroke()
         c.arc(cx - 1.0 * r, cy + 0.45 * r, 20, 0, 2 * math.pi)
         c.stroke()
+    elif who in ("bruno", "vita"):
+        # pelo
+        if who == "bruno":
+            c.move_to(cx - 0.95 * r, cy - 0.35 * r)
+            c.curve_to(cx - 0.9 * r, cy - 1.2 * r, cx + 0.9 * r, cy - 1.2 * r, cx + 0.98 * r, cy - 0.35 * r)
+            c.curve_to(cx + 0.6 * r, cy - 0.75 * r, cx - 0.6 * r, cy - 0.75 * r, cx - 0.95 * r, cy - 0.35 * r)
+            c.close_path()
+            fill_stroke(c, hx("6B6F7A"), INK, 5)     # canas de doctor experimentado
+        else:
+            sway = 6 * math.sin(t * 2.4)
+            for side in (-1, 1):
+                c.move_to(cx + side * 0.8 * r, cy - 0.6 * r)
+                c.curve_to(cx + side * 1.35 * r, cy - 0.2 * r, cx + side * 1.25 * r + sway, cy + 0.7 * r, cx + side * 1.05 * r + sway, cy + 0.95 * r)
+                c.curve_to(cx + side * 0.95 * r, cy + 0.4 * r, cx + side * 0.95 * r, cy - 0.1 * r, cx + side * 0.75 * r, cy - 0.35 * r)
+                c.close_path()
+                fill_stroke(c, hx("3A1F14"), INK, 5)
+            c.move_to(cx - 0.95 * r, cy - 0.4 * r)
+            c.curve_to(cx - 0.9 * r, cy - 1.25 * r, cx + 0.9 * r, cy - 1.25 * r, cx + 0.98 * r, cy - 0.4 * r)
+            c.curve_to(cx + 0.5 * r, cy - 0.85 * r, cx - 0.5 * r, cy - 0.6 * r, cx - 0.95 * r, cy - 0.4 * r)
+            c.close_path()
+            fill_stroke(c, hx("3A1F14"), INK, 5)
+        # vincha con espejo frontal (aparato de la cabeza)
+        col = CAST[who]["body"]
+        c.set_source_rgba(*col)
+        c.set_line_width(14)
+        c.arc(cx, cy + 0.15 * r, 1.0 * r, math.radians(200), math.radians(340))
+        c.stroke()
+        c.set_source_rgba(*INK)
+        c.set_line_width(3)
+        c.arc(cx, cy + 0.15 * r, 1.0 * r + 7, math.radians(200), math.radians(340))
+        c.stroke()
+        mxr, myr = cx + 0.05 * r, cy - 0.98 * r
+        c.arc(mxr, myr, 0.36 * r, 0, 2 * math.pi)
+        fill_stroke(c, hx("C9CED6"), INK, 6)
+        gl = cairo.RadialGradient(mxr - 12, myr - 12, 2, mxr, myr, 0.3 * r)
+        gl.add_color_stop_rgba(0, 1, 1, 1, 1)
+        gl.add_color_stop_rgba(1, *hx("8FD3FF", 0.9))
+        c.arc(mxr, myr, 0.27 * r, 0, 2 * math.pi)
+        c.set_source(gl)
+        c.fill()
+        c.arc(mxr, myr, 6, 0, 2 * math.pi)
+        c.set_source_rgba(*INK)
+        c.fill()
+        # destello del espejo
+        if (t % 2.6) < 0.25:
+            c.set_source_rgba(1, 1, 0.8, 0.9)
+            c.set_line_width(4)
+            for a in range(0, 360, 60):
+                ra = math.radians(a + 20)
+                c.move_to(mxr + math.cos(ra) * 0.45 * r, myr + math.sin(ra) * 0.45 * r)
+                c.line_to(mxr + math.cos(ra) * 0.62 * r, myr + math.sin(ra) * 0.62 * r)
+                c.stroke()
+        if who == "vita":
+            c.arc(cx + 0.98 * r, cy + 0.32 * r, 10, 0, 2 * math.pi)
+            fill_stroke(c, YELLOW, INK, 3)
+    elif who == "tito":
+        # pañuelo rojo bajo el mentón se dibuja en el cuerpo; aquí el gorro de chef alto
+        c.save()
+        c.translate(cx, cy - 0.78 * r)
+        rrect(c, -0.78 * r, -0.12 * r, 1.56 * r, 0.36 * r, 10)
+        fill_stroke(c, WHITE, INK, 6)
+        c.new_path()
+        for (dx, dy, rr) in ((-0.55, -0.55, 0.42), (0.0, -0.75, 0.5), (0.55, -0.55, 0.42), (-0.28, -1.05, 0.4), (0.3, -1.05, 0.4)):
+            c.new_sub_path()
+            c.arc(dx * r, dy * r + 2 * math.sin(t * 2 + dx), rr * r, 0, 2 * math.pi)
+        c.set_source_rgba(*WHITE)
+        c.fill_preserve()
+        c.set_source_rgba(*INK)
+        c.set_line_width(5)
+        c.stroke()
+        rrect(c, -0.6 * r, -0.4 * r, 1.2 * r, 0.36 * r, 6)
+        c.set_source_rgba(*WHITE)
+        c.fill()
+        c.restore()
+        # bigote
+        c.save()
+        c.translate(cx + 0.02 * r, cy + 0.28 * r)
+        for side in (-1, 1):
+            c.move_to(0, 0)
+            c.curve_to(side * 0.2 * r, -0.12 * r, side * 0.42 * r, -0.05 * r, side * 0.46 * r, 0.1 * r)
+            c.curve_to(side * 0.3 * r, 0.02 * r, side * 0.15 * r, 0.08 * r, 0, 0.05 * r)
+            c.close_path()
+            fill_stroke(c, hx("2E1F1A"), INK, 3)
+        c.restore()
+    elif who == "rosita":
+        # moño alto y flequillo, flor en el pelo
+        c.arc(cx + 0.1 * r, cy - 1.12 * r, 0.38 * r, 0, 2 * math.pi)
+        fill_stroke(c, hx("1E1A33"), INK, 5)
+        c.move_to(cx - 0.95 * r, cy - 0.3 * r)
+        c.curve_to(cx - 0.95 * r, cy - 1.3 * r, cx + 0.95 * r, cy - 1.3 * r, cx + 0.98 * r, cy - 0.3 * r)
+        c.curve_to(cx + 0.55 * r, cy - 0.8 * r, cx - 0.2 * r, cy - 0.55 * r, cx - 0.95 * r, cy - 0.3 * r)
+        c.close_path()
+        fill_stroke(c, hx("1E1A33"), INK, 5)
+        for a in range(0, 360, 72):
+            ra = math.radians(a + 10 * math.sin(t))
+            c.arc(cx + 0.62 * r + math.cos(ra) * 15, cy - 0.85 * r + math.sin(ra) * 15, 11, 0, 2 * math.pi)
+            fill_stroke(c, hx("FF4FA3"), INK, 2)
+        c.arc(cx + 0.62 * r, cy - 0.85 * r, 8, 0, 2 * math.pi)
+        fill_stroke(c, YELLOW, INK, 2)
+        c.arc(cx + 0.98 * r, cy + 0.32 * r, 12, 0, 2 * math.pi)
+        fill_stroke(c, hx("FF4FA3"), INK, 3)
+        ex, ey, er = cx + 0.42 * r, cy - 0.08 * r, 0.27 * r
+        c.set_source_rgba(*INK)
+        c.set_line_width(4)
+        for k in range(3):
+            a = math.radians(-60 + k * 30)
+            c.move_to(ex + er * math.sin(a), ey - er * math.cos(a))
+            c.line_to(ex + (er + 12) * math.sin(a), ey - (er + 12) * math.cos(a))
+            c.stroke()
+    elif who == "beto":
+        # gorra hacia atrás
+        c.move_to(cx - 1.0 * r, cy - 0.3 * r)
+        c.curve_to(cx - 0.98 * r, cy - 1.35 * r, cx + 0.98 * r, cy - 1.35 * r, cx + 1.0 * r, cy - 0.3 * r)
+        c.close_path()
+        fill_stroke(c, hx("2B6BE0"), INK, 6)
+        rrect(c, cx - 1.45 * r, cy - 0.42 * r, 0.6 * r, 0.2 * r, 8)
+        fill_stroke(c, hx("1F4FA8"), INK, 5)
+        c.arc(cx, cy - 1.0 * r, 12, 0, 2 * math.pi)
+        fill_stroke(c, YELLOW, INK, 3)
+        # barba corta
+        c.set_source_rgba(*hx("2E1F1A", 0.55))
+        c.arc(cx + 0.45 * r, cy + 0.55 * r, 0.35 * r, math.radians(10), math.radians(170))
+        c.set_line_width(10)
+        c.stroke()
     elif who == "chato":
         # chullo andino
         c.save()
@@ -756,6 +1402,11 @@ def draw_character(c, who, t, st):
         c.restore()
         fill_stroke(c, col, INK, 3)
     limb(c, [(x, HIP_Y + bob * 0.3), (x, hy + HEAD_R - 10)], col, 11)
+    sy0 = SHOULDER_Y + bob * 0.6
+    if who in ("bruno", "vita", "tito"):
+        draw_bata(c, who, x, sy0, bob)
+    elif who in ("rosita", "beto"):
+        draw_mandil(c, who, x, sy0, bob)
     # brazos
     pose = st.get("pose", "rest")
     (l1, l2), (r1, r2) = POSES.get(pose, POSES["rest"])
@@ -767,7 +1418,7 @@ def draw_character(c, who, t, st):
             l2 += 18 * math.sin(t * 9 + 1)
     # side: -1 = izquierda de pantalla
     left = arm_points(x, sy, -1, l1 + wig, l2)
-    if who == LOCUTOR and st.get("mic", True):
+    if who == LOCUTOR and st.get("mic", True) and who in PROPS:
         right = arm_points(x, sy, 1, 32, 128)
     else:
         right = arm_points(x, sy, 1, r1 - wig, r2)
@@ -791,9 +1442,21 @@ def draw_character(c, who, t, st):
         for k in range(-3, 4):
             c.arc(x + k * 13, sy - 2 + abs(k) * -3 + 10, 7, 0, 2 * math.pi)
             fill_stroke(c, WHITE, INK, 2)
-    if who == LOCUTOR and st.get("mic", True):
+    if who == LOCUTOR and st.get("mic", True) and who in PROPS:
         hxp, hyp = right[2]
-        draw_mic(c, hxp - 4, hyp - 6, math.radians(-28))
+        if PROPS[who] == "mic":
+            draw_mic(c, hxp - 4, hyp - 6, math.radians(-28))
+        else:
+            draw_cucharon(c, hxp - 4, hyp - 6, math.radians(-28 + 8 * math.sin(t * 3)))
+    if who in ("bruno", "vita"):
+        draw_estetoscopio(c, who, x, sy, t)
+    if who == "tito":
+        # pañuelo rojo al cuello
+        c.move_to(x - 40, sy - 16)
+        c.line_to(x + 40, sy - 16)
+        c.line_to(x, sy + 40)
+        c.close_path()
+        fill_stroke(c, RED, INK, 4)
     if who == "lucha":
         # credencial de prensa
         c.set_source_rgba(*INK)
@@ -947,9 +1610,12 @@ def draw_bubble(c, scene, local, dur):
     while len(lines) > 2 and size > 42:
         size -= 4
         lines, sp = layout_words(c, words, 850, size)
-    while len(lines) > 3:
+    while len(lines) > 3 and size > 40:
         size -= 4
-        lines, sp = layout_words(c, words, 820, size)
+        lines, sp = layout_words(c, words, 850, size)
+    while len(lines) > (4 if CANAL["fondo"] != "noticias" else 3):
+        size -= 4
+        lines, sp = layout_words(c, words, 850, size)
     lh = size * 1.2
     bx, by, bw = 50, 145, 980
     bh = 86 + lh * len(lines)
@@ -1204,7 +1870,7 @@ def draw_outro(c, ep, t, local):
         c.save()
         c.translate(540, 300)
         c.scale(k2, k2)
-        text_center(c, "¡GRACIAS, STICKMATAS!", 0, 0, 70, TEAL)
+        text_center(c, CANAL["gracias"], 0, 0, 70 if len(CANAL["gracias"]) < 22 else 62, TEAL)
         text_center(c, ep.get("cierre_sub", "Mañana, otra noticia calientita"), 0, 80, 44, WHITE, F_SEMI)
         rrect(c, -450, 150, 900, 104, 52)
         fill_stroke(c, TEAL, WHITE, 5)
@@ -1251,7 +1917,7 @@ def draw_outro(c, ep, t, local):
         c.fill()
         draw_user_plus(c, 215, 4, 1.05, WHITE)
         text_center(c, "SIGUIENDO" if on[2] else "SÍGUEME", 330, 18, 36 if on[2] else 40, WHITE)
-        text_center(c, "Activa la campana para la noticia de mañana", 0, 125, 30, TEAL, F_XBOLD)
+        text_center(c, CANAL["campana"], 0, 125, 30, TEAL, F_XBOLD)
         # mano
         targets = [(-300, 30), (-60, 40), (300, 30)]
         pos = targets[0]
@@ -1273,6 +1939,7 @@ def build_timeline(ep):
     t = INTRO
     out = []
     for sc in ep["escenas"]:
+        sc.setdefault("dur", 4.0)
         out.append((t, t + sc["dur"], sc))
         t += sc["dur"]
     return out, t + OUTRO
@@ -1312,7 +1979,8 @@ def render_frame(ctx, bg, ep, timeline, total, t):
         return
     c.set_source_surface(bg, 0, 0)
     c.paint()
-    draw_live(c, t)
+    if CANAL["fondo"] == "noticias":
+        draw_live(c, t)
     cur, local, states = state_for(ep, timeline, t)
     in_outro = t >= total - OUTRO
     if in_outro:
@@ -1327,6 +1995,11 @@ def render_frame(ctx, bg, ep, timeline, total, t):
     heads = {}
     for w in ELENCO:
         heads[w] = draw_character(c, w, t, states[w])
+    if CANAL["fondo"] == "cocina":
+        c.set_source_surface(FRENTE, 0, 0)
+        c.paint()
+        fuego = bool(cur and cur[2].get("fuego")) and not in_outro
+        draw_meson(c, t, fuego)
     if cur and not in_outro:
         sc = cur[2]
         for f in sc.get("fx", []):
@@ -1344,6 +2017,8 @@ def render_frame(ctx, bg, ep, timeline, total, t):
         c.set_source_rgba(1, 1, 1, 1 - (t - INTRO) / 0.15)
         c.paint()
     draw_top(c, ep, t, total)
+    if not in_outro:
+        draw_aviso(c)
 
 
 # ---------------------------------------------------------------- audio
@@ -1353,7 +2028,7 @@ SR = 48000
 def synth_audio(ep, timeline, total, path):
     n = int(total * SR) + SR
     music = np.zeros(n)
-    bpm = 124
+    bpm = CANAL["bpm"]
     beat = 60 / bpm
     tt = np.arange(n) / SR
 
@@ -1619,16 +2294,35 @@ def camera(timeline, t):
 
 
 # ---------------------------------------------------------------- main
+FRENTE = None
+
+
+def configurar(ep):
+    """Aplica canal, elenco y posiciones del guion (lo usan render y miniaturas)."""
+    global LOCUTOR, ELENCO, PROGRAMA, CANAL, SCREEN, FRENTE
+    CANAL = CANALES[ep.get("canal", "noticias")]
+    LOCUTOR = ep.get("locutor", "paco")
+    ELENCO = ep.get("elenco", ["chato", "paco", "lucha"])
+    PROGRAMA = ep.get("programa", ["NOTICIAS", "STICKMAN"])
+    xs = (300, 780) if len(ELENCO) == 2 else (190, 540, 890)
+    for w, x in zip(ELENCO, xs):
+        CAST[w]["x"] = x
+    if CANAL["fondo"] != "noticias":
+        SCREEN = (40, 440, 1000, 450)
+    if CANAL["fondo"] == "cocina":
+        FRENTE = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
+        fc = cairo.Context(FRENTE)
+        bg = build_cocina()
+        fc.set_source_surface(bg, 0, 0)
+        fc.rectangle(0, 1445, W, H - 1445)
+        fc.fill()
+
+
 def main():
     gpath = sys.argv[1]
     ep = json.load(open(gpath, encoding="utf-8"))
     outdir = os.path.dirname(os.path.abspath(gpath))
-    global LOCUTOR, ELENCO, PROGRAMA
-    LOCUTOR = ep.get("locutor", "paco")
-    ELENCO = ep.get("elenco", ["chato", "paco", "lucha"])
-    PROGRAMA = ep.get("programa", ["NOTICIAS", "STICKMAN"])
-    for w, x in zip(ELENCO, (190, 540, 890)):
-        CAST[w]["x"] = x
+    configurar(ep)
     if "--sin-voz" not in sys.argv:
         build_voices(ep, "/tmp")
     timeline, total = build_timeline(ep)

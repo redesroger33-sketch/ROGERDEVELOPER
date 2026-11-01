@@ -25,10 +25,17 @@ for i, (ln, sz) in enumerate(zip(cfg["titulo"], (120, 150))):
     R.text_center(c, ln, 0, i * 150, sz, R.PINK if i else R.NAVY, outline=R.WHITE, ow=22)
 c.restore()
 elenco = cfg.get("elenco", ["chato", "paco", "lucha"])
-for w_, x in zip(elenco, (200, 540, 880)):
+R.CANAL = R.CANALES[cfg.get("canal", "noticias")]
+for w_, x in zip(elenco, (300, 780) if len(elenco) == 2 else (200, 540, 880)):
     R.CAST[w_]["x"] = x
 R.LOCUTOR = cfg.get("locutor", "paco")
-c.save(); c.translate(0, -20)
+dy = -20
+if cfg.get("foto"):
+    # foto real del plato / tema entre el título y los personajes
+    R.rrect(c, 50, 770, 980, 520, 36); R.fill_stroke(c, R.NAVY, R.hx(cfg.get("marco", "E63946")), 12)
+    R.draw_foto(c, cfg["foto"], 62, 782, 956, 496, credito=False, radio=28)
+    dy = 300
+c.save(); c.translate(0, dy)
 heads = {}
 for w_ in elenco:
     c.new_path()

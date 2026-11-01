@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["CAMINA 10 MIN","Y BAJA TU AZÚCAR"],"programa":["STICKMAN","DOCTOR"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"malecon_miraflores_4","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"point","expr":"surprised"}},
+ "fx":["stars:bruno"],"sello":{"texto":"GRATIS","size":80,"x":880,"y":800},"franja":"DESPUÉS DE COMER: ¡A CAMINAR!"}
