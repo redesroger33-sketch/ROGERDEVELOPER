@@ -45,15 +45,19 @@ RED = hx("F2283C")
 YELLOW = hx("FFD23F")
 
 INTRO = 2.0
+LOCUTOR = "paco"
+ELENCO = ["chato", "paco", "lucha"]
+PROGRAMA = ["NOTICIAS", "STICKMAN"]
 VOICE_DIR = os.environ.get("NS_VOCES", "/tmp")
-VOCES = {"paco": "es_MX-ald-medium", "chato": "es_MX-claude-high", "lucha": "es_AR-daniela-high"}
+VOCES = {"maskaly": "es_MX-ald-medium", "paco": "es_MX-ald-medium", "chato": "es_MX-claude-high", "lucha": "es_AR-daniela-high"}
 VOZ_OFFSET = 0.15
 # Tono: semitonos hacia arriba por personaje (voces más alegres y agudas)
-TONO = {"paco": 3.0, "chato": 4.0, "lucha": 3.0}
+TONO = {"maskaly": "mezcla", "paco": 3.0, "chato": 4.0, "lucha": 3.0}
 OUTRO = 4.5
 
 CAST = {
     "chato": {"x": 190, "body": hx("FF7A1A"), "led": hx("2BE07A"), "name": "CHATO", "iris": hx("6B3E1F")},
+    "maskaly": {"x": 540, "body": hx("E8175D"), "led": hx("FF2E63"), "name": "MASKALY", "iris": hx("5B3A29")},
     "paco": {"x": 540, "body": hx("2B6BE0"), "led": hx("FFD23F"), "name": "PACO", "iris": hx("3A6FB0")},
     "lucha": {"x": 890, "body": hx("9B4DFF"), "led": hx("FF4FA3"), "name": "LUCHA", "iris": hx("2E8B57")},
 }
@@ -162,8 +166,8 @@ def build_background():
     # panel logo
     rrect(c, 680, 586, 340, 244, 26)
     fill_stroke(c, WHITE, INK, 7)
-    text_center(c, "NOTICIAS", 850, 670, 50, NAVY)
-    text_center(c, "STICKMAN", 850, 730, 54, TEAL)
+    text_center(c, PROGRAMA[0], 850, 670, 50 if len(PROGRAMA[0]) < 9 else 44, NAVY)
+    text_center(c, PROGRAMA[1], 850, 730, 54, TEAL)
     rrect(c, 735, 758, 230, 44, 22)
     c.set_source_rgba(*NAVY)
     c.fill()
@@ -442,8 +446,8 @@ def draw_face(c, cx, cy, r, who, expr, talking, t):
 
     # boca
     mx, my, mw = cx, cy + 0.47 * r, 0.42 * r
-    c.set_line_width(7)
-    c.set_source_rgba(*INK)
+    c.set_line_width(9 if who == "maskaly" else 7)
+    c.set_source_rgba(*(hx("D3123E") if who == "maskaly" else INK))
     if talking:
         op = (0.06 + 0.14 * abs(math.sin(t * 17)) * (0.6 + 0.4 * math.sin(t * 5.3))) * r
         c.save()
@@ -530,6 +534,41 @@ def draw_hair(c, who, cx, cy, r, t):
         # arete
         c.arc(cx + 0.98 * r, cy + 0.32 * r, 9, 0, 2 * math.pi)
         fill_stroke(c, YELLOW, INK, 3)
+    elif who == "maskaly":
+        c.set_source_rgba(*hx("5D6573"))
+        c.set_line_width(5)
+        c.move_to(cx - 0.45 * r, cy - 0.85 * r)
+        c.line_to(cx - 0.55 * r, cy - 1.45 * r)
+        c.stroke()
+        c.arc(cx - 0.55 * r, cy - 1.45 * r, 13, 0, 2 * math.pi)
+        c.set_source_rgba(*CAST["maskaly"]["led"])
+        c.fill()
+        # flequillo de lado
+        c.move_to(cx - 0.9 * r, cy - 0.45 * r)
+        c.curve_to(cx - 0.7 * r, cy - 1.25 * r, cx + 0.9 * r, cy - 1.2 * r, cx + 1.0 * r, cy - 0.2 * r)
+        c.curve_to(cx + 0.6 * r, cy - 0.75 * r, cx - 0.2 * r, cy - 0.7 * r, cx - 0.9 * r, cy - 0.45 * r)
+        c.close_path()
+        fill_stroke(c, hx("8E1B3A"), INK, 5)
+        # lentes de sol sobre la cabeza
+        for k in (-1, 1):
+            rrect(c, cx + k * 0.32 * r - 0.26 * r, cy - 1.02 * r, 0.52 * r, 0.26 * r, 10)
+            fill_stroke(c, hx("1A1D27"), YELLOW, 4)
+        # pestañas y labios
+        ex, ey, er = cx + 0.42 * r, cy - 0.08 * r, 0.27 * r
+        c.set_source_rgba(*INK)
+        c.set_line_width(4)
+        for k in range(3):
+            a = math.radians(-60 + k * 30)
+            c.move_to(ex + er * math.sin(a), ey - er * math.cos(a))
+            c.line_to(ex + (er + 14) * math.sin(a), ey - (er + 14) * math.cos(a))
+            c.stroke()
+        # aretes grandes
+        c.arc(cx + 1.0 * r, cy + 0.45 * r, 20, 0, 2 * math.pi)
+        c.set_source_rgba(*YELLOW)
+        c.set_line_width(7)
+        c.stroke()
+        c.arc(cx - 1.0 * r, cy + 0.45 * r, 20, 0, 2 * math.pi)
+        c.stroke()
     elif who == "chato":
         # chullo andino
         c.save()
@@ -577,6 +616,21 @@ def draw_hair(c, who, cx, cy, r, t):
         fill_stroke(c, YELLOW, INK, 5)
 
 
+def draw_maskaly_back(c, cx, cy, r, t):
+    # melena voluminosa de diva
+    col = hx("8E1B3A")
+    c.new_path()
+    for (dx, dy, rr) in ((-0.95, -0.55, 0.55), (-1.05, 0.1, 0.5), (-0.95, 0.65, 0.45), (0.95, -0.55, 0.55),
+                         (1.05, 0.1, 0.5), (0.95, 0.65, 0.45), (-0.5, -1.0, 0.55), (0.5, -1.0, 0.55), (0, -1.12, 0.5)):
+        c.new_sub_path()
+        c.arc(cx + dx * r, cy + dy * r + 3 * math.sin(t * 2 + dx), rr * r, 0, 2 * math.pi)
+    c.set_source_rgba(*col)
+    c.fill_preserve()
+    c.set_source_rgba(*INK)
+    c.set_line_width(5)
+    c.stroke()
+
+
 def draw_character(c, who, t, st):
     """st: dict con pose, expr, talking, bounce"""
     cfg = CAST[who]
@@ -614,7 +668,7 @@ def draw_character(c, who, t, st):
             l2 += 18 * math.sin(t * 9 + 1)
     # side: -1 = izquierda de pantalla
     left = arm_points(x, sy, -1, l1 + wig, l2)
-    if who == "paco" and st.get("mic", True):
+    if who == LOCUTOR and st.get("mic", True):
         right = arm_points(x, sy, 1, 32, 128)
     else:
         right = arm_points(x, sy, 1, r1 - wig, r2)
@@ -633,9 +687,14 @@ def draw_character(c, who, t, st):
         c.line_to(x + 30, sy + 10)
         c.close_path()
         fill_stroke(c, RED, INK, 4)
-        if st.get("mic", True):
-            hxp, hyp = right[2]
-            draw_mic(c, hxp - 4, hyp - 6, math.radians(-28))
+    if who == "maskaly":
+        # collar de perlas
+        for k in range(-3, 4):
+            c.arc(x + k * 13, sy - 2 + abs(k) * -3 + 10, 7, 0, 2 * math.pi)
+            fill_stroke(c, WHITE, INK, 2)
+    if who == LOCUTOR and st.get("mic", True):
+        hxp, hyp = right[2]
+        draw_mic(c, hxp - 4, hyp - 6, math.radians(-28))
     if who == "lucha":
         # credencial de prensa
         c.set_source_rgba(*INK)
@@ -651,9 +710,8 @@ def draw_character(c, who, t, st):
         c.move_to(x - tw(c, "PRENSA") / 2, sy + 81)
         c.show_text("PRENSA")
     # cabeza
-    draw_hair_back = who == "lucha"
-    if draw_hair_back:
-        pass
+    if who == "maskaly":
+        draw_maskaly_back(c, x, hy, HEAD_R, t)
     draw_face(c, x, hy, HEAD_R, who, st.get("expr", "neutral"), talking, t)
     draw_hair(c, who, x, hy, HEAD_R, t)
     return hy
@@ -892,7 +950,7 @@ def draw_top(c, ep, t, total):
     c.set_source_rgba(*TEAL)
     c.rectangle(0, 0, W * clamp(t / total), 14)
     c.fill()
-    s = "NOTICIAS STICKMAN · " + ep["fecha"]
+    s = " ".join(PROGRAMA) + " · " + ep["fecha"]
     font(c, 34)
     w = tw(c, s) + 64
     rrect(c, 540 - w / 2, 58, w, 64, 32)
@@ -926,8 +984,8 @@ def draw_intro(c, ep, t):
     c.scale(k, k)
     rrect(c, -330, -70, 660, 140, 36)
     fill_stroke(c, NAVY, TEAL, 8)
-    text_center(c, "NOTICIAS", 0, -6, 60, WHITE)
-    text_center(c, "STICKMAN", 0, 52, 52, TEAL)
+    text_center(c, PROGRAMA[0], 0, -6, 60, WHITE)
+    text_center(c, PROGRAMA[1], 0, 52, 52, TEAL)
     c.restore()
     if t > 0.15:
         k2 = ease_out_back((t - 0.15) / 0.3)
@@ -959,7 +1017,7 @@ def draw_intro(c, ep, t):
             font(c, size)
         text_center(c, line, 0, 36, size, col, outline=WHITE, ow=18)
         c.restore()
-    draw_character(c, "paco", t, {"pose": "rest", "expr": "happy", "talking": t > 0.6, "mic": True, "jump": True})
+    draw_character(c, LOCUTOR, t, {"pose": "rest", "expr": "happy", "talking": t > 0.6, "mic": True, "jump": True})
     confetti(c, t, 0.2, 80, 5)
 
 
@@ -1139,7 +1197,7 @@ def state_for(ep, timeline, t):
         for w_ in states:
             if states[w_]["expr"] in ("happy", "laugh"):
                 states[w_]["jump"] = True
-        if states[sc["quien"]]["pose"] == "rest" and sc["quien"] != "paco":
+        if states[sc["quien"]]["pose"] == "rest" and sc["quien"] != LOCUTOR:
             states[sc["quien"]]["pose"] = "talk"
     return cur, local, states
 
@@ -1160,7 +1218,7 @@ def render_frame(ctx, bg, ep, timeline, total, t):
     in_outro = t >= total - OUTRO
     if in_outro:
         for w in states:
-            states[w] = {"pose": "wave" if w != "paco" else "rest", "expr": "happy", "talking": False, "jump": True}
+            states[w] = {"pose": "wave" if w != LOCUTOR else "rest", "expr": "happy", "talking": False, "jump": True}
     # pantalla: última pantalla declarada hasta ahora
     screen, s_start = ep.get("pantalla_inicial", "logo"), INTRO
     for (a, b, sc) in timeline:
@@ -1168,7 +1226,7 @@ def render_frame(ctx, bg, ep, timeline, total, t):
             screen, s_start = sc["pantalla"], a
     draw_screen(c, screen, t, t - s_start)
     heads = {}
-    for w in ("chato", "paco", "lucha"):
+    for w in ELENCO:
         heads[w] = draw_character(c, w, t, states[w])
     if cur and not in_outro:
         sc = cur[2]
@@ -1180,7 +1238,7 @@ def render_frame(ctx, bg, ep, timeline, total, t):
         draw_bubble(c, sc, local, cur[1] - cur[0])
     if in_outro:
         draw_outro(c, ep, t, t - (total - OUTRO))
-        for w in ("chato", "lucha"):
+        for w in [e for e in ELENCO if e != LOCUTOR]:
             fx_stars(c, CAST[w]["x"], heads[w], t, 0)
         confetti(c, t, total - OUTRO + 1.0, 90, 9)
     if t < INTRO + 0.15:
@@ -1391,7 +1449,18 @@ def tts_line(who, texto, path, length_scale, tono=None):
                     "--length-scale", str(length_scale), "--noise-scale", "0.8", "--noise-w-scale", "0.95", "-f", path],
                    input=texto.encode("utf-8"), check=True, capture_output=True)
     semis = TONO.get(who, 0)
-    if semis:
+    if semis == "mezcla":
+        # voz gruesa y delgada a la vez: capa aguda (+7 st) sobre la voz grave original
+        with wave.open(path) as w:
+            sr0 = w.getframerate()
+        f = 2 ** (7 / 12)
+        mezcla = path.replace(".wav", "_mezcla.wav")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", path, "-filter_complex",
+                        f"[0]asplit[a][b];[a]asetrate={int(sr0 * f)},aresample={sr0},atempo={1 / f:.5f},volume=0.85[hi];"
+                        f"[b]volume=0.5,lowpass=f=1800[lo];[hi][lo]amix=inputs=2:normalize=0,"
+                        "equalizer=f=2500:t=q:w=1:g=2", mezcla], check=True)
+        path = mezcla
+    elif semis:
         with wave.open(path) as w:
             sr0 = w.getframerate()
         f = 2 ** (semis / 12)
@@ -1455,6 +1524,12 @@ def main():
     gpath = sys.argv[1]
     ep = json.load(open(gpath, encoding="utf-8"))
     outdir = os.path.dirname(os.path.abspath(gpath))
+    global LOCUTOR, ELENCO, PROGRAMA
+    LOCUTOR = ep.get("locutor", "paco")
+    ELENCO = ep.get("elenco", ["chato", "paco", "lucha"])
+    PROGRAMA = ep.get("programa", ["NOTICIAS", "STICKMAN"])
+    for w, x in zip(ELENCO, (190, 540, 890)):
+        CAST[w]["x"] = x
     if "--sin-voz" not in sys.argv:
         build_voices(ep, "/tmp")
     timeline, total = build_timeline(ep)

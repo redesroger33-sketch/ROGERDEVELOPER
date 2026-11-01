@@ -12,3 +12,7 @@ Saludo fijo: "¡Buenos días, Stickmatas!". Cierre: botones LIKE, corazón y SÍ
 5. Título, descripción y fuentes en `publicacion.md`.
 
 Voces: Paco y Chato (masculinas), Lucha (femenina), con tono subido (`TONO` en render.py) para sonar más alegres.
+
+## Serie 2: Farándula Stickman
+Locutora **Maskaly** (voz gruesa y delgada a la vez: capa aguda +7 semitonos sobre voz grave). En el guion: `"locutor": "maskaly"`, `"elenco": ["chato","maskaly","lucha"]`, `"programa": ["FARÁNDULA","STICKMAN"]`.
+Reglas: solo hechos publicados por 2+ medios; nada de inventar romances, delitos ni rumores sin fuente; nunca menores de edad.
