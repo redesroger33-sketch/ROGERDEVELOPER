@@ -1,0 +1,83 @@
+{
+  "id": "2026-11-01-feriado-pago-triple",
+  "archivo": "NoticiasStickman_2026-11-01_feriado_pago_triple.mp4",
+  "fecha": "01 NOV 2026",
+  "seccion": "PERÚ · TRABAJO",
+  "titular": ["FERIADO HOY:", "¿COBRAS TRIPLE?"],
+  "pantalla_inicial": "calendario",
+  "cierre_sub": "Mañana, otra noticia calientita",
+  "escenas": [
+    {
+      "quien": "paco", "dur": 3.6,
+      "texto": "¡Buenos días, *Stickmatas!* Hoy *1 de noviembre* es feriado: Todos los Santos.",
+      "expr": {"paco": "happy", "chato": "happy", "lucha": "happy"},
+      "pose": {"chato": "wave", "lucha": "wave"},
+      "pantalla": "calendario"
+    },
+    {
+      "quien": "chato", "dur": 2.4,
+      "texto": "¡Fin de semana *largo*, causa!",
+      "expr": {"chato": "laugh", "lucha": "neutral"},
+      "pose": {"chato": "up"},
+      "fx": ["ja:chato"]
+    },
+    {
+      "quien": "paco", "dur": 3.8,
+      "texto": "Nada de eso. El feriado cayó *domingo*. El *lunes 2* se trabaja normal.",
+      "expr": {"paco": "serious", "chato": "surprised", "lucha": "neutral"},
+      "pantalla": "lunes",
+      "fx": ["plop:chato"],
+      "tarjeta": {"label": "LUNES 2 DE NOVIEMBRE", "valor": "SE TRABAJA", "delay": 1.2}
+    },
+    {
+      "quien": "chato", "dur": 2.4,
+      "texto": "¿Y si hoy me toca *chambear*?",
+      "expr": {"chato": "worried", "lucha": "neutral"},
+      "pose": {"chato": "think"},
+      "fx": ["sweat:chato"]
+    },
+    {
+      "quien": "lucha", "dur": 3.3,
+      "texto": "Tranqui. La ley te cubre: *Decreto Legislativo 713*.",
+      "expr": {"lucha": "happy", "chato": "neutral"},
+      "pantalla": "ley",
+      "tarjeta": {"label": "BASE LEGAL", "valor": "D. LEG. 713", "nota": "Régimen laboral privado", "delay": 0.9}
+    },
+    {
+      "quien": "lucha", "dur": 3.2,
+      "texto": "Si trabajas el feriado y *no te dan otro día* de descanso...",
+      "expr": {"lucha": "serious", "chato": "surprised"},
+      "pose": {"lucha": "point"}
+    },
+    {
+      "quien": "lucha", "dur": 3.6,
+      "texto": "...cobras *triple:* el feriado, el día trabajado y *100% extra*.",
+      "expr": {"lucha": "happy", "chato": "alert"},
+      "pantalla": "x3",
+      "fx": ["alert:chato"],
+      "tarjeta": {"label": "PAGO POR TRABAJAR HOY", "valor": "x3", "delay": 0.8}
+    },
+    {
+      "quien": "chato", "dur": 3.2,
+      "texto": "Si gano *S/ 60* al día... ¡hoy serían *S/ 180!*",
+      "expr": {"chato": "happy", "lucha": "happy"},
+      "pose": {"chato": "up"},
+      "fx": ["money:chato"],
+      "tarjeta": {"label": "EJEMPLO", "valor": "S/ 60 → S/ 180", "nota": "Sueldo diario x3", "delay": 0.9}
+    },
+    {
+      "quien": "lucha", "dur": 3.2,
+      "texto": "Ojo: si hoy no te pagan así, revisa tu *boleta* y tu *contrato*.",
+      "expr": {"lucha": "serious", "chato": "neutral"},
+      "pose": {"lucha": "point"},
+      "pantalla": "contrato"
+    },
+    {
+      "quien": "paco", "dur": 3.0,
+      "texto": "Compártelo con quien chambea hoy. ¡Nos vemos mañana, *Stickmatas!*",
+      "expr": {"paco": "happy", "chato": "happy", "lucha": "happy"},
+      "pose": {"chato": "wave", "lucha": "wave"},
+      "pantalla": "compartir"
+    }
+  ]
+}
