@@ -1,0 +1,279 @@
+{
+ "id": "2026-11-02-menestras-colesterol",
+ "canal": "doctor",
+ "archivo": "StickmanDoctor_2026-11-02_menestras_bajan_colesterol.mp4",
+ "fecha": "02 NOV 2026",
+ "seccion": "ALIMENTO NATURAL",
+ "titular": [
+  "LAS MENESTRAS BAJAN",
+  "TU COLESTEROL"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "STICKMAN",
+  "DOCTOR"
+ ],
+ "pantalla_inicial": "foto:menestras_mix|MENESTRAS: MEDICINA DE MERCADO",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, un alimento de mercado que cuida tu *corazón*: ¡las *menestras!*",
+   "voz": "¡Hola, familia sana! Hoy, un alimento de mercado que cuida tu corazón: ¡las menestras!",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "pantalla": "foto:menestras_mix|MENESTRAS: MEDICINA DE MERCADO"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Las *lentejas del lunes*? ¿Esas que mi mamá me obligaba a comer?",
+   "voz": "¿Las lentejas del lunes? ¿Esas que mi mamá me obligaba a comer?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:sopa_lentejas|LAS LENTEJAS DEL LUNES"
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Esas mismas! Tu mamá tenía *razón*, y la ciencia lo confirma.",
+   "voz": "¡Esas mismas! Tu mamá tenía razón, y la ciencia lo confirma.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ]
+  },
+  {
+   "quien": "vita",
+   "texto": "Hablamos de *lentejas*, *frejoles*, *pallares* y *garbanzos*.",
+   "voz": "Hablamos de lentejas, frejoles, pallares y garbanzos.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "fotos:lentejas_rojas,frejoles_secos,pallares,garbanzos|LENTEJAS|FREJOLES|PALLARES|GARBANZOS"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Una revisión en la revista *CMAJ* juntó *26 ensayos* con más de *mil personas*.",
+   "voz": "Una revisión en la revista CMAJ juntó veintiséis ensayos con más de mil personas.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "neutral"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "CMAJ · 2014 · METAANÁLISIS",
+    "valor": "26 ENSAYOS",
+    "nota": "1 037 personas",
+    "delay": 0.9
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Comer *una porción al día*, unos *130 gramos* de menestra cocida, bajó el *colesterol malo*, el LDL.",
+   "voz": "Comer una porción al día, unos ciento treinta gramos de menestra cocida, bajó el colesterol malo, el LDL.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:analisis_sangre|COLESTEROL LDL",
+   "tarjeta": {
+    "label": "1 PORCIÓN AL DÍA",
+    "valor": "BAJA EL LDL",
+    "nota": "Unos 6 a 7 mg/dL menos en promedio",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cómo hace una *lenteja* para bajar el colesterol? ¿Le *pega*?",
+   "voz": "¿Y cómo hace una lenteja para bajar el colesterol? ¿Le pega?",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.7
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Casi! Su *fibra soluble* atrapa parte del colesterol en el intestino y ayuda a *botarlo*.",
+   "voz": "¡Casi! Su fibra soluble atrapa parte del colesterol en el intestino y ayuda a botarlo.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:lentejas_rojas|FIBRA SOLUBLE"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y la *fibra* tiene más premios: en *The Lancet* revisaron *185 estudios* y *58 ensayos*.",
+   "voz": "Y la fibra tiene más premios: en The Lancet revisaron ciento ochenta y cinco estudios y cincuenta y ocho ensayos.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "THE LANCET · 2019",
+    "valor": "185 ESTUDIOS + 58 ENSAYOS",
+    "delay": 1.0
+   },
+   "pantalla": "foto:frejoles_secos|LA FIBRA PROTEGE"
+  },
+  {
+   "quien": "vita",
+   "texto": "Quienes comían *más fibra* tenían *15 a 30 %* menos infartos, derrames, diabetes tipo 2 y cáncer de colon.",
+   "voz": "Quienes comían más fibra tenían quince a treinta por ciento menos infartos, derrames, diabetes tipo dos y cáncer de colon.",
+   "expr": {
+    "vita": "alert",
+    "bruno": "surprised"
+   },
+   "fx": [
+    "alert:bruno"
+   ],
+   "tarjeta": {
+    "label": "MÁS FIBRA = MENOS RIESGO",
+    "valor": "−15 A −30 %",
+    "nota": "Estudios observacionales: asociación, no garantía",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "La meta: *25 a 29 gramos* de fibra al día. Una taza de *lentejas cocidas* ya te da más de *la mitad*.",
+   "voz": "La meta: veinticinco a veintinueve gramos de fibra al día. Una taza de lentejas cocidas ya te da más de la mitad.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "tarjeta": {
+    "label": "META DIARIA DE FIBRA",
+    "valor": "25 A 29 g",
+    "nota": "1 taza de lentejas cocidas: unos 15 g",
+    "delay": 1.2
+   },
+   "pantalla": "foto:sopa_lentejas|1 TAZA = MEDIA META DE FIBRA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y los *gases*, doctor? Porque en la oficina me miran feo…",
+   "voz": "¿Y los gases, doctor? Porque en la oficina me miran feo...",
+   "expr": {
+    "vita": "worried",
+    "bruno": "laugh"
+   },
+   "fx": [
+    "sweat:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Remójalas la noche anterior, *bota esa agua* y empieza con porciones pequeñas. Tu barriga se *acostumbra*.",
+   "voz": "Remójalas la noche anterior, bota esa agua y empieza con porciones pequeñas. Tu barriga se acostumbra.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "laugh"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:pallares|REMOJA Y BOTA EL AGUA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu *receta natural*:",
+   "voz": "Una porción de menestras al día: como plato, en sopa o en ensalada. Remójalas y acompáñalas con verduras.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:TU RECETA NATURAL|1 porción de menestra al día|Remoja y bota el agua|Empieza con poco por los gases|Acompaña con verduras"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y el *tacu tacu* del día siguiente también cuenta… ¡con *poquito aceite*!",
+   "voz": "Y el tacu tacu del día siguiente también cuenta... ¡con poquito aceite!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "pantalla": "foto:tacu_tacu|TACU TACU CON POCO ACEITE"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Si ya tomas medicinas para el colesterol, esto *suma*, pero *no reemplaza* a tu médico. No las dejes por tu cuenta.",
+   "voz": "Si ya tomas medicinas para el colesterol, esto suma, pero no reemplaza a tu médico. No las dejes por tu cuenta.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Compártelo con quien *deja las lentejas* en el plato. ¡Hasta mañana, *familia sana!*",
+   "voz": "Compártelo con quien deja las lentejas en el plato. ¡Hasta mañana, familia sana!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:vita"
+   ],
+   "pantalla": "foto:menestras_mix|¡A COMER MENESTRAS!"
+  }
+ ]
+}
