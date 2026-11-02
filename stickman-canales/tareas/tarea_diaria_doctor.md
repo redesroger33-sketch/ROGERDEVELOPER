@@ -11,7 +11,7 @@ Tarea diaria: STICKMAN DOCTOR para Roger Guevara ("Roy"). Escribe y notifica sie
 - PROHIBIDO: decir que se dejen o cambien medicamentos, prometer curas, dosis peligrosas, temas para menores o embarazadas sin advertencia. Siempre una escena con "esto suma, pero no reemplaza a tu médico" y, si hay plantas, avisar de interacciones (p. ej. anticoagulantes) cuando aplique.
 
 3) GUION: stickman-canales/doctor/episodios/AAAA-MM-DD-tema/guion.json (copia el del 2026-11-02 como plantilla)
-- "canal":"doctor", "locutor":"bruno", "elenco":["bruno","vita"], "programa":["STICKMAN","DOCTOR"], "duracion_max":104 (dura 1:45).
+- "canal":"doctor", "locutor":"bruno", "elenco":["bruno","vita"], "programa":["DOCTOR","STICKMAN"], "duracion_max":104 (dura 1:45).
 - Dr. Bruno (voz gruesa) explica; Dra. Vita (voz delgada) pregunta, da datos y hace 1 chiste con "zoom", "sonido":["rimshot"]. Saludo "¡Hola, familia sana!".
 - 18 a 21 escenas, unas 260-280 palabras en total en los campos "voz" (números escritos en palabras). Tarjetas con las cifras, una "lista:" con la receta natural y fotos reales en casi todas las escenas.
 - FOTOS REALES: usa stickman-canales/fotos/ (claves en fotos/creditos.json). Si faltan fotos del tema, tráelas con herramientas/fotos_commons.py en el workbench → Drive redesoscio carpeta "Stickman Doctor y Cocina - Fotos" (id 1NOJVTNxGPVWHDXDQRaams38g-uOll4Tq, cuenta googledrive_pricky-prop) → baja cada zip con Google_Drive download_file_content → bash stickman-canales/herramientas/importar_fotos.sh <archivo>. Revisa una hoja de contacto: cada foto debe coincidir con su etiqueta.
