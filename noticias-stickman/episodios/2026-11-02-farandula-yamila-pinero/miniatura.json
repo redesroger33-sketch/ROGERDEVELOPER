@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA PERÚ","titulo":["¡YAMILA PIÑERO","SERÁ MAMÁ!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"laugh"}},
+ "fx":["alert:chato","stars:lucha"],"sello":{"texto":"35","size":130},"franja":"PRIMER BEBÉ · LLEGA EN 2027"}

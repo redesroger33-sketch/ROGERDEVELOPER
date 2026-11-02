@@ -1,0 +1,3 @@
+{"banda":"PERÚ · VISITA PAPAL","titulo":["¡LLEGARON LOS","PAPAMÓVILES!"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"paco":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["alert:chato"],"sello":{"texto":"x2","size":130},"franja":"LEÓN XIV · 11 AL 16 NOV"}
