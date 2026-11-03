@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA MUNDIAL","titulo":["¡TAEMIN","LLEGA A LIMA!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"laugh"}},
+ "fx":["alert:chato","stars:lucha"],"sello":{"texto":"K-POP","size":90},"franja":"VIERNES 6 · ARENA MONUMENTAL"}

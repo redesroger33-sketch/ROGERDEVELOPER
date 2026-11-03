@@ -1,0 +1,159 @@
+{
+  "id": "2026-11-03-paro-transportistas",
+  "archivo": "NoticiasStickman_2026-11-03_paro_transportistas_carga.mp4",
+  "fecha": "03 NOV 2026",
+  "seccion": "PERÚ · ECONOMÍA",
+  "titular": [
+    "¿PARO DE",
+    "TRANSPORTISTAS?"
+  ],
+  "pantalla_inicial": "camion",
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "paco": 0.88,
+    "chato": 0.95,
+    "lucha": 1.0
+  },
+  "escenas": [
+    {
+      "quien": "paco",
+      "texto": "¡Buenos días, *Stickmatas!* Los transportistas de *carga pesada* anuncian un *paro nacional*.",
+      "voz": "¡Buenos días, Stickmatas! Los transportistas de carga pesada anuncian un paro nacional.",
+      "expr": {
+        "paco": "serious",
+        "chato": "surprised",
+        "lucha": "neutral"
+      },
+      "pantalla": "camion",
+      "temblor": true
+    },
+    {
+      "quien": "lucha",
+      "texto": "Sería de *72 horas*: el *16, 17 y 18 de noviembre*, en Lima y regiones.",
+      "voz": "Sería de setenta y dos horas: el dieciséis, diecisiete y dieciocho de noviembre, en Lima y regiones.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "alert"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "pantalla": "fecha:16:LUNES:PARO",
+      "tarjeta": {
+        "label": "PARO ANUNCIADO",
+        "valor": "16 AL 18 NOV",
+        "nota": "72 horas · Lima y regiones",
+        "delay": 0.8
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¿Tres días sin camiones? ¡Mi pollo a la brasa llega en *bicicleta*, causa!",
+      "voz": "¿Tres días sin camiones? ¡Mi pollo a la brasa llega en bicicleta, causa!",
+      "expr": {
+        "chato": "laugh",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      },
+      "fx": [
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "lucha",
+      "texto": "¿El motivo? El *alza del diésel*. Dicen que el *subsidio* del Gobierno no alcanza.",
+      "voz": "¿El motivo? El alza del diésel. Dicen que el subsidio del Gobierno no alcanza.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "worried"
+      },
+      "pantalla": "texto:DIÉSEL ↑|ALZA DE PRECIO",
+      "tarjeta": {
+        "label": "MOTIVO DEL PARO",
+        "valor": "ALZA DEL DIÉSEL",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "paco",
+      "texto": "Según sus proyecciones, se sumarían unos *20 mil transportistas*.",
+      "voz": "Según sus proyecciones, se sumarían unos veinte mil transportistas.",
+      "expr": {
+        "paco": "serious",
+        "chato": "surprised",
+        "lucha": "neutral"
+      },
+      "pantalla": "texto:20,000|TRANSPORTISTAS",
+      "tarjeta": {
+        "label": "PARTICIPACIÓN ESTIMADA",
+        "valor": "20,000",
+        "nota": "Proyección de los gremios",
+        "delay": 0.5
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "Ojo: *todavía no es definitivo*. Piden una *mesa de diálogo* con el Gobierno.",
+      "voz": "Ojo: todavía no es definitivo. Piden una mesa de diálogo con el Gobierno.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "neutral"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "pantalla": "contrato"
+    },
+    {
+      "quien": "chato",
+      "texto": "Entonces voy comprando mi *arroz* desde ahorita… ¡por si acaso!",
+      "voz": "Entonces voy comprando mi arroz desde ahorita... ¡por si acaso!",
+      "expr": {
+        "chato": "worried",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "shrug"
+      },
+      "fx": [
+        "sweat:chato",
+        "ja:paco"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "paco",
+      "texto": "Calma, Chato: te contamos *si se confirma*. ¡Nos vemos mañana, *Stickmatas*!",
+      "voz": "Calma, Chato: te contamos si se confirma. ¡Nos vemos mañana, Stickmatas!",
+      "expr": {
+        "paco": "happy",
+        "chato": "happy",
+        "lucha": "happy"
+      },
+      "pantalla": "compartir",
+      "pose": {
+        "chato": "up",
+        "lucha": "wave"
+      },
+      "fx": [
+        "confeti:paco"
+      ]
+    }
+  ]
+}
