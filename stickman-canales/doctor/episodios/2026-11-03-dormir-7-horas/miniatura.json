@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["DORMIR 7 HORAS","TU MEDICINA GRATIS"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"dormitorio","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"worried"}},
+ "fx":["sweat:vita"],"sello":{"texto":"7 H","size":100,"x":880,"y":800},"franja":"EL CAFÉ DE LAS 5 TE ROBA SUEÑO"}
