@@ -11,7 +11,7 @@ Saludo fijo: "¡Buenos días, Stickmatas!". Cierre: botones LIKE, corazón y SÍ
 4. Miniatura: adaptar `motor/miniatura.py`.
 5. Título, descripción y fuentes en `publicacion.md`.
 
-Voces: Paco y Chato (masculinas), Lucha (femenina), con tono subido (`TONO` en render.py) para sonar más alegres.
+Voces: motor natural Kokoro (neuronal) por defecto: Paco em_alex, Chato em_santa+em_alex, Lucha ef_dora, Maskaly ef_dora+if_sara. Sin pitch-shift (eso era lo robótico). Respaldo: `NS_MOTOR_VOZ=piper`.
 
 ## Serie 2: Farándula Stickman
 Locutora **Maskaly** (voz gruesa y delgada a la vez: capa aguda +7 semitonos sobre voz grave). En el guion: `"locutor": "maskaly"`, `"elenco": ["chato","maskaly","lucha"]`, `"programa": ["FARÁNDULA","STICKMAN"]`.

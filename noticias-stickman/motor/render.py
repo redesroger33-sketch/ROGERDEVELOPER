@@ -477,6 +477,50 @@ def draw_screen(c, kind, t, local):
             c.set_line_width(22)
             c.set_line_cap(cairo.LINE_CAP_ROUND)
             c.stroke()
+    elif kind == "ola":
+        # ola de surf con tabla que la corre
+        c.set_source_rgba(*hx("2BB3E0"))
+        c.move_to(x0, y0 + h)
+        for i in range(0, w + 1, 10):
+            xx = x0 + i
+            yy = cy + 60 + 26 * math.sin(i / 55 + t * 2.4)
+            c.line_to(xx, yy)
+        c.line_to(x0 + w, y0 + h); c.close_path(); c.fill()
+        c.save(); c.translate(cx + 120, cy + 40)
+        c.move_to(-170, 80); c.curve_to(-180, -120, 40, -170, 120, -40)
+        c.curve_to(60, -90, -40, -60, -60, 40); c.close_path()
+        c.set_source_rgba(*hx("1A8FC0")); c.fill_preserve()
+        c.set_source_rgba(*WHITE); c.set_line_width(8); c.stroke()
+        c.restore()
+        bx = cx - 60 + 40 * math.sin(t * 1.8)
+        by = cy + 30 + 14 * math.sin(t * 2.4 + 1)
+        c.save(); c.translate(bx, by); c.rotate(-0.25 + 0.08 * math.sin(t * 3))
+        c.save(); c.scale(1, 0.22); c.arc(0, 0, 95, 0, 2 * math.pi); c.restore()
+        fill_stroke(c, YELLOW, INK, 5)
+        c.restore()
+        for i in range(6):
+            a_ = t * 2 + i
+            c.arc(bx - 90 - 12 * i, by + 8 * math.sin(a_), 6 + i % 3, 0, 2 * math.pi)
+            c.set_source_rgba(1, 1, 1, 0.8); c.fill()
+        etiqueta = "PUNTA ROCAS"
+        text_center(c, etiqueta, cx, y0 + 80, 58, YELLOW, outline=INK, ow=8)
+    elif kind.startswith("corona"):
+        c.save(); c.translate(cx, cy + 20 + 8 * math.sin(t * 2))
+        c.move_to(-170, 90); c.line_to(-170, -40); c.line_to(-90, 20); c.line_to(0, -90)
+        c.line_to(90, 20); c.line_to(170, -40); c.line_to(170, 90); c.close_path()
+        fill_stroke(c, YELLOW, INK, 7)
+        for xx, yy, col in ((-170, -40, PINK), (0, -90, TEAL), (170, -40, PINK)):
+            c.arc(xx, yy, 20, 0, 2 * math.pi); fill_stroke(c, col, INK, 5)
+        for xx in (-90, 0, 90):
+            c.arc(xx, 55, 16, 0, 2 * math.pi); fill_stroke(c, hx("E8175D"), INK, 4)
+        c.restore()
+        for i in range(8):
+            a_ = t * 1.5 + i * 0.8
+            sx, sy = cx + 230 * math.cos(a_), cy + 20 + 140 * math.sin(a_)
+            c.arc(sx, sy, 5 + 4 * abs(math.sin(t * 4 + i)), 0, 2 * math.pi)
+            c.set_source_rgba(*WHITE); c.fill()
+        etiqueta = kind.split(":", 1)[1] if ":" in kind else "MISS GRAND"
+        text_center(c, etiqueta, cx, y0 + 70, 58, YELLOW, outline=INK, ow=8)
     elif kind == "x3":
         for i in range(5):
             yy = cy + 110 - i * 40
@@ -1679,7 +1723,50 @@ def synth_audio(ep, timeline, total, path):
 
 
 # ---------------------------------------------------------------- voces
+# Voces naturales (Kokoro, neuronal). Sin cambio de tono: el pitch-shift era lo que sonaba robótico.
+# Mezclas de estilo para que cada personaje tenga timbre propio. NS_MOTOR_VOZ=piper vuelve al motor antiguo.
+MOTOR_VOZ = os.environ.get("NS_MOTOR_VOZ", "natural")
+KOKORO_DIR = os.environ.get("NS_KOKORO", "/tmp/kok")
+VOCES_NAT = {
+    "paco": ([("em_alex", 1.0)], 1.08),
+    "chato": ([("em_santa", 0.8), ("em_alex", 0.2)], 1.12),
+    "lucha": ([("ef_dora", 1.0)], 1.05),
+    "maskaly": ([("ef_dora", 0.6), ("if_sara", 0.4)], 1.10),
+}
+_KOK = None
+
+
+def tts_natural(who, texto, path, length_scale):
+    global _KOK
+    import soundfile as sf
+    from kokoro_onnx import Kokoro
+    if _KOK is None:
+        _KOK = Kokoro(f"{KOKORO_DIR}/kokoro-v1.0.onnx", f"{KOKORO_DIR}/voices-v1.0.bin")
+    mezcla, vel = VOCES_NAT.get(who, ([("em_alex", 1.0)], 1.05))
+    estilo = sum(_KOK.get_voice_style(v) * w for v, w in mezcla)
+    a, sr = _KOK.create(texto, voice=estilo, speed=min(1.5, vel / length_scale), lang="es")
+    sf.write(path, a, sr)
+    # brillo suave y nivel, sin tocar el tono
+    out = path.replace(".wav", "_eq.wav")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", path, "-af",
+                    "highpass=f=70,equalizer=f=3200:t=q:w=1:g=2,acompressor=threshold=-18dB:ratio=2.5,volume=1.15",
+                    "-ar", str(sr), "-ac", "1", "-c:a", "pcm_s16le", out], check=True)
+    return out
+
+
 def tts_line(who, texto, path, length_scale, tono=None):
+    if MOTOR_VOZ == "natural":
+        path = tts_natural(who, texto, path, length_scale)
+        with wave.open(path) as w:
+            x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32767
+            sr = w.getframerate()
+        idx = np.where(np.abs(x) > 0.02)[0]
+        if len(idx):
+            x = x[max(0, idx[0] - int(0.02 * sr)): idx[-1] + int(0.08 * sr)]
+        if sr != SR:
+            tt = np.arange(int(len(x) * SR / sr)) / SR
+            x = np.interp(tt, np.arange(len(x)) / sr, x)
+        return x
     name = VOCES[who]
     d = os.path.join(VOICE_DIR, "vits-piper-" + name)
     subprocess.run(["python3", "-m", "piper", "-m", f"{d}/{name}.onnx", "-c", f"{d}/{name}.onnx.json",
