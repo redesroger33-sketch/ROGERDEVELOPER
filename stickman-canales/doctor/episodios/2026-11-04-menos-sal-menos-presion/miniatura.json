@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["MENOS SAL,","MENOS PRESIÓN"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"salero","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["alert:vita"],"sello":{"texto":"< 5 g","size":90,"x":880,"y":800},"franja":"LA SAL ESCONDIDA EN TU MESA"}
