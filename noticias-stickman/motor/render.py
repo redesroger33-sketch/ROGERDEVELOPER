@@ -260,7 +260,28 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
-    elif kind == "escenario":
+    elif kind == "atomo":
+        c.save()
+        c.translate(cx, cy)
+        for i in range(3):
+            c.save()
+            c.rotate(t * 0.6 + i * math.pi / 3)
+            c.scale(1, 0.38)
+            c.arc(0, 0, 160, 0, 2 * math.pi)
+            c.restore()
+            c.set_source_rgba(*TEAL)
+            c.set_line_width(7)
+            c.stroke()
+            a_ = t * 3 + i * 2.1
+            ex, ey = 160 * math.cos(a_), 160 * 0.38 * math.sin(a_)
+            r_ = t * 0.6 + i * math.pi / 3
+            c.arc(ex * math.cos(r_) - ey * math.sin(r_), ex * math.sin(r_) + ey * math.cos(r_), 14, 0, 2 * math.pi)
+            c.set_source_rgba(*YELLOW)
+            c.fill()
+        c.arc(0, 0, 36, 0, 2 * math.pi)
+        fill_stroke(c, PINK, WHITE, 5)
+        c.restore()
+    elif kind.startswith("escenario"):
         for i, col in enumerate((PINK, TEAL, YELLOW, hx("9B4DFF"))):
             a_ = -0.6 + i * 0.4 + 0.25 * math.sin(t * 2 + i)
             c.save()
@@ -282,7 +303,8 @@ def draw_screen(c, kind, t, local):
         c.stroke()
         c.arc(cx, cy - 30, 26, 0, 2 * math.pi)
         fill_stroke(c, hx("C9CED6"), INK, 5)
-        text_center(c, "K-POP", cx, cy - 90, 70, YELLOW, outline=INK, ow=8)
+        etiqueta = kind.split(":", 1)[1] if ":" in kind else "K-POP"
+        text_center(c, etiqueta, cx, cy - 90, 70 if len(etiqueta) < 8 else 54, YELLOW, outline=INK, ow=8)
     elif kind == "papamovil":
         dx = 20 * math.sin(t * 1.5)
         c.save()

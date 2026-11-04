@@ -1,0 +1,3 @@
+{"banda":"PERÚ · CIENCIA Y ENERGÍA","titulo":["¿PERÚ CON","ENERGÍA NUCLEAR?"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"paco":{"pose":"rest","expr":"happy"},"lucha":{"pose":"hip","expr":"serious"}},
+ "fx":["alert:chato"],"sello":{"texto":"2040","size":100},"franja":"ACUERDO PERÚ – EE.UU."}
