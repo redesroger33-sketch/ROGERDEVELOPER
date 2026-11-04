@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"TIPS DE UN CHEF PERUANO","titulo":["HUANCAÍNA","¡NO AGUADA!"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"huancaina","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"3 TIPS","size":76,"x":880,"y":800},"franja":"EL SECRETO: OJO CON LA LECHE"}
