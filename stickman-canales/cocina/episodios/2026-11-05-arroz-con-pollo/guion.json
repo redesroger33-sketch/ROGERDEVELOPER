@@ -1,0 +1,307 @@
+{
+ "id": "2026-11-05-arroz-con-pollo",
+ "canal": "cocina",
+ "archivo": "CocinaStickman_2026-11-05_arroz_con_pollo.mp4",
+ "fecha": "05 NOV 2026",
+ "seccion": "CLÁSICO PERUANO",
+ "titular": [
+  "ARROZ CON POLLO",
+  "¡VERDE DE VERDAD!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:arroz_con_pollo|ARROZ CON POLLO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el almuerzo de domingo de todo el Perú: ¡el *arroz con pollo!*",
+   "voz": "¡Hola, cocineros! Hoy, el almuerzo de domingo de todo el Perú: ¡el arroz con pollo!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:arroz_con_pollo|ARROZ CON POLLO"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, el mío sale tan *pálido* que parece *arroz con susto*.",
+   "voz": "Chef, el mío sale tan pálido que parece arroz con susto.",
+   "expr": {
+    "beto": "worried",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "tito",
+   "texto": "Hoy lo hacemos con los *secretos de un chef peruano*, publicados en un diario limeño.",
+   "voz": "Hoy lo hacemos con los secretos del chef Rodrigo Fernandini, publicados en El Comercio.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "pantalla": "foto:culantro_1|SECRETOS DE UN CHEF PERUANO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "La receta es para *seis*: *1 pollo entero* en presas, *1 kilo de arroz* y *150 gramos de pasta de ají amarillo*.",
+   "voz": "La receta es para seis: un pollo entero en presas, un kilo de arroz y ciento cincuenta gramos de pasta de ají amarillo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:pechuga,arroz_blanco_3,aji_amarillo_0|1 POLLO EN PRESAS|1 KG DE ARROZ|PASTA DE AJÍ"
+  },
+  {
+   "quien": "rosita",
+   "texto": "El verde: *500 gramos de culantro* y *200 de espinaca*, licuados con *100 ml de caldo*.",
+   "voz": "El verde: quinientos gramos de culantro y doscientos de espinaca, licuados con cien mililitros de caldo.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:culantro_1|500 g CULANTRO + 200 g ESPINACA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Más *cebolla*, *ajo*, *ají amarillo picado*, *200 ml de cerveza*, y *zanahoria*, *pimiento*, *arvejas* y *choclo*.",
+   "voz": "Más cebolla, ajo, ají amarillo picado, doscientos mililitros de cerveza negra o rubia, y zanahoria, pimiento, arvejas y choclo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:zanahoria,pimiento_zanahoria,arvejas,choclo|ZANAHORIA|PIMIENTO|ARVEJAS|CHOCLO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Primer secreto: licúa el culantro y la espinaca *justo antes* del aderezo. Así tienes el *máximo color* y aroma.",
+   "voz": "Primer secreto: licúa el culantro y la espinaca justo antes de hacer el aderezo. Así tienes el máximo color, sabor y aroma.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "SECRETO 1",
+    "valor": "LICÚA AL ÚLTIMO",
+    "nota": "Máximo color y aroma",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Yo lo licuaba *el sábado* para ganar tiempo!",
+   "voz": "¡Yo lo licuaba el sábado para ganar tiempo!",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "fx": [
+    "ja:rosita"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: sazona las presas con sal, pimienta y comino, y séllalas en aceite.",
+   "voz": "Paso uno: sazona las presas con sal, pimienta y comino, y séllalas en aceite.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:pechuga|PASO 1: SELLAR LAS PRESAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Segundo secreto: dóralas *hasta que la piel esté crocante*. Esa grasa y ese sabor van a la base.",
+   "voz": "Segundo secreto: dóralas hasta que la piel esté crocante. Esa grasa y ese sabor van a la base.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "fx": [
+    "stars:tito"
+   ],
+   "tarjeta": {
+    "label": "SECRETO 2",
+    "valor": "PIEL CROCANTE",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: en la misma olla, sofríe la *cebolla*, el *ajo* y el *ají picado*.",
+   "voz": "Paso dos: en la misma olla, sofríe la cebolla, el ajo y el ají amarillo picado.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:cebolla_roja_0,ajo_0,aji_amarillo_2|CEBOLLA|AJO|AJÍ"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: la *pasta de ají*, el *licuado verde*, la *cerveza* y el caldo.",
+   "voz": "Paso tres: la pasta de ají, el licuado verde, la cerveza y el caldo.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:culantro_1|PASO 3: EL VERDE"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: regresan las presas, el *arroz*, la *zanahoria*, el *pimiento* y las *arvejas*. Sal y pimienta.",
+   "voz": "Paso cuatro: regresan las presas, el arroz, la zanahoria, el pimiento y las arvejas. Sal y pimienta.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:zanahoria,arvejas|ZANAHORIA|ARVEJAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Tapa y cocina a *fuego lento* unos *20 minutos*.",
+   "voz": "Tapa y cocina a fuego lento unos veinte minutos.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "tarjeta": {
+    "label": "COCCIÓN",
+    "valor": "20 MIN, FUEGO LENTO",
+    "nota": "Olla tapada",
+    "delay": 0.8
+   },
+   "pantalla": "foto:arroz_blanco_3|PASO 5: FUEGO LENTO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y si me queda *seco*, chef?",
+   "voz": "¿Y si me queda seco, chef?",
+   "expr": {
+    "rosita": "worried",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Tercer secreto: un poco de *agua tibia*, cúbrelo con una *bolsa transparente*, tapa, y *cinco minutos más* a fuego bajo.",
+   "voz": "Tercer secreto: un poco de agua tibia, cúbrelo con una bolsa transparente, tapa, y cinco minutos más a fuego bajo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "SECRETO 3",
+    "valor": "AGUA TIBIA + 5 MIN",
+    "delay": 1.6
+   },
+   "pantalla": "foto:arroz_con_pollo|SI QUEDA SECO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y ojo con las verduras: que no te salgan *verduras con arroz* en vez de *arroz con verduras*.",
+   "voz": "Y ojo con las verduras: que no te salgan verduras con arroz en vez de arroz con verduras.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "laugh"
+   },
+   "fx": [
+    "ja:beto"
+   ],
+   "pantalla": "foto:pimiento_zanahoria|OJO CON LAS VERDURAS"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, ahora sí está *verdecito*! Mi arroz ya no tiene *susto*.",
+   "voz": "¡Chef, ahora sí está verdecito! Mi arroz ya no tiene susto.",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6,
+   "pantalla": "foto:arroz_con_pollo|¡A LA MESA!"
+  },
+  {
+   "quien": "tito",
+   "texto": "Sírvelo con *salsa criolla*. Dale *like*, suscríbete y dime qué cocinamos mañana. ¡Buen provecho!",
+   "voz": "Sírvelo con salsa criolla. Dale like, suscríbete y dime qué cocinamos mañana. ¡Buen provecho, cocineros!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:cebolla_roja_0|CON SALSA CRIOLLA"
+  }
+ ]
+}
