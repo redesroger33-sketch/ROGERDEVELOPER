@@ -1,0 +1,249 @@
+{
+ "id": "2026-11-05-fuerza-muscular",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-05_fuerza_muscular.mp4",
+ "fecha": "05 NOV 2026",
+ "seccion": "HÁBITO NATURAL",
+ "titular": [
+  "30 MINUTOS DE FUERZA",
+  "A LA SEMANA"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:escaleras_barranco|TU MÚSCULO ES MEDICINA",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, una medicina que llevas puesta todo el día: ¡tus *músculos!*",
+   "voz": "¡Hola, familia sana! Hoy, una medicina que llevas puesta todo el día: ¡tus músculos!",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "pantalla": "foto:escaleras_barranco|TU MÚSCULO ES MEDICINA"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, yo *ya camino*. ¿Para qué hacer fuerza? ¿Para ser *fisicoculturista*?",
+   "voz": "Doctor, yo ya camino. ¿Para qué hacer fuerza? ¿Para ser fisicoculturista?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Nada de eso! Caminar es genial, pero la *fuerza* protege otras cosas. Y no necesitas *gimnasio*.",
+   "voz": "¡Nada de eso! Caminar es genial, pero la fuerza protege otras cosas. Y no necesitas gimnasio.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "pantalla": "foto:banda_elastica|SIN GIMNASIO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Una revisión en el *British Journal of Sports Medicine* juntó *16 estudios* que siguieron a miles de personas por años.",
+   "voz": "Una revisión en el British Journal of Sports Medicine juntó dieciséis estudios que siguieron a miles de personas por años.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "neutral"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "BR J SPORTS MED · 2022",
+    "valor": "16 ESTUDIOS",
+    "nota": "Metaanálisis de estudios de cohorte",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Quienes hacían ejercicios de *fuerza* tenían entre *10 y 17 %* menos riesgo de morir y de enfermedad del corazón, cáncer y diabetes.",
+   "voz": "Quienes hacían ejercicios de fuerza tenían entre diez y diecisiete por ciento menos riesgo de morir, y de enfermedad del corazón, cáncer y diabetes.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "alert"
+   },
+   "fx": [
+    "alert:vita"
+   ],
+   "tarjeta": {
+    "label": "EJERCICIOS DE FUERZA",
+    "valor": "−10 A −17 % RIESGO",
+    "nota": "Asociación en estudios observacionales",
+    "delay": 1.6
+   },
+   "pantalla": "foto:flexiones|MENOS RIESGO"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cuánto hay que hacer? ¿*Tres horas* diarias?",
+   "voz": "¿Y cuánto hay que hacer? ¿Tres horas diarias?",
+   "expr": {
+    "vita": "worried",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "fx": [
+    "sweat:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡No! El mayor beneficio apareció con unos *30 a 60 minutos* de fuerza… ¡*a la semana*!",
+   "voz": "¡No! El mayor beneficio apareció con unos treinta a sesenta minutos de fuerza... ¡a la semana!",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "tarjeta": {
+    "label": "LA DOSIS QUE MÁS RINDE",
+    "valor": "30-60 MIN / SEMANA",
+    "delay": 1.0
+   },
+   "pantalla": "foto:sentadilla|LA DOSIS JUSTA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿*A la semana*? ¡Eso es menos que lo que paso *eligiendo serie* en la tele!",
+   "voz": "¿A la semana? ¡Eso es menos que lo que paso eligiendo serie en la tele!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y si lo combinas con *caminar*, el beneficio es *todavía mayor*.",
+   "voz": "Y si lo combinas con caminar, el beneficio es todavía mayor.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:parque_kennedy_3|FUERZA + CAMINAR"
+  },
+  {
+   "quien": "vita",
+   "texto": "La *OMS* también lo pide: ejercicios de fuerza *dos o más días* por semana.",
+   "voz": "La OMS también lo pide: ejercicios de fuerza dos o más días por semana.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "RECOMENDACIÓN DE LA OMS",
+    "valor": "2 DÍAS / SEMANA",
+    "nota": "Principales grupos musculares",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "En casa, sin pesas:",
+   "voz": "En casa, sin pesas: sentadillas, levantándote de una silla. Flexiones, en la pared o en el piso. Subir escaleras. Y una banda elástica o dos botellas de agua como pesas.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "fotos:sentadilla,flexiones,escaleras_barranco,banda_elastica|SENTADILLAS|FLEXIONES|ESCALERAS|BANDA ELÁSTICA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿*Botellas de agua* como pesas? ¡Por fin les doy un uso a las de mi refri!",
+   "voz": "¿Botellas de agua como pesas? ¡Por fin les doy un uso a las de mi refri!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "fx": [
+    "ja:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu *receta natural*:",
+   "voz": "Dos o tres veces por semana, veinte minutos de fuerza. Movimientos lentos y controlados. Empieza suave y sube poco a poco. Y descansa un día entre sesiones.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:TU RECETA NATURAL|2 a 3 veces por semana|20 minutos cada vez|Lento y controlado|Empieza suave, sube poco a poco"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Si tienes una enfermedad del corazón, dolor de espalda o rodillas, esto *suma*, pero *consulta a tu médico* antes de empezar.",
+   "voz": "Si tienes una enfermedad del corazón, dolor de espalda o de rodillas, esto suma, pero consulta a tu médico antes de empezar.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Compártelo con quien dice que *no tiene tiempo*. ¡Treinta minutos a la semana, familia!",
+   "voz": "Compártelo con quien dice que no tiene tiempo. ¡Treinta minutos a la semana, familia!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:vita"
+   ],
+   "pantalla": "foto:escaleras_barranco|¡A MOVERSE!"
+  }
+ ]
+}
