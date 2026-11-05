@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA PERÚ","titulo":["¡CUMBIA","PARA EL PAPA!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"wave","expr":"laugh"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["ja:chato","stars:lucha"],"sello":{"texto":"12 NOV","size":90},"franja":"DONNIE YAIPÉN · ESTADIO NACIONAL"}
