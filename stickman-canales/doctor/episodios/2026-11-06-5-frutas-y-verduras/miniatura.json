@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"ALIMENTO NATURAL CON CIENCIA","titulo":["2 FRUTAS + 3 VERDURAS","LA CUENTA QUE TE CUIDA"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"mercado_frutas","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"laugh"}},
+ "fx":["stars:bruno"],"sello":{"texto":"5 AL DÍA","size":70,"x":880,"y":800},"franja":"EL JUGO NO CUENTA IGUAL"}
