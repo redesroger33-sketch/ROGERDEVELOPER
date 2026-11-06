@@ -1,0 +1,160 @@
+{
+  "id": "2026-11-06-senamhi-ciclon-yaku-2027",
+  "archivo": "NoticiasStickman_2026-11-06_Senamhi_ciclon_Yaku_2027.mp4",
+  "fecha": "06 NOV 2026",
+  "seccion": "PERÚ · CLIMA",
+  "titular": [
+    "¿VUELVE UN",
+    "CICLÓN YAKU?"
+  ],
+  "pantalla_inicial": "nube",
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "paco": 0.88,
+    "chato": 0.95,
+    "lucha": 1.0
+  },
+  "escenas": [
+    {
+      "quien": "paco",
+      "texto": "¡Buenos días, *Stickmatas!* Alerta de clima: el *Senamhi* no descarta un nuevo *ciclón tipo Yaku* en *2027*.",
+      "voz": "¡Buenos días, Stickmatas! Alerta de clima: el Senamhi no descarta un nuevo ciclón tipo Yaku, en dos mil veintisiete.",
+      "expr": {
+        "paco": "serious",
+        "chato": "surprised",
+        "lucha": "serious"
+      },
+      "pantalla": "nube",
+      "temblor": true
+    },
+    {
+      "quien": "chato",
+      "texto": "¿*Yaku*? ¡Ya voy sacando el *paraguas* que nunca uso en Lima, causa!",
+      "voz": "¿Yaku? ¡Ya voy sacando el paraguas que nunca uso en Lima, causa!",
+      "expr": {
+        "chato": "worried",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      },
+      "fx": [
+        "sweat:chato",
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "lucha",
+      "texto": "Ojo: es una *posibilidad*, no un pronóstico. Lo dijo la presidenta del Senamhi, *Grinia Ávalos*.",
+      "voz": "Ojo: es una posibilidad, no un pronóstico. Lo dijo la presidenta del Senamhi, Grinia Ávalos.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "neutral"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "tarjeta": {
+        "label": "SENAMHI",
+        "valor": "POSIBLE, NO SEGURO",
+        "nota": "No hay una probabilidad calculada",
+        "delay": 1.0
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "Podría coincidir con *El Niño costero*, porque el mar del Pacífico está *más caliente*.",
+      "voz": "Podría coincidir con El Niño costero, porque el mar del Pacífico está más caliente.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "alert"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "pantalla": "texto:EL NIÑO|+ CICLÓN",
+      "tarjeta": {
+        "label": "ALERTA VIGENTE",
+        "valor": "EL NIÑO COSTERO",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "paco",
+      "texto": "Recuerda: *Yaku* se formó frente a *Piura* en *marzo de 2023* y trajo lluvias fuertes.",
+      "voz": "Recuerda: Yaku se formó frente a Piura en marzo de dos mil veintitrés, y trajo lluvias fuertes.",
+      "expr": {
+        "paco": "serious",
+        "chato": "worried",
+        "lucha": "neutral"
+      },
+      "pantalla": "fecha:4:2023:YAKU:MARZO",
+      "tarjeta": {
+        "label": "CICLÓN YAKU",
+        "valor": "MARZO 2023",
+        "nota": "Se formó frente a Piura",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "Consejo: *limpia techos y canaletas*, ten una *mochila de emergencia* y sigue los avisos oficiales.",
+      "voz": "Consejo: limpia techos y canaletas, ten una mochila de emergencia, y sigue los avisos oficiales.",
+      "expr": {
+        "lucha": "happy",
+        "chato": "happy"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "pantalla": "texto:PREVENIR|ES MEJOR",
+      "tarjeta": {
+        "label": "PREVENCIÓN",
+        "valor": "MOCHILA DE EMERGENCIA",
+        "delay": 0.8
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¡Mi mochila ya tiene agua, linterna… y un *pan con chicharrón*, por si acaso!",
+      "voz": "¡Mi mochila ya tiene agua, linterna... y un pan con chicharrón, por si acaso!",
+      "expr": {
+        "chato": "laugh",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      },
+      "fx": [
+        "ja:paco"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "paco",
+      "texto": "¡Prevenir es mejor! Compártelo con tu familia. Nos vemos mañana, *Stickmatas*.",
+      "voz": "¡Prevenir es mejor! Compártelo con tu familia. Nos vemos mañana, Stickmatas.",
+      "expr": {
+        "paco": "happy",
+        "chato": "happy",
+        "lucha": "happy"
+      },
+      "pose": {
+        "chato": "wave",
+        "lucha": "wave"
+      },
+      "pantalla": "compartir"
+    }
+  ]
+}

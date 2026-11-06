@@ -1,0 +1,184 @@
+{
+  "id": "2026-11-06-farandula-mana-40-anos",
+  "archivo": "FarandulaStickman_2026-11-06_Mana_40_anos_concierto_gratis.mp4",
+  "fecha": "06 NOV 2026",
+  "seccion": "FARÁNDULA MUNDIAL",
+  "titular": [
+    "¡MANÁ GRATIS",
+    "EN YOUTUBE!"
+  ],
+  "locutor": "maskaly",
+  "elenco": [
+    "chato",
+    "maskaly",
+    "lucha"
+  ],
+  "programa": [
+    "FARÁNDULA",
+    "STICKMAN"
+  ],
+  "pantalla_inicial": "escenario:MANÁ",
+  "cierre_sub": "Mañana, más chisme del bueno",
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "maskaly": 0.9,
+    "chato": 0.95,
+    "lucha": 1.0
+  },
+  "escenas": [
+    {
+      "quien": "maskaly",
+      "texto": "¡Buenos días, *Stickmatas!* ¡*Maná* cumple *40 años* y nos regala un concierto *gratis*!",
+      "voz": "¡Buenos días, Stickmatas! ¡Maná cumple cuarenta años, y nos regala un concierto gratis!",
+      "expr": {
+        "maskaly": "happy",
+        "chato": "surprised",
+        "lucha": "happy"
+      },
+      "pose": {
+        "lucha": "up"
+      },
+      "pantalla": "escenario:MANÁ",
+      "fx": [
+        "confeti:maskaly"
+      ]
+    },
+    {
+      "quien": "chato",
+      "texto": "¿*Gratis*? ¡Así sí voy, causa! ¿Dónde me formo?",
+      "voz": "¿Gratis? ¡Así sí voy, causa! ¿Dónde me formo?",
+      "expr": {
+        "chato": "laugh",
+        "maskaly": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      }
+    },
+    {
+      "quien": "maskaly",
+      "texto": "¡No hay cola, Chato! Es por *YouTube*, en el canal oficial de la banda.",
+      "voz": "¡No hay cola, Chato! Es por YouTube, en el canal oficial de la banda.",
+      "expr": {
+        "maskaly": "laugh",
+        "chato": "surprised",
+        "lucha": "laugh"
+      },
+      "pantalla": "youtube",
+      "fx": [
+        "plop:chato",
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "lucha",
+      "texto": "Dato: se estrena *hoy viernes 6*, a las *7:30 de la noche* hora de Perú.",
+      "voz": "Dato: se estrena hoy viernes seis, a las siete y media de la noche, hora de Perú.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "alert"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "pantalla": "fecha:6:VIERNES:HOY",
+      "tarjeta": {
+        "label": "ESTRENO",
+        "valor": "HOY 7:30 P.M.",
+        "nota": "Hora de Perú, según La República",
+        "delay": 1.0
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "Se llama *Vivir Sin Aire Tour*, y lo grabaron en el anfiteatro *Red Rocks*, en Colorado.",
+      "voz": "Se llama Vivir sin aire tour, y lo grabaron en el anfiteatro Red Rocks, en Colorado.",
+      "expr": {
+        "lucha": "happy",
+        "maskaly": "happy"
+      },
+      "pantalla": "texto:RED ROCKS|COLORADO, EE.UU.",
+      "tarjeta": {
+        "label": "EL CONCIERTO",
+        "valor": "LIVE FROM RED ROCKS",
+        "delay": 0.8
+      }
+    },
+    {
+      "quien": "maskaly",
+      "texto": "¡Y después queda *guardado*, para verlo cuando quieras!",
+      "voz": "¡Y después queda guardado, para verlo cuando quieras!",
+      "expr": {
+        "maskaly": "happy",
+        "chato": "happy"
+      },
+      "pantalla": "youtube"
+    },
+    {
+      "quien": "lucha",
+      "texto": "Entre los temas suenan clásicos como *Labios compartidos* y *Rayando el sol*.",
+      "voz": "Entre los temas suenan clásicos como Labios compartidos, y Rayando el sol.",
+      "expr": {
+        "lucha": "happy",
+        "maskaly": "happy",
+        "chato": "happy"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "pantalla": "escenario:MANÁ",
+      "tarjeta": {
+        "label": "REPERTORIO",
+        "valor": "GRANDES CLÁSICOS",
+        "delay": 0.8
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¡Perfecto! Esta noche *Rayando el sol*… y mañana rayando el *piso*, de tanto bailar.",
+      "voz": "¡Perfecto! Esta noche rayando el sol... y mañana rayando el piso, de tanto bailar.",
+      "expr": {
+        "chato": "laugh",
+        "maskaly": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "wave"
+      },
+      "fx": [
+        "ja:maskaly"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "maskaly",
+      "texto": "¡Dale *like* y sígueme! Nos vemos mañana, *Stickmatas*.",
+      "voz": "¡Dale like y sígueme! Nos vemos mañana, Stickmatas.",
+      "expr": {
+        "maskaly": "happy",
+        "chato": "laugh",
+        "lucha": "happy"
+      },
+      "pose": {
+        "chato": "up",
+        "lucha": "wave"
+      },
+      "fx": [
+        "confeti:maskaly"
+      ],
+      "pantalla": "escenario:MANÁ"
+    }
+  ]
+}

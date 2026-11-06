@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA MUNDIAL","titulo":["¡MANÁ GRATIS","EN YOUTUBE!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"laugh"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["ja:chato","stars:lucha"],"sello":{"texto":"40 AÑOS","size":80},"franja":"HOY 7:30 P.M. (PERÚ)"}

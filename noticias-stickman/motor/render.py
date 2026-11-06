@@ -202,7 +202,8 @@ def draw_screen(c, kind, t, local):
                 font(c, size)
             text_center(c, ln, cx, cy - 20 + (i * 90 if i else 0) - (40 if len(partes) > 1 else -40), size, cols[i % 3])
     elif kind.startswith("fecha:"):
-        num, dia, cinta = (kind[6:].split(":") + ["", "", ""])[:3]
+        num, dia, cinta, mes = (kind[6:].split(":") + ["", "", "", ""])[:4]
+        mes = mes or "NOVIEMBRE"
         rrect(c, cx - 150, cy - 160, 300, 320, 22)
         fill_stroke(c, WHITE, INK, 7)
         c.save()
@@ -211,7 +212,7 @@ def draw_screen(c, kind, t, local):
         c.set_source_rgba(*RED)
         c.paint()
         c.restore()
-        text_center(c, "NOVIEMBRE", cx, cy - 104, 34, WHITE)
+        text_center(c, mes, cx, cy - 104, 34, WHITE)
         text_center(c, num, cx, cy + 70, 150, NAVY)
         text_center(c, dia, cx, cy + 128, 34, hx("5A6070"), F_XBOLD)
         if cinta:
@@ -260,6 +261,51 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
+    elif kind == "nube":
+        # espiral de ciclón
+        c.save()
+        c.translate(cx + 150, cy - 90)
+        c.rotate(-t * 2.5)
+        c.set_source_rgba(*TEAL)
+        c.set_line_width(9)
+        for k in range(3):
+            c.new_path()
+            for i in range(60):
+                a_ = i * 0.18 + k * 2.09
+                r_ = 8 + i * 1.4
+                (c.move_to if i == 0 else c.line_to)(r_ * math.cos(a_), r_ * math.sin(a_))
+            c.stroke()
+        c.restore()
+        # nube y lluvia
+        c.new_path()
+        for (dx, dy, rr) in ((-90, 0, 70), (-10, -40, 85), (80, 0, 70), (0, 30, 80)):
+            c.new_sub_path()
+            c.arc(cx + dx - 60, cy + dy - 20, rr, 0, 2 * math.pi)
+        fill_stroke(c, hx("C9CED6"), INK, 6)
+        c.set_source_rgba(0.43, 0.78, 1, 1)
+        c.set_line_width(7)
+        c.set_line_cap(cairo.LINE_CAP_ROUND)
+        for i in range(7):
+            x = cx - 180 + i * 40
+            y = cy + 90 + ((t * 300 + i * 37) % 90)
+            c.move_to(x, y)
+            c.line_to(x - 10, y + 28)
+            c.stroke()
+    elif kind == "youtube":
+        rrect(c, cx - 170, cy - 110, 340, 230, 60)
+        fill_stroke(c, RED, INK, 7)
+        k = 1 + 0.08 * math.sin(t * 5)
+        c.save()
+        c.translate(cx + 10, cy + 5)
+        c.scale(k, k)
+        c.move_to(-45, -60)
+        c.line_to(70, 0)
+        c.line_to(-45, 60)
+        c.close_path()
+        c.set_source_rgba(*WHITE)
+        c.fill()
+        c.restore()
+        text_center(c, "GRATIS", cx, cy + 175, 48, YELLOW, outline=INK, ow=7)
     elif kind == "plato":
         c.save()
         c.translate(cx, cy + 60)
