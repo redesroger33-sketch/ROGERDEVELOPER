@@ -1,0 +1,322 @@
+{
+ "id": "2026-11-06-ceviche-clasico",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-06_ceviche_clasico.mp4",
+ "fecha": "06 NOV 2026",
+ "seccion": "PLATO BANDERA",
+ "titular": [
+  "CEVICHE CLÁSICO:",
+  "¡SAL PRIMERO, LIMÓN AL FINAL!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:ceviche_0|CEVICHE CLÁSICO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el plato bandera del Perú: ¡el *ceviche clásico!*",
+   "voz": "¡Hola, cocineros! Hoy, el plato bandera del Perú: ¡el ceviche clásico!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:ceviche_0|CEVICHE CLÁSICO"
+  },
+  {
+   "quien": "beto",
+   "texto": "Fácil, chef: dejo el pescado *toda la noche* en limón y listo.",
+   "voz": "Fácil, chef: dejo el pescado toda la noche en limón y listo.",
+   "expr": {
+    "beto": "happy",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡No, Beto! Eso queda *duro y amargo*. El ceviche se hace y se come *al instante*.",
+   "voz": "¡No, Beto! Eso queda duro y amargo. El ceviche se hace y se come al instante.",
+   "expr": {
+    "tito": "alert",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "fx": [
+    "alert:tito",
+    "sweat:beto"
+   ],
+   "tarjeta": {
+    "label": "REGLA DE ORO",
+    "valor": "¡AL INSTANTE!",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Insumos para *cuatro*: *ochocientos gramos* de pescado blanco bien fresco, en cubos de *dos centímetros*.",
+   "voz": "Insumos para cuatro: ochocientos gramos de pescado blanco bien fresco, en cubos de dos centímetros.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:pescado_fresco|800 G DE PESCADO FRESCO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Más *una taza* de jugo de limón, *una cebolla roja* grande, *un ají limo* y *culantro*.",
+   "voz": "Más una taza de jugo de limón, unos quince limones, una cebolla roja grande, un ají limo y culantro.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:limon,cebolla_roja_0,culantro_1|1 TAZA DE LIMÓN (15)|1 CEBOLLA ROJA|2 CDAS DE CULANTRO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y para acompañar: *camote*, *choclo*, *cancha* y una hoja de *lechuga*.",
+   "voz": "Y para acompañar: camote, choclo, cancha y una hoja de lechuga.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:camote,choclo,cancha,lechuga|1 CAMOTE|1 CHOCLO|CANCHA|LECHUGA"
+  },
+  {
+   "quien": "tito",
+   "texto": "¿Qué pescado? *Lenguado*, *corvina* o *cojinova*. Si no alcanza, el *bonito* también es ceviche de verdad.",
+   "voz": "¿Qué pescado? Lenguado, corvina o cojinova. Si no alcanza, el bonito también es ceviche de verdad.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:ceviche_lenguado|PESCADO BLANCO Y FIRME"
+  },
+  {
+   "quien": "tito",
+   "texto": "Truco del gran chef: frota el *bowl* con el *ají* cortado y pon unos *cubitos de hielo*. ¡Todo bien *frío!*",
+   "voz": "Truco de Gastón Acurio: frota el bowl con el ají cortado y pon unos cubitos de hielo. ¡Todo tiene que estar bien frío!",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "tarjeta": {
+    "label": "TRUCO DEL GRAN CHEF",
+    "valor": "BOWL FRÍO + HIELO",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Hielo? Chef, ¡yo pensé que era para mi *chicha morada!*",
+   "voz": "¿Hielo? Chef, ¡yo pensé que era para mi chicha morada!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.7
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: el pescado al bowl con *buena sal*. El gran chef enseña que la *sal* es la que lo *afirma*, no el limón.",
+   "voz": "Paso uno: el pescado al bowl con buena sal. Gastón enseña que la sal es la que lo afirma, no el limón.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:pescado_fresco|PASO 1: SAL PRIMERO",
+   "tarjeta": {
+    "label": "PRIMERO",
+    "valor": "LA SAL",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y cómo exprimo los limones, chef?",
+   "voz": "¿Y cómo exprimo los limones, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "pantalla": "foto:limon|EL LIMÓN"
+  },
+  {
+   "quien": "tito",
+   "texto": "*Suavecito*, sin apretar hasta el final. Si exprimes de más, sale el *amargo* de la cáscara.",
+   "voz": "Suavecito, sin apretar hasta el final. Si exprimes de más, sale el amargo de la cáscara.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "EXPRIME",
+    "valor": "SIN APRETAR",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: el *limón* al final, con el ají picado, el culantro y *la mitad* de la cebolla. Mezcla.",
+   "voz": "Paso dos: el limón al final, con el ají picado, el culantro y la mitad de la cebolla. Mezcla.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "lista:PASO 2: AL ÚLTIMO|Jugo de limón|Ají limo picado|Culantro|Mitad de la cebolla"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, ¿y cuánto lo dejo? ¿*Una horita?*",
+   "voz": "Chef, ¿y cuánto lo dejo? ¿Una horita?",
+   "expr": {
+    "beto": "surprised",
+    "tito": "alert"
+   },
+   "fx": [
+    "alert:tito"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Segundos, Beto! Así lo hace el *gran chef*: mezcla, prueba la sal y *sirve en el acto*.",
+   "voz": "¡Segundos, Beto! Así lo hace Gastón: mezcla, prueba la sal y sirve en el acto.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried",
+    "rosita": "laugh"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "pantalla": "foto:ceviche_3|¡SEGUNDOS!",
+   "tarjeta": {
+    "label": "MACERADO",
+    "valor": "SEGUNDOS",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Saco los *hielos*, y encima va la *otra mitad* de la cebolla, bien lavada y escurrida.",
+   "voz": "Saco los hielos, y encima va la otra mitad de la cebolla, bien lavada y escurrida.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:cebolla_roja_2|CEBOLLA LAVADA ENCIMA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres, la *leche de tigre*: ese juguito del fondo. No lo botes: ¡se sirve en *copita*!",
+   "voz": "Paso tres, la leche de tigre: ese juguito del fondo. No lo botes: ¡se sirve en copita!",
+   "expr": {
+    "tito": "happy",
+    "beto": "laugh"
+   },
+   "pantalla": "foto:ceviche_lenguado|LECHE DE TIGRE"
+  },
+  {
+   "quien": "tito",
+   "texto": "El gran chef lo resume: al primer bocado, *cítrico fuerte*, equilibrado con el pescado, y un *picante fresco*.",
+   "voz": "Gastón lo resume: al primer bocado, cítrico fuerte, equilibrado con el pescado, y un picante fresco.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "tarjeta": {
+    "label": "EL PRIMER BOCADO",
+    "valor": "CÍTRICO + PICANTE",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, esto ya *huele a playa* en verano!",
+   "voz": "¡Chef, esto ya huele a playa en verano!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Con su camote, choclo y cancha, ¡a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "Con su camote, choclo y cancha, ¡a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:ceviche_0|¡A LA MESA!"
+  }
+ ]
+}
