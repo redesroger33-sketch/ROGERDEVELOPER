@@ -1,0 +1,161 @@
+{
+  "id": "2026-11-07-canasta-basica-alza-320",
+  "archivo": "NoticiasStickman_2026-11-07_canasta_basica_alza_320.mp4",
+  "fecha": "07 NOV 2026",
+  "seccion": "PERÚ · ECONOMÍA",
+  "titular": [
+    "¡LA ZANAHORIA",
+    "SUBIÓ 320%!"
+  ],
+  "pantalla_inicial": "mercado",
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "paco": 0.88,
+    "chato": 0.95,
+    "lucha": 1.0
+  },
+  "escenas": [
+    {
+      "quien": "paco",
+      "texto": "¡Buenos días, *Stickmatas!* Golpe al bolsillo: *once alimentos* básicos subieron hasta *320%* en mayoristas.",
+      "voz": "¡Buenos días, Stickmatas! Golpe al bolsillo: once alimentos básicos subieron hasta trescientos veinte por ciento en mayoristas.",
+      "expr": {
+        "paco": "serious",
+        "chato": "surprised",
+        "lucha": "serious"
+      },
+      "pantalla": "mercado",
+      "temblor": true
+    },
+    {
+      "quien": "chato",
+      "texto": "¿*320%*? ¡Ahora la zanahoria viene con *seguro y garantía*, causa!",
+      "voz": "¿Trescientos veinte por ciento? ¡Ahora la zanahoria viene con seguro y garantía, causa!",
+      "expr": {
+        "chato": "alert",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      },
+      "fx": [
+        "plop:chato",
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "lucha",
+      "texto": "Dato: en dos años, la *zanahoria* pasó de *S/ 0.54* a *S/ 2.27* el kilo.",
+      "voz": "Dato: en dos años, la zanahoria pasó de cincuenta y cuatro céntimos, a dos soles veintisiete el kilo.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "worried"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "fx": [
+        "sweat:chato"
+      ],
+      "tarjeta": {
+        "label": "ZANAHORIA (MAYORISTA, KG)",
+        "valor": "S/ 0.54 → S/ 2.27",
+        "nota": "Nov 2024 → Nov 2026",
+        "delay": 1.0
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "La *arveja verde* subió *151%*. También suben habas, olluco, vainitas, choclo y cebolla.",
+      "voz": "La arveja verde subió ciento cincuenta y uno por ciento. También suben habas, olluco, vainitas, choclo y cebolla.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "alert"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "pantalla": "texto:ARVEJA|+151%",
+      "tarjeta": {
+        "label": "ARVEJA VERDE",
+        "valor": "S/ 3.43 → S/ 8.63",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "paco",
+      "texto": "¿Las causas? *El Niño*, la *inflación internacional* y el costo del *combustible* para transportar.",
+      "voz": "¿Las causas? El Niño, la inflación internacional, y el costo del combustible para transportar.",
+      "expr": {
+        "paco": "serious",
+        "chato": "neutral",
+        "lucha": "neutral"
+      },
+      "pantalla": "nube",
+      "tarjeta": {
+        "label": "CAUSAS",
+        "valor": "EL NIÑO + COMBUSTIBLE",
+        "delay": 0.8
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "Ojo: el 320% es precio *mayorista*. En tu mercado o súper el precio puede ser *distinto*.",
+      "voz": "Ojo: el trescientos veinte por ciento es precio mayorista. En tu mercado o súper el precio puede ser distinto.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "surprised"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "tarjeta": {
+        "label": "IMPORTANTE",
+        "valor": "PRECIO MAYORISTA",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¡Desde hoy mi ensalada es de *zanahoria imaginaria*!",
+      "voz": "¡Desde hoy mi ensalada es de zanahoria imaginaria!",
+      "expr": {
+        "chato": "laugh",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "shrug"
+      },
+      "fx": [
+        "ja:paco"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "paco",
+      "texto": "Consejo: *compara precios* y compra lo de temporada. ¡Nos vemos mañana, *Stickmatas*!",
+      "voz": "Consejo: compara precios, y compra lo de temporada. ¡Nos vemos mañana, Stickmatas!",
+      "expr": {
+        "paco": "happy",
+        "chato": "happy",
+        "lucha": "happy"
+      },
+      "pose": {
+        "chato": "wave",
+        "lucha": "wave"
+      },
+      "pantalla": "compartir"
+    }
+  ]
+}

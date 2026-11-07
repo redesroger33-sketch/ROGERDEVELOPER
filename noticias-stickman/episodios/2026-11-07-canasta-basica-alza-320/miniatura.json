@@ -1,0 +1,3 @@
+{"banda":"PERÚ · ECONOMÍA","titulo":["¡LA ZANAHORIA","SUBIÓ 320%!"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"paco":{"pose":"rest","expr":"serious"},"lucha":{"pose":"hip","expr":"serious"}},
+ "fx":["alert:chato","money:chato"],"sello":{"texto":"+320%","size":90},"franja":"S/ 0.54 → S/ 2.27 EL KILO"}

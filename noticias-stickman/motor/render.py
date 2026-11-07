@@ -261,6 +261,44 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
+    elif kind == "mercado":
+        # zanahoria y arvejas con etiqueta de precio que sube
+        c.save()
+        c.translate(cx - 110, cy + 20)
+        c.rotate(-0.5)
+        c.move_to(-25, -110)
+        c.curve_to(25, -110, 30, -90, 10, 120)
+        c.line_to(-10, 120)
+        c.curve_to(-30, -90, -25, -110, -25, -110)
+        c.close_path()
+        fill_stroke(c, hx("FF7A1A"), INK, 5)
+        for dx in (-14, 0, 14):
+            c.move_to(dx * 0.6, -110)
+            c.line_to(dx * 1.6, -160)
+            c.set_source_rgba(*hx("3E8E41"))
+            c.set_line_width(10)
+            c.stroke()
+        c.restore()
+        for i in range(4):
+            c.arc(cx - 10 + i * 34, cy + 120, 18, 0, 2 * math.pi)
+            fill_stroke(c, hx("6FCF5A"), INK, 4)
+        # flecha de alza
+        k = (t % 1.2) / 1.2
+        c.save()
+        c.translate(cx + 140, cy + 60 - 120 * k)
+        c.move_to(0, -60)
+        c.line_to(45, 0)
+        c.line_to(18, 0)
+        c.line_to(18, 70)
+        c.line_to(-18, 70)
+        c.line_to(-18, 0)
+        c.line_to(-45, 0)
+        c.close_path()
+        fill_stroke(c, RED, INK, 5)
+        c.restore()
+        rrect(c, cx + 40, cy - 160, 200, 70, 14)
+        fill_stroke(c, YELLOW, INK, 5)
+        text_center(c, "+320%", cx + 140, cy - 108, 50, RED)
     elif kind == "nube":
         # espiral de ciclón
         c.save()

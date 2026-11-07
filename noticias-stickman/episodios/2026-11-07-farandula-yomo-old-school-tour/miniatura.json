@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA MUNDIAL","titulo":["¡YOMO VUELVE","AL PERÚ!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"laugh"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["ja:chato","stars:lucha"],"sello":{"texto":"OLD SCHOOL","size":70},"franja":"26 NOV – 6 DIC"}
