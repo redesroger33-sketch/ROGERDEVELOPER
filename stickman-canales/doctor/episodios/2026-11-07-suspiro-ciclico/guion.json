@@ -1,0 +1,290 @@
+{
+ "id": "2026-11-07-suspiro-ciclico",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-07_suspiro_ciclico.mp4",
+ "fecha": "07 NOV 2026",
+ "seccion": "ESTRÉS Y RESPIRACIÓN",
+ "titular": [
+  "5 MINUTOS CONTRA EL ESTRÉS:",
+  "EL SUSPIRO CÍCLICO"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:meditar_parque|RESPIRAR CON CIENCIA",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy: un truco de *cinco minutos* para bajar el *estrés*, sin pastillas.",
+   "voz": "¡Hola, familia sana! Hoy: un truco de cinco minutos para bajar el estrés, sin pastillas.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:meditar_parque|RESPIRAR CON CIENCIA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Cinco minutos? Yo paso *una hora* en el tráfico y salgo hecha un nudo.",
+   "voz": "¿Cinco minutos? Yo paso una hora en el tráfico y salgo hecha un nudo.",
+   "expr": {
+    "vita": "worried",
+    "bruno": "surprised"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "sweat:vita"
+   ],
+   "pantalla": "foto:trafico_lima|ESTRÉS DE CADA DÍA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Para eso es: se llama *suspiro cíclico*, y lo probó la Universidad de *Stanford*.",
+   "voz": "Para eso es: se llama suspiro cíclico, y lo probó la Universidad de Stanford.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "LA TÉCNICA",
+    "valor": "SUSPIRO CÍCLICO",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Datos: *ciento ocho* adultos, *cinco minutos* al día, durante *un mes*. Revista *Cell Reports Medicine*, dos mil veintitrés.",
+   "voz": "Datos: ciento ocho adultos, cinco minutos al día, durante un mes. Revista Cell Reports Medicine, dos mil veintitrés.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:cronometro|5 MINUTOS AL DÍA",
+   "tarjeta": {
+    "label": "ESTUDIO STANFORD 2023",
+    "valor": "108 ADULTOS · 1 MES",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Compararon *tres respiraciones* con la *meditación*. El suspiro cíclico mejoró *más el ánimo*.",
+   "voz": "Compararon tres tipos de respiración con la meditación. El suspiro cíclico fue el que más mejoró el ánimo.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "RESULTADO",
+    "valor": "MEJOR ÁNIMO",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y bajó la *frecuencia respiratoria* en reposo: el cuerpo pasa a modo *calma*.",
+   "voz": "Y bajó la frecuencia respiratoria en reposo: el cuerpo pasa a modo calma.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "pantalla": "foto:pulmones|MÁS CALMA AL RESPIRAR"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cómo se hace, doctor?",
+   "voz": "¿Y cómo se hace, doctor?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Paso uno: inhala *lento por la nariz* hasta llenar los pulmones.",
+   "voz": "Paso uno: inhala lento por la nariz hasta llenar los pulmones.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:pulmones|1. INHALA POR LA NARIZ"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Paso dos: cuando estén llenos, una *segunda inhalación corta*, para estirarlos un poquito más.",
+   "voz": "Paso dos: cuando estén llenos, una segunda inhalación cortita, para estirarlos un poquito más.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "tarjeta": {
+    "label": "EL TRUCO",
+    "valor": "DOBLE INHALACIÓN",
+    "delay": 1.3
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Paso tres: bota el aire *muy lento* por la boca, hasta vaciarte. La clave es esa *exhalación larga*.",
+   "voz": "Paso tres: bota el aire muy lento por la boca, hasta vaciarte. La clave es esa exhalación larga.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:SUSPIRO CÍCLICO|Inhala lento por la nariz|Segunda inhalación corta|Bota el aire lento por la boca|Repite 5 minutos"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Suspirar? ¡Eso yo lo hago gratis cada vez que llega el *recibo de luz!*",
+   "voz": "¿Suspirar? ¡Eso yo lo hago gratis cada vez que llega el recibo de luz!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Ja! Pero aquí es a propósito, *cinco minutos seguidos*, mejor a la misma hora.",
+   "voz": "¡Ja! Pero aquí es a propósito, cinco minutos seguidos, mejor a la misma hora cada día.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:reloj_arena|5 MINUTOS SEGUIDOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y hay más estudios, o solo ese?",
+   "voz": "¿Y hay más estudios, o solo ese?",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:meditar_parque|¿MÁS ESTUDIOS?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Un análisis de *doce ensayos* con *setecientos ochenta y cinco* adultos: respirar así se asoció con *menos estrés*.",
+   "voz": "Un análisis de doce ensayos con setecientos ochenta y cinco adultos: respirar así se asoció con menos estrés.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "SCIENTIFIC REPORTS 2023",
+    "valor": "12 ENSAYOS · 785 ADULTOS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Efecto *pequeño a mediano*: ayuda, pero *no es magia*.",
+   "voz": "El efecto fue de pequeño a mediano: ayuda, pero no es magia.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:malecon_miraflores_4|AYUDA, NO ES MAGIA"
+  },
+  {
+   "quien": "vita",
+   "texto": "Si te *mareas*, para y respira normal. Y no lo hagas manejando.",
+   "voz": "Si te mareas, para y respira normal. Y no lo hagas manejando.",
+   "expr": {
+    "vita": "alert",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "fx": [
+    "alert:vita"
+   ],
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "SI TE MAREAS, PARA",
+    "delay": 1.0
+   },
+   "pantalla": "foto:trafico_lima|NUNCA MANEJANDO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Con *asma*, problemas del corazón o *ansiedad fuerte*, consulta primero.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes asma, problemas del corazón o ansiedad fuerte, consulta primero.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA PRIMERO SI TIENES|Asma o EPOC|Problemas del corazón|Ansiedad fuerte"
+  },
+  {
+   "quien": "vita",
+   "texto": "Hazlo al despertar o antes de dormir. ¡Comparte con alguien *estresado!* Hasta mañana, *familia sana*.",
+   "voz": "Hazlo al despertar o antes de dormir. ¡Compártelo con alguien estresado! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:luz_manana|¡RESPIRA HONDO!"
+  }
+ ]
+}
