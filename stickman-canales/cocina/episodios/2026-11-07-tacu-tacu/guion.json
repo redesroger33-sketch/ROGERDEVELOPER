@@ -1,0 +1,315 @@
+{
+ "id": "2026-11-07-tacu-tacu",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-07_tacu_tacu.mp4",
+ "fecha": "07 NOV 2026",
+ "seccion": "CLÁSICO LIMEÑO",
+ "titular": [
+  "TACU TACU:",
+  "¡EL SECRETO DEL CHEF!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:tacu_tacu|TACU TACU",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy convertimos las sobras en un clásico limeño: ¡el *tacu tacu!*",
+   "voz": "¡Hola, cocineros! Hoy convertimos las sobras en un clásico limeño: ¡el tacu tacu!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:tacu_tacu|TACU TACU"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Sobras? Chef, en mi casa el arroz de ayer *no sobrevive* la noche.",
+   "voz": "¿Sobras? Chef, en mi casa el arroz de ayer no sobrevive la noche.",
+   "expr": {
+    "beto": "laugh",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "tito",
+   "texto": "Pues guárdalo, Beto: el tacu tacu nace del *arroz* y los *frejoles* del día anterior.",
+   "voz": "Pues guárdalo, Beto: el tacu tacu nace del arroz y los frejoles del día anterior.",
+   "expr": {
+    "tito": "happy",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "fotos:arroz_blanco_3,frejoles_secos|ARROZ DE AYER|FREJOLES DE AYER"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Insumos para *cuatro*: *cuatro tazas* de arroz cocido y *cuatro tazas* de frejol cocido.",
+   "voz": "Insumos para cuatro, como en la receta de Gastón Acurio: cuatro tazas de arroz cocido y cuatro tazas de frejol cocido.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:arroz_blanco_3,frejoles_secos|4 TAZAS DE ARROZ|4 TAZAS DE FREJOL"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para el aderezo: *una taza* de cebolla roja picadita, *una cucharada* de ajo y *un cuarto de taza* de ají amarillo licuado.",
+   "voz": "Para el aderezo: una taza de cebolla roja picadita, una cucharada de ajo molido y un cuarto de taza de ají amarillo licuado.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:cebolla_roja_2,ajo_0,aji_amarillo_0|1 TAZA DE CEBOLLA|1 CDA DE AJO|¼ TAZA DE AJÍ AMARILLO"
+  },
+  {
+   "quien": "tito",
+   "texto": "¿No tienes frejol? Sirve con *pallares*, *lentejas* o *garbanzos* guisados.",
+   "voz": "¿No tienes frejol? Sirve también con pallares, lentejas o garbanzos guisados.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:menestras_mix|O LA MENESTRA QUE TENGAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: el aderezo a *fuego muy lento*. Prueba la sal, una pizca de *pimienta* y *comino*.",
+   "voz": "Paso uno: el aderezo a fuego muy lento. Prueba la sal, y una pizca de pimienta y comino.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:aji_amarillo_0|PASO 1: ADEREZO LENTO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos, el truco del chef: la mitad del frejol *licuado* y la otra mitad *chancada*. ¡No es lo mismo!",
+   "voz": "Paso dos, el truco del chef: la mitad del frejol licuado y la otra mitad chancado. ¡No es lo mismo!",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "tarjeta": {
+    "label": "TRUCO DEL GRAN CHEF",
+    "valor": "½ LICUADO · ½ CHANCADO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y para qué las dos texturas, chef?",
+   "voz": "¿Y para qué las dos texturas, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El licuado *une* la mezcla, y el chancado le da *cuerpo*. Mezcla todo con el arroz y el aderezo.",
+   "voz": "El licuado une la mezcla, y el chancado le da cuerpo. Mezcla todo con el arroz y el aderezo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "lista:PASO 2: LA MEZCLA|4 tazas de arroz|2 tazas de frejol licuado|2 tazas de frejol chancado|El aderezo|Divide en 4"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: antes de dorar, un chorrito del *jugo de un guiso* de ayer: *estofado*, *seco* o *adobo*.",
+   "voz": "Y el secreto de Gastón: antes de dorar, un chorrito del jugo de un guiso de ayer: estofado, seco o adobo.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "JUGO DE GUISO",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Ya sé! Lo aprieto *bien durito*, como ladrillo, para que no se rompa.",
+   "voz": "¡Ya sé! Lo aprieto bien durito, como ladrillo, para que no se rompa.",
+   "expr": {
+    "beto": "happy",
+    "tito": "alert"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "alert:tito"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡No, Beto! El gran chef lo dice: la virtud del tacu tacu está en su *fragilidad*. *No queremos un ladrillo.*",
+   "voz": "¡No, Beto! Gastón lo dice: la virtud del tacu tacu está en su fragilidad. No queremos un ladrillo.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried",
+    "rosita": "laugh"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "tarjeta": {
+    "label": "LA VIRTUD",
+    "valor": "FRÁGIL, NO LADRILLO",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: un *chorro de aceite* en la sartén y dora cada porción a *fuego lento*.",
+   "voz": "Paso tres: un chorro de aceite en la sartén, y dora cada porción a fuego lento.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 3: DORAR LENTO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Mueve la sartén y dale forma de *almohadita*. Buscamos *crocante* por fuera y *cremosito* por dentro.",
+   "voz": "Mueve la sartén y dale forma de almohadita. Buscamos crocante por fuera y cremosito por dentro.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "temblor": true,
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "CROCANTE · CREMOSO",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, ¡huele a *almuerzo de mamá* un lunes!",
+   "voz": "Chef, ¡huele a almuerzo de mamá un lunes!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fuego": true,
+   "fx": [
+    "ja:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: ya en el plato, un *buen chorro de aceite de oliva* encima. ¡Listo!",
+   "voz": "Paso cuatro: ya en el plato, un buen chorro de aceite de oliva encima. ¡Listo!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:tacu_tacu|PASO 4: ACEITE DE OLIVA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y con qué lo acompaño?",
+   "voz": "¿Y con qué lo acompaño?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Con *huevo frito* y *plátano frito*, con un *bistec*, o con *mariscos*. ¡Como más te guste!",
+   "voz": "Con huevo frito y plátano frito, con un bistec, o con mariscos. ¡Como más te guste!",
+   "expr": {
+    "tito": "happy",
+    "beto": "laugh"
+   },
+   "pantalla": "foto:tacu_tacu_2|TACU TACU CON MARISCOS"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:tacu_tacu|¡A LA MESA!"
+  }
+ ]
+}
