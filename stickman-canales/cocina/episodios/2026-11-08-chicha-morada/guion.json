@@ -1,0 +1,320 @@
+{
+ "id": "2026-11-08-chicha-morada",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-08_chicha_morada.mp4",
+ "fecha": "08 NOV 2026",
+ "seccion": "BEBIDA PERUANA",
+ "titular": [
+  "CHICHA MORADA:",
+  "¡LA DE VERDAD!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:chicha_morada_2|CHICHA MORADA",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy no hay plato: hay *bebida*. ¡La *chicha morada* de casa!",
+   "voz": "¡Hola, cocineros! Hoy no hay plato: hay bebida. ¡La chicha morada de casa!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:chicha_morada_2|CHICHA MORADA"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Para qué, chef? Yo la compro en *sobrecito* y en *dos minutos* está.",
+   "voz": "¿Para qué, chef? Yo la compro en sobrecito y en dos minutos está.",
+   "expr": {
+    "beto": "happy",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Ay, Beto! La de verdad se hace con *maíz morado* de verdad. Ya vas a ver la diferencia.",
+   "voz": "¡Ay, Beto! La de verdad se hace con maíz morado de verdad. Ya vas a ver la diferencia.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:maiz_morado|MAÍZ MORADO PERUANO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Además, en casa *tú decides* cuánta *azúcar* le pones.",
+   "voz": "Además, en casa tú decides cuánta azúcar le pones. ¡Nada de colorantes!",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "rosita": "point"
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para unos *dos litros*, para cuatro: *medio kilo* de maíz morado y *tres litros* de agua.",
+   "voz": "Para unos dos litros, para cuatro personas: medio kilo de maíz morado, y tres litros de agua.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:maiz_morado,chicha_olla|½ KG DE MAÍZ MORADO|3 LITROS DE AGUA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Más la *cáscara de una piña*, *una manzana*, *una rama de canela* y *cuatro clavos de olor*.",
+   "voz": "Más la cáscara de una piña, una manzana, una rama de canela, y cuatro clavos de olor.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:pina,manzana,canela,clavo|CÁSCARA DE 1 PIÑA|1 MANZANA|1 RAMA DE CANELA|4 CLAVOS"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y al final: *azúcar* al gusto, el jugo de *dos limones* y fruta picada.",
+   "voz": "Y al final: azúcar al gusto, el jugo de dos limones, y fruta picada.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:limon,pina,manzana|2 LIMONES|PIÑA EN CUBOS|MANZANA EN CUBOS"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿La *cáscara* de la piña? Chef, yo esa la boto a la basura.",
+   "voz": "¿La cáscara de la piña? Chef, yo esa la boto a la basura.",
+   "expr": {
+    "beto": "surprised",
+    "tito": "alert"
+   },
+   "fx": [
+    "alert:tito"
+   ],
+   "pantalla": "foto:pina|¿LA CÁSCARA?"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Ahí está el *sabor*, Beto! Lávala bien y va a la olla. Igual la *cáscara de manzana*.",
+   "voz": "¡Ahí está el sabor, Beto! Lávala bien, y va a la olla. Igual la cáscara de manzana.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "tarjeta": {
+    "label": "TRUCO DE CASA",
+    "valor": "LAS CÁSCARAS SUMAN",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: desgrana el maíz, y a la olla los *granos* con las *corontas*. ¡Todo suelta color!",
+   "voz": "Paso uno: desgrana el maíz, y a la olla van los granos con las corontas. ¡Todo suelta color!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:maiz_morado|PASO 1: GRANOS + CORONTAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: agrega la canela, el clavo y las cáscaras, con los *tres litros* de agua.",
+   "voz": "Paso dos: agrega la canela, el clavo y las cáscaras, con los tres litros de agua.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:canela,clavo,pina|CANELA|CLAVO|CÁSCARAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Hierve y luego *fuego medio*, entre *cuarenta y cinco minutos* y *una hora*, hasta que el grano *se abra*.",
+   "voz": "Hierve, y luego fuego medio, entre cuarenta y cinco minutos y una hora, hasta que el grano se abra.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "temblor": true,
+   "pantalla": "foto:chicha_olla|PASO 2: HERVIR 45-60 MIN",
+   "tarjeta": {
+    "label": "FUEGO MEDIO",
+    "valor": "45 A 60 MINUTOS",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y si se evapora mucho, chef?",
+   "voz": "¿Y si se evapora mucho, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Agrega un poquito de *agua caliente*. Quieres un color *morado intenso*, casi negro.",
+   "voz": "Agrega un poquito de agua caliente. Quieres un color morado intenso, casi negro.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:chicha_olla|MORADO INTENSO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¡Y ya huele a *canela* en toda la cocina!",
+   "voz": "¡Y ya huele a canela y a piña en toda la cocina, chef!",
+   "expr": {
+    "rosita": "laugh",
+    "beto": "happy",
+    "tito": "happy"
+   },
+   "fuego": true,
+   "fx": [
+    "stars:rosita"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: *cuela* y deja *enfriar*. Recién ahí, el azúcar.",
+   "voz": "Paso tres: cuela y deja enfriar. Recién ahí, el azúcar.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "pantalla": "lista:PASO 3: AL FINAL|Cuela|Deja enfriar|Azúcar al gusto|Limón al último"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el *limón* al último, ya fría: el ácido *aviva el color* y le da el toque fresco.",
+   "voz": "Y el limón al último, ya fría: el ácido aviva el color y le da el toque fresco.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:limon|EL LIMÓN AL ÚLTIMO",
+   "tarjeta": {
+    "label": "EL TOQUE FINAL",
+    "valor": "LIMÓN EN FRÍO",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y la sirvo con *piña* y *manzana picadita*, bien heladita.",
+   "voz": "Y la sirvo con piña y manzana picadita, bien heladita.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:chicha_morada|¡BIEN HELADA!"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, todavía no la pruebo y ya tengo la *lengua morada!*",
+   "voz": "¡Chef, todavía no la pruebo y ya tengo la lengua morada!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Porque ya te tomaste medio vaso, Beto! Y un dato: con el maíz cocido que sobra, en muchas casas hacen *mazamorra morada*.",
+   "voz": "¡Porque ya te tomaste medio vaso, Beto! Y un dato: con el maíz cocido que sobra, en muchas casas hacen mazamorra morada.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "pantalla": "foto:maiz_morado|CON LO QUE SOBRA: MAZAMORRA"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Salud! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡Salud! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:chicha_morada_2|¡SALUD!"
+  }
+ ]
+}

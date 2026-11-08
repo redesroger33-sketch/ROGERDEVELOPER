@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"RECETA PERUANA DE VERDAD","titulo":["CHICHA MORADA","¡LA DE VERDAD!"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"chicha_morada_2","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"SIN SOBRECITO","size":48,"x":880,"y":800},"franja":"EL LIMÓN VA AL ÚLTIMO"}
