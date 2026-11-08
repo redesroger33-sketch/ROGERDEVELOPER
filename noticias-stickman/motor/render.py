@@ -261,6 +261,47 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
+    elif kind == "penal":
+        # muro con torreón y escudo
+        c.rectangle(cx - 230, cy - 10, 460, 170)
+        fill_stroke(c, hx("9AA1AD"), INK, 6)
+        c.set_source_rgba(*hx("7E8694"))
+        c.set_line_width(3)
+        for r in range(4):
+            y = cy - 10 + r * 42
+            c.move_to(cx - 230, y)
+            c.line_to(cx + 230, y)
+            c.stroke()
+            for k in range(6):
+                x = cx - 230 + (k * 80 + (40 if r % 2 else 0))
+                c.move_to(x, y)
+                c.line_to(x, y + 42)
+                c.stroke()
+        c.rectangle(cx + 120, cy - 150, 80, 140)
+        fill_stroke(c, hx("C9CED6"), INK, 5)
+        c.rectangle(cx + 105, cy - 175, 110, 30)
+        fill_stroke(c, hx("5D6573"), INK, 5)
+        # reflector que barre
+        a_ = math.sin(t * 1.5) * 0.6
+        c.save()
+        c.translate(cx + 160, cy - 150)
+        c.rotate(a_)
+        c.move_to(0, 0)
+        c.line_to(-260, -60)
+        c.line_to(-260, 60)
+        c.close_path()
+        c.set_source_rgba(1, 0.95, 0.6, 0.35)
+        c.fill()
+        c.restore()
+        c.move_to(cx - 130, cy - 150)
+        c.line_to(cx - 60, cy - 120)
+        c.line_to(cx - 60, cy - 50)
+        c.curve_to(cx - 60, cy - 10, cx - 130, cy + 10, cx - 130, cy + 10)
+        c.curve_to(cx - 130, cy + 10, cx - 200, cy - 10, cx - 200, cy - 50)
+        c.line_to(cx - 200, cy - 120)
+        c.close_path()
+        fill_stroke(c, hx("3E8E41"), INK, 5)
+        text_center(c, "FF.AA.", cx - 130, cy - 60, 30, WHITE)
     elif kind == "mercado":
         # zanahoria y arvejas con etiqueta de precio que sube
         c.save()
@@ -574,16 +615,16 @@ def draw_screen(c, kind, t, local):
         c.move_to(-tw(c, cinta) / 2, 10)
         c.show_text(cinta)
         c.restore()
-    elif kind in ("ley", "contrato"):
+    elif kind in ("ley", "contrato") or kind.startswith("ley:"):
         rrect(c, cx - 130, cy - 165, 260, 330, 16)
         fill_stroke(c, WHITE, INK, 7)
-        titulo = "D. LEG. 713" if kind == "ley" else "CONTRATO"
+        titulo = kind[4:] if kind.startswith("ley:") else ("D. LEG. 713" if kind == "ley" else "CONTRATO")
         text_center(c, titulo, cx, cy - 105, 38, NAVY)
         c.set_source_rgba(*GRAY_TXT)
         for i in range(6):
             rrect(c, cx - 95, cy - 70 + i * 34, 190 - (50 if i == 5 else 0), 14, 7)
             c.fill()
-        if kind == "ley":
+        if kind.startswith("ley"):
             c.arc(cx + 80, cy + 120, 44, 0, 2 * math.pi)
             fill_stroke(c, RED, INK, 5)
             text_center(c, "LEY", cx + 80, cy + 132, 30, WHITE)

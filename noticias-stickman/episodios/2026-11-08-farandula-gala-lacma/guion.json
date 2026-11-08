@@ -1,0 +1,171 @@
+{
+  "id": "2026-11-08-farandula-gala-lacma",
+  "archivo": "FarandulaStickman_2026-11-08_Gala_LACMA_Villeneuve.mp4",
+  "fecha": "08 NOV 2026",
+  "seccion": "FARÁNDULA MUNDIAL",
+  "titular": [
+    "¡GALA DE",
+    "ESTRELLAS EN L.A.!"
+  ],
+  "locutor": "maskaly",
+  "elenco": [
+    "chato",
+    "maskaly",
+    "lucha"
+  ],
+  "programa": [
+    "FARÁNDULA",
+    "STICKMAN"
+  ],
+  "pantalla_inicial": "escenario:GALA",
+  "cierre_sub": "Mañana, más chisme del bueno",
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "maskaly": 0.9,
+    "chato": 0.95,
+    "lucha": 1.0
+  },
+  "escenas": [
+    {
+      "quien": "maskaly",
+      "texto": "¡Buenos días, *Stickmatas!* ¡Alfombra roja de lujo! Anoche fue la *gala LACMA Art+Film* en Los Ángeles.",
+      "voz": "¡Buenos días, Stickmatas! ¡Alfombra roja de lujo! Anoche fue la gala Lacma Art and Film, en Los Ángeles.",
+      "expr": {
+        "maskaly": "happy",
+        "chato": "surprised",
+        "lucha": "happy"
+      },
+      "pose": {
+        "lucha": "up"
+      },
+      "pantalla": "escenario:GALA",
+      "fx": [
+        "confeti:maskaly"
+      ]
+    },
+    {
+      "quien": "lucha",
+      "texto": "Dato: homenajearon al director *Denis Villeneuve*, el de *Dune*, y a la artista *Vija Celmins*.",
+      "voz": "Dato: homenajearon al director Denis Villeneuve, el de Dune, y a la artista Vija Celmins.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "surprised"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "tarjeta": {
+        "label": "HOMENAJEADOS",
+        "valor": "VILLENEUVE + CELMINS",
+        "nota": "15.ª edición · 7 de noviembre",
+        "delay": 1.2
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¿El de *Dune*? ¡Yo también tengo duna… en mi patio, de arena de construcción!",
+      "voz": "¿El de Dune? ¡Yo también tengo duna... en mi patio, de arena de construcción!",
+      "expr": {
+        "chato": "laugh",
+        "maskaly": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      },
+      "fx": [
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "maskaly",
+      "texto": "¡Y desfiló *Anya Taylor-Joy*, la que creció en Argentina, con un vestido de *escultura*!",
+      "voz": "¡Y desfiló Anya Taylor Joy, la que creció en Argentina, con un vestido de escultura!",
+      "expr": {
+        "maskaly": "surprised",
+        "chato": "alert"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "temblor": true
+    },
+    {
+      "quien": "lucha",
+      "texto": "También llegaron *Andrew Garfield*, *Paris Hilton* y *Julia Garner*. La organizaron *Leonardo DiCaprio* y *Eva Chow*.",
+      "voz": "También llegaron Andrew Garfield, Paris Hilton y Julia Garner. La organizaron Leonardo DiCaprio y Eva Chow.",
+      "expr": {
+        "lucha": "happy",
+        "maskaly": "happy"
+      },
+      "pantalla": "texto:DICAPRIO|COANFITRIÓN",
+      "tarjeta": {
+        "label": "COANFITRIONES",
+        "valor": "DICAPRIO + EVA CHOW",
+        "delay": 1.0
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "¿Las entradas? Desde *10 mil dólares*… y una mesa, *75 mil*.",
+      "voz": "¿Las entradas? Desde diez mil dólares... y una mesa, setenta y cinco mil.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "alert"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "pantalla": "texto:$10,000|ENTRADA",
+      "tarjeta": {
+        "label": "PRECIO",
+        "valor": "DESDE US$ 10,000",
+        "delay": 0.5
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¡Con eso me compro *diez parrillas* y me sobra para el carbón!",
+      "voz": "¡Con eso me compro diez parrillas, y me sobra para el carbón!",
+      "expr": {
+        "chato": "laugh",
+        "maskaly": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "shrug"
+      },
+      "fx": [
+        "ja:maskaly"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "maskaly",
+      "texto": "¡Dale *like* y sígueme! Nos vemos mañana, *Stickmatas*.",
+      "voz": "¡Dale like y sígueme! Nos vemos mañana, Stickmatas.",
+      "expr": {
+        "maskaly": "happy",
+        "chato": "laugh",
+        "lucha": "happy"
+      },
+      "pose": {
+        "chato": "up",
+        "lucha": "wave"
+      },
+      "fx": [
+        "confeti:maskaly"
+      ],
+      "pantalla": "escenario:GALA"
+    }
+  ]
+}

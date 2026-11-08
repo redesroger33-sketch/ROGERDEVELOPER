@@ -1,0 +1,3 @@
+{"banda":"PERÚ · SEGURIDAD","titulo":["¡MILITARES EN","LOS PENALES!"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"paco":{"pose":"rest","expr":"serious"},"lucha":{"pose":"hip","expr":"serious"}},
+ "fx":["alert:chato"],"sello":{"texto":"D.L. 1742","size":80},"franja":"RESGUARDO EXTERIOR · TEMPORAL"}

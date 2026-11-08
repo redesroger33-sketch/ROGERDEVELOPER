@@ -1,0 +1,158 @@
+{
+  "id": "2026-11-08-militares-penales-dl-1742",
+  "archivo": "NoticiasStickman_2026-11-08_militares_penales_DL1742.mp4",
+  "fecha": "08 NOV 2026",
+  "seccion": "PERÚ · SEGURIDAD",
+  "titular": [
+    "¡MILITARES EN",
+    "LOS PENALES!"
+  ],
+  "pantalla_inicial": "penal",
+  "duracion_max": 49.5,
+  "velocidad_voz": {
+    "paco": 0.88,
+    "chato": 0.95,
+    "lucha": 1.0
+  },
+  "escenas": [
+    {
+      "quien": "paco",
+      "texto": "¡Buenos días, *Stickmatas!* Nueva norma: las *Fuerzas Armadas* podrán resguardar los *exteriores de penales* en emergencia.",
+      "voz": "¡Buenos días, Stickmatas! Nueva norma: las Fuerzas Armadas podrán resguardar los exteriores de penales en emergencia.",
+      "expr": {
+        "paco": "serious",
+        "chato": "surprised",
+        "lucha": "serious"
+      },
+      "pantalla": "penal",
+      "temblor": true
+    },
+    {
+      "quien": "lucha",
+      "texto": "Es el *Decreto Legislativo 1742*, publicado hoy en *El Peruano*.",
+      "voz": "Es el Decreto Legislativo mil setecientos cuarenta y dos, publicado hoy en El Peruano.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "neutral"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "pantalla": "ley:D. LEG. 1742",
+      "tarjeta": {
+        "label": "NORMA PUBLICADA HOY",
+        "valor": "D. LEG. 1742",
+        "delay": 0.8
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¿Militares en la puerta? ¡Así ni el *delivery* se atreve a tocar, causa!",
+      "voz": "¿Militares en la puerta? ¡Así ni el delivery se atreve a tocar, causa!",
+      "expr": {
+        "chato": "laugh",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "up"
+      },
+      "fx": [
+        "ja:lucha"
+      ],
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "lucha",
+      "texto": "Podrán poner *anillos de seguridad*, patrullar la zona y proteger *torreones y accesos*.",
+      "voz": "Podrán poner anillos de seguridad, patrullar la zona, y proteger torreones y accesos.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "alert"
+      },
+      "fx": [
+        "alert:chato"
+      ],
+      "pantalla": "penal",
+      "tarjeta": {
+        "label": "FUNCIONES",
+        "valor": "ANILLOS + PATRULLAJE",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "paco",
+      "texto": "También apoyarán a la *Policía* en controles de identidad, coordinando con el *INPE*.",
+      "voz": "También apoyarán a la Policía en controles de identidad, coordinando con el INPE.",
+      "expr": {
+        "paco": "serious",
+        "chato": "neutral",
+        "lucha": "neutral"
+      },
+      "tarjeta": {
+        "label": "TRABAJO CONJUNTO",
+        "valor": "FF.AA. + PNP + INPE",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "lucha",
+      "texto": "Ojo: es *temporal y excepcional*. Los detalles operativos se conocerán *después*.",
+      "voz": "Ojo: es temporal y excepcional. Los detalles operativos se conocerán después.",
+      "expr": {
+        "lucha": "serious",
+        "chato": "surprised"
+      },
+      "pose": {
+        "lucha": "point"
+      },
+      "pantalla": "texto:TEMPORAL|Y EXCEPCIONAL",
+      "tarjeta": {
+        "label": "IMPORTANTE",
+        "valor": "MEDIDA TEMPORAL",
+        "delay": 0.6
+      }
+    },
+    {
+      "quien": "chato",
+      "texto": "¡Con ese *reflector* ni mi suegra se escapa de la sobremesa!",
+      "voz": "¡Con ese reflector ni mi suegra se escapa de la sobremesa!",
+      "expr": {
+        "chato": "laugh",
+        "paco": "laugh",
+        "lucha": "laugh"
+      },
+      "pose": {
+        "chato": "shrug"
+      },
+      "fx": [
+        "ja:paco"
+      ],
+      "pantalla": "penal",
+      "zoom": true,
+      "sonido": [
+        "rimshot"
+      ],
+      "pausa": 0.8
+    },
+    {
+      "quien": "paco",
+      "texto": "¿Tú qué opinas de la medida? Comenta. ¡Nos vemos mañana, *Stickmatas*!",
+      "voz": "¿Tú qué opinas de la medida? Comenta. ¡Nos vemos mañana, Stickmatas!",
+      "expr": {
+        "paco": "happy",
+        "chato": "happy",
+        "lucha": "happy"
+      },
+      "pose": {
+        "chato": "wave",
+        "lucha": "wave"
+      },
+      "pantalla": "compartir"
+    }
+  ]
+}
