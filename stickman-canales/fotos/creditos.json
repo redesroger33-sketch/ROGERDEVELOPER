@@ -658,5 +658,29 @@
   "autor": "Al Riaz Uddin",
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Analog_stopwatch.jpg"
+ },
+ "vaso_agua": {
+  "title": "File:Glass of water ouside.jpg",
+  "autor": "Kurt Kaiser",
+  "lic": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Glass_of_water_ouside.jpg"
+ },
+ "vaso_agua_2": {
+  "title": "File:Glass-of-water.jpg",
+  "autor": "Derek Jensen (Tysto)",
+  "lic": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Glass-of-water.jpg"
+ },
+ "sandia": {
+  "title": "File:Watermelon slices (8481636501).jpg",
+  "autor": "fitri agung from Pekanbaru, Riau, Indonesia, Indonesia",
+  "lic": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Watermelon_slices_(8481636501).jpg"
+ },
+ "pepino": {
+  "title": "File:Cucumber Slices (Alabama Extension).jpg",
+  "autor": "Alabama Extension",
+  "lic": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cucumber_Slices_(Alabama_Extension).jpg"
  }
 }

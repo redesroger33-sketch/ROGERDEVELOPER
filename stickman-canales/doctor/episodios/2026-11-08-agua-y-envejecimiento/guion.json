@@ -1,0 +1,294 @@
+{
+ "id": "2026-11-08-agua-y-envejecimiento",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-08_agua_y_envejecimiento.mp4",
+ "fecha": "08 NOV 2026",
+ "seccion": "HIDRATACIÓN",
+ "titular": [
+  "TOMAR AGUA:",
+  "¿ENVEJECER MÁS LENTO?"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:vaso_agua|AGUA: EL HÁBITO BARATO",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, el hábito más barato del mundo: *tomar agua*.",
+   "voz": "¡Hola, familia sana! Hoy, el hábito más barato del mundo: tomar agua.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:vaso_agua|AGUA: EL HÁBITO BARATO"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Agua? Doctor, eso no es noticia.",
+   "voz": "¿Agua? Doctor, eso no es noticia.",
+   "expr": {
+    "vita": "shrug",
+    "bruno": "surprised"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Sí lo es: los *Institutos Nacionales de Salud* de Estados Unidos la ligaron con *envejecer más lento*.",
+   "voz": "Sí lo es: los Institutos Nacionales de Salud de Estados Unidos la ligaron con envejecer más lento.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "ESTUDIO NIH",
+    "valor": "AGUA Y EDAD BIOLÓGICA",
+    "delay": 1.5
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Datos: *quince mil setecientos* adultos de *cuarenta y cinco a sesenta y seis* años, seguidos *veinticinco años*. Revista *eBioMedicine*, dos mil veintitrés.",
+   "voz": "Datos: quince mil setecientos adultos de cuarenta y cinco a sesenta y seis años, seguidos veinticinco años. Revista eBioMedicine, dos mil veintitrés.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:analisis_sangre|SE MIDIÓ EN LA SANGRE",
+   "tarjeta": {
+    "label": "EBIOMEDICINE 2023",
+    "valor": "15 752 ADULTOS · 25 AÑOS",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Midieron el *sodio en la sangre*: cuando sube, suele ser señal de que *tomamos poca agua*.",
+   "voz": "Midieron el sodio en la sangre: cuando sube, suele ser señal de que tomamos poca agua.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Con el sodio alto, hubo *treinta y nueve por ciento* más riesgo de *enfermedades crónicas*.",
+   "voz": "Con el sodio en la parte alta, hubo treinta y nueve por ciento más riesgo de enfermedades crónicas.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "tarjeta": {
+    "label": "ENFERMEDADES CRÓNICAS",
+    "valor": "+39 % RIESGO",
+    "delay": 1.2
+   },
+   "pantalla": "foto:caminando_gente_0|ENFERMEDADES CRÓNICAS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Y hasta *cincuenta por ciento* más probabilidad de tener un cuerpo *más viejo* que su edad!",
+   "voz": "¡Y hasta cincuenta por ciento más probabilidad de tener un cuerpo más viejo que su edad!",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "alert:vita"
+   ],
+   "tarjeta": {
+    "label": "EDAD BIOLÓGICA",
+    "valor": "HASTA +50 %",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y con el sodio *más alto* aún, *veintiún por ciento* más riesgo de *morir antes de tiempo*.",
+   "voz": "Y con el sodio todavía más alto, veintiún por ciento más riesgo de morir antes de tiempo.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "tarjeta": {
+    "label": "MUERTE PREMATURA",
+    "valor": "+21 % RIESGO",
+    "delay": 1.2
+   },
+   "pantalla": "foto:reloj_arena|ANTES DE TIEMPO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: es un estudio de *observación*. Muestra relación, no prueba causa. Faltan *ensayos* para confirmarlo.",
+   "voz": "Ojo: es un estudio de observación. Muestra relación, no prueba causa. Faltan ensayos para confirmarlo.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:OJO CON ESTE ESTUDIO|Muestra relación|No prueba causa|Faltan ensayos"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cuánta agua necesito, doctor?",
+   "voz": "¿Y cuánta agua necesito, doctor?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:vaso_agua_2|¿CUÁNTA AGUA?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "La Academia Nacional de Medicina sugiere unos *nueve vasos* de líquidos al día en mujeres y *trece* en hombres.",
+   "voz": "La Academia Nacional de Medicina sugiere unos nueve vasos de líquidos al día en mujeres, y trece en hombres.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "LÍQUIDOS AL DÍA",
+    "valor": "MUJER 9 · HOMBRE 13 VASOS",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y cerca del *veinte por ciento* del agua viene de la comida: *sandía*, *pepino*, frutas y verduras.",
+   "voz": "Y cerca del veinte por ciento del agua viene de la comida: sandía, pepino, frutas y verduras.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "fotos:sandia,pepino,lechuga|SANDÍA|PEPINO|LECHUGA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y la *cervecita* del domingo cuenta como agua?",
+   "voz": "¿Y la cervecita del domingo cuenta como agua?",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡No! El *alcohol* te hace orinar más y *pierdes agua*. Mejor agua sola.",
+   "voz": "¡No! El alcohol te hace orinar más y pierdes agua. Mejor agua sola.",
+   "expr": {
+    "bruno": "alert",
+    "vita": "laugh"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "fx": [
+    "alert:bruno"
+   ],
+   "pantalla": "foto:vaso_agua_2|MEJOR AGUA SOLA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Receta natural para hoy:",
+   "voz": "Receta natural para hoy:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Un vaso al despertar|Un vaso con cada comida|Botella a la mano|Fruta y verdura con agua|Agua sola, no gaseosa"
+  },
+  {
+   "quien": "vita",
+   "texto": "Señal fácil: si tu orina sale *amarillo oscuro*, te falta agua.",
+   "voz": "Señal fácil: si tu orina sale amarillo oscuro, te falta agua.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "SEÑAL DE ALERTA",
+    "valor": "ORINA OSCURA",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Con problemas de *riñón*, *corazón*, *hígado* o *tiroides*, pregunta cuánta agua te toca: el exceso también daña.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes problemas de riñón, corazón, hígado o tiroides, pregunta cuánta agua te toca: el exceso también daña.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:PREGUNTA A TU MÉDICO SI TIENES|Problemas de riñón|Problemas del corazón|Problemas del hígado|Tiroides"
+  },
+  {
+   "quien": "vita",
+   "texto": "Comparte esto con quien vive a puro *café*. ¡Hasta mañana, *familia sana!*",
+   "voz": "Compártelo con quien vive a puro café. ¡Hasta mañana, familia sana!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:vaso_agua|¡SALUD CON AGUA!"
+  }
+ ]
+}
