@@ -261,6 +261,50 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
+    elif kind == "estatua":
+        # mar al fondo + figura blanca gigante con mitra
+        c.rectangle(x0 + 10, cy + 90, w - 20, 90)
+        c.set_source_rgba(0.12, 0.45, 0.7, 1)
+        c.fill()
+        c.set_source_rgba(1, 1, 1, 0.6)
+        c.set_line_width(4)
+        for i in range(5):
+            yy = cy + 110 + i * 15
+            c.move_to(x0 + 10, yy)
+            for j in range(12):
+                c.line_to(x0 + 10 + j * 48, yy + 5 * math.sin(t * 3 + j + i))
+            c.stroke()
+        # pedestal
+        rrect(c, cx - 70, cy + 60, 140, 50, 6)
+        fill_stroke(c, hx("9AA1AD"), INK, 5)
+        # túnica
+        c.move_to(cx - 60, cy + 62)
+        c.line_to(cx - 35, cy - 70)
+        c.line_to(cx + 35, cy - 70)
+        c.line_to(cx + 60, cy + 62)
+        c.close_path()
+        fill_stroke(c, WHITE, INK, 5)
+        # brazos abiertos
+        c.set_source_rgba(*WHITE)
+        c.set_line_width(18)
+        c.set_line_cap(cairo.LINE_CAP_ROUND)
+        c.move_to(cx - 30, cy - 50)
+        c.line_to(cx - 100, cy - 95)
+        c.move_to(cx + 30, cy - 50)
+        c.line_to(cx + 100, cy - 95)
+        c.stroke()
+        # cabeza y mitra
+        c.arc(cx, cy - 95, 26, 0, 2 * math.pi)
+        fill_stroke(c, hx("F2DCC4"), INK, 4)
+        c.move_to(cx - 22, cy - 115)
+        c.line_to(cx, cy - 170)
+        c.line_to(cx + 22, cy - 115)
+        c.close_path()
+        fill_stroke(c, WHITE, INK, 4)
+        c.rectangle(cx - 4, cy - 160, 8, 40)
+        c.set_source_rgba(*YELLOW)
+        c.fill()
+        text_center(c, "14 M", cx + 175, cy - 120, 46, YELLOW, outline=INK, ow=6)
     elif kind == "penal":
         # muro con torreón y escudo
         c.rectangle(cx - 230, cy - 10, 460, 170)

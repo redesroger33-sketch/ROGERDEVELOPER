@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA PERÚ","titulo":["¡ANUEL AA RECONOCE","A UN PERUANO!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"laugh"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["ja:chato","stars:lucha"],"sello":{"texto":"RIMA","size":100},"franja":"TOWER BEATZ · ORGULLO PERUANO"}

@@ -1,0 +1,3 @@
+{"banda":"PERÚ · VISITA PAPAL","titulo":["¡UN PAPA","DE 14 METROS!"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"paco":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["alert:chato","stars:lucha"],"sello":{"texto":"14 M","size":110},"franja":"LA PUNTA · HOY 5 P.M."}
