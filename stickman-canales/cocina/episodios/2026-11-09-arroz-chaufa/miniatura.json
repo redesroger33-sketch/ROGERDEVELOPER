@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"SECRETOS DE UN CHEF PERUANO","titulo":["ARROZ CHAUFA","¡QUE EL ARROZ SUENE!"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"chaufa_0","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"3 VECES","size":64,"x":880,"y":800},"franja":"EL SECRETO: LIMÓN + ROCOTO"}

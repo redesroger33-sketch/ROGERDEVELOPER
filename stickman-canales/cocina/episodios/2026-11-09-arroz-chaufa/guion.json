@@ -1,0 +1,304 @@
+{
+ "id": "2026-11-09-arroz-chaufa",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-09_arroz_chaufa.mp4",
+ "fecha": "09 NOV 2026",
+ "seccion": "CHIFA DE BARRIO",
+ "titular": [
+  "ARROZ CHAUFA:",
+  "¡EL ARROZ TIENE QUE SONAR!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:chaufa_0|ARROZ CHAUFA",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el rey del chifa de barrio: ¡el *arroz chaufa* casero!",
+   "voz": "¡Hola, cocineros! Hoy, el rey del chifa de barrio: ¡el arroz chaufa casero!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:chaufa_0|ARROZ CHAUFA"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, el mío siempre sale *pegoteado*, como mazamorra de arroz.",
+   "voz": "Chef, el mío siempre sale pegoteado, como mazamorra de arroz.",
+   "expr": {
+    "beto": "worried",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Hoy lo arreglamos con la *técnica del gran chef*: el arroz tiene que *sonar*.",
+   "voz": "Hoy lo arreglamos con la técnica de Gastón Acurio: el arroz tiene que sonar.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "tarjeta": {
+    "label": "LA TÉCNICA DEL GRAN CHEF",
+    "valor": "¡QUE SUENE!",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Insumos para *cuatro*: *cuatro tazas* de arroz cocido y *una taza* de carne picada, pollo o cerdo.",
+   "voz": "Insumos para cuatro: cuatro tazas de arroz cocido, y una taza de carne picada, pollo o cerdo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:arroz_blanco_3,pechuga|4 TAZAS DE ARROZ|1 TAZA DE CARNE"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Más *cebolla china*, *una cucharada* de ajo, *una* de kion rallado y *media taza* de pimiento rojo.",
+   "voz": "Más cebolla china, una cucharada de ajo, una de kion rallado, y media taza de pimiento rojo.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:cebolla_china_3,ajo_0,kion,pimiento_zanahoria|CEBOLLA CHINA|1 CDA AJO|1 CDA KION|½ TAZA PIMIENTO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y para sazonar: *ocho cucharadas* de sillao, *cuatro* de aceite de ajonjolí, salsa de ostión y *cuatro huevos*.",
+   "voz": "Y para sazonar: ocho cucharadas de sillao, cuatro de aceite de ajonjolí, una de salsa de ostión, y cuatro huevos.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:sillao_1,aceite_ajonjoli,huevos|8 CDAS SILLAO|4 CDAS AJONJOLÍ|4 HUEVOS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: un chorro de aceite, la *cabeza* de la cebolla china, el ajo y el kion. *Dos minutos* a fuego medio.",
+   "voz": "Paso uno: un chorro de aceite, media taza de la cabeza de la cebolla china, el ajo y el kion. Dos minutos a fuego medio.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:kion|PASO 1: SUDAR 2 MINUTOS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: el pimiento y la carne. Doras *dos minutos* rapidito.",
+   "voz": "Paso dos: el pimiento y la carne. Doras dos minutos, rapidito.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 2: CARNE Y PIMIENTO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: el arroz, fuego *al máximo*... ¡y *dejas de mover*!",
+   "voz": "Paso tres: el arroz, fuego al máximo... ¡y dejas de mover!",
+   "expr": {
+    "tito": "alert",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "fuego": true,
+   "temblor": true
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Dejar de mover? ¡Pero se va a quemar, chef!",
+   "voz": "¿Dejar de mover? ¡Pero se va a quemar, chef!",
+   "expr": {
+    "beto": "worried",
+    "tito": "happy"
+   },
+   "fuego": true,
+   "fx": [
+    "alert:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Esperas hasta que *suene* como si en el fondo se estuviera *tostando*. Ahí raspas y *chancas* el arroz con el cucharón.",
+   "voz": "Esperas hasta que suene como si en el fondo se estuviera tostando. Ahí raspas, y chancas el arroz con el cucharón.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 3: LA TÉCNICA|Fuego al máximo|No muevas hasta que suene|Raspa el fondo|Chanca con el cucharón|Repite 3 veces"
+  },
+  {
+   "quien": "tito",
+   "texto": "Das vuelta, otra vez *quieto* hasta que suene. ¡Así *tres veces*!",
+   "voz": "Das vuelta, y otra vez quieto hasta que suene. ¡Así tres veces!",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "EL SECRETO DEL SABOR",
+    "valor": "3 VECES TOSTADO",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, ya entendí! Es como mi *celular cargando*: si lo miro a cada rato, *no avanza*.",
+   "voz": "¡Chef, ya entendí! Es como mi celular cargando: si lo miro a cada rato, no avanza.",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: el ajonjolí, el sillao, sal, pimienta, una *pizca de azúcar*, el ostión y *dos tazas* de cebolla china.",
+   "voz": "Paso cuatro: el ajonjolí, el sillao, sal, pimienta, una pizca de azúcar, el ostión, y dos tazas de cebolla china.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:sillao_1|PASO 4: SAZONAR"
+  },
+  {
+   "quien": "tito",
+   "texto": "Al final, una *tortilla* de cuatro huevos *picadita*. Una última movida ¡y listo!",
+   "voz": "Al final, una tortilla de cuatro huevos, picadita. Una última movida, ¡y listo!",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:huevos|TORTILLA PICADA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y el toque final, chef?",
+   "voz": "¿Y el toque final, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El secreto del gran chef: unas *gotitas de limón* y un poco de *rocoto licuado* casero, al terminar.",
+   "voz": "El secreto de Gastón: unas gotitas de limón y un poco de rocoto licuado casero, al terminar.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "fotos:limon,rocoto|GOTITAS DE LIMÓN|ROCOTO LICUADO",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "LIMÓN + ROCOTO",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, esto huele a *chifa de esquina* un sábado!",
+   "voz": "¡Chef, esto huele a chifa de esquina un sábado!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:beto"
+   ],
+   "pantalla": "foto:chaufa_2|¡HUELE A CHIFA!"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:chaufa_0|¡A LA MESA!"
+  }
+ ]
+}
