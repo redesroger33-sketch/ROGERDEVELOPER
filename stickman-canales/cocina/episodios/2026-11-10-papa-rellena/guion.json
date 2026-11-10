@@ -1,0 +1,295 @@
+{
+ "id": "2026-11-10-papa-rellena",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-10_papa_rellena.mp4",
+ "fecha": "10 NOV 2026",
+ "seccion": "CLÁSICO LIMEÑO",
+ "titular": [
+  "PAPA RELLENA:",
+  "¡QUE NO SE ABRA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:papa_rellena|PAPA RELLENA",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, la reina de la carretilla limeña: ¡la *papa rellena!*",
+   "voz": "¡Hola, cocineros! Hoy, la reina de la carretilla limeña: ¡la papa rellena!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:papa_rellena|PAPA RELLENA"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, a mí se me *abren* en el aceite y termino con *puré frito*.",
+   "voz": "Chef, a mí se me abren en el aceite, y termino con puré frito.",
+   "expr": {
+    "beto": "worried",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Hoy no, Beto. Seguimos la receta del *gran chef*, paso a paso.",
+   "voz": "Hoy no, Beto. Seguimos la receta de Gastón Acurio, paso a paso.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Insumos para *cuatro*: *cuatro papas blancas* grandes, *una papa amarilla* y *un huevo*.",
+   "voz": "Insumos para cuatro: cuatro papas blancas grandes, una papa amarilla, y un huevo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:papas_sancochadas,huevos|4 BLANCAS + 1 AMARILLA|1 HUEVO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "El relleno: *medio kilo* de carne picada o molida, *una cebolla roja*, ajo y *una cucharada* de ají panca.",
+   "voz": "Para el relleno: medio kilo de carne picada o molida, una cebolla roja, una pizca de ajo, y una cucharada de ají panca licuado.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:carne_molida,cebolla_roja_2,aji_panca|½ KG DE CARNE|1 CEBOLLA ROJA|1 CDA AJÍ PANCA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y la sorpresa de adentro: *huevo duro*, *pasas* y *aceitunas*.",
+   "voz": "Y la sorpresa de adentro: huevo duro, pasas, y aceitunas.",
+   "expr": {
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:huevo_duro,pasas,aceitunas|HUEVO DURO|PASAS|ACEITUNAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: sancocha las papas y pásalas por el *prensapapas* mientras están *calientes*.",
+   "voz": "Paso uno: sancocha las papas, y pásalas por el prensapapas mientras están calientes.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:prensapapas|PASO 1: PRENSA EN CALIENTE"
+  },
+  {
+   "quien": "tito",
+   "texto": "Amasa con el *huevo*, sal y pimienta, hasta tener una masa *suave* y pareja.",
+   "voz": "Amasa con el huevo, sal y pimienta, hasta tener una masa suave y pareja.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "tarjeta": {
+    "label": "LA MASA",
+    "valor": "SUAVE Y PAREJA",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: sofríe la cebolla con el ajo, dora la carne y agrega el *ají panca*, comino y orégano.",
+   "voz": "Paso dos: sofríe la cebolla con el ajo, dora la carne, y agrega el ají panca, sal, pimienta, comino y orégano.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:carne_molida|PASO 2: EL RELLENO"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y la armo de una vez, chef, con la masa calientita?",
+   "voz": "¿Y la armo de una vez, chef, con la masa calientita?",
+   "expr": {
+    "beto": "happy",
+    "tito": "alert"
+   },
+   "fx": [
+    "alert:tito"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡No! El gran chef lo dice clarito: se arma con la masa *ya fría*. Así se *maneja mejor*.",
+   "voz": "¡No! Gastón lo dice clarito: se arma con la masa ya fría. Así se maneja mucho mejor.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "TRUCO DEL GRAN CHEF",
+    "valor": "MASA FRÍA",
+    "delay": 1.3
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: espolvorea *harina* en la palma de la mano y estira una porción de masa.",
+   "voz": "Paso tres: espolvorea harina en la palma de tu mano, y estira una porción de masa.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "lista:PASO 3: EL ARMADO|Harina en la palma|Estira la masa|Huevo, pasa y aceituna|Relleno generoso|Cierra y sella bien"
+  },
+  {
+   "quien": "tito",
+   "texto": "Al centro: huevo duro, una pasa, una aceituna y *relleno generoso*. Cierra y *sella bien* los bordes.",
+   "voz": "Al centro: huevo duro, una pasa, una aceituna, y relleno generoso. Cierra, y sella bien los bordes.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:carne_molida|RELLENO GENEROSO"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, me quedó con forma de *pelota de fulbito!*",
+   "voz": "¡Chef, me quedó con forma de pelota de fulbito!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Igual vale, Beto! Bola u óvalo. Ahora pásala por *harina* y luego por *huevo batido*.",
+   "voz": "¡Igual vale, Beto! Bola u óvalo. Ahora pásala por harina, y luego por huevo batido.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "happy"
+   },
+   "tarjeta": {
+    "label": "EL APANADO",
+    "valor": "HARINA + HUEVO",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: deja *reposar* un momento y fríe a *fuego lento*, hasta que esté *dorada y crujiente*.",
+   "voz": "Paso cuatro: deja reposar un momento, y fríe a fuego lento, hasta que esté dorada y crujiente.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "temblor": true,
+   "pantalla": "foto:wok_fuego_0|PASO 4: FUEGO LENTO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y con qué la acompaño, chef?",
+   "voz": "¿Y con qué la acompaño, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El secreto del gran chef: *salsa criolla* y cremas como *huancaína*, *ocopa* o *crema de rocoto*.",
+   "voz": "El secreto de Gastón: salsa criolla, y cremas como huancaína, ocopa, o crema de rocoto.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "fotos:salsa_criolla,huancaina,rocoto|SALSA CRIOLLA|HUANCAÍNA|ROCOTO",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "CRIOLLA + CREMAS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:papa_rellena|¡A LA MESA!"
+  }
+ ]
+}
