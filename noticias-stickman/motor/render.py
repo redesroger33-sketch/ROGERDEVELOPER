@@ -261,6 +261,27 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
+    elif kind == "bus":
+        c.save()
+        c.translate(cx - 20, cy + 30)
+        rrect(c, -210, -120, 420, 170, 26)
+        fill_stroke(c, hx("FFD23F"), INK, 6)
+        for i in range(5):
+            rrect(c, -190 + i * 76, -100, 62, 60, 8)
+            fill_stroke(c, hx("6EC8FF"), INK, 4)
+        c.rectangle(-210, -20, 420, 18)
+        c.set_source_rgba(*RED)
+        c.fill()
+        for wx in (-130, 130):
+            c.arc(wx, 55, 34, 0, 2 * math.pi)
+            fill_stroke(c, hx("2A2F3F"), INK, 5)
+            c.arc(wx, 55, 12, 0, 2 * math.pi)
+            fill_stroke(c, hx("C9CED6"), INK, 3)
+        c.restore()
+        if (t % 1.0) < 0.65:
+            rrect(c, cx + 60, cy - 170, 170, 64, 12)
+            fill_stroke(c, RED, WHITE, 5)
+            text_center(c, "SIN SERVICIO", cx + 145, cy - 128, 26, WHITE)
     elif kind == "estatua":
         # mar al fondo + figura blanca gigante con mitra
         c.rectangle(x0 + 10, cy + 90, w - 20, 90)

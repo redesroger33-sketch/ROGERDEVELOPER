@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA PERÚ","titulo":["¡DIANA SÁNCHEZ","CONDUCE PARA EL PAPA!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"up","expr":"alert"},"maskaly":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["alert:chato","stars:lucha"],"sello":{"texto":"12 NOV","size":90},"franja":"VIGILIA · ESTADIO NACIONAL"}
