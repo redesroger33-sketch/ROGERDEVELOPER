@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["¿10 MIL PASOS?","LO QUE DICE LA CIENCIA"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"jiron_union","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["stars:bruno"],"sello":{"texto":"47 MIL ADULTOS","size":46,"x":880,"y":800},"franja":"+60 AÑOS: 6 A 8 MIL PASOS"}
