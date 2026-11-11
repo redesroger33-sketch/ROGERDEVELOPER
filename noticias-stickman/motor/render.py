@@ -261,6 +261,55 @@ def draw_screen(c, kind, t, local):
             c.move_to(-tw(c, "PARO") / 2, 11)
             c.show_text("PARO")
             c.restore()
+    elif kind == "avion":
+        k = (t % 4.0) / 4.0
+        px, py = x0 + 60 + k * (w - 120), y0 + 90 + k * 160
+        c.save()
+        c.translate(px, py)
+        c.rotate(0.3)
+        rrect(c, -110, -22, 220, 44, 22)
+        fill_stroke(c, WHITE, INK, 5)
+        c.move_to(-20, -10)
+        c.line_to(30, -80)
+        c.line_to(55, -80)
+        c.line_to(30, -10)
+        c.close_path()
+        fill_stroke(c, hx("C9CED6"), INK, 4)
+        c.move_to(-20, 10)
+        c.line_to(30, 80)
+        c.line_to(55, 80)
+        c.line_to(30, 10)
+        c.close_path()
+        fill_stroke(c, hx("C9CED6"), INK, 4)
+        c.move_to(-100, -10)
+        c.line_to(-125, -55)
+        c.line_to(-105, -55)
+        c.line_to(-75, -10)
+        c.close_path()
+        fill_stroke(c, YELLOW, INK, 4)
+        for i in range(5):
+            c.arc(-50 + i * 28, -4, 6, 0, 2 * math.pi)
+            c.set_source_rgba(0.43, 0.78, 1, 1)
+            c.fill()
+        c.restore()
+        c.rectangle(x0 + 10, y0 + h - 60, w - 20, 40)
+        c.set_source_rgba(0.25, 0.27, 0.32, 1)
+        c.fill()
+        c.set_source_rgba(1, 1, 1, 0.8)
+        for i in range(7):
+            c.rectangle(x0 + 30 + i * 78, y0 + h - 43, 40, 6)
+            c.fill()
+        text_center(c, "17:30", cx + 170, y0 + 80, 44, YELLOW, outline=INK, ow=6)
+    elif kind.startswith("rating"):
+        vals = [(11.7, "RISA", PINK), (10.9, "REVENT.", YELLOW), (4.8, "YO SOY", TEAL), (2.7, "JB", hx("9B4DFF"))]
+        grow = clamp(local / 1.2)
+        for i, (v, lbl, col) in enumerate(vals):
+            bx = x0 + 70 + i * 120
+            bh = 240 * (v / 12) * grow
+            rrect(c, bx, y0 + h - 70 - bh, 80, bh + 1, 8)
+            fill_stroke(c, col, INK, 4)
+            text_center(c, f"{v * grow:.1f}", bx + 40, y0 + h - 82 - bh, 30, WHITE)
+            text_center(c, lbl, bx + 40, y0 + h - 34, 22, WHITE, F_XBOLD)
     elif kind == "bus":
         c.save()
         c.translate(cx - 20, cy + 30)

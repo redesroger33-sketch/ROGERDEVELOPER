@@ -1,0 +1,3 @@
+{"banda":"PERÚ · VISITA PAPAL","titulo":["¡HOY LLEGA","EL PAPA!"],
+ "estados":{"chato":{"pose":"up","expr":"laugh"},"paco":{"pose":"rest","expr":"happy"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["ja:chato","stars:lucha"],"sello":{"texto":"5:30 PM","size":80},"franja":"LEÓN XIV · BASE AÉREA DEL CALLAO"}
