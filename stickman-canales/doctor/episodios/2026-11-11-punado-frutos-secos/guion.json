@@ -1,0 +1,292 @@
+{
+ "id": "2026-11-11-punado-frutos-secos",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-11_punado_frutos_secos.mp4",
+ "fecha": "11 NOV 2026",
+ "seccion": "ALIMENTO NATURAL",
+ "titular": [
+  "UN PUÑADO AL DÍA:",
+  "FRUTOS SECOS Y CORAZÓN"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:frutos_secos|UN PUÑADO AL DÍA",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, un snack que cabe en tu mano: un *puñado de frutos secos*.",
+   "voz": "¡Hola, familia sana! Hoy, un snack que cabe en tu mano: un puñado de frutos secos.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:frutos_secos|UN PUÑADO AL DÍA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Frutos secos? Doctor, yo pensaba que *engordaban*.",
+   "voz": "¿Frutos secos? Doctor, yo pensaba que engordaban.",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tienen calorías, sí. Pero mira lo que encontró la ciencia con *un puñado* al día.",
+   "voz": "Tienen calorías, sí. Pero mira lo que encontró la ciencia con un puñado al día.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Datos: revista *BMC Medicine*, dos mil dieciséis. *Veinte* estudios con hasta *ochocientos diecinueve mil* participantes.",
+   "voz": "Datos: revista BMC Medicine, dos mil dieciséis. Veinte estudios, con hasta ochocientos diecinueve mil participantes.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "BMC MEDICINE 2016",
+    "valor": "20 ESTUDIOS · 819 MIL PERSONAS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Por cada *veintiocho gramos* al día, más o menos *un puñado*, hubo *veintidós por ciento* menos mortalidad.",
+   "voz": "Por cada veintiocho gramos al día, más o menos un puñado, hubo veintidós por ciento menos mortalidad.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:punado_frutos|28 GRAMOS = UN PUÑADO",
+   "tarjeta": {
+    "label": "28 G AL DÍA",
+    "valor": "−22 % MORTALIDAD",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y *veintinueve por ciento* menos enfermedad coronaria, y *quince por ciento* menos cáncer en total.",
+   "voz": "Y veintinueve por ciento menos enfermedad coronaria, y quince por ciento menos cáncer en total.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "pantalla": "lista:CON UN PUÑADO AL DÍA|−22 % mortalidad|−29 % enfermedad coronaria|−21 % enfermedad cardiovascular|−15 % cáncer total"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y en otras enfermedades?",
+   "voz": "¿Y en otras enfermedades?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "También hubo menos muertes por enfermedades *respiratorias*, *diabetes* e *infecciones*, aunque con *menos estudios*.",
+   "voz": "También hubo menos muertes por enfermedades respiratorias, por diabetes y por infecciones, aunque esos datos vienen de menos estudios.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "pantalla": "foto:nueces|MÁS BENEFICIOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y vale el *maní*? ¡Porque las *almendras* están carísimas!",
+   "voz": "¿Y vale el maní? ¡Porque las almendras están carísimas!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6,
+   "pantalla": "foto:mani|¿Y EL MANÍ?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Buena noticia para el bolsillo! Los resultados fueron *parecidos* con el *maní* y con los demás frutos secos.",
+   "voz": "¡Buena noticia para el bolsillo! Los resultados fueron parecidos con el maní y con los demás frutos secos.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "laugh"
+   },
+   "tarjeta": {
+    "label": "MANÍ",
+    "valor": "TAMBIÉN SUMA",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Y en el Perú tenemos *castañas* de Madre de Dios, *nueces*, *pecanas* y *maní*.",
+   "voz": "Y en el Perú tenemos castañas de Madre de Dios, nueces, pecanas, y maní.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "pantalla": "fotos:castanas,nueces,pecanas,mani|CASTAÑAS|NUECES|PECANAS|MANÍ"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: son estudios de *observación*. Muestran relación, no prueban causa. Pero la señal se *repite* mucho.",
+   "voz": "Ojo: son estudios de observación. Muestran relación, no prueban causa. Pero la señal se repite mucho.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Los autores calcularon que, si la relación es causal, comer *menos de veinte gramos* al día se ligaría a *millones* de muertes prematuras.",
+   "voz": "Los autores calcularon que, si la relación es causal, comer menos de veinte gramos al día se ligaría a millones de muertes prematuras.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "serious"
+   },
+   "tarjeta": {
+    "label": "SI ES CAUSAL",
+    "valor": "LIGADO A MILLONES DE MUERTES",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cómo los como, doctor?",
+   "voz": "¿Y cómo los como, doctor?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:almendras|¿CÓMO COMERLOS?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Receta natural:",
+   "voz": "Receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Un puñado al día (28 g)|Naturales o tostados|Sin sal ni azúcar|Cambia la galleta por el puñado|En la avena o la ensalada"
+  },
+  {
+   "quien": "vita",
+   "texto": "Un puñado, ¿eh? ¡No la *bolsa entera* viendo la novela!",
+   "voz": "Un puñado, ¿eh? ¡No la bolsa entera viendo la novela!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "fx": [
+    "sweat:bruno"
+   ],
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "UN PUÑADO, NO LA BOLSA",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Exacto. Y si eres *alérgico* a algún fruto seco, *ni uno*.",
+   "voz": "Exacto. Y si eres alérgico al maní o a algún fruto seco, ni uno.",
+   "expr": {
+    "bruno": "alert",
+    "vita": "serious"
+   },
+   "fx": [
+    "alert:bruno"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si tienes problemas de *riñón* o una *dieta indicada*, pregúntale antes.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes problemas de riñón o una dieta indicada, pregúntale antes.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA ANTES SI TIENES|Alergia a frutos secos|Problemas de riñón|Una dieta indicada por tu médico"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con quien vive de *galletas* en la oficina! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con quien vive de galletas en la oficina! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:frutos_secos|¡UN PUÑADO AL DÍA!"
+  }
+ ]
+}

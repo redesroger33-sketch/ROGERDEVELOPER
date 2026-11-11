@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"ALIMENTO NATURAL CON CIENCIA","titulo":["UN PUÑADO AL DÍA","FRUTOS SECOS Y CORAZÓN"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"frutos_secos","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"laugh"}},
+ "fx":["stars:bruno"],"sello":{"texto":"−22 %","size":80,"x":880,"y":800},"franja":"EL MANÍ TAMBIÉN CUENTA"}
