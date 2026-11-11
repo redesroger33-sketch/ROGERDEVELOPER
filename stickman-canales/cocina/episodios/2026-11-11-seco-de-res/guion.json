@@ -1,0 +1,303 @@
+{
+ "id": "2026-11-11-seco-de-res",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-11_seco_de_res.mp4",
+ "fecha": "11 NOV 2026",
+ "seccion": "GUISO DE DOMINGO",
+ "titular": [
+  "SECO DE RES:",
+  "¡QUE SE CORTE CON CUCHARA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:seco_frejoles|SECO DE RES",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un guiso de domingo: ¡el *seco de res a la limeña!*",
+   "voz": "¡Hola, cocineros! Hoy, un guiso de domingo: ¡el seco de res a la limeña!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:seco_frejoles|SECO DE RES"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, mi seco siempre sale con la carne *dura como zapato*.",
+   "voz": "Chef, mi seco siempre sale con la carne dura como zapato.",
+   "expr": {
+    "beto": "worried",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Porque eliges mal el corte y lo apuras. Hoy seguimos la receta del *gran chef*.",
+   "voz": "Porque eliges mal el corte y lo apuras. Hoy seguimos la receta de Gastón Acurio.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El corte: *punta de pecho*, *asado de tira*, *osobuco*, *costilla* o *falda*. Cortes que piden *tiempo*.",
+   "voz": "El corte: punta de pecho, asado de tira, osobuco, costilla, o falda. Cortes que piden tiempo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:carne_res_1|CORTES PARA GUISO",
+   "tarjeta": {
+    "label": "TRUCO DEL GRAN CHEF",
+    "valor": "CORTES CON TIEMPO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Insumos: *un kilo* de carne sin hueso, o *kilo y medio* con hueso. *Dos cebollas rojas* y *una cucharada* de ajo.",
+   "voz": "Insumos: un kilo de carne sin hueso, o kilo y medio con hueso. Dos cebollas rojas, y una cucharada de ajo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:carne_res_1,cebolla_roja_2,ajo_0|1 KG DE CARNE|2 CEBOLLAS ROJAS|1 CDA DE AJO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "*Media taza* de ají amarillo licuado, *media* de ají mirasol, *un vaso* de chicha de jora y *una taza* de culantro licuado.",
+   "voz": "Media taza de ají amarillo licuado, media de ají mirasol, un vaso de chicha de jora, y una taza de culantro licuado.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:aji_amarillo_0,aji_mirasol,chicha_jora,culantro_1|½ TAZA AJÍ AMARILLO|½ TAZA MIRASOL|1 VASO CHICHA|1 TAZA CULANTRO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y para el final: *una taza* de arvejas, *dos zanahorias* y *cuatro papas* grandes.",
+   "voz": "Y para el final: una taza de arvejas, dos zanahorias, y cuatro papas grandes.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:arvejas,zanahoria,papas_sancochadas|1 TAZA ARVEJAS|2 ZANAHORIAS|4 PAPAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: corta la carne en trozos *grandes* y *dórala* con un chorrito de aceite. Retira y reserva.",
+   "voz": "Paso uno: corta la carne en trozos grandes, y dórala con un chorrito de aceite. Retira, y reserva.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 1: DORAR LA CARNE"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: en la misma olla, la cebolla *cinco minutos*, el ajo *dos*, y los ajíes *cinco más*.",
+   "voz": "Paso dos: en la misma olla, la cebolla cinco minutos, el ajo dos, y los ajíes cinco minutos más.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 2: EL ADEREZO|Cebolla: 5 minutos|Ajo: 2 minutos|Ajíes: 5 minutos|Chicha de jora|Culantro licuado"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y si no consigo *chicha de jora*, chef?",
+   "voz": "¿Y si no consigo chicha de jora, chef?",
+   "expr": {
+    "beto": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "think"
+   },
+   "pantalla": "foto:chicha_jora|¿Y SI NO HAY CHICHA?"
+  },
+  {
+   "quien": "tito",
+   "texto": "El gran chef lo resuelve: la cambias por *cerveza rubia*. Luego el *culantro* licuado, y que rompa a hervir.",
+   "voz": "Gastón lo resuelve: la cambias por cerveza rubia. Luego el culantro licuado, y que rompa a hervir.",
+   "expr": {
+    "tito": "happy",
+    "beto": "laugh"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "SIN CHICHA DE JORA",
+    "valor": "CERVEZA RUBIA",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: sal, pimienta y comino. Regresa la carne, *cubre con agua*, tapa y a *fuego lento*.",
+   "voz": "Paso tres: sal, pimienta y comino. Regresa la carne, cubre con agua, tapa, y a fuego lento.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:culantro_1|PASO 3: FUEGO LENTO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y cuánto tiempo, chef?",
+   "voz": "¿Y cuánto tiempo, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Hasta que la carne *se caiga del hueso*, o se corte *con cuchara*. Puede ser *media hora* o *dos horas*: ¡ve mirando!",
+   "voz": "Hasta que la carne se caiga del hueso, o se corte con cuchara. Puede ser media hora, o dos horas: ¡ve mirando!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "SE CORTA CON CUCHARA",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Dos horas! Chef, para entonces ya me comí *todo el pan* de la casa.",
+   "voz": "¡Dos horas! Chef, para entonces ya me comí todo el pan de la casa.",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6,
+   "pantalla": "foto:pan_frances|PACIENCIA, BETO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: las *arvejas*, las *zanahorias* y las *papas*.",
+   "voz": "Paso cuatro: las arvejas, las zanahorias y las papas.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:arvejas,zanahoria,papas_sancochadas|ARVEJAS|ZANAHORIAS|PAPAS"
+  },
+  {
+   "quien": "tito",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "texto": "Cuando las papas estén cocidas, *apaga* y deja que *todo se asiente*.",
+   "voz": "Cuando las papas estén cocidas, apaga, y deja que todo se asiente.",
+   "tarjeta": {
+    "label": "AL FINAL",
+    "valor": "DEJA ASENTAR",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: con la *misma receta* haces *seco de pescado*. Solo cocinas el pescado *poquito tiempo*, que quede *jugoso*.",
+   "voz": "Y el secreto de Gastón: con la misma receta haces seco de pescado. Solo cocinas el pescado poquito tiempo, que quede jugoso.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:pescado_fresco|EL SECRETO: SECO DE PESCADO",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "VERSIÓN DE PESCADO",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Con arroz blanco o frejoles, ¡a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "Con arroz blanco o frejoles, ¡a la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:seco_res|¡A LA MESA!"
+  }
+ ]
+}

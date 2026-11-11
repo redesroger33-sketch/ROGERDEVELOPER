@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"SECRETOS DE UN CHEF PERUANO","titulo":["SECO DE RES","¡SE CORTA CON CUCHARA!"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"seco_frejoles","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"A LA LIMEÑA","size":50,"x":880,"y":800},"franja":"EL SECRETO: VERSIÓN DE PESCADO"}
