@@ -610,6 +610,80 @@ def draw_screen(c, kind, t, local):
         c.rectangle(45, -190, 40, 10)
         c.fill()
         c.restore()
+    elif kind == "multitud":
+        # multitud saludando con banderas peruanas
+        rnd = random.Random(12)
+        for row in range(6):
+            yy = y0 + 120 + row * 46
+            for i in range(14):
+                xx = x0 + 20 + i * 40 + (row % 2) * 20 + rnd.uniform(-6, 6)
+                jump = 6 * max(0.0, math.sin(t * 7 + i * 0.9 + row))
+                col = rnd.choice([hx("FFD84A"), hx("FF8A5C"), hx("6EC8FF"), hx("B48CFF"), hx("7BE07F"), WHITE])
+                c.set_source_rgba(*col)
+                c.arc(xx, yy - jump, 14, 0, 2 * math.pi)
+                c.fill()
+                c.set_source_rgba(*INK)
+                c.set_line_width(3)
+                c.arc(xx, yy - jump, 14, 0, 2 * math.pi)
+                c.stroke()
+                if (i + row) % 4 == 0:
+                    ax = xx + 10
+                    c.move_to(xx + 8, yy - jump + 6)
+                    c.line_to(ax + 8, yy - jump - 34)
+                    c.stroke()
+                    c.save()
+                    c.translate(ax + 8, yy - jump - 34)
+                    c.rotate(0.15 * math.sin(t * 6 + i))
+                    for k, colf in enumerate((RED, WHITE, RED)):
+                        c.set_source_rgba(*colf)
+                        c.rectangle(k * 10, 0, 10, 18)
+                        c.fill()
+                    c.set_source_rgba(*INK)
+                    c.set_line_width(2)
+                    c.rectangle(0, 0, 30, 18)
+                    c.stroke()
+                    c.restore()
+        papa_x = x0 + w / 2 + 40 * math.sin(t * 0.8)
+        rrect(c, papa_x - 70, y0 + 40, 140, 56, 14)
+        fill_stroke(c, WHITE, INK, 5)
+        c.set_source_rgba(*YELLOW)
+        c.rectangle(papa_x - 3, y0 + 14, 6, 26)
+        c.fill()
+        c.rectangle(papa_x - 12, y0 + 22, 24, 6)
+        c.fill()
+    elif kind.startswith("estadio"):
+        lbl = kind.split(":", 1)[1] if ":" in kind else "ESTADIO NACIONAL"
+        c.set_source_rgba(*hx("0E1430"))
+        c.paint()
+        for k in range(4):
+            gx = x0 + 60 + k * 150
+            g = cairo.RadialGradient(gx, y0 + 40, 4, gx, y0 + 40, 180)
+            g.add_color_stop_rgba(0, 1, 1, 0.85, 0.9)
+            g.add_color_stop_rgba(1, 1, 1, 0.85, 0)
+            c.set_source(g)
+            c.arc(gx, y0 + 40, 180, 0, 2 * math.pi)
+            c.fill()
+        c.save()
+        c.translate(cx, cy + 90)
+        c.scale(1, 0.42)
+        c.arc(0, 0, 250, 0, 2 * math.pi)
+        c.set_source_rgba(*hx("3A4A6A"))
+        c.fill()
+        c.arc(0, 0, 170, 0, 2 * math.pi)
+        c.set_source_rgba(*hx("2E9A4E"))
+        c.fill()
+        c.restore()
+        rnd = random.Random(4)
+        for i in range(160):
+            a = rnd.uniform(0, 2 * math.pi)
+            rr = rnd.uniform(185, 245)
+            px, py = cx + math.cos(a) * rr, cy + 90 + math.sin(a) * rr * 0.42
+            tw_ = 0.5 + 0.5 * math.sin(t * 5 + i)
+            c.set_source_rgba(1, 1, 0.8, 0.4 + 0.6 * tw_)
+            c.arc(px, py, 3, 0, 2 * math.pi)
+            c.fill()
+        font(c, 36)
+        text_center(c, lbl, cx, y0 + 90, 36, YELLOW)
     elif kind == "ecografia":
         c.save()
         c.move_to(cx, cy - 150)

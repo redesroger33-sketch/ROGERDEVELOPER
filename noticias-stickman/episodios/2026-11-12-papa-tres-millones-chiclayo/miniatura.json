@@ -1,0 +1,3 @@
+{"banda":"PERÚ · VISITA PAPAL","titulo":["¿3 MILLONES","EN LA CALLE?"],
+ "estados":{"chato":{"pose":"up","expr":"surprised"},"paco":{"pose":"rest","expr":"surprised"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["alert:chato","stars:lucha"],"sello":{"texto":"3M","size":110},"franja":"MAÑANA: CHICLAYO · PAMPAS DE PIMENTEL"}

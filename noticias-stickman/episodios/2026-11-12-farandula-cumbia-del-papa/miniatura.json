@@ -1,0 +1,4 @@
+{"banda":"FARÁNDULA PERÚ","titulo":["¡EL PAPA","EN CUMBIA!"],"programa":["FARÁNDULA","STICKMAN"],
+ "fondo1":"FBE3F0","fondo2":"F7B2D2","locutor":"maskaly","elenco":["chato","maskaly","lucha"],
+ "estados":{"chato":{"pose":"wave","expr":"laugh"},"maskaly":{"pose":"rest","expr":"surprised"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["ja:chato","stars:lucha"],"sello":{"texto":"HOY","size":100},"franja":"DONNIE YAIPÉN · DANIELA DARCOURT · GRUPO 5"}
