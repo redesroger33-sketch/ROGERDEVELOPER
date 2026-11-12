@@ -7,6 +7,7 @@ palabra, música de tensión, latidos, golpes y cierre "CONTINUARÁ".
 
 Uso: python3 esqueletos.py ../capitulos/<carpeta>/guion.json [--frame 3,10]
 """
+import colorsys
 import json
 import math
 import os
@@ -53,152 +54,478 @@ def back(t):
     return R.ease_out_back(t)
 
 
-# ------------------------------------------------------------------ huesos
-def bone(c, x1, y1, x2, y2, w):
-    c.set_line_cap(cairo.LINE_CAP_ROUND)
-    for col, ww in ((INK, w + 7), (BONE, w)):
-        c.set_source_rgba(*col)
-        c.set_line_width(ww)
-        c.move_to(x1, y1)
-        c.line_to(x2, y2)
-        c.stroke()
-        for (px, py) in ((x1, y1), (x2, y2)):
-            c.arc(px, py, (ww / 2) * 1.35, 0, 2 * math.pi)
-            c.fill()
-    # brillo
-    c.set_source_rgba(1, 1, 1, 0.5)
-    c.set_line_width(max(2, w * 0.18))
-    dx, dy = x2 - x1, y2 - y1
-    L = math.hypot(dx, dy) or 1
-    nx, ny = -dy / L * w * 0.18, dx / L * w * 0.18
-    c.move_to(x1 + dx * 0.2 + nx, y1 + dy * 0.2 + ny)
-    c.line_to(x1 + dx * 0.8 + nx, y1 + dy * 0.8 + ny)
+# ------------------------------------------------------------------ estilo NEÓN (calavera Pixar)
+NEON = {"h0": 0.55, "t": 0.0, "seed": 1}
+HAIR = hx("07060C")
+HAIR_MID = hx("15142A")
+HAIR_HI = hx("4A5C9E")
+
+
+def ncol(x, y, a=1.0, sat=0.70):
+    h = (NEON["h0"] + 0.00045 * x - 0.00042 * y) % 1.0
+    r, g, b = colorsys.hsv_to_rgb(h, sat, 1.0)
+    return (r, g, b, a)
+
+
+def ngrad(x1, y1, x2, y2, a, sat=0.70):
+    g = cairo.LinearGradient(x1, y1, x2 + 0.01, y2 + 0.01)
+    g.add_color_stop_rgba(0, *ncol(x1, y1, a, sat))
+    g.add_color_stop_rgba(1, *ncol(x2, y2, a, sat))
+    return g
+
+
+def _seg(c, x1, y1, x2, y2, w, src):
+    c.set_source(src) if isinstance(src, cairo.Pattern) else c.set_source_rgba(*src)
+    c.set_line_width(w)
+    c.move_to(x1, y1)
+    c.line_to(x2, y2)
     c.stroke()
 
 
+def sparkle(c, x, y, r, a=1.0, col=(1, 1, 1)):
+    if a <= 0.02 or r <= 0.5:
+        return
+    c.set_source_rgba(*col, a)
+    c.move_to(x, y - r)
+    for (px, py) in ((x + r * 0.18, y - r * 0.18), (x + r, y), (x + r * 0.18, y + r * 0.18), (x, y + r),
+                     (x - r * 0.18, y + r * 0.18), (x - r, y), (x - r * 0.18, y - r * 0.18)):
+        c.line_to(px, py)
+    c.close_path()
+    c.fill()
+    g = cairo.RadialGradient(x, y, 0, x, y, r * 0.9)
+    g.add_color_stop_rgba(0, *col, a * 0.6)
+    g.add_color_stop_rgba(1, *col, 0)
+    c.set_source(g)
+    c.arc(x, y, r * 0.9, 0, 2 * math.pi)
+    c.fill()
+
+
+def bone(c, x1, y1, x2, y2, w):
+    """Hueso translúcido de neón arcoíris con epífisis dobles, núcleo de cristal y destellos."""
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
+    for k, a in ((3.6, 0.06), (2.4, 0.12), (1.6, 0.24)):
+        _seg(c, x1, y1, x2, y2, w * k, ngrad(x1, y1, x2, y2, a))
+    dx, dy = x2 - x1, y2 - y1
+    L = math.hypot(dx, dy) or 1
+    ux, uy = dx / L, dy / L
+    nx, ny = -uy, ux
+    for (px, py, sg) in ((x1, y1, 1), (x2, y2, -1)):
+        for s in (-1, 1):
+            cx_, cy_ = px + nx * s * w * 0.36 + ux * sg * w * 0.1, py + ny * s * w * 0.36 + uy * sg * w * 0.1
+            c.arc(cx_, cy_, w * 0.56, 0, 2 * math.pi)
+            c.set_source_rgba(*ncol(px, py, 0.92))
+            c.fill()
+    _seg(c, x1, y1, x2, y2, w, ngrad(x1, y1, x2, y2, 0.92))
+    _seg(c, x1 + ux * w * 0.3, y1 + uy * w * 0.3, x2 - ux * w * 0.3, y2 - uy * w * 0.3, w * 0.42, (1, 1, 1, 0.42))
+    o = w * 0.22
+    _seg(c, x1 + dx * 0.18 + nx * o, y1 + dy * 0.18 + ny * o, x1 + dx * 0.72 + nx * o, y1 + dy * 0.72 + ny * o,
+         max(1.5, w * 0.12), (1, 1, 1, 0.85))
+    # destellos que titilan sobre el hueso
+    rnd = random.Random(int(abs(x1) * 7 + abs(y1) * 13 + abs(x2) * 3) + NEON["seed"])
+    for _ in range(2):
+        f = rnd.random()
+        ph = rnd.random() * 6.28
+        tw = 0.5 + 0.5 * math.sin(NEON["t"] * 3.2 + ph)
+        sparkle(c, x1 + dx * f + nx * rnd.uniform(-w, w), y1 + dy * f + ny * rnd.uniform(-w, w),
+                w * 0.55 * tw + 1, 0.9 * tw)
+
+
+SKIN_L, SKIN_D, SKIN_LINE = hx("F8C9A2"), hx("E0956A"), hx("A65E3C")
+
+
+def _finger(c, x, y, a, ln, w, curl, outline):
+    pts = [(x, y)]
+    cur = a
+    for frac in (0.55, 0.45):
+        x, y = x + math.sin(cur) * ln * frac, y + math.cos(cur) * ln * frac
+        pts.append((x, y))
+        cur += curl
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
+    c.set_line_join(cairo.LINE_JOIN_ROUND)
+    c.move_to(*pts[0])
+    for p in pts[1:]:
+        c.line_to(*p)
+    if outline:
+        c.set_source_rgba(*SKIN_LINE)
+        c.set_line_width(w + 4)
+    else:
+        g = cairo.LinearGradient(pts[0][0] - w, 0, pts[0][0] + w, 0)
+        g.add_color_stop_rgba(0, *SKIN_D)
+        g.add_color_stop_rgba(0.45, *SKIN_L)
+        g.add_color_stop_rgba(1, *SKIN_D)
+        c.set_source(g)
+        c.set_line_width(w)
+    c.stroke()
+    if not outline:
+        tx, ty = pts[-1]
+        c.save()
+        c.translate(tx - math.sin(cur - curl) * w * 0.25, ty - math.cos(cur - curl) * w * 0.25)
+        c.rotate(-(cur - curl))
+        c.scale(1, 1.3)
+        c.arc(0, 0, w * 0.3, 0, 2 * math.pi)
+        c.restore()
+        c.set_source_rgba(1, 0.9, 0.85, 0.85)
+        c.fill()
+        # pliegue del nudillo
+        mx, my = pts[1]
+        c.set_source_rgba(*SKIN_LINE[:3], 0.45)
+        c.set_line_width(1.6)
+        c.move_to(mx - w * 0.3 * math.cos(a), my + w * 0.3 * math.sin(a))
+        c.line_to(mx + w * 0.3 * math.cos(a), my - w * 0.3 * math.sin(a))
+        c.stroke()
+
+
 def hand(c, x, y, ang, side, curl=0.0):
-    """Mano esquelética articulada: carpos, 5 dedos con falanges."""
+    """Mano humana real (piel), con palma, cuatro dedos con uñas y pulgar."""
     c.save()
     c.translate(x, y)
     c.rotate(ang)
-    c.scale(side, 1)
-    # palma (carpos)
-    c.save()
-    c.scale(1, 0.8)
-    c.arc(0, 12, 17, 0, 2 * math.pi)
-    c.restore()
-    c.set_source_rgba(*INK)
-    c.fill_preserve()
-    c.set_source_rgba(*BONE)
-    c.set_line_width(2)
-    c.save()
-    c.scale(1, 0.8)
-    c.arc(0, 12, 13, 0, 2 * math.pi)
-    c.restore()
-    c.fill()
-    fingers = [(-14, 1.0, 0.55), (-6, 1.0, 1.0), (2, 1.0, 1.1), (10, 1.0, 1.0), (17, 1.0, 0.8)]
-    for i, (fx, _, ln) in enumerate(fingers):
-        a = math.radians(-35 if i == 0 else (i - 2) * 9)
-        px, py = fx * 0.9, 20
-        segs = [14 * ln, 11 * ln, 8 * ln] if i else [12, 10]
-        cur = a
-        for s in segs:
-            nx_, ny_ = px + math.sin(cur) * s, py + math.cos(cur) * s
-            bone(c, px, py, nx_, ny_, 5)
-            px, py = nx_, ny_
-            cur += curl * 0.5
+    c.scale(side * 1.15, 1.15)
+    fingers = [(-15, 34, 10.5), (-5, 41, 11.5), (5, 39, 11.5), (15, 31, 10)]
+    for outline in (True, False):
+        _finger(c, -21, 22, -0.95, 30, 12, curl * 0.8 + 0.25, outline)
+        if outline:
+            R.rrect(c, -25, 4, 50, 50, 18)
+            c.set_source_rgba(*SKIN_LINE)
+            c.fill()
+        for i, (fx, ln, fw) in enumerate(fingers):
+            _finger(c, fx, 44, (i - 1.5) * 0.11, ln, fw, curl, outline)
+        if not outline:
+            R.rrect(c, -23, 6, 46, 46, 16)
+            g = cairo.LinearGradient(-23, 0, 23, 0)
+            g.add_color_stop_rgba(0, *SKIN_D)
+            g.add_color_stop_rgba(0.45, *SKIN_L)
+            g.add_color_stop_rgba(1, *SKIN_D)
+            c.set_source(g)
+            c.fill()
+            c.set_source_rgba(*SKIN_LINE[:3], 0.4)
+            c.set_line_width(1.8)
+            c.move_to(-14, 24)
+            c.curve_to(-4, 34, 6, 30, 14, 36)
+            c.stroke()
+            c.move_to(-10, 38)
+            c.curve_to(0, 42, 8, 40, 16, 44)
+            c.stroke()
     c.restore()
 
 
 def heart(c, x, y, s, beat):
-    k = s * (1 + 0.12 * beat)
-    glow = cairo.RadialGradient(x, y, 2, x, y, 70 * k)
-    glow.add_color_stop_rgba(0, 1, 0.1, 0.2, 0.55 * (0.5 + beat))
-    glow.add_color_stop_rgba(1, 1, 0.1, 0.2, 0)
+    """Corazón anatómico: ventrículos, aurícula, aorta con ramas, tronco pulmonar y coronarias."""
+    k = s * (1 + 0.1 * beat)
+    glow = cairo.RadialGradient(x, y, 2, x, y, 95 * k)
+    glow.add_color_stop_rgba(0, 1, 0.25, 0.25, 0.55 * (0.45 + beat))
+    glow.add_color_stop_rgba(1, 1, 0.2, 0.3, 0)
     c.set_source(glow)
-    c.arc(x, y, 70 * k, 0, 2 * math.pi)
+    c.arc(x, y, 95 * k, 0, 2 * math.pi)
     c.fill()
     c.save()
     c.translate(x, y)
     c.scale(k, k)
-    c.move_to(0, 32)
-    c.curve_to(-48, 2, -34, -38, 0, -16)
-    c.curve_to(34, -38, 48, 2, 0, 32)
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
+    # vena cava
+    for col, lw in ((hx("5A0C22"), 17), (hx("9A3C6E"), 13)):
+        _seg(c, 26, -20, 28, -62, lw, col)
+    # aorta y ramas
+    for col, lw in ((hx("6A0A18"), 20), (hx("E0453E"), 15)):
+        c.set_source_rgba(*col)
+        c.set_line_width(lw)
+        c.move_to(-2, -20)
+        c.curve_to(-4, -66, -40, -70, -44, -38)
+        c.stroke()
+        for bx in (-10, -22, -33):
+            _seg(c, bx, -56, bx + 2, -80, lw * 0.42, col)
+    # tronco pulmonar
+    for col, lw in ((hx("6A0A18"), 16), (hx("C8323A"), 11)):
+        c.set_source_rgba(*col)
+        c.set_line_width(lw)
+        c.move_to(-12, -14)
+        c.curve_to(-26, -34, -40, -28, -52, -20)
+        c.stroke()
+    # aurícula derecha
+    c.arc(30, -14, 15, 0, 2 * math.pi)
+    c.set_source_rgba(*hx("D23A3A"))
+    c.fill_preserve()
+    c.set_source_rgba(*hx("6A0A18"))
+    c.set_line_width(2.5)
+    c.stroke()
+    # ventrículos
+    c.move_to(0, -28)
+    c.curve_to(30, -34, 46, -6, 38, 16)
+    c.curve_to(30, 40, 8, 52, -8, 60)
+    c.curve_to(-28, 44, -46, 20, -42, -4)
+    c.curve_to(-38, -24, -18, -30, 0, -28)
     c.close_path()
-    g = cairo.LinearGradient(-30, -30, 30, 30)
-    g.add_color_stop_rgba(0, *hx("FF4A5E"))
-    g.add_color_stop_rgba(1, *hx("A0001C"))
+    g = cairo.LinearGradient(-30, -30, 30, 50)
+    g.add_color_stop_rgba(0, *hx("FF7A66"))
+    g.add_color_stop_rgba(0.5, *hx("D8283A"))
+    g.add_color_stop_rgba(1, *hx("7E0A1C"))
     c.set_source(g)
     c.fill_preserve()
-    c.set_source_rgba(*hx("5A0010"))
+    c.set_source_rgba(*hx("5E0A16"))
+    c.set_line_width(2.5)
+    c.stroke()
+    # coronarias y grasa
+    c.set_source_rgba(*hx("7A0818"))
     c.set_line_width(3)
+    c.move_to(-4, -24)
+    c.curve_to(2, 0, -4, 30, -8, 54)
     c.stroke()
-    c.arc(-14, -14, 7, 0, 2 * math.pi)
+    for (a, b, cx_, cy_) in ((-2, -4, -24, 10), (0, 16, 22, 26), (-4, 30, -20, 38)):
+        c.move_to(a, b)
+        c.curve_to((a + cx_) / 2, b - 4, cx_, cy_ - 6, cx_, cy_)
+        c.stroke()
+    c.set_source_rgba(1, 0.8, 0.45, 0.45)
+    c.set_line_width(2)
+    c.move_to(4, -22)
+    c.curve_to(18, -6, 20, 14, 12, 34)
+    c.stroke()
     c.set_source_rgba(1, 1, 1, 0.55)
+    c.save()
+    c.translate(-20, -8)
+    c.rotate(-0.5)
+    c.scale(1, 0.55)
+    c.arc(0, 0, 10, 0, 2 * math.pi)
+    c.restore()
     c.fill()
-    # arteria
-    c.set_source_rgba(*hx("C21A35"))
-    c.set_line_width(7)
-    c.move_to(4, -20)
-    c.curve_to(6, -36, 18, -40, 22, -48)
-    c.stroke()
+    c.arc(18, 4, 3.5, 0, 2 * math.pi)
+    c.fill()
     c.restore()
 
 
 def pixar_eye(c, x, y, r, iris, look, blink, scared, female):
-    # cuenca
-    c.save()
-    c.translate(x, y)
-    c.scale(1, 1.08)
-    c.arc(0, 0, r * 1.18, 0, 2 * math.pi)
-    c.restore()
-    c.set_source_rgba(0.12, 0.08, 0.07, 1)
-    c.fill()
     rr = r * (1.08 if scared else 1.0)
     if blink:
-        c.set_source_rgba(*BONE_SH)
+        c.set_source_rgba(*hx("B55AD6"))
         c.arc(x, y, rr, 0, 2 * math.pi)
         c.fill()
-        c.set_source_rgba(*INK)
-        c.set_line_width(4)
-        c.arc(x, y + 2, rr * 0.8, math.radians(20), math.radians(160))
+        c.set_source_rgba(*hx("1A0F22"))
+        c.set_line_width(5)
+        c.set_line_cap(cairo.LINE_CAP_ROUND)
+        c.arc(x, y + 2, rr * 0.8, math.radians(15), math.radians(165))
         c.stroke()
         return
     c.arc(x, y, rr, 0, 2 * math.pi)
-    c.set_source_rgba(1, 1, 1, 1)
+    g = cairo.RadialGradient(x - rr * 0.2, y - rr * 0.3, rr * 0.2, x, y, rr)
+    g.add_color_stop_rgba(0, 1, 1, 1, 1)
+    g.add_color_stop_rgba(1, *hx("D9D2E6"))
+    c.set_source(g)
     c.fill_preserve()
-    c.set_source_rgba(*INK)
+    c.set_source_rgba(*hx("2A1430"))
     c.set_line_width(3)
     c.stroke()
-    ix, iy = x + look[0] * r * 0.25, y + look[1] * r * 0.2
-    ir = rr * (0.48 if scared else 0.62)
-    g = cairo.RadialGradient(ix - ir * 0.2, iy - ir * 0.3, ir * 0.1, ix, iy, ir)
-    g.add_color_stop_rgba(0, *[min(1, v * 1.5) for v in iris[:3]], 1)
-    g.add_color_stop_rgba(0.7, *iris[:3], 1)
-    g.add_color_stop_rgba(1, *[v * 0.4 for v in iris[:3]], 1)
+    ix, iy = x + look[0] * r * 0.22, y + look[1] * r * 0.18 + r * 0.04
+    ir = rr * (0.55 if scared else 0.72)
+    g = cairo.RadialGradient(ix, iy + ir * 0.3, ir * 0.1, ix, iy, ir)
+    g.add_color_stop_rgba(0, *[min(1, v * 1.8 + 0.08) for v in iris[:3]], 1)
+    g.add_color_stop_rgba(0.6, *iris[:3], 1)
+    g.add_color_stop_rgba(1, *[v * 0.25 for v in iris[:3]], 1)
     c.set_source(g)
     c.arc(ix, iy, ir, 0, 2 * math.pi)
     c.fill()
-    c.set_source_rgba(0.03, 0.03, 0.05, 1)
-    c.arc(ix, iy, ir * (0.32 if scared else 0.45), 0, 2 * math.pi)
+    c.set_source_rgba(0.02, 0.02, 0.04, 1)
+    c.arc(ix, iy, ir * (0.38 if scared else 0.55), 0, 2 * math.pi)
     c.fill()
-    c.set_source_rgba(1, 1, 1, 0.95)
-    c.arc(ix - ir * 0.35, iy - ir * 0.38, ir * 0.28, 0, 2 * math.pi)
+    # sombra del párpado superior
+    c.save()
+    c.arc(x, y, rr - 1.5, 0, 2 * math.pi)
+    c.clip()
+    sg = cairo.LinearGradient(0, y - rr, 0, y - rr * 0.2)
+    sg.add_color_stop_rgba(0, 0.25, 0.1, 0.35, 0.45)
+    sg.add_color_stop_rgba(1, 0.25, 0.1, 0.35, 0)
+    c.set_source(sg)
+    c.paint()
+    c.restore()
+    c.set_source_rgba(1, 1, 1, 0.97)
+    c.arc(ix - ir * 0.32, iy - ir * 0.36, ir * 0.3, 0, 2 * math.pi)
     c.fill()
-    c.arc(ix + ir * 0.3, iy + ir * 0.3, ir * 0.12, 0, 2 * math.pi)
+    c.arc(ix + ir * 0.34, iy + ir * 0.3, ir * 0.12, 0, 2 * math.pi)
     c.fill()
+    c.arc(ix + ir * 0.1, iy - ir * 0.5, ir * 0.08, 0, 2 * math.pi)
+    c.fill()
+    side = 1 if x > 0 else -1
+    c.set_source_rgba(*hx("140A18"))
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
     if female:
-        c.set_source_rgba(*INK)
-        c.set_line_width(4)
-        c.set_line_cap(cairo.LINE_CAP_ROUND)
-        side = 1 if x > 0 else -1
-        for k in range(4):
-            a = math.radians(-70 + k * 22) * side
+        # delineado con "colita" y pestañas largas
+        c.set_line_width(5)
+        c.arc(x, y, rr + 1, math.radians(195), math.radians(345))
+        c.stroke()
+        c.move_to(x + side * rr * 0.97, y - rr * 0.25)
+        c.line_to(x + side * (rr + 16), y - rr * 0.55)
+        c.stroke()
+        for k in range(5):
+            a = math.radians(-78 + k * 20) * side
             bx, by = x + math.sin(a) * rr, y - math.cos(a) * rr
+            c.set_line_width(4.5 - k * 0.3)
             c.move_to(bx, by)
-            c.curve_to(bx + math.sin(a) * 10, by - 8, bx + math.sin(a) * 18 + side * 4, by - 14,
-                       bx + math.sin(a) * 22 + side * 8, by - 16)
+            c.curve_to(bx + math.sin(a) * 12, by - 10, bx + math.sin(a) * 20 + side * 6, by - 18,
+                       bx + math.sin(a) * 24 + side * 12, by - 18)
             c.stroke()
+    else:
+        c.set_line_width(4)
+        c.arc(x, y, rr + 1, math.radians(205), math.radians(335))
+        c.stroke()
+
+
+def _lock(c, bx, by, tx, ty, w, bend, col_a, col_b):
+    dx, dy = tx - bx, ty - by
+    L = math.hypot(dx, dy) or 1
+    nx, ny = -dy / L, dx / L
+    c.move_to(bx + nx * w, by + ny * w)
+    c.curve_to(bx + dx * 0.45 + nx * (w * 0.9 + bend), by + dy * 0.45 + ny * (w * 0.9 + bend),
+               bx + dx * 0.85 + nx * (w * 0.3 + bend * 0.6), by + dy * 0.85 + ny * (w * 0.3 + bend * 0.6), tx, ty)
+    c.curve_to(bx + dx * 0.8 - nx * (w * 0.2 - bend * 0.6), by + dy * 0.8 - ny * (w * 0.2 - bend * 0.6),
+               bx + dx * 0.45 - nx * (w * 0.9 - bend), by + dy * 0.45 - ny * (w * 0.9 - bend),
+               bx - nx * w, by - ny * w)
+    c.close_path()
+    g = cairo.LinearGradient(bx, by, tx, ty)
+    g.add_color_stop_rgba(0, *col_a)
+    g.add_color_stop_rgba(1, *col_b)
+    c.set_source(g)
+    c.fill()
+
+
+def _hair_hi(c, x1, y1, cx_, cy_, x2, y2, a=0.55, w=3.0):
+    c.set_source_rgba(*HAIR_HI[:3], a)
+    c.set_line_width(w)
+    c.set_line_cap(cairo.LINE_CAP_ROUND)
+    c.move_to(x1, y1)
+    c.curve_to(cx_, cy_, cx_, cy_, x2, y2)
+    c.stroke()
+
+
+def _cloud(c, cx, cy, R_, r, a0, a1, step, wob=0.0, t=0.0):
+    a = a0
+    while a <= a1:
+        ar = math.radians(a)
+        rr = r * (1 + 0.08 * math.sin(a * 0.37))
+        c.arc(cx + math.cos(ar) * R_, cy + math.sin(ar) * R_ + wob * math.sin(t * 1.5 + a), rr, 0, 2 * math.pi)
+        c.close_path()
+        a += step
+
+
+def _fill_hair(c, y0=-180, y1=60):
+    g = cairo.LinearGradient(0, y0, 0, y1)
+    g.add_color_stop_rgba(0, *HAIR_MID)
+    g.add_color_stop_rgba(1, *HAIR)
+    c.set_source(g)
+    c.fill()
+
+
+def hair_back(c, female, t, phase):
+    """Volumen esponjoso de cabello detrás del cráneo, con puntas que se abren a los lados."""
+    sway = 4 * math.sin(t * 1.6 + phase)
+    c.new_path()
+    _cloud(c, 0, -40, 112, 56, -205, 25, 15, 1.5, t)
+    _fill_hair(c)
+    flicks = ([(-100, -10, -178 + sway, 34, 30, -26), (100, -10, 178 + sway, 30, 30, 26),
+               (-110, -70, -186, -66, 28, -18), (110, -70, 186, -70, 28, 18),
+               (-70, -130, -140, -170, 26, -16), (70, -130, 140, -172, 26, 16)] if not female else
+              [(-100, -20, -172 + sway, 60, 30, -22), (100, -20, 172 + sway, 60, 30, 22)])
+    for (bx, by, tx, ty, w, bd) in flicks:
+        _lock(c, bx, by, tx, ty, w, bd, HAIR, HAIR_MID)
+    for a in (-160, -130, -100, -70, -40, -10):
+        ar = math.radians(a)
+        _hair_hi(c, math.cos(ar) * 80, math.sin(ar) * 80 - 40, math.cos(ar + 0.25) * 135, math.sin(ar + 0.25) * 135 - 40,
+                 math.cos(ar + 0.15) * 158, math.sin(ar + 0.15) * 158 - 40, 0.35, 3.5)
+
+
+def _swoop(c, top_pts, bottom_pts):
+    c.move_to(*top_pts[0])
+    for i in range(1, len(top_pts), 3):
+        c.curve_to(*top_pts[i], *top_pts[i + 1], *top_pts[i + 2])
+    prev = top_pts[-1]
+    for (x, y) in bottom_pts:
+        mx, my = (prev[0] + x) / 2, (prev[1] + y) / 2
+        c.curve_to(prev[0] + (mx - prev[0]) * 0.3, my + 16, x + (mx - x) * 0.3, my + 16, x, y)
+        prev = (x, y)
+    c.close_path()
+
+
+def hair_front(c, female, t, phase):
+    sway = 3 * math.sin(t * 1.9 + phase)
+    if female:
+        # flequillo de lado con ondas + mechones largos que enmarcan la cara
+        for (bx, by, tx, ty, w, b) in ((-118, -60, -138 + sway, 130, 24, -18), (122, -60, 140 + sway, 140, 22, 18)):
+            _lock(c, bx, by, tx, ty, w, b, HAIR, HAIR_MID)
+        _swoop(c, [(-126, -10), (-140, -150), (40, -190), (128, -70)],
+               [(100, -96), (64, -100), (30, -112), (-10, -100), (-50, -96), (-86, -70), (-112, -36), (-126, -10)])
+        _fill_hair(c, -190, -10)
+        _hair_hi(c, -90, -120, -10, -160, 90, -110, 0.5, 4)
+        _hair_hi(c, -116, -60, -128, 10, -126, 100, 0.35)
+        _hair_hi(c, 116, -50, 128, 20, 128, 110, 0.35)
+        # corona de flores (calavera catrina)
+        for (fx, fy, r, col) in ((-92, -118, 20, hx("FF3D6E")), (-52, -142, 16, hx("FFB13B")),
+                                 (-124, -80, 15, hx("B65CFF")), (-14, -152, 11, hx("4FD1FF"))):
+            for k in range(2):
+                a = math.radians(200 + k * 70)
+                _lock(c, fx, fy, fx + math.cos(a) * r * 1.8, fy + math.sin(a) * r * 1.8, 6, 3,
+                      hx("2FA35A"), hx("7BE07F"))
+            for k in range(6):
+                a = k * math.pi / 3 + t * 0.2
+                c.arc(fx + math.cos(a) * r * 0.55, fy + math.sin(a) * r * 0.55, r * 0.55, 0, 2 * math.pi)
+                c.set_source_rgba(*col[:3], 0.95)
+                c.fill()
+            c.arc(fx, fy, r * 0.42, 0, 2 * math.pi)
+            c.set_source_rgba(*[v * 0.7 for v in col[:3]], 1)
+            c.fill()
+            c.set_source_rgba(1, 1, 1, 0.5)
+            c.set_line_width(2)
+            c.arc(fx, fy, r * 0.25, 0, 4)
+            c.stroke()
+    else:
+        # tupé voluminoso con ondas que caen sobre la frente
+        _swoop(c, [(-128, -30), (-150, -170), (60, -210), (130, -40)],
+               [(108, -80), (76, -92), (44, -110), (10, -96), (-24, -112), (-58, -94), (-92, -84), (-128, -30)])
+        _fill_hair(c, -210, -30)
+        _lock(c, -40, -150, 40 + sway, -86, 24, 18, HAIR_MID, HAIR)
+        _hair_hi(c, -100, -110, -40, -190, 80, -120, 0.55, 4.5)
+        _hair_hi(c, -60, -130, 0, -170, 90, -96, 0.4, 3)
+        _hair_hi(c, -116, -60, -128, -130, -60, -160, 0.35, 3)
+
+
+def sugar_decor(c, female, eyes_x, eye_y, er):
+    """Pintura de calavera catrina: aros de colores, diamante, gotas y puntos."""
+    for sx in (-1, 1):
+        ex = sx * eyes_x
+        g = cairo.RadialGradient(ex, eye_y, er * 0.9, ex, eye_y, er * 1.55)
+        g.add_color_stop_rgba(0, *hx("A64BFF")[:3], 0.95)
+        g.add_color_stop_rgba(0.6, *hx("FF5FA2")[:3], 0.8)
+        g.add_color_stop_rgba(1, *hx("FF5FA2")[:3], 0)
+        c.set_source(g)
+        c.arc(ex, eye_y, er * 1.55, 0, 2 * math.pi)
+        c.fill()
+        cols = (hx("FF3D6E"), hx("FFB13B"), hx("3FD9FF"), hx("7BE07F"))
+        for k in range(9):
+            a = math.radians(205 + k * 16.5) if sx < 0 else math.radians(335 - k * 16.5)
+            c.arc(ex + math.cos(a) * er * 1.6, eye_y + math.sin(a) * er * 1.6, 5.5, 0, 2 * math.pi)
+            c.set_source_rgba(*cols[k % 4])
+            c.fill()
+        # puntos en las mejillas
+        for k in range(4):
+            c.arc(sx * (72 + k * 7), 52 + k * 9, 4.5 - k * 0.6, 0, 2 * math.pi)
+            c.set_source_rgba(*hx("3FD9FF"))
+            c.fill()
+        # gotitas en la frente
+        for k, col in enumerate((hx("FFB13B"), hx("3FD9FF"), hx("FF3D6E"))):
+            dx_, dy_ = sx * (26 + k * 18), -80 - k * 6
+            c.move_to(dx_, dy_ - 10)
+            c.curve_to(dx_ + 7, dy_, dx_ + 6, dy_ + 7, dx_, dy_ + 7)
+            c.curve_to(dx_ - 6, dy_ + 7, dx_ - 7, dy_, dx_, dy_ - 10)
+            c.set_source_rgba(*col)
+            c.fill()
+    # diamante central
+    for (s, col) in ((1.0, hx("FF3D8B")), (0.5, hx("FFE15A"))):
+        c.move_to(0, -64 * 1 - 22 * s + 22)
+        c.line_to(10 * s, -42)
+        c.line_to(0, -42 + 22 * s)
+        c.line_to(-10 * s, -42)
+        c.close_path()
+        c.set_source_rgba(*col)
+        c.fill()
+    c.arc(0, -82, 5, 0, 2 * math.pi)
+    c.set_source_rgba(*hx("A64BFF"))
+    c.fill()
 
 
 def skull(c, st, t):
@@ -206,94 +533,112 @@ def skull(c, st, t):
     talking = st.get("talking", False)
     scared = st.get("scared", False)
     blink = (t + st.get("phase", 0)) % 3.3 < 0.12
-    # cráneo
-    c.save()
-    c.scale(1, 1.05)
-    c.arc(0, -10, 112, 0, 2 * math.pi)
-    c.restore()
-    g = cairo.RadialGradient(-30, -50, 10, 0, -10, 130)
-    g.add_color_stop_rgba(0, *hx("FFFBF2"))
-    g.add_color_stop_rgba(1, *BONE_SH)
+    op = (6 + 16 * abs(math.sin(t * 15)) * (0.6 + 0.4 * math.sin(t * 4.7))) if talking else (18 if scared else 0)
+    jd = op * 0.55
+    hair_back(c, female, t, st.get("phase", 0))
+
+    def shape():
+        c.move_to(0, -128)
+        c.curve_to(72, -128, 120, -82, 118, -14)
+        c.curve_to(117, 28, 100, 52, 74, 64)
+        c.curve_to(64, 96 + jd, 40, 118 + jd, 0, 120 + jd)
+        c.curve_to(-40, 118 + jd, -64, 96 + jd, -74, 64)
+        c.curve_to(-100, 52, -117, 28, -118, -14)
+        c.curve_to(-120, -82, -72, -128, 0, -128)
+        c.close_path()
+    # resplandor de neón alrededor del cráneo
+    for lw, a in ((26, 0.08), (14, 0.18)):
+        shape()
+        g = cairo.LinearGradient(-120, 0, 120, 0)
+        g.add_color_stop_rgba(0, 1, 0.3, 0.75, a)
+        g.add_color_stop_rgba(1, 0.25, 0.85, 1, a)
+        c.set_source(g)
+        c.set_line_width(lw)
+        c.stroke()
+    shape()
+    g = cairo.RadialGradient(-20, -40, 10, 0, -10, 140)
+    g.add_color_stop_rgba(0, 1, 1, 1, 1)
+    g.add_color_stop_rgba(0.75, *hx("F4EEF6"))
+    g.add_color_stop_rgba(1, *hx("D9CDE6"))
     c.set_source(g)
     c.fill_preserve()
-    c.set_source_rgba(*INK)
-    c.set_line_width(6)
-    c.stroke()
-    # mandíbula
-    op = (8 + 16 * abs(math.sin(t * 15)) * (0.6 + 0.4 * math.sin(t * 4.7))) if talking else (14 if scared else 0)
-    c.save()
-    c.translate(0, op)
-    R.rrect(c, -62, 62, 124, 60, 26)
-    c.set_source_rgba(*BONE_SH)
-    c.fill_preserve()
-    c.set_source_rgba(*INK)
+    g = cairo.LinearGradient(-120, 0, 120, 0)
+    g.add_color_stop_rgba(0, *hx("FF4FC3"))
+    g.add_color_stop_rgba(0.5, *hx("C9B8FF"))
+    g.add_color_stop_rgba(1, *hx("3FD9FF"))
+    c.set_source(g)
     c.set_line_width(5)
     c.stroke()
-    c.set_source_rgba(1, 1, 1, 1)
-    for i in range(6):
-        R.rrect(c, -46 + i * 16, 64, 13, 15, 4)
+    # rubor
+    for sx in (-1, 1):
+        g2 = cairo.RadialGradient(sx * 70, 40, 2, sx * 70, 40, 30)
+        a = 0.6 if female else 0.3
+        g2.add_color_stop_rgba(0, 1, 0.4, 0.6, a)
+        g2.add_color_stop_rgba(1, 1, 0.4, 0.6, 0)
+        c.set_source(g2)
+        c.arc(sx * 70, 40, 30, 0, 2 * math.pi)
+        c.fill()
+    er = 40 if female else 38
+    sugar_decor(c, female, 48, -6, er)
+    # nariz en forma de corazón invertido
+    c.move_to(0, 46)
+    c.curve_to(-16, 36, -16, 18, -7, 18)
+    c.curve_to(-3, 18, 0, 22, 0, 26)
+    c.curve_to(0, 22, 3, 18, 7, 18)
+    c.curve_to(16, 18, 16, 36, 0, 46)
+    c.set_source_rgba(*hx("2A0F22"))
+    c.fill()
+    # boca: sonrisa amplia con dientes arriba y abajo
+    top_y, bot_y = 62, 92 + op * 1.1
+    c.move_to(-58, 60)
+    c.curve_to(-30, top_y + 22, 30, top_y + 22, 58, 60)
+    c.curve_to(40, bot_y + 18, -40, bot_y + 18, -58, 60)
+    c.close_path()
+    c.set_source_rgba(*hx("3A0D1F"))
+    c.fill_preserve()
+    c.save()
+    c.clip()
+    if op > 6:
+        c.arc(0, bot_y + 30, 34, 0, 2 * math.pi)
+        c.set_source_rgba(*hx("E8577A"))
+        c.fill()
+    for i in range(8):
+        f = (i + 0.5) / 8
+        tx = -58 + f * 116
+        ty = 60 + 4 * f * (1 - f) * 18
+        R.rrect(c, tx - 7, ty - 8, 13.5, 17, 4)
+        c.set_source_rgba(1, 1, 1, 1)
+        c.fill()
+        by_ = 60 + 4 * f * (1 - f) * (bot_y - 48)
+        R.rrect(c, tx - 6.5, by_ - 10, 13, 14, 4)
+        c.set_source_rgba(*hx("F1ECF4"))
         c.fill()
     c.restore()
-    if op > 2:
-        c.set_source_rgba(0.1, 0.05, 0.05, 1)
-        c.rectangle(-50, 72, 100, op)
-        c.fill()
-    c.set_source_rgba(1, 1, 1, 1)
-    for i in range(6):
-        R.rrect(c, -46 + i * 16, 60, 13, 14, 4)
-        c.fill()
-    # nariz
-    c.move_to(0, 18)
-    c.line_to(-12, 42)
-    c.line_to(12, 42)
-    c.close_path()
-    c.set_source_rgba(0.15, 0.1, 0.08, 1)
-    c.fill()
-    # pómulos rosados (mujer) / sombra
-    if female:
-        for sx in (-1, 1):
-            g2 = cairo.RadialGradient(sx * 62, 26, 2, sx * 62, 26, 26)
-            g2.add_color_stop_rgba(0, 1, 0.45, 0.6, 0.6)
-            g2.add_color_stop_rgba(1, 1, 0.45, 0.6, 0)
-            c.set_source(g2)
-            c.arc(sx * 62, 26, 26, 0, 2 * math.pi)
-            c.fill()
-    look = st.get("look", (0.2 * math.sin(t * 0.7), 0))
-    iris = st.get("iris", hx("6B3E1F"))
+    c.set_source_rgba(*hx("2A0F22"))
+    c.set_line_width(2.5)
+    c.move_to(-58, 60)
+    c.curve_to(-30, top_y + 22, 30, top_y + 22, 58, 60)
+    c.stroke()
     for sx in (-1, 1):
-        pixar_eye(c, sx * 44, -12, 36 if female else 34, iris, look, blink, scared, female)
-    # cejas
-    c.set_source_rgba(*hx("140F12"))
-    c.set_line_width(7)
-    c.set_line_cap(cairo.LINE_CAP_ROUND)
+        c.arc(sx * 64, 58, 3.5, 0, 2 * math.pi)
+        c.set_source_rgba(*hx("FF3D6E"))
+        c.fill()
+    look = st.get("look", (0.25 * math.sin(t * 0.7), 0))
+    iris = st.get("iris", hx("4A2A1A"))
     for sx in (-1, 1):
-        lift = -12 if scared else 0
-        c.move_to(sx * 18, -62 + lift + (6 if scared else 0))
-        c.line_to(sx * 66, -66 + lift)
-        c.stroke()
-    # cabello frontal
-    c.set_source_rgba(*hx("140F12"))
-    if female:
-        c.move_to(-118, -10)
-        c.curve_to(-120, -150, 110, -165, 120, -20)
-        c.curve_to(90, -80, 30, -96, 10, -70)
-        c.curve_to(-20, -100, -80, -90, -118, -10)
+        pixar_eye(c, sx * 48, -6, er, iris, look, blink, scared, female)
+    # cejas gruesas (hombre) / finas arqueadas (mujer)
+    c.set_source_rgba(*hx("120E18"))
+    for sx in (-1, 1):
+        lift = -12 if scared else (-3 * abs(math.sin(t * 2.3)) if talking else 0)
+        y0 = -64 + lift
+        th = 7 if female else 13
+        c.move_to(sx * 20, y0 + (8 if scared else 4))
+        c.curve_to(sx * 40, y0 - 14, sx * 64, y0 - 14, sx * 82, y0 - 2)
+        c.curve_to(sx * 64, y0 - 14 + th, sx * 40, y0 - 14 + th, sx * 20, y0 + (8 if scared else 4) + th * 0.6)
         c.close_path()
         c.fill()
-        c.arc(96, 10, 12, 0, 2 * math.pi)
-        c.set_source_rgba(*YEL)
-        c.fill()
-    else:
-        c.move_to(-112, -30)
-        c.curve_to(-110, -150, 100, -175, 116, -40)
-        c.curve_to(80, -95, 30, -100, -10, -78)
-        c.curve_to(-40, -100, -90, -80, -112, -30)
-        c.close_path()
-        c.fill()
-        c.set_source_rgba(1, 1, 1, 0.18)
-        c.set_line_width(5)
-        c.arc(10, -40, 90, math.radians(220), math.radians(290))
-        c.stroke()
+    hair_front(c, female, t, st.get("phase", 0))
 
 
 def arm_pts(sx, sy, side, a1, a2, L1=150, L2=140):
@@ -310,36 +655,65 @@ POSES = {
     "up": ((160, 10), (160, 10)),
     "talk": ((25, 55), (18, 10)),
     "think": ((18, 10), (28, 150)),
+    "wave": ((18, 10), (120, 40)),
 }
+
+
+def _neon_path_stroke(c, build, w):
+    for k, a in ((3.0, 0.07), (1.9, 0.16)):
+        build()
+        x1, y1, x2, y2 = c.stroke_extents() if False else (0, 0, 0, 0)
+        c.set_source_rgba(*NEON["cur"], a)
+        c.set_line_width(w * k)
+        c.stroke()
+    build()
+    c.set_source_rgba(*NEON["cur"], 0.92)
+    c.set_line_width(w)
+    c.stroke()
+    build()
+    c.set_source_rgba(1, 1, 1, 0.45)
+    c.set_line_width(w * 0.38)
+    c.stroke()
 
 
 def skeleton(c, x, st, t):
     s = st.get("scale", 0.95)
+    female = st.get("female", False)
+    NEON["h0"] = st.get("tono", 0.86 if female else 0.52)
+    NEON["t"] = t
+    NEON["seed"] = 1 if female else 2
     shake = 5 * math.sin(t * 60) if st.get("scared") else 0
     bob = 6 * math.sin(t * 2 + st.get("phase", 0))
     c.save()
     c.translate(x + shake, GROUND_Y)
     c.scale(s, s)
-    # sombra
+    # sombra / reflejo de neón en el piso
     c.save()
     c.scale(1, 0.15)
-    c.arc(0, 0, 170, 0, 2 * math.pi)
-    c.restore()
-    c.set_source_rgba(0, 0, 0, 0.35)
+    g = cairo.RadialGradient(0, 0, 10, 0, 0, 200)
+    g.add_color_stop_rgba(0, *ncol(0, 0, 0.45))
+    g.add_color_stop_rgba(0.5, 0, 0, 0, 0.35)
+    g.add_color_stop_rgba(1, 0, 0, 0, 0)
+    c.set_source(g)
+    c.arc(0, 0, 200, 0, 2 * math.pi)
     c.fill()
+    c.restore()
     hip = -330 + bob * 0.3
     top = -650 + bob
-    if st.get("female"):
-        # melena larga detrás del cuerpo
+    if female:
+        # melena larga y voluminosa detrás del cuerpo
         sway = 8 * math.sin(t * 1.8 + st.get("phase", 0))
-        hy = top - 210
-        c.move_to(-128, hy - 40)
-        c.curve_to(-175, hy + 120, -150 + sway, hy + 300, -110 + sway, hy + 360)
-        c.curve_to(-60, hy + 380, 60, hy + 380, 110 + sway, hy + 360)
-        c.curve_to(150 + sway, hy + 300, 175, hy + 120, 128, hy - 40)
-        c.close_path()
-        c.set_source_rgba(*hx("140F12"))
-        c.fill()
+        hy = top - 225
+        rnd = random.Random(5)
+        for i in range(13):
+            f = i / 12
+            bx = -120 + f * 240
+            tx = bx * 1.25 + sway * (0.5 + f) + rnd.uniform(-10, 10)
+            ty = hy + 330 + 50 * math.sin(f * math.pi) + rnd.uniform(-20, 20)
+            _lock(c, bx * 0.8, hy - 40, tx, ty, 34, rnd.uniform(-20, 20), HAIR, HAIR_MID)
+        for f in (0.15, 0.35, 0.7, 0.88):
+            bx = -120 + f * 240
+            _hair_hi(c, bx, hy, bx * 1.2 - 10, hy + 160, bx * 1.25 + sway, hy + 320, 0.35)
     # piernas
     for sd in (-1, 1):
         knee = (sd * 55, -170)
@@ -348,87 +722,141 @@ def skeleton(c, x, st, t):
         bone(c, knee[0], knee[1], foot[0], foot[1], 15)
         bone(c, foot[0], foot[1], foot[0] + sd * 38, foot[1] + 4, 12)
     # pelvis
-    c.move_to(-75, hip - 10)
-    c.curve_to(-90, hip + 40, -30, hip + 70, 0, hip + 40)
-    c.curve_to(30, hip + 70, 90, hip + 40, 75, hip - 10)
-    c.curve_to(40, hip + 10, -40, hip + 10, -75, hip - 10)
-    c.close_path()
-    c.set_source_rgba(*BONE)
+    def pelvis():
+        c.move_to(-78, hip - 14)
+        c.curve_to(-96, hip + 40, -30, hip + 72, 0, hip + 40)
+        c.curve_to(30, hip + 72, 96, hip + 40, 78, hip - 14)
+        c.curve_to(40, hip + 8, -40, hip + 8, -78, hip - 14)
+        c.close_path()
+    for lw, a in ((30, 0.08), (16, 0.18)):
+        pelvis()
+        c.set_source(ngrad(-80, hip, 80, hip, a))
+        c.set_line_width(lw)
+        c.stroke()
+    pelvis()
+    c.set_source(ngrad(-80, hip, 80, hip, 0.9))
     c.fill_preserve()
-    c.set_source_rgba(*INK)
-    c.set_line_width(5)
+    c.set_source_rgba(1, 1, 1, 0.5)
+    c.set_line_width(3)
     c.stroke()
+    for sd in (-1, 1):
+        c.save()
+        c.translate(sd * 36, hip + 22)
+        c.scale(1, 0.7)
+        c.arc(0, 0, 14, 0, 2 * math.pi)
+        c.restore()
+        c.set_source_rgba(0.1, 0.05, 0.15, 0.45)
+        c.fill()
     # columna
+    bone(c, 0, hip - 10, 0, top + 10, 12)
     for i in range(10):
         y = hip - 20 - i * ((hip - 20 - top) / 10)
-        R.rrect(c, -14, y - 13, 28, 22, 7)
-        c.set_source_rgba(*BONE)
+        R.rrect(c, -15, y - 12, 30, 20, 8)
+        c.set_source_rgba(*ncol(0, y, 0.95))
         c.fill_preserve()
-        c.set_source_rgba(*INK)
-        c.set_line_width(3)
+        c.set_source_rgba(1, 1, 1, 0.55)
+        c.set_line_width(2)
         c.stroke()
     # corazón (detrás de costillas)
     rate = st.get("bpm", 70) / 60.0
     ph = (t * rate) % 1.0
     beat = max(0.0, 1 - abs(ph - 0.08) / 0.08) + 0.6 * max(0.0, 1 - abs(ph - 0.26) / 0.07)
-    heart(c, -16, top + 150, 1.3, beat)
-    # costillas
+    heart(c, -12, top + 150, 1.25, beat)
+    # costillas de neón
     c.set_line_cap(cairo.LINE_CAP_ROUND)
     for i in range(6):
         y = top + 60 + i * 34
         wd = 120 - abs(i - 2) * 8
         for sd in (-1, 1):
-            for col, lw in ((INK, 13), (BONE, 7)):
-                c.set_source_rgba(*col)
-                c.set_line_width(lw)
+            NEON["cur"] = ncol(sd * wd * 0.8, y, 1)[:3]
+
+            def rib(y=y, wd=wd, sd=sd):
                 c.move_to(0, y)
                 c.curve_to(sd * wd * 0.7, y - 18, sd * wd, y + 6, sd * wd * 0.85, y + 40)
-                c.stroke()
-    bone(c, 0, top + 40, 0, top + 230, 14)  # esternón
-    # clavículas
+            _neon_path_stroke(c, rib, 8)
+    bone(c, 0, top + 40, 0, top + 230, 13)  # esternón
     sy = top + 20
     for sd in (-1, 1):
         bone(c, 0, sy, sd * 110, sy + 8, 11)
-    # brazos + manos
+    # brazos + manos de piel real
     pose = st.get("pose", "idle")
     (l1, l2), (r1, r2) = POSES.get(pose, POSES["idle"])
     wig = 6 * math.sin(t * 5) if st.get("talking") else 3 * math.sin(t * 1.7 + st.get("phase", 0))
+    if pose == "wave":
+        r2 += 18 * math.sin(t * 7)
     for sd, (a1, a2) in ((-1, (l1 + wig, l2)), (1, (r1 - wig, r2))):
         sxp, syp = sd * 110, sy + 8
         (ex, ey), (hxp, hyp), ang = arm_pts(sxp, syp, sd, a1, a2)
         bone(c, sxp, syp, ex, ey, 16)
-        bone(c, ex, ey, hxp, hyp, 13)
-        bone(c, ex + 6 * sd, ey + 4, hxp + 6 * sd, hyp, 7)
-        hand(c, hxp, hyp, -sd * ang, sd, curl=0.5 if pose == "scared" else 0.1)
+        bone(c, ex, ey, hxp, hyp, 12)
+        bone(c, ex + 7 * sd, ey + 4, hxp + 7 * sd, hyp, 7)
+        hand(c, hxp, hyp, -sd * ang, sd, curl=0.55 if pose == "scared" else 0.12)
     # cuello y cráneo
     for i in range(3):
-        R.rrect(c, -16, top - 40 - i * 22, 32, 18, 6)
-        c.set_source_rgba(*BONE)
+        R.rrect(c, -16, top - 40 - i * 22, 32, 18, 7)
+        c.set_source_rgba(*ncol(0, top - 40 - i * 22, 0.95))
         c.fill_preserve()
-        c.set_source_rgba(*INK)
-        c.set_line_width(3)
+        c.set_source_rgba(1, 1, 1, 0.5)
+        c.set_line_width(2)
         c.stroke()
-    c.save()
-    c.translate(0, top - 225)
-    c.scale(1.22, 1.22)
-    tilt = 0.05 * math.sin(t * 1.3 + st.get("phase", 0))
-    c.rotate(tilt)
-    skull(c, st, t)
-    c.restore()
-    # bufanda
     if st.get("bufanda"):
         R.rrect(c, -70, top - 50, 140, 36, 16)
         c.set_source_rgba(*st["bufanda"])
         c.fill_preserve()
-        c.set_source_rgba(*INK)
-        c.set_line_width(4)
+        c.set_source_rgba(1, 1, 1, 0.35)
+        c.set_line_width(3)
         c.stroke()
         R.rrect(c, 30, top - 30, 34, 110, 12)
         c.set_source_rgba(*st["bufanda"])
         c.fill_preserve()
-        c.set_source_rgba(*INK)
         c.stroke()
+        c.set_source_rgba(1, 1, 1, 0.55)
+        for yy in (top + 10, top + 40):
+            c.rectangle(32, yy, 30, 7)
+            c.fill()
+        for fx in range(4):
+            _seg(c, 36 + fx * 8, top + 80, 36 + fx * 8, top + 96, 4, st["bufanda"])
+    c.save()
+    c.translate(0, top - 225)
+    c.scale(1.22, 1.22)
+    c.rotate(0.05 * math.sin(t * 1.3 + st.get("phase", 0)))
+    skull(c, st, t)
     c.restore()
+    # destellos alrededor del personaje
+    rnd = random.Random(NEON["seed"] * 17)
+    for _ in range(9):
+        px, py = rnd.uniform(-200, 200), rnd.uniform(-1050, -150)
+        ph = rnd.random() * 6.28
+        tw = max(0.0, math.sin(t * 2.4 + ph))
+        sparkle(c, px, py, 10 * tw + 2, 0.85 * tw, ncol(px, py, 1, 0.35)[:3])
+    c.restore()
+
+
+def bokeh(c, t):
+    """Fondo mágico: círculos desenfocados de colores y polvo de estrellas."""
+    rnd = random.Random(42)
+    for _ in range(26):
+        x0, y0 = rnd.uniform(0, W), rnd.uniform(150, 1600)
+        r = rnd.uniform(14, 58)
+        sp = rnd.uniform(4, 14)
+        x = (x0 + sp * t) % (W + 120) - 60
+        y = y0 - 6 * math.sin(t * 0.5 + x0)
+        r_, g_, b_ = colorsys.hsv_to_rgb(rnd.random(), 0.6, 1)
+        a = rnd.uniform(0.10, 0.24)
+        g = cairo.RadialGradient(x, y, r * 0.2, x, y, r)
+        g.add_color_stop_rgba(0, r_, g_, b_, a)
+        g.add_color_stop_rgba(0.85, r_, g_, b_, a * 0.8)
+        g.add_color_stop_rgba(1, r_, g_, b_, 0)
+        c.set_source(g)
+        c.arc(x, y, r, 0, 2 * math.pi)
+        c.fill()
+    for _ in range(70):
+        x, y = rnd.uniform(0, W), rnd.uniform(120, 1650)
+        tw = 0.5 + 0.5 * math.sin(t * rnd.uniform(1.5, 4) + rnd.random() * 6.28)
+        r_, g_, b_ = colorsys.hsv_to_rgb(rnd.random(), 0.3, 1)
+        c.arc(x, y, 1.2 + 1.8 * tw, 0, 2 * math.pi)
+        c.set_source_rgba(r_, g_, b_, 0.25 + 0.6 * tw)
+        c.fill()
 
 
 # ------------------------------------------------------------------ escenarios
@@ -936,6 +1364,9 @@ def main():
         c.scale(zoom, zoom)
         c.translate(-540, -960)
         scene(c, sk, t, lt, ln)
+        c.set_source_rgba(0.04, 0.03, 0.10, 0.38)
+        c.paint()
+        bokeh(c, t)
         for name, cfg in elenco.items():
             st = dict(cfg)
             st["talking"] = (ln["quien"] == name and lt < ln["habla"] + 0.1)
