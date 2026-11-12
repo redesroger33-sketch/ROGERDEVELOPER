@@ -1383,6 +1383,12 @@ def main():
     surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
     c = cairo.Context(surf)
     elenco = ep["elenco"]
+    MODELOS = {}
+    for name, cfg in elenco.items():
+        if cfg.get("modelo"):
+            import sprites
+            MODELOS[name] = {"close": sprites.Personaje(cfg["modelo"], cfg.get("escala_primer_plano", 0.72)),
+                             "two": sprites.Personaje(cfg["modelo"], cfg.get("escala", 0.42))}
 
     def frame(t):
         cur = None
@@ -1400,7 +1406,7 @@ def main():
         c.save()
         if shake:
             c.translate(shake * math.sin(t * 70), shake * math.cos(t * 55))
-        zoom = 1 + 0.04 * clamp(lt / max(b - a, 0.1))
+        zoom = 1 + 0.04 * clamp(lt / max(b - a, 0.1)) + 0.07 * max(0.0, 1 - lt / 0.18)
         c.translate(540, 960)
         c.scale(zoom, zoom)
         c.translate(-540, -960)
@@ -1408,11 +1414,26 @@ def main():
         c.set_source_rgba(0.04, 0.03, 0.10, 0.38)
         c.paint()
         bokeh(c, t)
-        for name, cfg in elenco.items():
+        orden = sorted(elenco.items(), key=lambda kv: kv[0] == ln["quien"])
+        primer_plano = MODELOS and ln["quien"] in elenco and ln.get("plano") != "dos"
+        for name, cfg in orden:
+            if primer_plano and name != ln["quien"]:
+                continue
             st = dict(cfg)
             st["talking"] = (ln["quien"] == name and lt < ln["habla"] + 0.1)
             st.update(ln.get("estado", {}).get(name, {}))
-            skeleton(c, cfg["x"], st, t)
+            if cfg.get("modelo"):
+                talk = (0.35 + 0.65 * abs(math.sin(t * 13)) * (0.5 + 0.5 * math.sin(t * 4.3))) if st["talking"] else 0.0
+                dim = 0.28 if (ln["quien"] in elenco and ln["quien"] != name) else 0.0
+                if primer_plano:
+                    MODELOS[name]["close"].draw(c, cfg.get("x_primer_plano", 540), 1610, st, t,
+                                                mirror=cfg.get("espejo", False), talk=talk)
+                else:
+                    MODELOS[name]["two"].draw(c, cfg["x"], cfg.get("y", 1600), st, t,
+                                              mirror=cfg.get("espejo", False), dim=dim, talk=talk,
+                                              brazo_extra=-0.42)
+            else:
+                skeleton(c, cfg["x"], st, t)
         c.restore()
         if ln.get("gancho"):
             gancho(c, ln["gancho"], lt, RED if ln.get("rojo", True) else YEL)

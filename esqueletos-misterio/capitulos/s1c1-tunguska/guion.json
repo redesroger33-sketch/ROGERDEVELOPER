@@ -7,7 +7,7 @@
   "siguiente": "Cap. 2: CHELYABINSK, 2013|El meteorito que todos grabaron",
   "elenco": {
     "ivan": {
-      "x": 290,
+      "x": 300,
       "female": false,
       "iris": [
         0.42,
@@ -22,10 +22,15 @@
         1
       ],
       "phase": 0.0,
-      "bpm": 75
+      "bpm": 75,
+      "modelo": "masculino",
+      "espejo": true,
+      "escala": 0.5,
+      "y": 1625,
+      "x_primer_plano": 630
     },
     "ana": {
-      "x": 790,
+      "x": 780,
       "female": true,
       "iris": [
         0.16,
@@ -34,7 +39,12 @@
         1
       ],
       "phase": 1.7,
-      "bpm": 75
+      "bpm": 75,
+      "modelo": "femenino",
+      "espejo": false,
+      "escala": 0.5,
+      "y": 1625,
+      "x_primer_plano": 450
     }
   },
   "lineas": [
