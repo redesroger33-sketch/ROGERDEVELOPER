@@ -1,0 +1,276 @@
+{
+  "archivo": "EsqueletosDelMisterio_T1C1_Tunguska_1908.mp4",
+  "badge": "ESQUELETOS DEL MISTERIO · EL CIELO EXPLOTÓ · CAP 1/3",
+  "duracion": 45.0,
+  "cierre": 3.0,
+  "pausa": 0.08,
+  "siguiente": "Cap. 2: CHELYABINSK, 2013|El meteorito que todos grabaron",
+  "elenco": {
+    "ivan": {
+      "x": 290,
+      "female": false,
+      "iris": [
+        0.42,
+        0.24,
+        0.12,
+        1
+      ],
+      "bufanda": [
+        0.78,
+        0.1,
+        0.15,
+        1
+      ],
+      "phase": 0.0,
+      "bpm": 75
+    },
+    "ana": {
+      "x": 790,
+      "female": true,
+      "iris": [
+        0.16,
+        0.55,
+        0.36,
+        1
+      ],
+      "phase": 1.7,
+      "bpm": 75
+    }
+  },
+  "lineas": [
+    {
+      "quien": "narrador",
+      "escena": "siberia",
+      "gancho": "30 DE JUNIO, 1908|SIBERIA · 7:17 A.M.",
+      "texto": "Siberia, 1908, siete y diecisiete de la mañana… el *cielo* se partió en dos.",
+      "estado": {
+        "ivan": {
+          "look": [
+            0,
+            -1
+          ]
+        },
+        "ana": {
+          "look": [
+            0,
+            -1
+          ]
+        }
+      },
+      "voz": "Siberia, mil novecientos ocho, siete y diecisiete de la mañana... el cielo se partió en dos."
+    },
+    {
+      "quien": "ivan",
+      "escena": "meteoro",
+      "gancho": "¿UN SEGUNDO SOL?",
+      "sfx": [
+        "riser"
+      ],
+      "texto": "¡Ana, mira arriba! ¡Hay un *segundo sol*!",
+      "estado": {
+        "ivan": {
+          "pose": "point",
+          "scared": true,
+          "bpm": 120,
+          "look": [
+            0.6,
+            -1
+          ]
+        },
+        "ana": {
+          "scared": true,
+          "bpm": 120,
+          "look": [
+            -0.4,
+            -1
+          ]
+        }
+      }
+    },
+    {
+      "quien": "narrador",
+      "escena": "explosion",
+      "gancho": "¡BOOM!",
+      "sfx": [
+        "boom"
+      ],
+      "texto": "Una bola de fuego cruzó el cielo… y *explotó* antes de tocar el suelo.",
+      "estado": {
+        "ivan": {
+          "pose": "scared",
+          "scared": true,
+          "bpm": 150
+        },
+        "ana": {
+          "pose": "scared",
+          "scared": true,
+          "bpm": 150
+        }
+      }
+    },
+    {
+      "quien": "ana",
+      "escena": "explosion",
+      "gancho": "65 KM DE DISTANCIA…|Y AÚN QUEMABA",
+      "texto": "¡Iván, el calor! ¡Siento que la ropa me *quema*!",
+      "estado": {
+        "ana": {
+          "pose": "scared",
+          "scared": true,
+          "bpm": 150
+        },
+        "ivan": {
+          "scared": true,
+          "bpm": 140
+        }
+      }
+    },
+    {
+      "quien": "narrador",
+      "escena": "bosque_caido",
+      "gancho": "80 MILLONES|DE ÁRBOLES",
+      "texto": "La onda derribó *ochenta millones* de árboles en dos mil kilómetros cuadrados.",
+      "voz": "La onda derribó ochenta millones de árboles, en dos mil kilómetros cuadrados.",
+      "estado": {
+        "ivan": {
+          "bpm": 110,
+          "look": [
+            0.3,
+            0.4
+          ]
+        },
+        "ana": {
+          "bpm": 110,
+          "look": [
+            -0.3,
+            0.4
+          ]
+        }
+      }
+    },
+    {
+      "quien": "ivan",
+      "escena": "bosque_caido",
+      "gancho": "¿Y EL CRÁTER?",
+      "texto": "Pero… ¿dónde está la roca? ¡Debería haber un *cráter*!",
+      "estado": {
+        "ivan": {
+          "pose": "think",
+          "bpm": 95
+        },
+        "ana": {
+          "bpm": 95
+        }
+      }
+    },
+    {
+      "quien": "narrador",
+      "escena": "bosque_caido",
+      "gancho": "1927|EXPEDICIÓN KULIK",
+      "rojo": false,
+      "carpa": true,
+      "texto": "En 1927, el científico *Leonid Kulik* llegó al lugar… y lo que vio lo dejó helado.",
+      "voz": "En mil novecientos veintisiete, el científico Leonid Kulik llegó al lugar... y lo que vio lo dejó helado.",
+      "sfx": [
+        "latidos"
+      ],
+      "estado": {
+        "ivan": {
+          "bpm": 130
+        },
+        "ana": {
+          "bpm": 130
+        }
+      }
+    },
+    {
+      "quien": "narrador",
+      "escena": "noche",
+      "gancho": "NI UN CRÁTER.|NI UNA ROCA.",
+      "texto": "No había *cráter*. Ni una sola roca del cielo.",
+      "estado": {
+        "ivan": {
+          "scared": true,
+          "bpm": 140
+        },
+        "ana": {
+          "scared": true,
+          "bpm": 140
+        }
+      }
+    },
+    {
+      "quien": "ana",
+      "escena": "londres",
+      "gancho": "EUROPA:|NOCHES QUE BRILLABAN",
+      "rojo": false,
+      "texto": "Y en esos días, en *Europa*, las noches brillaron de forma extraña…",
+      "estado": {
+        "ana": {
+          "pose": "point",
+          "bpm": 100,
+          "look": [
+            0.5,
+            -0.8
+          ]
+        },
+        "ivan": {
+          "look": [
+            0.5,
+            -0.8
+          ],
+          "bpm": 100
+        }
+      }
+    },
+    {
+      "quien": "narrador",
+      "escena": "moscu",
+      "gancho": "¿1.000 BOMBAS|DE HIROSHIMA?",
+      "texto": "Según algunos cálculos, fue como *mil bombas* de Hiroshima… y casi nadie lo vio.",
+      "voz": "Según algunos cálculos, fue como mil bombas de Hiroshima... y casi nadie lo vio.",
+      "sfx": [
+        "latidos"
+      ],
+      "estado": {
+        "ivan": {
+          "scared": true,
+          "bpm": 160
+        },
+        "ana": {
+          "scared": true,
+          "bpm": 160
+        }
+      }
+    },
+    {
+      "quien": "narrador",
+      "escena": "moscu",
+      "gancho": "2013…|OTRA VEZ",
+      "sfx": [
+        "riser"
+      ],
+      "texto": "Pero en 2013, Rusia volvió a *estallar*… y esta vez, todo quedó grabado.",
+      "voz": "Pero en dos mil trece, Rusia volvió a estallar... y esta vez, todo quedó grabado.",
+      "estado": {
+        "ivan": {
+          "pose": "point",
+          "scared": true,
+          "bpm": 170,
+          "look": [
+            0.6,
+            -1
+          ]
+        },
+        "ana": {
+          "scared": true,
+          "bpm": 170,
+          "look": [
+            -0.6,
+            -1
+          ]
+        }
+      }
+    }
+  ]
+}
