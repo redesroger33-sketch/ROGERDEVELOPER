@@ -1,9 +1,9 @@
 {
   "archivo": "EsqueletosDelMisterio_T1C1_Tunguska_1908.mp4",
   "badge": "ESQUELETOS DEL MISTERIO · EL CIELO EXPLOTÓ · CAP 1/3",
-  "duracion": 45.0,
-  "cierre": 3.0,
-  "pausa": 0.08,
+  "duracion": 40,
+  "cierre": 3.5,
+  "pausa": 0.18,
   "siguiente": "Cap. 2: CHELYABINSK, 2013|El meteorito que todos grabaron",
   "elenco": {
     "ivan": {
@@ -272,5 +272,6 @@
         }
       }
     }
-  ]
+  ],
+  "duracion_max": 55
 }

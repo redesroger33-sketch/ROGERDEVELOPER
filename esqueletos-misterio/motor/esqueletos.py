@@ -32,9 +32,9 @@ YEL = hx("FFD84A")
 WHITE = hx("FFFFFF")
 GROUND_Y = 1560
 
-R.VOCES_NAT["narrador"] = ([("em_alex", 1.0)], 1.1)
-R.VOCES_NAT["ivan"] = ([("em_santa", 1.0)], 1.12)
-R.VOCES_NAT["ana"] = ([("ef_dora", 1.0)], 1.12)
+R.VOCES_NAT["narrador"] = ([("em_alex", 1.0)], 1.0)
+R.VOCES_NAT["ivan"] = ([("em_santa", 1.0)], 1.03)
+R.VOCES_NAT["ana"] = ([("ef_dora", 1.0)], 1.03)
 R.VOCES_NAT["leo"] = ([("em_santa", 0.6), ("em_alex", 0.4)], 1.05)
 R.VOCES_NAT["sofi"] = ([("ef_dora", 0.7), ("if_sara", 0.3)], 1.05)
 NOMBRES = {"narrador": "NARRADOR", "ivan": "IVÁN", "ana": "ANA", "leo": "LEO", "sofi": "SOFÍA"}
@@ -489,13 +489,15 @@ def sugar_decor(c, female, eyes_x, eye_y, er):
     for sx in (-1, 1):
         ex = sx * eyes_x
         g = cairo.RadialGradient(ex, eye_y, er * 0.9, ex, eye_y, er * 1.55)
-        g.add_color_stop_rgba(0, *hx("A64BFF")[:3], 0.95)
-        g.add_color_stop_rgba(0.6, *hx("FF5FA2")[:3], 0.8)
-        g.add_color_stop_rgba(1, *hx("FF5FA2")[:3], 0)
+        c1, c2 = (hx("A64BFF"), hx("FF5FA2")) if female else (hx("2B5BFF"), hx("23D3FF"))
+        g.add_color_stop_rgba(0, *c1[:3], 0.95)
+        g.add_color_stop_rgba(0.6, *c2[:3], 0.8)
+        g.add_color_stop_rgba(1, *c2[:3], 0)
         c.set_source(g)
         c.arc(ex, eye_y, er * 1.55, 0, 2 * math.pi)
         c.fill()
-        cols = (hx("FF3D6E"), hx("FFB13B"), hx("3FD9FF"), hx("7BE07F"))
+        cols = ((hx("FF3D6E"), hx("FFB13B"), hx("3FD9FF"), hx("7BE07F")) if female else
+                (hx("FFB13B"), hx("3FD9FF"), hx("FFFFFF"), hx("7BE07F")))
         for k in range(9):
             a = math.radians(205 + k * 16.5) if sx < 0 else math.radians(335 - k * 16.5)
             c.arc(ex + math.cos(a) * er * 1.6, eye_y + math.sin(a) * er * 1.6, 5.5, 0, 2 * math.pi)
@@ -514,6 +516,20 @@ def sugar_decor(c, female, eyes_x, eye_y, er):
             c.curve_to(dx_ - 6, dy_ + 7, dx_ - 7, dy_, dx_, dy_ - 10)
             c.set_source_rgba(*col)
             c.fill()
+    if not female:
+        # estrella en la frente (catrín) en lugar del diamante
+        c.move_to(0, -66)
+        for k in range(1, 11):
+            a = -math.pi / 2 + k * math.pi / 5
+            rr = 16 if k % 2 == 0 else 7
+            c.line_to(math.cos(a) * rr, -48 + math.sin(a) * rr)
+        c.close_path()
+        c.set_source_rgba(*hx("23D3FF"))
+        c.fill()
+        c.arc(0, -48, 4, 0, 2 * math.pi)
+        c.set_source_rgba(*hx("FFE15A"))
+        c.fill()
+        return
     # diamante central
     for (s, col) in ((1.0, hx("FF3D8B")), (0.5, hx("FFE15A"))):
         c.move_to(0, -64 * 1 - 22 * s + 22)
@@ -541,8 +557,12 @@ def skull(c, st, t):
         c.move_to(0, -128)
         c.curve_to(72, -128, 120, -82, 118, -14)
         c.curve_to(117, 28, 100, 52, 74, 64)
-        c.curve_to(64, 96 + jd, 40, 118 + jd, 0, 120 + jd)
-        c.curve_to(-40, 118 + jd, -64, 96 + jd, -74, 64)
+        if female:
+            c.curve_to(64, 96 + jd, 40, 118 + jd, 0, 120 + jd)
+            c.curve_to(-40, 118 + jd, -64, 96 + jd, -74, 64)
+        else:
+            c.curve_to(78, 104 + jd, 66, 124 + jd, 0, 126 + jd)
+            c.curve_to(-66, 124 + jd, -78, 104 + jd, -74, 64)
         c.curve_to(-100, 52, -117, 28, -118, -14)
         c.curve_to(-120, -82, -72, -128, 0, -128)
         c.close_path()
@@ -623,6 +643,21 @@ def skull(c, st, t):
         c.arc(sx * 64, 58, 3.5, 0, 2 * math.pi)
         c.set_source_rgba(*hx("FF3D6E"))
         c.fill()
+    if not female:
+        # bigote catrín de puntas rizadas
+        c.set_source_rgba(*hx("120E18"))
+        for sx in (-1, 1):
+            c.move_to(0, 50)
+            c.curve_to(sx * 18, 42, sx * 40, 46, sx * 52, 54)
+            c.curve_to(sx * 62, 58, sx * 70, 50, sx * 66, 42)
+            c.curve_to(sx * 74, 50, sx * 68, 66, sx * 52, 62)
+            c.curve_to(sx * 38, 60, sx * 18, 60, 0, 58)
+            c.close_path()
+            c.fill()
+        for k in range(3):
+            c.arc(0, 112 + jd + k * 0.1 - k * 9 + 0 * op, 4 - k * 0.8, 0, 2 * math.pi)
+            c.set_source_rgba(*hx("23D3FF"))
+            c.fill()
     look = st.get("look", (0.25 * math.sin(t * 0.7), 0))
     iris = st.get("iris", hx("4A2A1A"))
     for sx in (-1, 1):
@@ -700,6 +735,10 @@ def skeleton(c, x, st, t):
     c.restore()
     hip = -330 + bob * 0.3
     top = -650 + bob
+    BW = 0.84 if female else 1.15          # grosor de huesos
+    SW = 94 if female else 128             # ancho de hombros
+    RW = 0.88 if female else 1.1           # ancho de costillas
+    PW = 1.15 if female else 0.88          # ancho de cadera
     if female:
         # melena larga y voluminosa detrás del cuerpo
         sway = 8 * math.sin(t * 1.8 + st.get("phase", 0))
@@ -718,15 +757,15 @@ def skeleton(c, x, st, t):
     for sd in (-1, 1):
         knee = (sd * 55, -170)
         foot = (sd * 70, -10)
-        bone(c, sd * 40, hip + 20, knee[0], knee[1], 18)
-        bone(c, knee[0], knee[1], foot[0], foot[1], 15)
-        bone(c, foot[0], foot[1], foot[0] + sd * 38, foot[1] + 4, 12)
+        bone(c, sd * 40 * PW, hip + 20, knee[0], knee[1], 18 * BW)
+        bone(c, knee[0], knee[1], foot[0], foot[1], 15 * BW)
+        bone(c, foot[0], foot[1], foot[0] + sd * 38, foot[1] + 4, 12 * BW)
     # pelvis
     def pelvis():
-        c.move_to(-78, hip - 14)
-        c.curve_to(-96, hip + 40, -30, hip + 72, 0, hip + 40)
-        c.curve_to(30, hip + 72, 96, hip + 40, 78, hip - 14)
-        c.curve_to(40, hip + 8, -40, hip + 8, -78, hip - 14)
+        c.move_to(-78 * PW, hip - 14)
+        c.curve_to(-96 * PW, hip + 40, -30 * PW, hip + 72, 0, hip + 40)
+        c.curve_to(30 * PW, hip + 72, 96 * PW, hip + 40, 78 * PW, hip - 14)
+        c.curve_to(40 * PW, hip + 8, -40 * PW, hip + 8, -78 * PW, hip - 14)
         c.close_path()
     for lw, a in ((30, 0.08), (16, 0.18)):
         pelvis()
@@ -766,18 +805,18 @@ def skeleton(c, x, st, t):
     c.set_line_cap(cairo.LINE_CAP_ROUND)
     for i in range(6):
         y = top + 60 + i * 34
-        wd = 120 - abs(i - 2) * 8
+        wd = (120 - abs(i - 2) * 8) * RW * ((1 - 0.05 * i) if female else 1)
         for sd in (-1, 1):
             NEON["cur"] = ncol(sd * wd * 0.8, y, 1)[:3]
 
             def rib(y=y, wd=wd, sd=sd):
                 c.move_to(0, y)
                 c.curve_to(sd * wd * 0.7, y - 18, sd * wd, y + 6, sd * wd * 0.85, y + 40)
-            _neon_path_stroke(c, rib, 8)
+            _neon_path_stroke(c, rib, 8 * BW)
     bone(c, 0, top + 40, 0, top + 230, 13)  # esternón
     sy = top + 20
     for sd in (-1, 1):
-        bone(c, 0, sy, sd * 110, sy + 8, 11)
+        bone(c, 0, sy, sd * SW, sy + 8, 11 * BW)
     # brazos + manos de piel real
     pose = st.get("pose", "idle")
     (l1, l2), (r1, r2) = POSES.get(pose, POSES["idle"])
@@ -785,10 +824,10 @@ def skeleton(c, x, st, t):
     if pose == "wave":
         r2 += 18 * math.sin(t * 7)
     for sd, (a1, a2) in ((-1, (l1 + wig, l2)), (1, (r1 - wig, r2))):
-        sxp, syp = sd * 110, sy + 8
+        sxp, syp = sd * SW, sy + 8
         (ex, ey), (hxp, hyp), ang = arm_pts(sxp, syp, sd, a1, a2)
-        bone(c, sxp, syp, ex, ey, 16)
-        bone(c, ex, ey, hxp, hyp, 12)
+        bone(c, sxp, syp, ex, ey, 16 * BW)
+        bone(c, ex, ey, hxp, hyp, 12 * BW)
         bone(c, ex + 7 * sd, ey + 4, hxp + 7 * sd, hyp, 7)
         hand(c, hxp, hyp, -sd * ang, sd, curl=0.55 if pose == "scared" else 0.12)
     # cuello y cráneo
@@ -1328,6 +1367,8 @@ def main():
     outro_at = max(speech_end, total - outro)
     if speech_end > total - outro + 0.5:
         print(f"AVISO: el habla dura {speech_end:.1f}s; total {total}s")
+    if ep.get("duracion_max"):
+        total = min(ep["duracion_max"], math.ceil(speech_end + outro))
     total = max(total, speech_end + outro)
     # estira levemente para encajar
     if speech_end < total - outro:
