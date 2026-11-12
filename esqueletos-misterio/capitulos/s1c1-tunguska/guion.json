@@ -288,66 +288,66 @@
     {
       "linea": 0,
       "desde": 0.0,
-      "escena": "taiga_amanecer",
+      "escena": "taiga_aerea",
       "trans": "negro",
-      "rotulo": "📍 Tunguska, Siberia · 1908",
+      "rotulo": "Taiga siberiana",
       "cam": {
-        "z0": 0.95,
-        "z1": 1.18,
-        "y0": -280,
-        "y1": 60
-      }
+        "z0": 1.0,
+        "z1": 1.1,
+        "x0": -900,
+        "x1": 500
+      },
+      "mano": 0.8
     },
     {
       "linea": 0,
       "desde": 0.5,
-      "escena": "rio_taiga",
-      "trans": "luz",
+      "escena": "taiga_lago",
+      "trans": "barrido",
       "cam": {
         "z0": 1.0,
-        "z1": 1.08,
-        "x0": -60,
-        "x1": 40
+        "z1": 1.07,
+        "x0": -250,
+        "x1": 150
       },
       "pj": [
         {
           "q": "ivan",
-          "x": 330,
-          "y": 1575,
-          "esc": 0.5,
+          "x": 300,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
-          "reflejo": true,
-          "entra": "izq",
-          "brazo": -0.42
+          "brazo": -0.42,
+          "entra": "izq"
         },
         {
           "q": "ana",
-          "x": 760,
-          "y": 1575,
-          "esc": 0.5,
-          "reflejo": true,
-          "entra": "der",
-          "brazo": -0.42
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
+          "brazo": -0.42,
+          "entra": "der"
         }
       ]
     },
     {
       "linea": 1,
       "desde": 0.0,
-      "escena": "cielo_meteoro",
+      "escena": "taiga_bosque",
       "trans": "barrido",
+      "fondo_desenfocado": false,
       "cam": {
-        "z0": 1.05,
-        "z1": 1.2,
-        "y0": 200,
-        "y1": -60
+        "z0": 1.0,
+        "z1": 1.12,
+        "y0": 350,
+        "y1": -250
       },
       "pj": [
         {
           "q": "ivan",
           "x": 600,
-          "y": 1650,
-          "esc": 0.72,
+          "y": 1830,
+          "esc": 0.74,
           "espejo": true,
           "entra": "abajo"
         }
@@ -356,49 +356,59 @@
     {
       "linea": 2,
       "desde": 0.0,
-      "escena": "explosion",
+      "escena": "incendio",
       "trans": "flash",
+      "fx": "destello",
       "cam": {
         "z0": 1.0,
         "z1": 1.12,
-        "y0": 120,
-        "y1": 80
+        "x0": -150,
+        "x1": 150
       },
+      "mano": 2.2,
       "pj": [
         {
           "q": "ivan",
           "x": 300,
-          "y": 1640,
-          "esc": 0.5,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
-          "lean": -0.08,
-          "brazo": -0.42
+          "brazo": -0.42,
+          "estado": {
+            "scared": true
+          }
         },
         {
           "q": "ana",
-          "x": 780,
-          "y": 1640,
-          "esc": 0.5,
-          "lean": 0.08,
-          "brazo": -0.42
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
+          "brazo": -0.42,
+          "estado": {
+            "scared": true
+          }
         }
       ]
     },
     {
       "linea": 3,
       "desde": 0.0,
-      "escena": "calor",
+      "escena": "incendio",
       "trans": "zoom",
+      "fondo_desenfocado": true,
       "cam": {
-        "z0": 1.1,
-        "z1": 1.0
+        "z0": 1.3,
+        "z1": 1.2,
+        "x0": 200,
+        "x1": 120
       },
+      "mano": 1.6,
       "pj": [
         {
           "q": "ana",
           "x": 450,
-          "y": 1640,
-          "esc": 0.72
+          "y": 1830,
+          "esc": 0.74
         }
       ]
     },
@@ -546,51 +556,52 @@
     {
       "linea": 8,
       "desde": 0.0,
-      "escena": "londres_noche",
-      "trans": "luz",
-      "rotulo": "📍 Londres · julio de 1908",
+      "escena": "londres",
+      "trans": "barrido",
+      "rotulo": "Londres · puente de Westminster",
       "cam": {
         "z0": 1.0,
-        "z1": 1.12,
-        "y0": -120,
-        "y1": -40
+        "z1": 1.08,
+        "x0": 250,
+        "x1": 900
       },
       "pj": [
         {
           "q": "ana",
-          "x": 420,
-          "y": 1560,
-          "esc": 0.72,
+          "x": 430,
+          "y": 1830,
+          "esc": 0.74,
           "entra": "izq"
         }
-      ]
+      ],
+      "paralaje": 0.12
     },
     {
       "linea": 9,
       "desde": 0.0,
-      "escena": "moscu_nieve",
+      "escena": "moscu",
       "trans": "barrido",
-      "rotulo": "📍 Moscú, Rusia",
+      "rotulo": "Moscú · catedral de San Basilio",
       "cam": {
         "z0": 1.0,
-        "z1": 1.15,
-        "y0": -60,
-        "y1": 0
+        "z1": 1.12,
+        "y0": -250,
+        "y1": 150
       },
       "pj": [
         {
           "q": "ivan",
-          "x": 320,
-          "y": 1660,
-          "esc": 0.5,
+          "x": 300,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
           "brazo": -0.42
         },
         {
           "q": "ana",
-          "x": 770,
-          "y": 1660,
-          "esc": 0.5,
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
           "brazo": -0.42
         }
       ]
@@ -598,19 +609,22 @@
     {
       "linea": 10,
       "desde": 0.0,
-      "escena": "chely_real",
+      "escena": "chely",
       "trans": "flash",
-      "rotulo": "📍 Chelyabinsk · 15 feb 2013",
+      "rotulo": "Foto real · Chelyabinsk, 15 feb 2013",
       "cam": {
         "z0": 1.0,
-        "z1": 1.04
+        "z1": 1.06,
+        "x0": 900,
+        "x1": -700
       },
+      "mano": 1.8,
       "pj": [
         {
           "q": "ivan",
-          "x": 330,
-          "y": 1660,
-          "esc": 0.5,
+          "x": 300,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
           "brazo": -0.42,
           "estado": {
@@ -619,15 +633,16 @@
         },
         {
           "q": "ana",
-          "x": 760,
-          "y": 1660,
-          "esc": 0.5,
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
           "brazo": -0.42,
           "estado": {
             "scared": true
           }
         }
-      ]
+      ],
+      "paralaje": 0.0
     }
   ],
   "escenas_reales": {
@@ -689,6 +704,69 @@
       "luz": "sepia",
       "particulas": "nieve",
       "n_part": 60
+    },
+    "taiga_aerea": {
+      "tipo": "foto",
+      "archivo": "taiga_rio_aereo.jpg",
+      "luz": "calida",
+      "grado": {
+        "contraste": 1.08,
+        "saturacion": 1.1
+      },
+      "particulas": "polvo",
+      "n_part": 40
+    },
+    "taiga_lago": {
+      "tipo": "foto",
+      "archivo": "taiga_lago.jpg",
+      "luz": "calida",
+      "particulas": "polvo",
+      "n_part": 50
+    },
+    "taiga_bosque": {
+      "tipo": "foto",
+      "archivo": "taiga_bosque.jpg",
+      "luz": "fuego",
+      "fx": "bolido",
+      "grado": {
+        "brillo": 0.8
+      }
+    },
+    "incendio": {
+      "tipo": "foto",
+      "archivo": "incendio_noche.jpg",
+      "luz": "fuego",
+      "particulas": "brasas",
+      "n_part": 110,
+      "fx": "fuego",
+      "desenfoque": 14
+    },
+    "londres": {
+      "tipo": "foto",
+      "archivo": "londres_big_ben_noche.jpg",
+      "luz": "noche",
+      "fx": "noctilucente",
+      "grado": {
+        "brillo": 1.15
+      }
+    },
+    "moscu": {
+      "tipo": "foto",
+      "archivo": "moscu_san_basilio_nieve.jpg",
+      "luz": "nieve",
+      "particulas": "nieve",
+      "n_part": 110,
+      "grado": {
+        "brillo": 1.15
+      }
+    },
+    "chely": {
+      "tipo": "foto",
+      "archivo": "chelyabinsk_estela_2013.jpg",
+      "luz": "nieve",
+      "grado": {
+        "contraste": 1.1
+      }
     }
   }
 }
