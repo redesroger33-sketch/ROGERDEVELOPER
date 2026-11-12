@@ -1,0 +1,292 @@
+{
+ "id": "2026-11-12-mazamorra-morada",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-12_mazamorra_morada.mp4",
+ "fecha": "12 NOV 2026",
+ "seccion": "POSTRE LIMEÑO",
+ "titular": [
+  "MAZAMORRA MORADA:",
+  "¡EL SECRETO DEL COLOR!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:mazamorra|MAZAMORRA MORADA",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 119.0,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, postre limeño de carretilla: ¡la *mazamorra morada!*",
+   "voz": "¡Hola, cocineros! Hoy, postre limeño de carretilla: ¡la mazamorra morada!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:mazamorra|MAZAMORRA MORADA"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, a la mía le sale un color *rosadito pálido*, como chicha aguada.",
+   "voz": "Chef, a la mía le sale un color rosadito pálido, como chicha aguada.",
+   "expr": {
+    "beto": "worried",
+    "tito": "surprised"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Porque el secreto empieza en el *mercado*. Hoy seguimos los consejos de un *chef pastelero*.",
+   "voz": "Porque el secreto empieza en el mercado. Hoy seguimos los consejos de Miguel Ballona, chef de pastelería de Le Cordon Bleu.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:maiz_morado|EL SECRETO: EL MAÍZ"
+  },
+  {
+   "quien": "tito",
+   "texto": "Si el maíz morado se ve *muy brilloso*, está nuevo y *no suelta* bien el color. Busca uno *más seco*.",
+   "voz": "Si el maíz morado se ve muy brilloso, está nuevo, y no suelta bien el color. Busca uno más seco.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "tarjeta": {
+    "label": "TRUCO DEL CHEF",
+    "valor": "MAÍZ SECO, NO BRILLOSO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Cuando se seca, la *coronta* absorbe el color de los granos. ¡Y ahí tienes una mazamorra *más viva*!",
+   "voz": "Cuando se seca, la coronta absorbe el color de los granos. ¡Y ahí tienes una mazamorra más viva!",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:maiz_morado|LA CORONTA DA COLOR"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Primero, el *líquido morado*: hierve el maíz con *canela* y *clavo*. Si quieres, *cáscara de naranja* o *anís*.",
+   "voz": "Primero, el líquido morado: hierve el maíz con canela y clavo de olor. Si quieres, cáscara de naranja o anís.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "fuego": true,
+   "pantalla": "fotos:maiz_morado,canela,clavo|MAÍZ MORADO|CANELA|CLAVO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para *cuatro copas*: *doscientos cincuenta mililitros* de líquido morado, y *cien gramos* de membrillo, de manzana y de piña.",
+   "voz": "Para unas cuatro copas: doscientos cincuenta mililitros de líquido morado, y cien gramos de membrillo, de manzana, y de piña.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:membrillo,manzana,pina|100 G MEMBRILLO|100 G MANZANA|100 G PIÑA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Más *cien gramos* de harina de camote, *un par* de guindones y *ciento ochenta gramos* de azúcar.",
+   "voz": "Más cien gramos de harina de camote, un par de guindones, y ciento ochenta gramos de azúcar.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:camote,guindones|HARINA DE CAMOTE (100 G)|2 GUINDONES"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Ciento ochenta gramos de azúcar? ¡Chef, mi dentista ya está *aplaudiendo!*",
+   "voz": "¿Ciento ochenta gramos de azúcar? ¡Chef, mi dentista ya está aplaudiendo!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Es postre, Beto! Una copita, no la olla. Y rectifica el dulce *a tu gusto*.",
+   "voz": "¡Es postre, Beto! Una copita, no la olla. Y rectifica el dulce a tu gusto.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "happy"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: cocina el líquido morado con los *guindones* hidratados, hasta que se ablanden un poco.",
+   "voz": "Paso uno: cocina el líquido morado con los guindones hidratados, hasta que se ablanden un poco.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:guindones|PASO 1: CON GUINDONES"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: las frutas picadas, *diez minutos*. Luego el *azúcar*, y prueba.",
+   "voz": "Paso dos: agrega las frutas picadas, y cocina diez minutos. Luego el azúcar, y prueba.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:LA PREPARACIÓN|Líquido morado + guindones|Frutas: 10 minutos|Azúcar al gusto|Espesar con harina de camote|Limón y canela al final"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: espesa con la *harina de camote* disuelta, *moviendo sin parar* para que no haga grumos.",
+   "voz": "Paso tres: espesa con la harina de camote disuelta, moviendo sin parar para que no haga grumos.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "temblor": true,
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "MUEVE SIN PARAR",
+    "delay": 1.3
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y el toque final, chef?",
+   "voz": "¿Y el toque final, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "*Jugo de limón* al final, y *canela en polvo* al servir.",
+   "voz": "Jugo de limón al final, y canela en polvo al servir.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:mazamorra_2|LIMÓN Y CANELA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el consejo del chef: sírvela con *arroz con leche*. ¡El famoso *clásico*!",
+   "voz": "Y el consejo del chef: sírvela con arroz con leche. ¡El famoso clásico!",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:combinado|EL CLÁSICO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Porque el *arroz con leche* baja el dulzor de la mazamorra, y ahí está el *equilibrio*.",
+   "voz": "Porque, dice el chef, el arroz con leche baja el dulzor de la mazamorra, y ahí está el equilibrio.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "laugh"
+   },
+   "pantalla": "foto:arroz_con_leche|EL EQUILIBRIO",
+   "tarjeta": {
+    "label": "EL CONSEJO DEL CHEF",
+    "valor": "CON ARROZ CON LECHE",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, esto me recuerda a la *salida del colegio*!",
+   "voz": "¡Chef, esto me recuerda a la salida del colegio!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:mazamorra|¡A LA MESA!"
+  }
+ ]
+}

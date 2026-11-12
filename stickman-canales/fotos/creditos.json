@@ -964,5 +964,41 @@
   "autor": "Ross Parmly rparmly",
   "lic": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:Black_coffee_cup_(Unsplash).jpg"
+ },
+ "mazamorra": {
+  "title": "File:Mazamorra morada.JPG",
+  "autor": "Dtarazona",
+  "lic": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Mazamorra_morada.JPG"
+ },
+ "mazamorra_2": {
+  "title": "File:Mazamorramoradaconcanela.jpg",
+  "autor": "Miguel Alan Córdova Silva",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mazamorramoradaconcanela.jpg"
+ },
+ "combinado": {
+  "title": "File:Vasos de mazamorra morada y arroz con leche.jpg",
+  "autor": "GORE Callao",
+  "lic": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Vasos_de_mazamorra_morada_y_arroz_con_leche.jpg"
+ },
+ "membrillo": {
+  "title": "File:Quince (10928s).jpg",
+  "autor": "Rhododendrites",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Quince_(10928s).jpg"
+ },
+ "guindones": {
+  "title": "File:Dried plums 01.jpg",
+  "autor": "Андрей Перцев",
+  "lic": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dried_plums_01.jpg"
+ },
+ "arroz_con_leche": {
+  "title": "File:Arroz con leche estilo peruano.jpg",
+  "autor": "Francesc Fort",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arroz_con_leche_estilo_peruano.jpg"
  }
 }
