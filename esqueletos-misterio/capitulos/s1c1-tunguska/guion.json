@@ -405,41 +405,42 @@
     {
       "linea": 4,
       "desde": 0.0,
-      "escena": "bosque_aereo",
+      "escena": "tunguska_pan",
       "trans": "barrido",
-      "rotulo": "2.150 km² de bosque arrasado",
+      "rotulo": "Foto real · expedición de 1927",
       "cam": {
-        "z0": 0.85,
-        "z1": 1.2,
-        "r0": -0.15,
-        "r1": 0.12
-      }
+        "z0": 1.0,
+        "z1": 1.08,
+        "x0": -850,
+        "x1": 650
+      },
+      "mano": 1.2
     },
     {
       "linea": 4,
       "desde": 0.55,
-      "escena": "bosque_caido",
-      "trans": "luz",
+      "escena": "tunguska_troncos",
+      "trans": "barrido",
       "cam": {
         "z0": 1.0,
-        "z1": 1.1,
-        "x0": -80,
+        "z1": 1.07,
+        "x0": -120,
         "x1": 60
       },
       "pj": [
         {
           "q": "ivan",
-          "x": 320,
-          "y": 1600,
-          "esc": 0.5,
+          "x": 300,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
           "brazo": -0.42
         },
         {
           "q": "ana",
-          "x": 770,
-          "y": 1600,
-          "esc": 0.5,
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
           "brazo": -0.42
         }
       ]
@@ -447,52 +448,52 @@
     {
       "linea": 5,
       "desde": 0.0,
-      "escena": "bosque_caido",
-      "trans": "barrido",
+      "escena": "tunguska_troncos",
+      "trans": "zoom",
+      "fondo_desenfocado": true,
       "cam": {
-        "z0": 1.15,
-        "z1": 1.25,
-        "x0": 150,
-        "x1": 100
+        "z0": 1.25,
+        "z1": 1.32,
+        "x0": 200,
+        "x1": 160
       },
       "pj": [
         {
           "q": "ivan",
           "x": 600,
-          "y": 1620,
-          "esc": 0.72,
-          "espejo": true,
-          "entra": "abajo"
+          "y": 1830,
+          "esc": 0.74,
+          "espejo": true
         }
       ]
     },
     {
       "linea": 6,
       "desde": 0.0,
-      "escena": "expedicion_1927",
+      "escena": "tunguska_pie",
       "trans": "negro",
-      "rotulo": "Archivo · Expedición Kulik, 1927",
+      "rotulo": "Expedición de Leonid Kulik · 1927",
       "cam": {
         "z0": 1.0,
-        "z1": 1.12,
-        "x0": 60,
-        "x1": -60
+        "z1": 1.1,
+        "x0": 150,
+        "x1": -150
       },
       "pj": [
         {
           "q": "ivan",
-          "x": 330,
-          "y": 1640,
-          "esc": 0.5,
+          "x": 300,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
-          "camina": 12
+          "camina": 10
         },
         {
           "q": "ana",
-          "x": 760,
-          "y": 1640,
-          "esc": 0.5,
-          "camina": 12
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
+          "camina": 10
         }
       ]
     },
@@ -500,43 +501,42 @@
       "linea": 6,
       "desde": 0.55,
       "escena": "pantano_real",
-      "trans": "luz",
+      "trans": "barrido",
+      "rotulo": "Foto real · pantano de Tunguska, 1930",
       "cam": {
         "z0": 1.0,
         "z1": 1.1,
-        "y0": -200,
-        "y1": 0
+        "x0": -500,
+        "x1": 300
       }
     },
     {
       "linea": 7,
       "desde": 0.0,
       "escena": "pantano_real",
-      "trans": "barrido",
+      "trans": "zoom",
       "cam": {
-        "z0": 1.1,
-        "z1": 1.15,
-        "x0": -40,
-        "x1": 40
+        "z0": 1.12,
+        "z1": 1.2,
+        "x0": 300,
+        "x1": 360
       },
       "pj": [
         {
           "q": "ivan",
-          "x": 330,
-          "y": 1615,
-          "esc": 0.5,
+          "x": 300,
+          "y": 1795,
+          "esc": 0.56,
           "espejo": true,
-          "reflejo": true,
           "estado": {
             "scared": true
           }
         },
         {
           "q": "ana",
-          "x": 760,
-          "y": 1615,
-          "esc": 0.5,
-          "reflejo": true,
+          "x": 790,
+          "y": 1795,
+          "esc": 0.56,
           "estado": {
             "scared": true
           }
@@ -653,6 +653,42 @@
       "centro": 0.75,
       "luz": "nieve",
       "bucle": "fin"
+    },
+    "tunguska_pan": {
+      "tipo": "foto",
+      "archivo": "tunguska_arboles_1927.jpg",
+      "sepia": true,
+      "luz": "sepia",
+      "particulas": "cenizas",
+      "n_part": 40
+    },
+    "tunguska_troncos": {
+      "tipo": "foto",
+      "archivo": "tunguska_arboles_1927.jpg",
+      "recorte": [
+        0.0,
+        0.25,
+        0.62,
+        1.0
+      ],
+      "sepia": true,
+      "luz": "sepia",
+      "particulas": "cenizas",
+      "n_part": 40
+    },
+    "tunguska_pie": {
+      "tipo": "foto",
+      "archivo": "tunguska_arboles_1927.jpg",
+      "recorte": [
+        0.45,
+        0.0,
+        1.0,
+        0.8
+      ],
+      "sepia": true,
+      "luz": "sepia",
+      "particulas": "nieve",
+      "n_part": 60
     }
   }
 }
