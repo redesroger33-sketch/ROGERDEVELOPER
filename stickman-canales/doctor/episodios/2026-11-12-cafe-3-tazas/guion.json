@@ -1,0 +1,279 @@
+{
+ "id": "2026-11-12-cafe-3-tazas",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-12_cafe_3_tazas.mp4",
+ "fecha": "12 NOV 2026",
+ "seccion": "ALIMENTO NATURAL",
+ "titular": [
+  "CAFÉ:",
+  "¿CUÁNTAS TAZAS AL DÍA?"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:cafe_taza|CAFÉ: ¿AMIGO O ENEMIGO?",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, la bebida del desayuno peruano: el *café*. ¿Amigo o enemigo?",
+   "voz": "¡Hola, familia sana! Hoy, la bebida del desayuno peruano: el café. ¿Amigo o enemigo?",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:cafe_taza|CAFÉ: ¿AMIGO O ENEMIGO?"
+  },
+  {
+   "quien": "vita",
+   "texto": "Mi abuela decía que el café *quita años de vida*.",
+   "voz": "Mi abuela decía que el café quita años de vida.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "surprised"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "La ciencia dice otra cosa. Mira esta revisión gigante en la revista *BMJ*.",
+   "voz": "La ciencia dice otra cosa. Mira esta revisión gigante en la revista BMJ.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:cafe_peru|CAFÉ PERUANO"
+  },
+  {
+   "quien": "vita",
+   "texto": "Datos: *BMJ*, dos mil diecisiete. Juntaron *doscientos uno* metaanálisis sobre café y salud.",
+   "voz": "Datos: revista BMJ, dos mil diecisiete. Juntaron doscientos uno metaanálisis sobre café y salud.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "BMJ 2017",
+    "valor": "201 METAANÁLISIS",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "El café se asoció más con *beneficio* que con daño. El mejor punto: *tres a cuatro tazas* al día.",
+   "voz": "El café se asoció más con beneficio que con daño. Y el mejor punto fue de tres a cuatro tazas al día.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "EL MEJOR PUNTO",
+    "valor": "3 A 4 TAZAS AL DÍA",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Frente a no tomar café: *diecisiete por ciento* menos mortalidad y *diecinueve por ciento* menos muerte cardiovascular.",
+   "voz": "Frente a no tomar café: diecisiete por ciento menos mortalidad, y diecinueve por ciento menos muerte cardiovascular.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pantalla": "lista:CON 3 A 4 TAZAS AL DÍA|−17 % mortalidad total|−19 % muerte cardiovascular|−15 % enfermedad cardiovascular"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Y menos riesgo de varios problemas del *hígado* y del *metabolismo*!",
+   "voz": "¡Y también menos riesgo de varios problemas del hígado y del metabolismo!",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "stars:vita"
+   ],
+   "pantalla": "foto:cafe_grano|HÍGADO Y METABOLISMO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: casi todo es de *observación*. Los autores piden *ensayos* para saber si es causa.",
+   "voz": "Ojo: casi todo es de observación. Los autores piden ensayos clínicos para saber si es causa.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:cafe_peru|RELACIÓN, NO PRUEBA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y entonces me tomo *diez tazas*, doctor?",
+   "voz": "¿Y entonces me tomo diez tazas, doctor?",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "alert"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "alert:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6,
+   "pantalla": "foto:cafe_taza|¿10 TAZAS?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡No, Vita! Que luego no duermes ni con canción de cuna. Más no es mejor.",
+   "voz": "¡No, Vita! Que luego no duermes ni con canción de cuna. Más no es mejor.",
+   "expr": {
+    "bruno": "laugh",
+    "vita": "laugh"
+   },
+   "fx": [
+    "ja:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hay dos grupos con *advertencia* en el estudio. Uno: el *embarazo*.",
+   "voz": "Hay dos grupos con advertencia en el estudio. Uno: el embarazo.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "ADVERTENCIA 1",
+    "valor": "EMBARAZO",
+    "delay": 1.2
+   },
+   "pantalla": "lista:DOS ADVERTENCIAS|Embarazo|Mujeres con riesgo de fractura"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ahí, más café se asoció con *bajo peso* al nacer, *parto prematuro* y *pérdida del embarazo*.",
+   "voz": "Ahí, tomar mucho café se asoció con bajo peso al nacer, parto prematuro, y pérdida del embarazo.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y el otro grupo?",
+   "voz": "¿Y el otro grupo?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Las *mujeres* con riesgo de *fracturas*: el café se asoció con más fracturas en ellas.",
+   "voz": "Las mujeres con riesgo de fracturas: el café se asoció con más fracturas en ellas, pero no en los hombres.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "tarjeta": {
+    "label": "ADVERTENCIA 2",
+    "valor": "MUJERES CON RIESGO DE FRACTURA",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Y ojo con lo que le echas: *tres cucharadas de azúcar* ya no es lo mismo.",
+   "voz": "Y ojo con lo que le echas: tres cucharadas de azúcar ya no es lo mismo.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:cafe_negro_2|OJO CON EL AZÚCAR"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Receta natural:",
+   "voz": "Receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Hasta 3 o 4 tazas al día|Con poca o nada de azúcar|No muy tarde si te quita el sueño|Café peruano de verdad"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si estás *embarazada*, tienes *osteoporosis*, *arritmias* o *presión alta*, consulta cuánto te conviene.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si estás embarazada, tienes osteoporosis, arritmias o presión alta, consulta cuánto café te conviene.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA ANTES SI TIENES|Embarazo|Osteoporosis|Arritmias|Presión alta"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con tu compañero de *cafecito*! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con tu compañero de cafecito! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:cafe_peru|¡SALUD CON CAFÉ PERUANO!"
+  }
+ ]
+}

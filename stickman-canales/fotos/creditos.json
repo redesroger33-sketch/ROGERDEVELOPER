@@ -934,5 +934,35 @@
   "autor": "Christian Bellazzi",
   "lic": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ajies_secos_Arequipa_(P%C3%A9rou).jpg"
+ },
+ "cafe_peru": {
+  "title": "File:Coffee plantations in Peru.jpg",
+  "autor": "Kızıldeniz",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coffee_plantations_in_Peru.jpg"
+ },
+ "cafe_cerezo": {
+  "title": "File:Coffea arabica 7.jpg",
+  "autor": "Kızıldeniz",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coffea_arabica_7.jpg"
+ },
+ "cafe_grano": {
+  "title": "File:Roasted coffee beans.jpg",
+  "autor": "MarkSweep",
+  "lic": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans.jpg"
+ },
+ "cafe_negro": {
+  "title": "File:Morning cup of coffee black no sugar.jpg",
+  "autor": "Jon Sullivan",
+  "lic": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Morning_cup_of_coffee_black_no_sugar.jpg"
+ },
+ "cafe_negro_2": {
+  "title": "File:Black coffee cup (Unsplash).jpg",
+  "autor": "Ross Parmly rparmly",
+  "lic": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Black_coffee_cup_(Unsplash).jpg"
  }
 }
