@@ -283,5 +283,353 @@
       }
     }
   ],
-  "duracion_max": 55
+  "duracion_max": 55,
+  "planos": [
+    {
+      "linea": 0,
+      "desde": 0.0,
+      "escena": "taiga_amanecer",
+      "trans": "negro",
+      "rotulo": "📍 Tunguska, Siberia · 1908",
+      "cam": {
+        "z0": 0.95,
+        "z1": 1.18,
+        "y0": -280,
+        "y1": 60
+      }
+    },
+    {
+      "linea": 0,
+      "desde": 0.5,
+      "escena": "rio_taiga",
+      "trans": "luz",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.08,
+        "x0": -60,
+        "x1": 40
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 330,
+          "y": 1575,
+          "esc": 0.5,
+          "espejo": true,
+          "reflejo": true,
+          "entra": "izq",
+          "brazo": -0.42
+        },
+        {
+          "q": "ana",
+          "x": 760,
+          "y": 1575,
+          "esc": 0.5,
+          "reflejo": true,
+          "entra": "der",
+          "brazo": -0.42
+        }
+      ]
+    },
+    {
+      "linea": 1,
+      "desde": 0.0,
+      "escena": "cielo_meteoro",
+      "trans": "barrido",
+      "cam": {
+        "z0": 1.05,
+        "z1": 1.2,
+        "y0": 200,
+        "y1": -60
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 600,
+          "y": 1650,
+          "esc": 0.72,
+          "espejo": true,
+          "entra": "abajo"
+        }
+      ]
+    },
+    {
+      "linea": 2,
+      "desde": 0.0,
+      "escena": "explosion",
+      "trans": "flash",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.12,
+        "y0": 120,
+        "y1": 80
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 300,
+          "y": 1640,
+          "esc": 0.5,
+          "espejo": true,
+          "lean": -0.08,
+          "brazo": -0.42
+        },
+        {
+          "q": "ana",
+          "x": 780,
+          "y": 1640,
+          "esc": 0.5,
+          "lean": 0.08,
+          "brazo": -0.42
+        }
+      ]
+    },
+    {
+      "linea": 3,
+      "desde": 0.0,
+      "escena": "calor",
+      "trans": "zoom",
+      "cam": {
+        "z0": 1.1,
+        "z1": 1.0
+      },
+      "pj": [
+        {
+          "q": "ana",
+          "x": 450,
+          "y": 1640,
+          "esc": 0.72
+        }
+      ]
+    },
+    {
+      "linea": 4,
+      "desde": 0.0,
+      "escena": "bosque_aereo",
+      "trans": "barrido",
+      "rotulo": "2.150 km² de bosque arrasado",
+      "cam": {
+        "z0": 0.85,
+        "z1": 1.2,
+        "r0": -0.15,
+        "r1": 0.12
+      }
+    },
+    {
+      "linea": 4,
+      "desde": 0.55,
+      "escena": "bosque_caido",
+      "trans": "luz",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.1,
+        "x0": -80,
+        "x1": 60
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 320,
+          "y": 1600,
+          "esc": 0.5,
+          "espejo": true,
+          "brazo": -0.42
+        },
+        {
+          "q": "ana",
+          "x": 770,
+          "y": 1600,
+          "esc": 0.5,
+          "brazo": -0.42
+        }
+      ]
+    },
+    {
+      "linea": 5,
+      "desde": 0.0,
+      "escena": "bosque_caido",
+      "trans": "barrido",
+      "cam": {
+        "z0": 1.15,
+        "z1": 1.25,
+        "x0": 150,
+        "x1": 100
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 600,
+          "y": 1620,
+          "esc": 0.72,
+          "espejo": true,
+          "entra": "abajo"
+        }
+      ]
+    },
+    {
+      "linea": 6,
+      "desde": 0.0,
+      "escena": "expedicion_1927",
+      "trans": "negro",
+      "rotulo": "Archivo · Expedición Kulik, 1927",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.12,
+        "x0": 60,
+        "x1": -60
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 330,
+          "y": 1640,
+          "esc": 0.5,
+          "espejo": true,
+          "camina": 12
+        },
+        {
+          "q": "ana",
+          "x": 760,
+          "y": 1640,
+          "esc": 0.5,
+          "camina": 12
+        }
+      ]
+    },
+    {
+      "linea": 6,
+      "desde": 0.55,
+      "escena": "pantano",
+      "trans": "luz",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.1,
+        "y0": -200,
+        "y1": 0
+      }
+    },
+    {
+      "linea": 7,
+      "desde": 0.0,
+      "escena": "pantano",
+      "trans": "barrido",
+      "cam": {
+        "z0": 1.1,
+        "z1": 1.15,
+        "x0": -40,
+        "x1": 40
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 330,
+          "y": 1615,
+          "esc": 0.5,
+          "espejo": true,
+          "reflejo": true,
+          "estado": {
+            "scared": true
+          }
+        },
+        {
+          "q": "ana",
+          "x": 760,
+          "y": 1615,
+          "esc": 0.5,
+          "reflejo": true,
+          "estado": {
+            "scared": true
+          }
+        }
+      ]
+    },
+    {
+      "linea": 8,
+      "desde": 0.0,
+      "escena": "londres_noche",
+      "trans": "luz",
+      "rotulo": "📍 Londres · julio de 1908",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.12,
+        "y0": -120,
+        "y1": -40
+      },
+      "pj": [
+        {
+          "q": "ana",
+          "x": 420,
+          "y": 1560,
+          "esc": 0.72,
+          "entra": "izq"
+        }
+      ]
+    },
+    {
+      "linea": 9,
+      "desde": 0.0,
+      "escena": "moscu_nieve",
+      "trans": "barrido",
+      "rotulo": "📍 Moscú, Rusia",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.15,
+        "y0": -60,
+        "y1": 0
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 320,
+          "y": 1660,
+          "esc": 0.5,
+          "espejo": true,
+          "brazo": -0.42
+        },
+        {
+          "q": "ana",
+          "x": 770,
+          "y": 1660,
+          "esc": 0.5,
+          "brazo": -0.42
+        }
+      ]
+    },
+    {
+      "linea": 10,
+      "desde": 0.0,
+      "escena": "chelyabinsk",
+      "trans": "flash",
+      "rotulo": "📍 Chelyabinsk · 15 feb 2013",
+      "cam": {
+        "z0": 1.0,
+        "z1": 1.2,
+        "x0": 120,
+        "x1": -40
+      },
+      "pj": [
+        {
+          "q": "ivan",
+          "x": 330,
+          "y": 1660,
+          "esc": 0.5,
+          "espejo": true,
+          "brazo": -0.42,
+          "estado": {
+            "scared": true
+          }
+        },
+        {
+          "q": "ana",
+          "x": 760,
+          "y": 1660,
+          "esc": 0.5,
+          "brazo": -0.42,
+          "estado": {
+            "scared": true
+          }
+        }
+      ]
+    }
+  ]
 }

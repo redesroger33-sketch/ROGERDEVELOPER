@@ -136,7 +136,7 @@ class Personaje:
                            fill=(20, 10, 25, 255), width=max(2, int(r * 0.07)))
         return out
 
-    def draw(self, c, x_centro, y_base, st, t, mirror=False, dim=0.0, talk=0.0, brazo_extra=0.0):
+    def draw(self, c, x_centro, y_base, st, t, mirror=False, dim=0.0, talk=0.0, brazo_extra=0.0, tinte=None, lean=0.0):
         """x_centro: centro horizontal del cuerpo; y_base: borde inferior."""
         ph = st.get("phase", 0.0)
         scared = st.get("scared", False)
@@ -147,7 +147,7 @@ class Personaje:
         bx = self.boca[0][0]
         c.save()
         c.translate(x_centro + shake[0], y_base + bob + shake[1])
-        c.rotate(sway)
+        c.rotate(sway + lean)
         if mirror:
             c.scale(-1, 1)
         c.scale(1, breath)
@@ -173,6 +173,7 @@ class Personaje:
         if dim > 0:
             c.set_source_rgba(0.02, 0.01, 0.06, dim)
             c.mask_surface(surf, 0, 0)
+        self._tint(c, surf, tinte)
         c.set_source(g)
         c.arc(cx, cy, r * 2.0, 0, 2 * math.pi)
         c.fill()
@@ -192,5 +193,21 @@ class Personaje:
         if dim > 0:
             c.set_source_rgba(0.02, 0.01, 0.06, dim)
             c.mask_surface(self.arm, 0, 0)
+        self._tint(c, self.arm, tinte)
         c.restore()
+        c.restore()
+
+    @staticmethod
+    def _tint(c, surf, tinte):
+        """Etalonaje del personaje con la luz de la escena: (r, g, b, a, modo)."""
+        if not tinte:
+            return
+        r, g, b, a = tinte[:4]
+        modo = tinte[4] if len(tinte) > 4 else "soft"
+        ops = {"soft": cairo.OPERATOR_SOFT_LIGHT, "color": cairo.OPERATOR_HSL_COLOR,
+               "over": cairo.OPERATOR_OVER, "mult": cairo.OPERATOR_MULTIPLY, "screen": cairo.OPERATOR_SCREEN}
+        c.save()
+        c.set_operator(ops.get(modo, cairo.OPERATOR_SOFT_LIGHT))
+        c.set_source_rgba(r, g, b, a)
+        c.mask_surface(surf, 0, 0)
         c.restore()

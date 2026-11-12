@@ -1356,7 +1356,9 @@ def main():
     tcur = 0.0
     for i, ln in enumerate(ep["lineas"]):
         if preview:
-            ln["_audio"] = np.zeros(int(SR * 2.5))
+            fw = f"/tmp/esq_{i}.wav"
+            n = wave.open(fw).getnframes() if os.path.exists(fw) else int(SR * 2.5)
+            ln["_audio"] = np.zeros(n)
         else:
             ln["_audio"] = R.tts_line(ln["quien"], ln.get("voz", ln["texto"].replace("*", "")), f"/tmp/esq_{i}.wav", 1.0)
         ln["habla"] = len(ln["_audio"]) / SR
@@ -1403,6 +1405,144 @@ def main():
         shake = 0
         if "boom" in ln.get("sfx", []) and lt < 1.2:
             shake = 18 * (1 - lt / 1.2)
+        if PLANOS:
+            dibujar_plano(c, t, ln, lt, shake)
+        else:
+            escena_clasica(c, t, ln, lt, a, b, shake)
+        if ln.get("gancho"):
+            gancho(c, ln["gancho"], lt, RED if ln.get("rojo", True) else YEL)
+        if t < outro_at and lt < ln["habla"] + 0.25:
+            subtitulos(c, ln["quien"], ln["texto"], lt, ln["habla"])
+        flash = 0
+        if "boom" in ln.get("sfx", []) and lt < 0.6:
+            flash = 0.9 * (1 - lt / 0.6)
+        if ln.get("gancho") and lt < 0.08:
+            flash = max(flash, 0.25)
+        post(c, t, flash, shake)
+        if t >= outro_at:
+            cierre(c, ep, t - outro_at)
+        badge(c, ep["badge"], t, total)
+
+    # --------------------------------------------------------- modo cine (planos)
+    PLANOS = []
+    for pl in ep.get("planos", []):
+        a_, b_, _ = lineas[pl["linea"]]
+        PLANOS.append((a_ + pl.get("desde", 0.0) * (b_ - a_), pl))
+    PLANOS.sort(key=lambda x: x[0])
+    if PLANOS:
+        import cine
+        import sprites as SP
+        for _, pl in PLANOS:
+            cine.escena(pl["escena"])
+    _PJ = {}
+
+    def pj(tipo, esc):
+        key = (tipo, round(esc, 2))
+        if key not in _PJ:
+            _PJ[key] = SP.Personaje(tipo, esc)
+        return _PJ[key]
+
+    def dibujar_plano(c, t, ln, lt_line, shake):
+        idx = max(i for i, (ts, _) in enumerate(PLANOS) if ts <= t + 1e-6) if t >= PLANOS[0][0] else 0
+        t0, pl = PLANOS[idx]
+        t1 = PLANOS[idx + 1][0] if idx + 1 < len(PLANOS) else total
+        lt = t - t0
+        k = clamp(lt / max(0.1, t1 - t0))
+        E = cine.escena(pl["escena"])
+        cam = pl.get("cam", {})
+        z, x, y, r = cine.camara(cam, k)
+        dx, dy, dz = cine.desplazamiento_transicion(pl.get("trans", ""), lt)
+        sh = (shake * math.sin(t * 70), shake * math.cos(t * 55))
+        c.save()
+        c.translate(dx, dy)
+        c.translate(W / 2, H / 2)
+        c.scale(dz, dz)
+        c.translate(-W / 2, -H / 2)
+        c.save()
+        cine.aplicar_camara(c, z, x, y, r, sh)
+        c.set_source_surface(E.bg, 0, 0)
+        c.paint()
+        E.dyn(c, t, lt, k)
+        c.restore()
+        # personajes (pantalla) con paralaje respecto a la cámara
+        z0, x0, y0, _ = cine.camara(cam, 0)
+        px, py = -(x - x0) * z * 0.45, -(y - y0) * z * 0.45
+        pz = (z / z0) ** 0.5
+        pers = pl.get("pj", [])
+        pers = sorted(pers, key=lambda q: q["q"] == ln["quien"])
+        for q in pers:
+            cfg = elenco[q["q"]]
+            st = dict(cfg)
+            st.update(ln.get("estado", {}).get(q["q"], {}))
+            st.update(q.get("estado", {}))
+            st["talking"] = (ln["quien"] == q["q"] and lt_line < ln["habla"] + 0.1)
+            talk = (0.35 + 0.65 * abs(math.sin(t * 13)) * (0.5 + 0.5 * math.sin(t * 4.3))) if st["talking"] else 0.0
+            P = pj(cfg["modelo"], q.get("esc", 0.6))
+            ex = q["x"] * 1.0
+            ey = q.get("y", 1640) * 1.0
+            ent = q.get("entra")
+            ke = cine.ease_out(lt / 0.7)
+            if ent == "abajo":
+                ey += 520 * (1 - ke)
+            elif ent == "izq":
+                ex -= 700 * (1 - ke)
+            elif ent == "der":
+                ex += 700 * (1 - ke)
+            walk = q.get("camina", 0.0)
+            ex += walk * lt
+            bob_w = 10 * abs(math.sin(lt * 6)) if walk else 0
+            sx_ = (ex - W / 2) * pz + W / 2 + px
+            sy_ = (ey - H / 2) * pz + H / 2 + py - bob_w + sh[1] * 0.5
+            c.save()
+            c.translate(sx_, sy_)
+            c.scale(pz, pz)
+            c.translate(-sx_, -sy_)
+            if E.agua and q.get("reflejo"):
+                c.save()
+                c.rectangle(0, E.agua, W, H - E.agua)
+                c.clip()
+                c.translate(0, 2 * E.agua)
+                c.scale(1, -1)
+                c.push_group()
+                P.draw(c, sx_, E.agua, st, t, mirror=q.get("espejo", False), talk=talk,
+                       brazo_extra=q.get("brazo", 0.0), tinte=E.luz, lean=q.get("lean", 0.0))
+                c.pop_group_to_source()
+                c.paint_with_alpha(0.32)
+                c.restore()
+            P.draw(c, sx_, sy_, st, t, mirror=q.get("espejo", False), talk=talk,
+                   brazo_extra=q.get("brazo", 0.0), tinte=E.luz, lean=q.get("lean", 0.0))
+            c.restore()
+        # primer plano con más paralaje
+        c.save()
+        c.translate(px * 1.6, py * 1.2)
+        E.fg(c, t, lt, k)
+        c.restore()
+        if E.sepia:
+            cine.sepia_overlay(c, t)
+        c.restore()
+        cine.transicion(c, pl.get("trans", ""), lt)
+        if pl.get("rotulo") and lt < 2.4:
+            a = min(1.0, lt / 0.3, (2.4 - lt) / 0.4)
+            font(c, 34, R.F_XBOLD)
+            txt = pl["rotulo"].replace("📍", "").strip()
+            ext = c.text_extents(txt)
+            slide = 40 * (1 - cine.ease_out(lt / 0.4))
+            x0r = 40 - slide
+            R.rrect(c, x0r, 1420, ext.width + 92, 62, 12)
+            c.set_source_rgba(0.05, 0.03, 0.08, 0.7 * a)
+            c.fill()
+            c.set_source_rgba(0.89, 0.07, 0.17, a)
+            c.arc(x0r + 32, 1446, 12, math.pi, 0)
+            c.line_to(x0r + 32, 1468)
+            c.close_path()
+            c.fill()
+            c.set_source_rgba(1, 1, 1, a)
+            c.arc(x0r + 32, 1446, 5, 0, 6.3)
+            c.fill()
+            c.move_to(x0r + 60, 1463)
+            c.show_text(txt)
+
+    def escena_clasica(c, t, ln, lt, a, b, shake):
         c.save()
         if shake:
             c.translate(shake * math.sin(t * 70), shake * math.cos(t * 55))
@@ -1435,24 +1575,11 @@ def main():
             else:
                 skeleton(c, cfg["x"], st, t)
         c.restore()
-        if ln.get("gancho"):
-            gancho(c, ln["gancho"], lt, RED if ln.get("rojo", True) else YEL)
-        if t < outro_at and lt < ln["habla"] + 0.25:
-            subtitulos(c, ln["quien"], ln["texto"], lt, ln["habla"])
-        flash = 0
-        if "boom" in ln.get("sfx", []) and lt < 0.6:
-            flash = 0.9 * (1 - lt / 0.6)
-        if ln.get("gancho") and lt < 0.08:
-            flash = max(flash, 0.25)
-        post(c, t, flash, shake)
-        if t >= outro_at:
-            cierre(c, ep, t - outro_at)
-        badge(c, ep["badge"], t, total)
 
     if preview:
         for ts in sys.argv[sys.argv.index("--frame") + 1].split(","):
             frame(float(ts))
-            p = f"/tmp/claude-0/-home-user-ROGERDEVELOPER/0e37c101-6eae-5a11-b822-1ce6fbc4f785/scratchpad/esq_{float(ts):05.1f}.png"
+            p = os.path.join(os.environ.get("PREV_DIR", "/tmp/claude-0/-home-user-ROGERDEVELOPER/0e37c101-6eae-5a11-b822-1ce6fbc4f785/scratchpad"), f"esq_{float(ts):05.1f}.png")
             surf.write_to_png(p)
             print(p)
         return
