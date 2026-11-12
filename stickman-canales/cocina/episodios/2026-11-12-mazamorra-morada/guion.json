@@ -62,7 +62,7 @@
   {
    "quien": "tito",
    "texto": "Porque el secreto empieza en el *mercado*. Hoy seguimos los consejos de un *chef pastelero*.",
-   "voz": "Porque el secreto empieza en el mercado. Hoy seguimos los consejos de Miguel Ballona, chef de pastelería de Le Cordon Bleu.",
+   "voz": "El secreto empieza en el mercado. Seguimos los consejos de Miguel Ballona, chef de pastelería de Le Cordon Bleu.",
    "expr": {
     "tito": "serious",
     "beto": "surprised"
