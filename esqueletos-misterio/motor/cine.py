@@ -269,6 +269,14 @@ class Escena:
     particulas = None
     sepia = False
 
+    bw, bh = BW, BH
+    fx = None
+    suelo = None
+
+    def fondo(self, c, t, lt, k, blur=False):
+        c.set_source_surface(self.bg, 0, 0)
+        c.paint()
+
     def dyn(self, c, t, lt, k):
         pass
 
@@ -1112,11 +1120,11 @@ def camara(cam, k):
     return g("z0", "z1", 1.0), g("x0", "x1", 0.0), g("y0", "y1", 0.0), g("r0", "r1", 0.0)
 
 
-def aplicar_camara(c, z, x, y, r, shake=(0, 0)):
+def aplicar_camara(c, z, x, y, r, shake=(0, 0), size=(BW, BH)):
     c.translate(W / 2 + shake[0], H / 2 + shake[1])
     c.scale(z, z)
     c.rotate(r)
-    c.translate(-BW / 2 - x, -BH / 2 - y)
+    c.translate(-size[0] / 2 - x, -size[1] / 2 - y)
 
 
 def transicion(c, tipo, lt):
@@ -1135,22 +1143,15 @@ def transicion(c, tipo, lt):
     elif tipo == "negro" and lt < 0.45:
         c.set_source_rgba(0, 0, 0, 1 - lt / 0.45)
         c.paint()
-    elif tipo == "barrido" and lt < 0.22:
-        a = 1 - lt / 0.22
-        r = random.Random(int(lt * 100))
-        for i in range(60):
-            y = r.uniform(0, H)
-            c.set_source_rgba(1, 1, 1, 0.25 * a)
-            c.rectangle(0, y, W, r.uniform(2, 30))
-            c.fill()
-        c.set_source_rgba(0.05, 0.05, 0.08, 0.55 * a)
+    elif tipo == "barrido" and lt < 0.1:
+        c.set_source_rgba(0.02, 0.02, 0.03, 0.35 * (1 - lt / 0.1))
         c.paint()
 
 
 def desplazamiento_transicion(tipo, lt):
     """Desplazamiento/zoom del plano entrante (barrido y zoom)."""
-    if tipo == "barrido" and lt < 0.22:
-        return (W * 0.6 * (1 - ease_out(lt / 0.22)) ** 2, 0, 1.0)
+    if tipo == "barrido" and lt < 0.26:
+        return (W * 0.9 * (1 - ease_out(lt / 0.26)) ** 2, 0, 1.0)
     if tipo == "zoom" and lt < 0.35:
         return (0, 0, 1 + 0.35 * (1 - ease_out(lt / 0.35)))
     return (0, 0, 1.0)
@@ -1178,3 +1179,178 @@ def sepia_overlay(c, t):
         c.set_source_rgba(0.05, 0.04, 0.03, 0.6)
         c.arc(r.uniform(0, W), r.uniform(0, H), r.uniform(1, 4), 0, 6.3)
         c.fill()
+
+
+# ================================================================ MATERIAL REAL (fotos y videos)
+import os
+import subprocess
+
+MEDIOS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../medios")
+CACHE = "/tmp/esq_cache"
+RW, RH = 1188, 2112            # lienzo de video real (10 % de margen para la cámara en mano)
+
+LUCES = {
+    "calida": (1.0, 0.75, 0.5, 0.35, "soft"), "fuego": (1.0, 0.5, 0.2, 0.55, "soft"),
+    "fria": (0.6, 0.8, 1.0, 0.4, "soft"), "nieve": (0.85, 0.92, 1.0, 0.3, "soft"),
+    "sepia": (0.75, 0.6, 0.42, 0.95, "color"), "noche": (0.45, 0.55, 0.9, 0.5, "soft"),
+    "gris": (0.8, 0.82, 0.88, 0.3, "soft"),
+}
+
+
+def _grade(im, g):
+    """Etalonaje simple: brillo, contraste, saturación y tinte."""
+    from PIL import ImageEnhance
+    if g.get("brillo"):
+        im = ImageEnhance.Brightness(im).enhance(g["brillo"])
+    if g.get("contraste"):
+        im = ImageEnhance.Contrast(im).enhance(g["contraste"])
+    if g.get("saturacion") is not None:
+        im = ImageEnhance.Color(im).enhance(g["saturacion"])
+    return im
+
+
+class FotoReal(Escena):
+    """Fotografía real: se escala a lo alto del lienzo y la cámara puede recorrerla (paneo)."""
+    def __init__(self, cfg):
+        im = Image.open(os.path.join(MEDIOS, cfg["archivo"])).convert("RGB")
+        if cfg.get("recorte"):
+            w, h = im.size
+            x0, y0, x1, y1 = cfg["recorte"]
+            im = im.crop((int(x0 * w), int(y0 * h), int(x1 * w), int(y1 * h)))
+        alto = cfg.get("alto", BH)
+        w = max(BW, int(im.width * alto / im.height))
+        im = im.resize((w, alto), Image.LANCZOS)
+        im = _grade(im, cfg.get("grado", {}))
+        self.bw, self.bh = w, alto
+        self.bg = pil_to_surf(im)
+        self.bg_blur = pil_to_surf(im.filter(ImageFilter.GaussianBlur(cfg.get("desenfoque", 9))))
+        self.luz = LUCES.get(cfg.get("luz"), None)
+        self.sepia = cfg.get("sepia", False)
+        self.part = Particulas(cfg.get("n_part", 70), 7, cfg["particulas"]) if cfg.get("particulas") else None
+        self.fx = cfg.get("fx")
+        self.suelo = cfg.get("suelo")
+
+    def fondo(self, c, t, lt, k, blur=False):
+        c.set_source_surface(self.bg_blur if blur else self.bg, 0, 0)
+        c.paint()
+
+    def fg(self, c, t, lt, k):
+        if self.part:
+            self.part.draw(c, t, wind=0.6)
+
+
+class VideoReal(Escena):
+    """Video real: se extraen los cuadros (recorte vertical) y se reproducen como fondo."""
+    def __init__(self, cfg):
+        self.bw, self.bh = RW, RH
+        name = cfg["nombre"]
+        d = os.path.join(CACHE, name)
+        self.fps = 30
+        if not os.path.isdir(d) or not os.listdir(d):
+            os.makedirs(d, exist_ok=True)
+            cx = cfg.get("centro", 0.5)
+            vf = (f"scale=-2:{RH}:flags=lanczos,crop={RW}:{RH}:(iw-{RW})*{cx}:0,"
+                  f"setpts={1 / cfg.get('velocidad', 1.0)}*PTS,fps=30,unsharp=5:5:0.6")
+            if cfg.get("eq"):
+                vf += "," + cfg["eq"]
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(cfg.get("inicio", 0)), "-t",
+                            str(cfg.get("dur", 5) * cfg.get("velocidad", 1.0)), "-i",
+                            os.path.join(MEDIOS, cfg["archivo"]), "-vf", vf, "-q:v", "3",
+                            os.path.join(d, "%04d.jpg")], check=True)
+        self.files = sorted(os.path.join(d, f) for f in os.listdir(d))
+        self._last = (None, None, None)
+        self.luz = LUCES.get(cfg.get("luz"), None)
+        self.sepia = cfg.get("sepia", False)
+        self.part = Particulas(cfg.get("n_part", 70), 7, cfg["particulas"]) if cfg.get("particulas") else None
+        self.fx = cfg.get("fx")
+        self.suelo = cfg.get("suelo")
+        self.bucle = cfg.get("bucle", "pingpong")
+
+    def _frame(self, lt, blur):
+        n = len(self.files)
+        i = int(lt * self.fps)
+        if i >= n:
+            if self.bucle == "pingpong":
+                j = i % (2 * n - 2) if n > 1 else 0
+                i = j if j < n else 2 * n - 2 - j
+            else:
+                i = n - 1
+        key = (i, blur)
+        if self._last[0] != key:
+            im = Image.open(self.files[i]).convert("RGB")
+            if blur:
+                im = im.filter(ImageFilter.GaussianBlur(8))
+            self._last = (key, pil_to_surf(im), None)
+        return self._last[1]
+
+    def fondo(self, c, t, lt, k, blur=False):
+        c.set_source_surface(self._frame(lt, blur), 0, 0)
+        c.paint()
+
+    def fg(self, c, t, lt, k):
+        if self.part:
+            self.part.draw(c, t, wind=0.6)
+
+
+def registrar_reales(defs):
+    """defs: {nombre: {tipo: foto|video, archivo, ...}} desde el guion."""
+    for nombre, cfg in defs.items():
+        cfg = dict(cfg, nombre=nombre)
+        ESCENAS[nombre] = (lambda cfg=cfg: FotoReal(cfg) if cfg["tipo"] == "foto" else VideoReal(cfg))
+
+
+def mano(t, seed=0.0, amp=1.0):
+    """Cámara en mano: vaivén orgánico (x, y, giro) como un camarógrafo respirando y caminando."""
+    x = (7 * math.sin(t * 1.1 + seed) + 4 * math.sin(t * 2.7 + seed * 2) + 1.5 * math.sin(t * 6.3 + seed)) * amp
+    y = (6 * math.sin(t * 0.9 + 1 + seed) + 3.5 * math.sin(t * 2.3 + seed) + 1.5 * math.sin(t * 7.1 + 2)) * amp
+    r = (0.004 * math.sin(t * 0.8 + seed) + 0.002 * math.sin(t * 2.1 + 3)) * amp
+    return x, y, r
+
+
+def fx_real(c, fx, t, lt, k, bw, bh):
+    """Efectos de luz sobre material real (coordenadas del fondo)."""
+    if not fx:
+        return
+    if fx == "bolido":
+        p = clamp(lt / 2.8)
+        mx, my = lerp(bw * 0.95, bw * 0.3, p), lerp(bh * 0.05, bh * 0.3, p)
+        c.save()
+        c.set_operator(cairo.OPERATOR_SCREEN)
+        glow(c, mx, my, 900, hx("FF9A4A"), 0.55 * (0.3 + p))
+        for i in range(30):
+            f = i / 30
+            glow(c, mx + f * 500, my - f * 330, 70 * (1 - f) + 12, hx("FFC06A"), 0.5 * (1 - f))
+        glow(c, mx, my, 240, hx("FFF2C8"), 1.0)
+        glow(c, mx, my, 70, hx("FFFFFF"), 1.0)
+        c.restore()
+    elif fx == "fuego":
+        c.save()
+        c.set_operator(cairo.OPERATOR_SCREEN)
+        for i in range(4):
+            glow(c, bw * (0.15 + i * 0.25), bh * 0.8, 520, hx("FF6A20"), 0.3 + 0.12 * math.sin(t * 8 + i * 2))
+        c.restore()
+    elif fx == "destello":
+        a = max(0.0, 1 - lt / 1.6)
+        c.save()
+        c.set_operator(cairo.OPERATOR_SCREEN)
+        glow(c, bw * 0.5, bh * 0.42, 1500, hx("FFF0D0"), 0.9 * a + 0.15)
+        c.restore()
+    elif fx == "noctilucente":
+        c.save()
+        c.set_operator(cairo.OPERATOR_SCREEN)
+        for i in range(10):
+            y = bh * 0.12 + i * 34
+            g = cairo.LinearGradient(0, y - 30, 0, y + 30)
+            a = 0.10 + 0.06 * math.sin(t * 0.9 + i)
+            g.add_color_stop_rgba(0, 0.6, 0.85, 1, 0)
+            g.add_color_stop_rgba(0.5, 0.6, 0.85, 1, a)
+            g.add_color_stop_rgba(1, 0.6, 0.85, 1, 0)
+            c.set_source(g)
+            c.move_to(0, y - 30)
+            for x in range(0, int(bw) + 80, 80):
+                c.line_to(x, y - 30 + 26 * math.sin(x * 0.004 + i * 0.8 + t * 0.2))
+            for x in range(int(bw) + 80, -1, -80):
+                c.line_to(x, y + 30 + 26 * math.sin(x * 0.004 + i * 0.8 + t * 0.2))
+            c.close_path()
+            c.fill()
+        c.restore()

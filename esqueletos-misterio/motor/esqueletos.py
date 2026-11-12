@@ -1357,7 +1357,11 @@ def main():
     for i, ln in enumerate(ep["lineas"]):
         if preview:
             fw = f"/tmp/esq_{i}.wav"
-            n = wave.open(fw).getnframes() if os.path.exists(fw) else int(SR * 2.5)
+            if os.path.exists(fw):
+                wf = wave.open(fw)
+                n = int(wf.getnframes() * SR / wf.getframerate())
+            else:
+                n = int(SR * 2.5)
             ln["_audio"] = np.zeros(n)
         else:
             ln["_audio"] = R.tts_line(ln["quien"], ln.get("voz", ln["texto"].replace("*", "")), f"/tmp/esq_{i}.wav", 1.0)
@@ -1432,6 +1436,7 @@ def main():
     if PLANOS:
         import cine
         import sprites as SP
+        cine.registrar_reales(ep.get("escenas_reales", {}))
         for _, pl in PLANOS:
             cine.escena(pl["escena"])
     _PJ = {}
@@ -1452,21 +1457,27 @@ def main():
         cam = pl.get("cam", {})
         z, x, y, r = cine.camara(cam, k)
         dx, dy, dz = cine.desplazamiento_transicion(pl.get("trans", ""), lt)
-        sh = (shake * math.sin(t * 70), shake * math.cos(t * 55))
+        hmx, hmy, hmr = cine.mano(t, idx * 1.7, pl.get("mano", 1.0))
+        sh = (shake * math.sin(t * 70) + hmx, shake * math.cos(t * 55) + hmy)
+        r += hmr
+        barrido = pl.get("trans") == "barrido" and lt < 0.26
+        if barrido:
+            c.push_group()
         c.save()
         c.translate(dx, dy)
         c.translate(W / 2, H / 2)
         c.scale(dz, dz)
         c.translate(-W / 2, -H / 2)
         c.save()
-        cine.aplicar_camara(c, z, x, y, r, sh)
-        c.set_source_surface(E.bg, 0, 0)
-        c.paint()
+        cine.aplicar_camara(c, z, x, y, r, sh, (E.bw, E.bh))
+        E.fondo(c, t, lt, k, blur=pl.get("fondo_desenfocado", False))
         E.dyn(c, t, lt, k)
+        cine.fx_real(c, pl.get("fx", E.fx), t, lt, k, E.bw, E.bh)
         c.restore()
         # personajes (pantalla) con paralaje respecto a la cámara
         z0, x0, y0, _ = cine.camara(cam, 0)
-        px, py = -(x - x0) * z * 0.45, -(y - y0) * z * 0.45
+        par = pl.get("paralaje", 0.45)
+        px, py = -(x - x0) * z * par + hmx * 1.15, -(y - y0) * z * par + hmy * 1.15
         pz = (z / z0) ** 0.5
         pers = pl.get("pj", [])
         pers = sorted(pers, key=lambda q: q["q"] == ln["quien"])
@@ -1495,8 +1506,21 @@ def main():
             sy_ = (ey - H / 2) * pz + H / 2 + py - bob_w + sh[1] * 0.5
             c.save()
             c.translate(sx_, sy_)
+            c.rotate(hmr)
             c.scale(pz, pz)
             c.translate(-sx_, -sy_)
+            if q.get("sombra", True) and not q.get("reflejo"):
+                # sombra de contacto: ancla al personaje en el suelo real
+                c.save()
+                c.translate(sx_, sy_ - 6)
+                c.scale(1, 0.16)
+                gsh = cairo.RadialGradient(0, 0, 10, 0, 0, P.W * 0.5)
+                gsh.add_color_stop_rgba(0, 0, 0, 0, 0.55)
+                gsh.add_color_stop_rgba(1, 0, 0, 0, 0)
+                c.set_source(gsh)
+                c.arc(0, 0, P.W * 0.5, 0, 2 * math.pi)
+                c.fill()
+                c.restore()
             if E.agua and q.get("reflejo"):
                 c.save()
                 c.rectangle(0, E.agua, W, H - E.agua)
@@ -1520,6 +1544,17 @@ def main():
         if E.sepia:
             cine.sepia_overlay(c, t)
         c.restore()
+        if barrido:
+            # barrido de cámara con desenfoque de movimiento real (estelas horizontales)
+            pat = c.pop_group()
+            f = 1 - cine.ease_out(lt / 0.26)
+            n = 9
+            for i in range(n):
+                c.save()
+                c.translate((i - n / 2) * 42 * f, 0)
+                c.set_source(pat)
+                c.paint_with_alpha(1.0 if i == 0 else 1.0 / (i + 1))
+                c.restore()
         cine.transicion(c, pl.get("trans", ""), lt)
         if pl.get("rotulo") and lt < 2.4:
             a = min(1.0, lt / 0.3, (2.4 - lt) / 0.4)

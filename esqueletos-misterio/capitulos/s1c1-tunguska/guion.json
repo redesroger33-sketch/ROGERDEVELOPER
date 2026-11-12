@@ -499,7 +499,7 @@
     {
       "linea": 6,
       "desde": 0.55,
-      "escena": "pantano",
+      "escena": "pantano_real",
       "trans": "luz",
       "cam": {
         "z0": 1.0,
@@ -511,7 +511,7 @@
     {
       "linea": 7,
       "desde": 0.0,
-      "escena": "pantano",
+      "escena": "pantano_real",
       "trans": "barrido",
       "cam": {
         "z0": 1.1,
@@ -598,14 +598,12 @@
     {
       "linea": 10,
       "desde": 0.0,
-      "escena": "chelyabinsk",
+      "escena": "chely_real",
       "trans": "flash",
       "rotulo": "📍 Chelyabinsk · 15 feb 2013",
       "cam": {
         "z0": 1.0,
-        "z1": 1.2,
-        "x0": 120,
-        "x1": -40
+        "z1": 1.04
       },
       "pj": [
         {
@@ -631,5 +629,30 @@
         }
       ]
     }
-  ]
+  ],
+  "escenas_reales": {
+    "pantano_real": {
+      "tipo": "foto",
+      "archivo": "tunguska_pantano_1930.jpg",
+      "recorte": [
+        0.01,
+        0.02,
+        0.99,
+        0.98
+      ],
+      "luz": "sepia",
+      "sepia": true,
+      "particulas": "nieve",
+      "n_part": 50
+    },
+    "chely_real": {
+      "tipo": "video",
+      "archivo": "chelyabinsk_camara_2013.webm",
+      "inicio": 16,
+      "dur": 7,
+      "centro": 0.75,
+      "luz": "nieve",
+      "bucle": "fin"
+    }
+  }
 }
