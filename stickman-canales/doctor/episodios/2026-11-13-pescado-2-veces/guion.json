@@ -64,7 +64,7 @@
   {
    "quien": "bruno",
    "texto": "¡Pues te estás perdiendo algo grande! Mira esta revisión de *Harvard* en la revista *JAMA*.",
-   "voz": "¡Pues te estás perdiendo algo grande! Mira esta revisión de Harvard en la revista JAMA.",
+   "voz": "¡Te pierdes algo grande! Mira esta revisión de Harvard en la revista JAMA.",
    "expr": {
     "bruno": "happy",
     "vita": "surprised"
@@ -76,7 +76,7 @@
   {
    "quien": "vita",
    "texto": "Datos: *JAMA*, dos mil seis. Revisaron *ensayos* y *grandes estudios* sobre pescado y salud.",
-   "voz": "Datos: revista JAMA, dos mil seis. Revisaron ensayos clínicos y grandes estudios sobre pescado y salud.",
+   "voz": "Datos: revista JAMA, dos mil seis. Revisaron ensayos y grandes estudios sobre pescado y salud.",
    "expr": {
     "vita": "happy",
     "bruno": "happy"
