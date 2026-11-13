@@ -1,0 +1,283 @@
+{
+ "id": "2026-11-13-pescado-2-veces",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-13_pescado_2_veces.mp4",
+ "fecha": "13 NOV 2026",
+ "seccion": "CORAZÓN",
+ "titular": [
+  "PESCADO 2 VECES POR SEMANA:",
+  "EL CORAZÓN LO AGRADECE"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:pescado_fresco|PESCADO PARA EL CORAZÓN",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, el tesoro de nuestro mar para el *corazón*: el *pescado*.",
+   "voz": "¡Hola, familia sana! Hoy, el tesoro de nuestro mar para el corazón: el pescado.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:pescado_fresco|PESCADO PARA EL CORAZÓN"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Pescado? ¡Pero si yo solo como pescado *en Semana Santa!*",
+   "voz": "¿Pescado? ¡Pero si yo solo como pescado en Semana Santa!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Pues te estás perdiendo algo grande! Mira esta revisión de *Harvard* en la revista *JAMA*.",
+   "voz": "¡Pues te estás perdiendo algo grande! Mira esta revisión de Harvard en la revista JAMA.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Datos: *JAMA*, dos mil seis. Revisaron *ensayos* y *grandes estudios* sobre pescado y salud.",
+   "voz": "Datos: revista JAMA, dos mil seis. Revisaron ensayos clínicos y grandes estudios sobre pescado y salud.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "JAMA 2006 · HARVARD",
+    "valor": "PESCADO Y CORAZÓN",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Con *una o dos porciones* de pescado a la *semana*, el riesgo de *morir del corazón* bajó *treinta y seis por ciento*.",
+   "voz": "Con una o dos porciones de pescado a la semana, el riesgo de morir por enfermedad del corazón bajó treinta y seis por ciento.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:pescado_plancha|1 A 2 PORCIONES POR SEMANA",
+   "tarjeta": {
+    "label": "MUERTE CORONARIA",
+    "valor": "−36 %",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Y la mortalidad total, *diecisiete por ciento* menos!",
+   "voz": "¡Y la mortalidad total, diecisiete por ciento menos!",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "stars:vita"
+   ],
+   "tarjeta": {
+    "label": "MORTALIDAD TOTAL",
+    "valor": "−17 %",
+    "delay": 0.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "El secreto está en los *omega tres*, sobre todo en los pescados *grasos* o *azules*.",
+   "voz": "El secreto está en los omega tres, sobre todo en los pescados grasos, o pescados azules.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "pantalla": "foto:sardinas|PESCADOS AZULES"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Según la revisión, unos *doscientos cincuenta miligramos* diarios de omega tres parecen *suficientes* para prevenir.",
+   "voz": "Según la revisión, unos doscientos cincuenta miligramos diarios de omega tres parecen suficientes para prevenir.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "OMEGA 3 (EPA + DHA)",
+    "valor": "~250 MG AL DÍA",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Y el Perú tiene de los mejores! *Anchoveta*, *bonito*, *jurel* y *caballa*.",
+   "voz": "¡Y el Perú tiene de los mejores! Anchoveta, bonito, jurel y caballa.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "pantalla": "fotos:anchoveta,bonito|ANCHOVETA|BONITO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y son de los más *baratos* del mercado. ¡No necesitas salmón importado!",
+   "voz": "Y suelen ser de los más baratos del mercado. ¡No necesitas salmón importado!",
+   "expr": {
+    "bruno": "happy",
+    "vita": "laugh"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:bonito|BUENO Y BARATO"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y el *mercurio*, doctor? Dicen que el pescado tiene.",
+   "voz": "¿Y el mercurio, doctor? Dicen que el pescado tiene.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:pescado_fresco|¿Y EL MERCURIO?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "La revisión concluyó que en adultos los *beneficios superan* a los riesgos. Pero si comes pescado *casi a diario*, varía y *limita* las especies con más mercurio.",
+   "voz": "La revisión concluyó que en adultos los beneficios superan a los riesgos. Pero si comes pescado casi a diario, varía, y limita las especies con más mercurio.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "tarjeta": {
+    "label": "EN ADULTOS",
+    "valor": "BENEFICIO > RIESGO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y las embarazadas?",
+   "voz": "¿Y las embarazadas?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "serious"
+   },
+   "pantalla": "lista:EMBARAZO Y LACTANCIA|2 porciones por semana|Varía las especies|Pregunta cuáles evitar"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Para mujeres en edad fértil y que dan de lactar: *dos porciones* por semana, evitando algunas especies. Consulten a su médico cuáles.",
+   "voz": "Para mujeres en edad fértil y que dan de lactar: dos porciones por semana, evitando algunas especies. Consulten a su médico cuáles.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "EMBARAZO Y LACTANCIA",
+    "valor": "2 PORCIONES · VARIAR",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: buena parte es de *observación*, y el pescado *frito* en mucho aceite no es lo mismo.",
+   "voz": "Ojo: buena parte de la evidencia es de observación. Y el pescado frito en mucho aceite no es lo mismo.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pantalla": "foto:sardinas|MEJOR SIN TANTA FRITURA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Receta natural:",
+   "voz": "Receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Pescado 2 veces por semana|Prefiere pescado azul|Sudado, al vapor o a la plancha|Menos fritura|Varía las especies"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si tienes *alergia* a pescados o mariscos, o tomas *anticoagulantes*, pregunta antes.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes alergia a pescados o mariscos, o tomas anticoagulantes, pregunta antes.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA ANTES SI TIENES|Alergia a pescados o mariscos|Anticoagulantes|Embarazo o lactancia"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con quien dice que el pescado *es caro!* Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con quien dice que el pescado es caro! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:anchoveta|¡VIVA LA ANCHOVETA!"
+  }
+ ]
+}

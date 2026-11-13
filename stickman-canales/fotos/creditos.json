@@ -1000,5 +1000,29 @@
   "autor": "Francesc Fort",
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Arroz_con_leche_estilo_peruano.jpg"
+ },
+ "anchoveta": {
+  "title": "File:Engraulis ringens Peru.jpg",
+  "autor": "cstobie",
+  "lic": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Engraulis_ringens_Peru.jpg"
+ },
+ "bonito": {
+  "title": "File:Sarda chiliensis 61671693.jpg",
+  "autor": "nmoorhatch",
+  "lic": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sarda_chiliensis_61671693.jpg"
+ },
+ "sardinas": {
+  "title": "File:Grilled sardines.jpg",
+  "autor": "E4024",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Grilled_sardines.jpg"
+ },
+ "pescado_plancha": {
+  "title": "File:Plated grilled fish.jpg",
+  "autor": "pompi",
+  "lic": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Plated_grilled_fish.jpg"
  }
 }
