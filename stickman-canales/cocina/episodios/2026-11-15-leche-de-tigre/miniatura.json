@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"SECRETOS DE UN CHEF PERUANO","titulo":["LECHE DE TIGRE","¡LA PÓCIMA MÁGICA!"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"leche_tigre_3","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"BIEN FRÍA","size":60,"x":860,"y":800},"franja":"EL JUGO DEL CEBICHE, PARA 4 VASOS"}

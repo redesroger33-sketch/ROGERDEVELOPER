@@ -1,0 +1,318 @@
+{
+ "id": "2026-11-15-leche-de-tigre",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-15_leche_de_tigre.mp4",
+ "fecha": "15 NOV 2026",
+ "seccion": "CLÁSICO MARINO",
+ "titular": [
+  "LECHE DE TIGRE:",
+  "¡LA PÓCIMA MÁGICA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:leche_tigre_3|LECHE DE TIGRE",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el vasito más famoso de la cevichería: ¡la *leche de tigre!*",
+   "voz": "¡Hola, cocineros! Hoy, el vasito más famoso de la cevichería: ¡la leche de tigre!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:leche_tigre_3|LECHE DE TIGRE"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, yo pensé que era *leche de verdad*… ¡de un tigre!",
+   "voz": "Chef, yo pensé que era leche de verdad… ¡de un tigre!",
+   "expr": {
+    "beto": "surprised",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "Ningún tigre fue ordeñado, Beto. Es el *jugo del cebiche*. Y seguimos la receta del *gran chef*, que la llama *pócima mágica*.",
+   "voz": "Ningún tigre fue ordeñado, Beto. Es el jugo del cebiche. Y seguimos la receta de Gastón Acurio, que la llama pócima mágica.",
+   "expr": {
+    "tito": "happy",
+    "beto": "worried"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "PARA EL GRAN CHEF",
+    "valor": "PÓCIMA MÁGICA",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro vasos: *doscientos gramos* de pejerrey o pescado fresquito, *doscientos* de calamar y *doscientos* de mariscos.",
+   "voz": "Para cuatro vasos: doscientos gramos de pejerrey o pescado fresquito, doscientos de calamar, y doscientos de mariscos.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:pescado_fresco,calamar,ceviche_lenguado|200 G PESCADO|200 G CALAMAR|200 G MARISCOS"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para la base: *cincuenta gramos* de retazos de pescado, *un diente* de ajo, *dos ramas* de culantro y *un tallo* de apio.",
+   "voz": "Para la base: cincuenta gramos de retazos de pescado, un diente de ajo, dos ramas de culantro, y un tallo de apio.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:ajo_0,culantro_1,apio|1 DIENTE DE AJO|2 RAMAS CULANTRO|1 TALLO DE APIO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "*Un cuarto* de cebolla, *un ají limo*, *medio rocoto* y… ¡*tres tazas* de jugo de limón!",
+   "voz": "Un cuarto de cebolla, un ají limo, medio rocoto, y… ¡tres tazas de jugo de limón!",
+   "expr": {
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:cebolla_roja_0,rocoto,limon|¼ CEBOLLA + 1 AJÍ LIMO|½ ROCOTO|3 TAZAS DE LIMÓN"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Tres tazas! Chef, voy a exprimir limones *hasta el próximo año*.",
+   "voz": "¡Tres tazas! Chef, voy a exprimir limones hasta el próximo año.",
+   "expr": {
+    "beto": "worried",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "pantalla": "foto:limon|¡A EXPRIMIR!"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: pasa el calamar por *agua caliente*, unos segundos. Luego pica el pescado, el calamar y los mariscos.",
+   "voz": "Paso uno: pasa el calamar por agua caliente, unos segundos. Luego pica el pescado, el calamar y los mariscos.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:calamar|PASO 1: CALAMAR AL AGUA CALIENTE"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: a la licuadora los retazos, el ajo, el culantro, el apio, la cebolla, los ajíes, sal, pimienta y el limón.",
+   "voz": "Paso dos: a la licuadora los retazos, el ajo, el culantro, el apio, la cebolla, los ajíes, sal, pimienta, y el limón.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "lista:PASO 2: LA BASE|Retazos de pescado|Ajo, culantro, apio|Cebolla, ají limo, rocoto|Sal y pimienta|3 tazas de limón"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y el kion, chef?",
+   "voz": "¿Y el kion, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "pantalla": "foto:kion|¿Y EL KION?"
+  },
+  {
+   "quien": "tito",
+   "texto": "Una *pizca*, al gusto. Licúa bien, *cuela*, y suma *cuatro cucharadas* de rocoto licuado.",
+   "voz": "Una pizca, al gusto. Licúa bien, cuela, y suma cuatro cucharadas de rocoto licuado.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "tarjeta": {
+    "label": "PASO 3",
+    "valor": "LICUAR Y COLAR",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: prueba la sal y agrega los mariscos picados. Luego cebolla, ají limo y culantro picaditos.",
+   "voz": "Paso cuatro: prueba la sal, y agrega los mariscos picados. Luego cebolla, ají limo y culantro picaditos.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "pantalla": "fotos:cebolla_roja_2,culantro_1|CEBOLLA Y AJÍ LIMO|CULANTRO"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y cómo sé si ya está, chef?",
+   "voz": "¿Y cómo sé si ya está, chef?",
+   "expr": {
+    "beto": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El punto del gran chef: tiene que estar *acidito*, *picantito* y *saladito*. Prueba otra vez.",
+   "voz": "El punto de Gastón: tiene que estar acidito, picantito y saladito. Prueba otra vez.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "tarjeta": {
+    "label": "EL PUNTO DEL GRAN CHEF",
+    "valor": "ACIDITO, PICANTITO, SALADITO",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cinco: termina con *choclo desgranado* y *canchita*.",
+   "voz": "Paso cinco: termina con choclo desgranado y canchita.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "fotos:choclo,cancha|CHOCLO|CANCHITA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Chef, he visto leche de tigre *más blanquita*. ¿Por qué?",
+   "voz": "Chef, he visto leche de tigre más blanquita. ¿Por qué?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "pantalla": "foto:leche_tigre_2|¿MÁS BLANQUITA?"
+  },
+  {
+   "quien": "tito",
+   "texto": "A algunos les gusta un *chorro de leche evaporada*. Y si se te entibia o se sala, *un trozo de hielo* lo equilibra.",
+   "voz": "A algunos les gusta un chorro de leche evaporada. Y si se te entibia o se sala, un trozo de hielo lo equilibra.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:leche_evaporada|CHORRITO DE LECHE",
+   "tarjeta": {
+    "label": "TRUCO DEL GRAN CHEF",
+    "valor": "UN TROZO DE HIELO",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "O sea que si le echo leche… ¡*sí* es leche de tigre!",
+   "voz": "O sea que si le echo leche… ¡sí es leche de tigre!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "Usa pescado *bien fresco* y sírvela *al momento*, bien fría.",
+   "voz": "Usa pescado bien fresco, y sírvela al momento, bien fría.",
+   "expr": {
+    "tito": "serious",
+    "beto": "happy"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:pescado_fresco|BIEN FRESCA Y BIEN FRÍA"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Salud, cocineros! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡Salud, cocineros! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:leche_tigre_3|¡SALUD!"
+  }
+ ]
+}
