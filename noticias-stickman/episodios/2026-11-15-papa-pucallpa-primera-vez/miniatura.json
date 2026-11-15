@@ -1,0 +1,3 @@
+{"banda":"PERÚ · VISITA PAPAL","titulo":["¡NUNCA UN PAPA","PISÓ PUCALLPA!"],
+ "estados":{"chato":{"pose":"up","expr":"surprised"},"paco":{"pose":"rest","expr":"surprised"},"lucha":{"pose":"up","expr":"happy"}},
+ "fx":["alert:chato","stars:lucha"],"sello":{"texto":"HOY","size":100},"franja":"LEÓN XIV EN LA SELVA · MISA 4:45 P. M."}
