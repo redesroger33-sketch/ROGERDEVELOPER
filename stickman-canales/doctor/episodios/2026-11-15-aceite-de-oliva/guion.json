@@ -1,0 +1,297 @@
+{
+ "id": "2026-11-15-aceite-de-oliva",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-15_aceite_de_oliva.mp4",
+ "fecha": "15 NOV 2026",
+ "seccion": "CORAZÓN",
+ "titular": [
+  "ACEITE DE OLIVA:",
+  "LA GRASA QUE CUIDA"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:olivo|ACEITE DE OLIVA EXTRA VIRGEN",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, una grasa que *sí* cuida el corazón: el *aceite de oliva extra virgen*.",
+   "voz": "¡Hola, familia sana! Hoy, una grasa que sí cuida el corazón: el aceite de oliva extra virgen.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:olivo|ACEITE DE OLIVA EXTRA VIRGEN"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Grasa que cuida? Doctor, yo pensaba que toda grasa era *mala*.",
+   "voz": "¿Grasa que cuida? Doctor, yo pensaba que toda grasa era mala.",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Eso lo puso a prueba un *ensayo clínico* grande en España: el estudio *PREDIMED*.",
+   "voz": "Eso lo puso a prueba un ensayo clínico grande en España: el estudio PREDIMED.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "ENSAYO CLÍNICO",
+    "valor": "PREDIMED · ESPAÑA",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Datos: *New England Journal of Medicine*, dos mil dieciocho. *Siete mil cuatrocientas* personas de *cincuenta y cinco a ochenta* años, con alto riesgo cardiovascular.",
+   "voz": "Datos: New England Journal of Medicine, dos mil dieciocho. Siete mil cuatrocientas personas de cincuenta y cinco a ochenta años, con alto riesgo cardiovascular.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "NEJM 2018",
+    "valor": "7447 PERSONAS · 55-80 AÑOS",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Los sortearon en *tres grupos*: dieta mediterránea con *aceite de oliva extra virgen*, con *frutos secos*, o una dieta *baja en grasa*.",
+   "voz": "Los sortearon en tres grupos: dieta mediterránea con aceite de oliva extra virgen, dieta mediterránea con frutos secos, o una dieta baja en grasa.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "pantalla": "lista:LOS 3 GRUPOS|Mediterránea + aceite de oliva|Mediterránea + frutos secos|Dieta baja en grasa"
+  },
+  {
+   "quien": "bruno",
+   "texto": "En casi *cinco años*, el grupo del aceite de oliva tuvo *treinta y uno por ciento* menos eventos graves.",
+   "voz": "En casi cinco años, el grupo del aceite de oliva tuvo treinta y uno por ciento menos eventos graves.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:ensalada_oliva|CON ACEITE DE OLIVA",
+   "tarjeta": {
+    "label": "INFARTO · DERRAME · MUERTE CV",
+    "valor": "−31 %",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Qué eventos graves?",
+   "voz": "¿Qué eventos graves, doctor?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "*Infarto*, *derrame cerebral* o *muerte* cardiovascular.",
+   "voz": "Infarto, derrame cerebral, o muerte cardiovascular.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "lista:EVENTOS GRAVES|Infarto|Derrame cerebral|Muerte cardiovascular"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Y el de frutos secos, *veintiocho por ciento* menos!",
+   "voz": "¡Y el de frutos secos, veintiocho por ciento menos!",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "stars:vita"
+   ],
+   "pantalla": "foto:frutos_secos|CON FRUTOS SECOS",
+   "tarjeta": {
+    "label": "GRUPO FRUTOS SECOS",
+    "valor": "−28 %",
+    "delay": 0.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo, por transparencia: el estudio se *reanalizó* en dos mil dieciocho por fallas en el sorteo. Los resultados *se mantuvieron*.",
+   "voz": "Ojo, por transparencia: el estudio se reanalizó en dos mil dieciocho por fallas en el sorteo de algunos centros. Y los resultados se mantuvieron.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "REANÁLISIS 2018",
+    "valor": "MISMO RESULTADO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y aquí en el Perú, doctor?",
+   "voz": "¿Y aquí en el Perú, doctor?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Tenemos olivos en *Tacna*, *Ica* y *Arequipa*! Y la *aceituna de botija* es nuestra.",
+   "voz": "¡Tenemos olivos en Tacna, Ica y Arequipa! Y la aceituna de botija es nuestra.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "laugh"
+   },
+   "pantalla": "foto:aceitunas|ACEITUNAS PERUANAS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿O sea que ahora frío mis papas en aceite de oliva y listo?",
+   "voz": "¿O sea que ahora frío mis papas en aceite de oliva y listo?",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.6
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Jaja, no! La clave fue la dieta *completa*: verduras, menestras, pescado y frutos secos, *con* aceite de oliva.",
+   "voz": "¡Ja, no! La clave fue la dieta completa: verduras, menestras, pescado y frutos secos, con aceite de oliva.",
+   "expr": {
+    "bruno": "laugh",
+    "vita": "happy"
+   },
+   "pantalla": "fotos:menestras_mix,pescado_fresco,ensalada,frutos_secos|MENESTRAS|PESCADO|VERDURAS|FRUTOS SECOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cómo lo uso en casa?",
+   "voz": "¿Y cómo lo uso en casa?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Receta natural:",
+   "voz": "Receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Aceite de oliva extra virgen en crudo|En ensaladas y menestras|Verduras todos los días|Pescado y menestras cada semana|Un puñado de frutos secos"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y ojo: es aceite. Una *cucharada* tiene muchas calorías, ¡no lo eches a chorros!",
+   "voz": "Y ojo: sigue siendo aceite. Tiene muchas calorías, ¡no lo eches a chorros!",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "ES ACEITE: CON MEDIDA",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si tienes *colesterol alto* o problemas del *corazón*, sigue tu tratamiento y pregunta cómo adaptar tu dieta.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes colesterol alto o problemas del corazón, sigue tu tratamiento, y pregunta cómo adaptar tu dieta.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA SI TIENES|Colesterol alto|Problemas del corazón|Una dieta indicada por tu médico"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con quien todavía *le teme a toda grasa!* Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con quien todavía le teme a toda grasa! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:olivo|¡VIVA EL OLIVO!"
+  }
+ ]
+}

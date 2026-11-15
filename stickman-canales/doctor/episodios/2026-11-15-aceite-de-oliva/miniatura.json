@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"ALIMENTO NATURAL CON CIENCIA","titulo":["ACEITE DE OLIVA","LA GRASA QUE CUIDA"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"olivo","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["stars:bruno"],"sello":{"texto":"−31 %","size":80,"x":880,"y":800},"franja":"ENSAYO CON 7447 PERSONAS"}
