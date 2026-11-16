@@ -1,0 +1,320 @@
+{
+ "id": "2026-11-16-picarones",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-16_picarones.mp4",
+ "fecha": "16 NOV 2026",
+ "seccion": "POSTRE CRIOLLO",
+ "titular": [
+  "PICARONES:",
+  "¡REDONDITOS Y CON MIEL!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:picarones|PICARONES",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el postre de la calle limeña: ¡*picarones* con miel de chancaca!",
+   "voz": "¡Hola, cocineros! Hoy, el postre de la calle limeña: ¡picarones con miel de chancaca!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:picarones|PICARONES"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, los míos salen *cuadrados*. Mi abuela dice que son *picarones con esquinas*.",
+   "voz": "Chef, los míos salen cuadrados. Mi abuela dice que son picarones con esquinas.",
+   "expr": {
+    "beto": "worried",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "Hoy salen redondos. Seguimos la receta del *gran chef*.",
+   "voz": "Hoy salen redonditos. Seguimos la receta de Gastón Acurio.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro golosos, la masa: *un cuarto de kilo* de camote amarillo y *medio kilo* de zapallo.",
+   "voz": "Para cuatro golosos, la masa: un cuarto de kilo de camote amarillo, y medio kilo de zapallo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:camote,zapallo|¼ KG CAMOTE|½ KG ZAPALLO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "*Cincuenta gramos* de levadura fresca, *una cucharadita* de azúcar, una pizca de sal y *medio kilo* de harina.",
+   "voz": "Cincuenta gramos de levadura fresca, una cucharadita de azúcar, una pizca de sal, y medio kilo de harina.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:levadura,harina|50 G LEVADURA|½ KG HARINA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para la miel: *medio kilo* de chancaca, *cinco* clavos de olor, *una* rama de canela, *dos* hojas de higo y *medio litro* de agua.",
+   "voz": "Para la miel: medio kilo de chancaca, cinco clavos de olor, una rama de canela, dos hojas de higo, y medio litro de agua.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:chancaca,clavo,canela,hojas_higo|½ KG CHANCACA|5 CLAVOS|1 CANELA|2 HOJAS DE HIGO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: cocina el camote y el zapallo con *poca agua*. Cuela, *guarda el agua* y pásalos por el prensapapas *en caliente*.",
+   "voz": "Paso uno: cocina el camote y el zapallo con poca agua. Cuela, guarda el agua, y pásalos por el prensapapas en caliente.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:prensapapas|PASO 1: EL PURÉ"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: disuelve la levadura con el azúcar, la sal y un poco de esa agua. Tapa y deja *fermentar treinta minutos*, en un lugar tibio.",
+   "voz": "Paso dos: disuelve la levadura con el azúcar, la sal, y un poco de esa agua. Tapa, y deja fermentar treinta minutos, en un lugar tibio.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:levadura|PASO 2: LA LEVADURA",
+   "tarjeta": {
+    "label": "FERMENTAR",
+    "valor": "30 MINUTOS",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: mézclala con el puré y suma la harina *poco a poco*, batiendo.",
+   "voz": "Paso tres: mézclala con el puré, y suma la harina poco a poco, batiendo.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:harina|PASO 3: LA HARINA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Un *chorro de anís*, y bate hasta que la masa *cobre vida y burbujee*.",
+   "voz": "Un chorro de anís, y bate hasta que la masa cobre vida y burbujee.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "QUE BURBUJEE",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y luego, chef?",
+   "voz": "¿Y luego, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Tapa la masa y deja *reposar unas tres horas*, en un lugar con calorcito.",
+   "voz": "Tapa la masa, y deja reposar unas tres horas, en un lugar con calorcito.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "tarjeta": {
+    "label": "REPOSO",
+    "valor": "3 HORAS",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Tres horas! Chef, en ese tiempo yo *también reposo*… en el sillón.",
+   "voz": "¡Tres horas! Chef, en ese tiempo yo también reposo… en el sillón.",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "Mientras, la miel: cocina la chancaca con los clavos, la canela, las hojas de higo y el agua, hasta que tome *punto de miel*.",
+   "voz": "Mientras, la miel: cocina la chancaca con los clavos, la canela, las hojas de higo, y el agua, hasta que tome punto de miel.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:chancaca|LA MIEL DE CHANCACA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: *abundante aceite* en una olla grande. *Moja tus manos*, haz un *huequito* al centro y suéltala con delicadeza.",
+   "voz": "Paso cuatro: abundante aceite en una olla grande. Moja tus manos, haz un huequito al centro, y suéltala con delicadeza.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 4: A FREÍR|Abundante aceite|Manos mojadas|Huequito al centro|Suelta con delicadeza"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y a qué fuego, chef?",
+   "voz": "¿Y a qué fuego, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "A *fuego suave*, hasta que estén dorados. Sácalos con una *varita* y báñalos en miel.",
+   "voz": "A fuego suave, hasta que estén dorados. Sácalos con una varita, y báñalos en miel.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:picarones_2|DORADITOS Y CON MIEL",
+   "tarjeta": {
+    "label": "FREÍR",
+    "valor": "A FUEGO SUAVE",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: puedes *reemplazar el camote por papa* en la masa.",
+   "voz": "Y el secreto de Gastón: puedes reemplazar el camote por papa en la masa.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:papas_sancochadas|EL SECRETO: CON PAPA",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "CAMOTE → PAPA",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Las medidas son *referenciales*. Todo depende de tu *ojo de cocinero*.",
+   "voz": "Las medidas son referenciales. Todo depende de tu ojo de cocinero.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Calientitos y con miel, a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡Calientitos y con miel, a la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:picarones|¡A LA MESA!"
+  }
+ ]
+}
