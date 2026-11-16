@@ -1,0 +1,310 @@
+{
+ "id": "2026-11-16-amigos-y-salud",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-16_amigos_y_salud.mp4",
+ "fecha": "16 NOV 2026",
+ "seccion": "LONGEVIDAD",
+ "titular": [
+  "TUS AMIGOS:",
+  "MEDICINA GRATIS"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:familia_mesa|LA MEDICINA DE LOS AMIGOS",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 104.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, una medicina que no se compra en farmacia: ¡tus *amigos!*",
+   "voz": "¡Hola, familia sana! Hoy, una medicina que no se compra en farmacia: ¡tus amigos!",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:familia_mesa|LA MEDICINA DE LOS AMIGOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Amigos? Doctor, yo pensé que hoy tocaba *brócoli*.",
+   "voz": "¿Amigos? Doctor, yo pensé que hoy tocaba brócoli.",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "pantalla": "foto:brocoli|¿HOY NO HAY BRÓCOLI?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy no. Mira: un análisis de *ciento cuarenta y ocho* estudios, con más de *trescientas mil* personas.",
+   "voz": "Hoy no. Mira: un análisis de ciento cuarenta y ocho estudios, con más de trescientas mil personas.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "PLOS MEDICINE · 2010",
+    "valor": "148 ESTUDIOS · 308 849 PERSONAS",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Las personas con *relaciones sociales más fuertes* tuvieron *cincuenta por ciento más* probabilidad de sobrevivir.",
+   "voz": "Las personas con relaciones sociales más fuertes tuvieron cincuenta por ciento más probabilidad de sobrevivir.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:amigos_caminata|RELACIONES FUERTES",
+   "tarjeta": {
+    "label": "PROBABILIDAD DE SOBREVIVIR",
+    "valor": "+50 %",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y eso pasaba solo en *adultos mayores*?",
+   "voz": "¿Y eso pasaba solo en adultos mayores?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:abuelos_nietos|¿SOLO EN MAYORES?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "No. Se mantuvo en *distintas edades*, en hombres y mujeres. Los autores lo comparan con factores de riesgo *muy conocidos*.",
+   "voz": "No. Se mantuvo en distintas edades, en hombres y mujeres. Los autores lo comparan con factores de riesgo muy conocidos.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "SE MANTUVO EN",
+    "valor": "EDAD Y SEXO",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Ojo: son estudios de *observación*. Muestran una *asociación* fuerte, no una receta mágica.",
+   "voz": "Ojo: son estudios de observación. Muestran una asociación fuerte, no una receta mágica.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "ASOCIACIÓN, NO MAGIA",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y la *Organización Mundial de la Salud*, en dos mil veinticinco: *una de cada seis* personas en el mundo se siente sola.",
+   "voz": "Y la Organización Mundial de la Salud, en dos mil veinticinco: una de cada seis personas en el mundo se siente sola.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "foto:solo_banca|1 DE CADA 6 SE SIENTE SOLA",
+   "tarjeta": {
+    "label": "OMS · 2025",
+    "valor": "1 DE CADA 6",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Y la OMS liga la soledad a unas *cien muertes por hora*: más de *ochocientas setenta mil* al año.",
+   "voz": "Y la OMS liga la soledad a unas cien muertes por hora: más de ochocientas setenta mil al año.",
+   "expr": {
+    "vita": "worried",
+    "bruno": "serious"
+   },
+   "fx": [
+    "alert:vita"
+   ],
+   "tarjeta": {
+    "label": "LIGADO A LA SOLEDAD",
+    "valor": "871 000 MUERTES AL AÑO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "La soledad y el aislamiento aumentan el riesgo de *derrame*, *enfermedad del corazón*, *diabetes* y *deterioro de la memoria*.",
+   "voz": "La soledad y el aislamiento aumentan el riesgo de derrame, enfermedad del corazón, diabetes, y deterioro de la memoria.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "lista:LA SOLEDAD AUMENTA EL RIESGO DE|Derrame cerebral|Enfermedad del corazón|Diabetes|Deterioro de la memoria"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y quien se siente solo tiene el *doble* de probabilidad de *deprimirse*.",
+   "voz": "Y quien se siente solo tiene el doble de probabilidad de deprimirse.",
+   "expr": {
+    "vita": "worried",
+    "bruno": "serious"
+   },
+   "pantalla": "foto:solo_banca|SOLEDAD Y DEPRESIÓN",
+   "tarjeta": {
+    "label": "OMS",
+    "valor": "2 VECES MÁS DEPRESIÓN",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "La buena noticia: la receta es *gratis*. La OMS propone pasos *simples*.",
+   "voz": "La buena noticia: la receta es gratis. La OMS propone pasos simples.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Escríbele a un amigo que lo necesita. *Guarda el celular* cuando conversas. *Saluda* a tu vecino.",
+   "voz": "Escríbele a un amigo que lo necesita. Guarda el celular cuando conversas. Saluda a tu vecino.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:LA RECETA (OMS)|Busca a un amigo que lo necesita|Guarda el celular al conversar|Saluda a tu vecino|Únete a un grupo|Haz voluntariado"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y *únete a un grupo* o haz *voluntariado*: la parroquia, el vóley del barrio.",
+   "voz": "Y únete a un grupo, o haz voluntariado: la parroquia, el vóley del barrio.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:marinera|ÚNETE A UN GRUPO"
+  },
+  {
+   "quien": "vita",
+   "texto": "Yo ya me inscribí en *marinera*. ¡El doctor todavía está buscando *su pañuelo*!",
+   "voz": "Yo ya me inscribí en marinera. ¡El doctor todavía está buscando su pañuelo!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:marinera|¡A BAILAR MARINERA!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si la tristeza o la soledad *no se van*, busca ayuda profesional.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si la tristeza o la soledad no se van, busca ayuda profesional.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:BUSCA AYUDA SI|La tristeza dura semanas|Ya no disfrutas nada|Tienes pensamientos de hacerte daño"
+  },
+  {
+   "quien": "vita",
+   "texto": "En Perú, la línea *ciento trece, opción cinco*, te orienta en *salud mental*.",
+   "voz": "En Perú, la línea ciento trece, opción cinco, te orienta en salud mental.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "tarjeta": {
+    "label": "PERÚ · SALUD MENTAL",
+    "valor": "LÍNEA 113, OPCIÓN 5",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: llama o visita a *una persona* que extrañas.",
+   "voz": "Hoy, tu tarea: llama o visita a una persona que extrañas.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:abuelos_nietos|TAREA: LLAMA A ALGUIEN"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con ese *amigo* que no ves hace tiempo! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con ese amigo que no ves hace tiempo! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:familia_mesa|¡NOS VEMOS, FAMILIA!"
+  }
+ ]
+}
