@@ -1,0 +1,315 @@
+{
+ "id": "2026-11-17-olluquito",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-17_olluquito.mp4",
+ "fecha": "17 NOV 2026",
+ "seccion": "CLÁSICO ANDINO",
+ "titular": [
+  "OLLUQUITO CON CARNE:",
+  "¡EL SECRETO ES LA SALSA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:olluquito_2|OLLUQUITO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un clásico andino de casa: ¡el *olluquito con carne!*",
+   "voz": "¡Hola, cocineros! Hoy, un clásico andino de casa: ¡el olluquito con carne!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:olluquito_2|OLLUQUITO"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, ¿el olluco es una *papa disfrazada* de fiesta?",
+   "voz": "Chef, ¿el olluco es una papa disfrazada de fiesta?",
+   "expr": {
+    "beto": "think",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:ollucos_crudos|¿UNA PAPA DISFRAZADA?"
+  },
+  {
+   "quien": "tito",
+   "texto": "Casi. Es un tubérculo *andino*, primo de la papa. Hoy seguimos la receta del *gran chef*.",
+   "voz": "Casi. Es un tubérculo andino, primo de la papa. Hoy seguimos la receta de Gastón Acurio.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:ollucos_crudos_2|TUBÉRCULO ANDINO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Él cuenta que *amaba* encontrarlo servido, esperándolo al volver *del colegio*.",
+   "voz": "Él cuenta que amaba encontrarlo servido en su plato, esperándolo al volver del colegio.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "tarjeta": {
+    "label": "RECUERDO DEL GRAN CHEF",
+    "valor": "AL VOLVER DEL COLEGIO",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *cuatro tazas* de olluco en juliana gruesa y *doscientos gramos* de bistec de res en tiras.",
+   "voz": "Para cuatro: cuatro tazas de olluco en juliana gruesa, y doscientos gramos de bistec de res en tiras.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:ollucos_crudos,carne_res_0|4 TAZAS DE OLLUCO|200 G DE BISTEC"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Si consigues *charqui*, mejor. Si no, el bistec funciona.",
+   "voz": "Si consigues charqui, mejor. Si no, el bistec funciona.",
+   "expr": {
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:charqui|CHARQUI O BISTEC"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Además: *una cebolla roja*, *una cucharada* de ajo, *un cuarto de taza* de ají panca y otro de ají amarillo.",
+   "voz": "Además: una cebolla roja, una cucharada de ajo, un cuarto de taza de ají panca, y otro de ají amarillo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:cebolla_roja_2,ajo_0,aji_panca,aji_amarillo_0|1 CEBOLLA ROJA|1 CDA DE AJO|¼ TAZA PANCA|¼ TAZA AMARILLO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y *una taza* de papa blanca, perejil, *una rodaja* de rocoto y *una ramita* de hierbabuena.",
+   "voz": "Y una taza de papa blanca, perejil, una rodaja de rocoto, y una ramita de hierbabuena.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pantalla": "fotos:papas_sancochadas,rocoto,hierbabuena|1 TAZA DE PAPA|1 RODAJA ROCOTO|HIERBABUENA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: el aderezo. Un chorro de aceite, la cebolla *bien picadita* y el ajo. *Diez minutos*.",
+   "voz": "Paso uno: el aderezo. Un chorro de aceite, la cebolla bien picadita, y el ajo. Diez minutos.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 1: EL ADEREZO",
+   "tarjeta": {
+    "label": "ADEREZO",
+    "valor": "10 MINUTOS",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: los dos ajíes, sal, pimienta y *una pizca* de comino. *Diez minutos* más.",
+   "voz": "Paso dos: los dos ajíes, sal, pimienta, y una pizca de comino. Diez minutos más.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "fotos:aji_panca,aji_amarillo_0|AJÍ PANCA|AJÍ AMARILLO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: la carne, *solo un minuto*. Luego los ollucos, y que dé *un hervor*.",
+   "voz": "Paso tres: la carne, solo un minuto. Luego los ollucos, y que dé un hervor.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 3|Carne: 1 minuto|Ollucos en juliana|Un hervor"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y no le echo agua, chef? ¡Se va a quemar!",
+   "voz": "¿Y no le echo agua, chef? ¡Se va a quemar!",
+   "expr": {
+    "beto": "worried",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "El olluco *suelta su propio jugo*, Beto. Paso cuatro: la papa, el perejil, el rocoto y la hierbabuena. *Tapa*.",
+   "voz": "El olluco suelta su propio jugo, Beto. Paso cuatro: la papa, el perejil, el rocoto y la hierbabuena. Tapa.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 4|Papa, un poco más gruesa|Perejil y rocoto|Hierbabuena|Tapa la olla"
+  },
+  {
+   "quien": "tito",
+   "texto": "Deja que el olluco se cocine y que el jugo *tome cuerpo*. Al final, más *perejil picado*.",
+   "voz": "Deja que el olluco se cocine, y que el jugo tome cuerpo. Al final, más perejil picado.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:olluquito|QUE EL JUGO TOME CUERPO",
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "JUGO CON CUERPO",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Chef, ¿y si no como carne de res?",
+   "voz": "Chef, ¿y si no como carne de res?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El gran chef dice que también queda bien con *panceta*, *camarones* o *pollo* en tiras.",
+   "voz": "Gastón dice que también queda bien con panceta de chancho, camarones, o pierna de pollo en tiras.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:olluquito_3|TAMBIÉN CON POLLO",
+   "tarjeta": {
+    "label": "VARIANTES",
+    "valor": "PANCETA · CAMARONES · POLLO",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: licúa ají amarillo con *sal* y *limón*, y al final *bastante perejil* picado.",
+   "voz": "Y el secreto de Gastón: licúa ají amarillo con sal y limón, y al final bastante perejil picado.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "fotos:aji_amarillo_0,limon,hierbas|AJÍ AMARILLO|LIMÓN|PEREJIL",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "SALSA DE AJÍ AMARILLO",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Esa salsita va *encima*, cuando el olluquito ya está *servido en el plato*.",
+   "voz": "Esa salsita va encima, cuando el olluquito ya está servido en el plato.",
+   "expr": {
+    "tito": "happy",
+    "beto": "laugh"
+   },
+   "pantalla": "foto:olluquito_2|LA SALSA, AL SERVIR"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Yo le pongo salsa *al arroz*, al olluco… y si me descuido, al postre!",
+   "voz": "¡Yo le pongo salsa al arroz, al olluco… y si me descuido, al postre!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "pantalla": "foto:arroz_blanco_0|CON ARROZ BLANCO"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Con arroz blanco, a la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡Con arroz blanco, a la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:olluquito_2|¡A LA MESA!"
+  }
+ ]
+}
