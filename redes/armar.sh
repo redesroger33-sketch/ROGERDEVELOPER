@@ -4,7 +4,8 @@
 set -euo pipefail
 IN="$1"; OUT="$2"; DIR="$(dirname "$0")"; W=$(mktemp -d)
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$IN")
-mapfile -t CUTS < <(ffmpeg -v info -i "$IN" -vf "select='gt(scene,0.05)',showinfo" -an -f null - 2>&1 | grep -o "pts_time:[0-9.]*" | cut -d: -f2)
+if [ -n "${CORTES:-}" ]; then read -ra CUTS <<< "$CORTES"; else mapfile -t CUTS < <(ffmpeg -v info -i "$IN" -vf "select='gt(scene,0.05)',showinfo" -an -f null - 2>&1 | grep -o "pts_time:[0-9.]*" | cut -d: -f2); fi
+if [ ${#CUTS[@]} -eq 0 ]; then echo "ERROR: no se detectaron cortes; usa CORTES=\"4 9 14\"" >&2; exit 1; fi
 STARTS=(0 "${CUTS[@]}"); ENDS=("${CUTS[@]}" "$DUR")
 XF=0.4; FPS=30; N=${#STARTS[@]}
 for i in $(seq 0 $((N-1))); do

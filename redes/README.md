@@ -2,7 +2,7 @@
 
 Herramientas para preparar cada video semanal antes de publicarlo.
 
-- `armar.sh entrada.mp4 salida.mp4`: detecta cada lámina del video, le aplica zoom progresivo (1.00→1.10), une las láminas con fundido y reemplaza el audio por música original.
+- `armar.sh entrada.mp4 salida.mp4`: detecta cada lámina del video, le aplica zoom progresivo (1.00→1.10), une las láminas con fundido y reemplaza el audio por música original. Si no detecta cortes (transiciones a oscuro), pásalos a mano: `CORTES="4 9 14 19 24" ./redes/armar.sh entrada.mp4 salida.mp4`.
 - `musica.py salida.wav segundos`: genera una pista instrumental original (piano + pad + beat suave) sin derechos de terceros.
 
 Requiere `ffmpeg` y `python3` con `numpy`.
