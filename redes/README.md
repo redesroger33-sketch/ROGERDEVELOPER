@@ -17,3 +17,7 @@ Requiere `ffmpeg` y `python3` con `numpy`.
 ## Reel desde láminas (Instagram)
 `TRANSPONER=3 ./redes/reel_desde_laminas.sh reel.mp4 lamina_1.png ... lamina_N.png`
 Cada lámina 1080x1350 centrada sobre fondo desenfocado 1080x1920, zoom 1.00→1.10, fundido y música original. `TRANSPONER` (semitonos, -5 a 6) cambia la tonalidad para que la música no suene igual cada semana.
+
+## Generar láminas nuevas (posts 10 al 20 y siguientes)
+`NODE_PATH=$(npm root -g) node redes/posts/render.js redes/posts/contenido_10_20.json <carpeta_salida> [10,11]`
+Lee el contenido (título, 4 puntos, dato opcional, cierre y caption) y genera 6 láminas 1080x1350 con el diseño de la serie GA (azul marino, dorado, tipografía Liberation Sans, marcos dorados) y `caption.txt`.
