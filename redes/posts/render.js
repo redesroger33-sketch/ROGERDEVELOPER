@@ -23,6 +23,21 @@ const ICONOS = {
   checklist: `<rect x="40" y="35" width="160" height="185"/><rect x="85" y="18" width="70" height="32"/><polyline points="70,95 85,110 110,82"/><line x1="125" y1="98" x2="170" y2="98"/><polyline points="70,150 85,165 110,137"/><line x1="125" y1="153" x2="170" y2="153"/>`,
 };
 
+Object.assign(ICONOS, {
+  tienda: `<polyline points="20,95 40,30 200,30 220,95"/><path d="M20,95 Q45,120 70,95 Q95,120 120,95 Q145,120 170,95 Q195,120 220,95"/><polyline points="35,110 35,215 205,215 205,110"/><rect x="60" y="140" width="45" height="75"/><rect x="130" y="140" width="55" height="45"/>`,
+  plano: `<rect x="20" y="25" width="200" height="185"/><line x1="110" y1="25" x2="110" y2="105"/><line x1="20" y1="105" x2="150" y2="105"/><line x1="185" y1="105" x2="220" y2="105"/><line x1="140" y1="105" x2="140" y2="210"/><path d="M150,105 A35,35 0 0 1 185,140"/>`,
+  camion: `<rect x="15" y="60" width="135" height="110"/><polyline points="150,95 195,95 225,135 225,170 150,170"/><circle cx="60" cy="180" r="22"/><circle cx="185" cy="180" r="22"/>`,
+  escudo: `<path d="M120,20 L210,55 L210,120 Q210,185 120,220 Q30,185 30,120 L30,55 Z"/><polyline points="80,120 110,150 165,92"/>`,
+  alcancia: `<ellipse cx="115" cy="130" rx="90" ry="65"/><line x1="95" y1="70" x2="140" y2="70"/><rect x="60" y="185" width="22" height="28"/><rect x="150" y="185" width="22" height="28"/><circle cx="160" cy="115" r="6"/><path d="M205,120 L228,110"/><circle cx="115" cy="35" r="18"/>`,
+  estrella: `<polygon points="120,15 148,88 225,88 163,135 186,212 120,165 54,212 77,135 15,88 92,88"/>`,
+  anillos: `<circle cx="85" cy="125" r="60"/><circle cx="155" cy="125" r="60"/>`,
+  arbol: `<circle cx="120" cy="45" r="25"/><circle cx="55" cy="175" r="22"/><circle cx="120" cy="175" r="22"/><circle cx="185" cy="175" r="22"/><polyline points="120,70 120,120 55,120 55,153"/><line x1="120" y1="120" x2="120" y2="153"/><polyline points="120,120 185,120 185,153"/>`,
+  camara: `<rect x="20" y="65" width="200" height="140" rx="10"/><polyline points="75,65 92,35 148,35 165,65"/><circle cx="120" cy="135" r="42"/>`,
+  brocha: `<rect x="40" y="25" width="160" height="60" rx="8"/><line x1="200" y1="55" x2="222" y2="55"/><polyline points="222,55 222,110 120,110 120,140"/><rect x="105" y="140" width="30" height="75" rx="6"/>`,
+  moneda: `<circle cx="85" cy="120" r="65"/><circle cx="165" cy="120" r="65"/><text x="85" y="140" font-size="60" text-anchor="middle" fill="#C9A35C" stroke="none" font-family="Liberation Sans" font-weight="700">S/</text><text x="165" y="140" font-size="60" text-anchor="middle" fill="#C9A35C" stroke="none" font-family="Liberation Sans" font-weight="700">$</text>`,
+  reloj: `<circle cx="120" cy="120" r="95"/><polyline points="120,60 120,120 165,145"/>`,
+});
+
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const pad = (n) => String(n).padStart(2, '0');
 
