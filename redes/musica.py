@@ -1,5 +1,5 @@
 """Pista instrumental original (sin derechos de terceros): piano/pad cálido + beat suave, ~92 bpm."""
-import sys, wave
+import os, sys, wave
 import numpy as np
 
 SR = 44100
@@ -26,7 +26,8 @@ def note(freq, start, length, amp, kind="piano"):
         env = np.exp(-2.0*t) * np.minimum(1, t/0.01)
     mix[s:e] += amp * w * env
 
-def hz(m): return 440 * 2 ** ((m - 69) / 12)
+TRANSPONER = int(os.environ.get("TRANSPONER", "0"))  # varía la tonalidad cada semana
+def hz(m): return 440 * 2 ** ((m + TRANSPONER - 69) / 12)
 
 # Progresión I–V–vi–IV en Do mayor (cálida, positiva)
 chords = [[60, 64, 67, 71], [55, 59, 62, 67], [57, 60, 64, 67], [53, 57, 60, 64]]
