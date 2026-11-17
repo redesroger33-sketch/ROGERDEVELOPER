@@ -1,0 +1,289 @@
+{
+ "id": "2026-11-17-ejercicio-y-animo",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-17_ejercicio_y_animo.mp4",
+ "fecha": "17 NOV 2026",
+ "seccion": "SALUD MENTAL",
+ "titular": [
+  "EJERCICIO Y ÁNIMO:",
+  "LO QUE DICEN 218 ENSAYOS"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:trotar|EJERCICIO Y ÁNIMO",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy: ¿moverte puede *levantar tu ánimo*? La ciencia dice que sí.",
+   "voz": "¡Hola, familia sana! Hoy: ¿moverte puede levantar tu ánimo? La ciencia dice que sí.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:trotar|EJERCICIO Y ÁNIMO"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, ¿hablamos de *depresión*? Eso es algo serio.",
+   "voz": "Doctor, ¿hablamos de depresión? Eso es algo serio.",
+   "expr": {
+    "vita": "worried",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:tristeza_ventana|LA DEPRESIÓN ES SERIA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Muy serio. Por eso hoy hablamos de algo que *suma al tratamiento*, nunca lo reemplaza.",
+   "voz": "Muy serio. Por eso hoy hablamos de algo que suma al tratamiento, nunca lo reemplaza.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "SUMA, NO REEMPLAZA",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Un gran análisis en la revista *BMJ*, de dos mil veinticuatro, reunió *doscientos dieciocho* ensayos con *catorce mil* personas con depresión.",
+   "voz": "Un gran análisis en la revista BMJ, de dos mil veinticuatro, reunió doscientos dieciocho ensayos con catorce mil personas con depresión.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "BMJ · 2024",
+    "valor": "218 ENSAYOS · 14 170 PERSONAS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y qué ejercicio funcionó mejor?",
+   "voz": "¿Y qué ejercicio funcionó mejor?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "El primero: *caminar o trotar*. Logró una *reducción moderada* de los síntomas, frente a la atención habitual.",
+   "voz": "El primero: caminar o trotar. Logró una reducción moderada de los síntomas, frente a la atención habitual.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:trotar|1. CAMINAR O TROTAR",
+   "tarjeta": {
+    "label": "EFECTO",
+    "valor": "MODERADO",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Muy cerca, el *yoga* y el *entrenamiento de fuerza*. Y también ayudaron el *tai chi* y los ejercicios aeróbicos mixtos.",
+   "voz": "Muy cerca, el yoga y el entrenamiento de fuerza. Y también ayudaron el tai chi, y los ejercicios aeróbicos mixtos.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "fotos:yoga,banda_elastica,tai_chi|YOGA|FUERZA|TAI CHI"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y un dato: el *yoga* y la *fuerza* fueron los más *aceptados*. La gente los dejaba menos.",
+   "voz": "Y un dato: el yoga y la fuerza fueron los más aceptados. La gente los dejaba menos.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "surprised"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:yoga|LOS QUE MENOS SE ABANDONAN"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Otro hallazgo: el efecto fue *mayor* cuanto más *intensidad* se indicaba. Siempre a tu medida.",
+   "voz": "Otro hallazgo: el efecto fue mayor cuanto más intensidad se indicaba. Siempre a tu medida.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "happy"
+   },
+   "tarjeta": {
+    "label": "MÁS INTENSIDAD",
+    "valor": "MÁS EFECTO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Entonces yo voy a *trotar intenso*… ¡hasta la panadería de la esquina!",
+   "voz": "Entonces yo voy a trotar intenso… ¡hasta la panadería de la esquina!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:pan_frances|¡A LA PANADERÍA!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Pero seamos honestos: casi todos los estudios tenían *riesgo de sesgo*. La confianza en la evidencia es *baja*.",
+   "voz": "Pero seamos honestos: casi todos los estudios tenían riesgo de sesgo. La confianza en la evidencia es baja.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CON HONESTIDAD|Casi todos con riesgo de sesgo|Confianza en la evidencia: baja|Hacen falta mejores estudios"
+  },
+  {
+   "quien": "vita",
+   "texto": "Aun así, los autores dicen que el ejercicio puede ir *junto a* la psicoterapia y los medicamentos, como parte del tratamiento.",
+   "voz": "Aun así, los autores dicen que el ejercicio puede ir junto a la psicoterapia y los medicamentos, como parte del tratamiento.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu receta natural para empezar:",
+   "voz": "Tu receta natural para empezar:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "pantalla": "foto:caminar_parque_4|TU RECETA NATURAL"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Camina o trota a *paso vivo*, prueba *yoga* o *tai chi*, y haz *fuerza* dos días por semana. Sube *poco a poco*.",
+   "voz": "Camina o trota a paso vivo, prueba yoga o tai chi, y haz fuerza dos días por semana. Sube poco a poco.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Camina o trota a paso vivo|Prueba yoga o tai chi|Fuerza 2 días por semana|Sube poco a poco"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y si vas *acompañado*, mejor: se disfruta más.",
+   "voz": "Y si vas acompañado, mejor: se disfruta más.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pantalla": "foto:amigos_caminata|MEJOR ACOMPAÑADO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. *No dejes* tu tratamiento ni tus medicinas sin hablar con él.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. No dejes tu tratamiento ni tus medicinas sin hablar con él.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA ANTES SI|Tienes problemas del corazón|Tienes dolor o lesiones|Llevas tiempo sin moverte"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y si tienes *pensamientos de hacerte daño*, busca ayuda hoy. En Perú, línea *ciento trece, opción cinco*.",
+   "voz": "Y si tienes pensamientos de hacerte daño, busca ayuda hoy. En Perú, línea ciento trece, opción cinco.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "serious"
+   },
+   "tarjeta": {
+    "label": "PERÚ · SALUD MENTAL",
+    "valor": "LÍNEA 113, OPCIÓN 5",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: *diez minutos* de caminata a paso vivo.",
+   "voz": "Hoy, tu tarea: diez minutos de caminata a paso vivo.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:caminar_parque_4|TAREA: 10 MINUTOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con quien necesite un *empujoncito*! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con quien necesite un empujoncito! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:trotar|¡A MOVERSE!"
+  }
+ ]
+}
