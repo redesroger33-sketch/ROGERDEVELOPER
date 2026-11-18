@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"SECRETOS DE UN CHEF PERUANO","titulo":["PESCADO A LA","CHORRILLANA"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"muelle_chorrillos","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"PARA 4","size":64,"x":880,"y":800},"franja":"HOMENAJE AL PESCADOR CHORRILLANO"}

@@ -1,0 +1,288 @@
+{
+ "id": "2026-11-18-pescado-a-la-chorrillana",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-18_pescado_a_la_chorrillana.mp4",
+ "fecha": "18 NOV 2026",
+ "seccion": "CRIOLLO MARINO",
+ "titular": [
+  "PESCADO A LA CHORRILLANA:",
+  "¡HOMENAJE AL PESCADOR!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:muelle_chorrillos|PESCADO A LA CHORRILLANA",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un homenaje al pescador de Chorrillos: ¡*pescado a la chorrillana!*",
+   "voz": "¡Hola, cocineros! Hoy, un homenaje al pescador de Chorrillos: ¡pescado a la chorrillana!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:muelle_chorrillos|CALETA DE CHORRILLOS"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* cuenta que cada madrugada el pescador chorrillano sale a buscar el *poco pescado fresco* que queda en la bahía.",
+   "voz": "Gastón Acurio cuenta que cada madrugada, el pescador chorrillano sale a buscar el poco pescado fresco que queda en la bahía.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:muelle_chorrillos_2|EL PESCADOR CHORRILLANO"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, yo también salgo de madrugada… ¡a buscar *pan* a la esquina!",
+   "voz": "Chef, yo también salgo de madrugada… ¡a buscar pan a la esquina!",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:pan_frances|¡PESCADOR DE PAN!"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *un pescado* de un kilo a kilo y medio, o *cuatro filetes* grandes, sin piel.",
+   "voz": "Para cuatro: un pescado de un kilo a kilo y medio, o cuatro filetes grandes, sin piel.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:pescado_fresco|1 A 1½ KG DE PESCADO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Pide al pescadero que le quite *vísceras* y *escamas*. Si lo filetea, guarda la cabeza y las espinas para un *chilcano*.",
+   "voz": "Pide al pescadero que le quite vísceras y escamas. Si lo filetea, guarda la cabeza y las espinas para un chilcano.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "TIP DEL GRAN CHEF",
+    "valor": "CABEZA Y ESPINAS: CHILCANO",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Sal, pimienta blanca, ajo molido y *harina sin preparar* para pasarlo.",
+   "voz": "Sal, pimienta blanca, ajo molido, y harina sin preparar para pasarlo.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:ajo_0,harina|AJO MOLIDO|HARINA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para la salsa: *dos cucharadas* de ají panca, *una* de ají mirasol y *una* de ajo.",
+   "voz": "Para la salsa: dos cucharadas de ají panca, una de ají mirasol, y una de ajo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:aji_panca,aji_mirasol,ajo_4|2 CDAS AJÍ PANCA|1 CDA MIRASOL|1 CDA AJO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y *dos cebollas rojas*, *dos* de cebolla china, *cuatro tomates* chicos y *dos ajíes amarillos*, todo en tiras gruesas.",
+   "voz": "Y dos cebollas rojas, dos de cebolla china, cuatro tomates chicos, y dos ajíes amarillos, todo en tiras gruesas.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "fotos:cebolla_roja_2,cebolla_china_3,tomate_1,aji_amarillo_2|2 CEBOLLAS ROJAS|2 CEBOLLAS CHINAS|4 TOMATES|2 AJÍES AMARILLOS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: sazona el pescado con sal, pimienta y ajo. Pásalo por harina y fríelo en aceite *bien caliente*.",
+   "voz": "Paso uno: sazona el pescado con sal, pimienta y ajo. Pásalo por harina, y fríelo en aceite bien caliente.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:pescado_plancha|PASO 1: FREÍR EL PESCADO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Cuando esté *bien dorado*, dale la vuelta. Tiene que quedar *jugoso*. Reserva.",
+   "voz": "Cuando esté bien dorado, dale la vuelta. Tiene que quedar jugoso. Reserva.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "DORADO Y JUGOSO",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: en otra sartén, un chorro de aceite, el ajo y los ajíes panca y mirasol. *Dos minutos*.",
+   "voz": "Paso dos: en otra sartén, un chorro de aceite, el ajo, y los ajíes panca y mirasol. Dos minutos.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 2: LA SALSA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: las cebollas, unos minutos. Luego el tomate y el ají amarillo, *solo unos segundos*.",
+   "voz": "Paso tres: las cebollas, unos minutos. Luego el tomate y el ají amarillo, solo unos segundos.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 3: SALTEAR|Cebolla roja y china|Tomate en tiras|Ají amarillo en tiras|¡Solo unos segundos!"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y qué le da ese saborcito ácido, chef?",
+   "voz": "¿Y qué le da ese saborcito ácido, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Un *chorro de vinagre de vino tinto*, culantro picado, sal, pimienta y comino.",
+   "voz": "Un chorro de vinagre de vino tinto, culantro picado, sal, pimienta y comino.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:culantro_1|VINAGRE TINTO Y CULANTRO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: baja el fuego y pon el pescado *encima* de la salsa. *Un minuto*, y los dos se vuelven *un solo plato*.",
+   "voz": "Paso cuatro: baja el fuego, y pon el pescado encima de la salsa. Un minuto, y los dos se vuelven un solo plato.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 4: TODO JUNTO|Baja el fuego|Pescado encima de la salsa|1 minuto|¡Un solo plato!"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y con qué lo acompaño, chef? ¿Con más pan?",
+   "voz": "¿Y con qué lo acompaño, chef? ¿Con más pan?",
+   "expr": {
+    "beto": "think",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Con *camote*, *yuca* o *papas* cocidas. O con *arroz blanco*.",
+   "voz": "Con camote, yuca, o papas cocidas. O con arroz blanco.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "pantalla": "fotos:camote,yuca,arroz_blanco_0|CAMOTE|YUCA|ARROZ"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: si *sobra*, lo guarda en el refri… ¡y en la noche se prepara un *sánguche*!",
+   "voz": "Y el secreto de Gastón: si sobra, lo guarda en el refrigerador… ¡y en la noche se prepara un sánguche!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "laugh"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:pan_frances|EL SECRETO: SÁNGUCHE DE NOCHE",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "SÁNGUCHE CON LO QUE SOBRA",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa, cocineros! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa, cocineros! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:muelle_chorrillos|¡A LA MESA!"
+  }
+ ]
+}
