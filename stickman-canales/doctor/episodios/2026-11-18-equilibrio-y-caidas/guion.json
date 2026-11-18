@@ -1,0 +1,304 @@
+{
+ "id": "2026-11-18-equilibrio-y-caidas",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-18_equilibrio_y_caidas.mp4",
+ "fecha": "18 NOV 2026",
+ "seccion": "HUESOS Y EQUILIBRIO",
+ "titular": [
+  "EVITA CAÍDAS:",
+  "EJERCICIOS DE EQUILIBRIO"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:adulto_mayor_caminando|EQUILIBRIO Y CAÍDAS",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy hablamos de algo que cambia vidas: *evitar las caídas* después de los sesenta.",
+   "voz": "¡Hola, familia sana! Hoy hablamos de algo que cambia vidas: evitar las caídas después de los sesenta.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:adulto_mayor_caminando|EQUILIBRIO Y CAÍDAS"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, ¿tan comunes son las caídas?",
+   "voz": "Doctor, ¿tan comunes son las caídas?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Mucho. Al menos *uno de cada tres* mayores de sesenta y cinco se cae *cada año*.",
+   "voz": "Mucho. Al menos uno de cada tres mayores de sesenta y cinco se cae cada año.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "foto:mayores_baston|1 DE CADA 3, CADA AÑO",
+   "tarjeta": {
+    "label": "MAYORES DE 65",
+    "valor": "1 DE CADA 3 SE CAE AL AÑO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "La *Colaboración Cochrane* revisó *ciento ocho* ensayos, con más de *veintitrés mil* personas mayores que viven en casa.",
+   "voz": "La Colaboración Cochrane revisó ciento ocho ensayos, con más de veintitrés mil personas mayores que viven en casa.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "COCHRANE · 2019",
+    "valor": "108 ENSAYOS · 23 407 PERSONAS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y el ejercicio sirvió?",
+   "voz": "¿Y el ejercicio sirvió?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Sí: redujo las caídas en *veintitrés por ciento*. Y eso, con evidencia de *certeza alta*.",
+   "voz": "Sí: redujo las caídas en veintitrés por ciento. Y eso, con evidencia de certeza alta.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "pantalla": "foto:centro_mayores|EL EJERCICIO FUNCIONA",
+   "tarjeta": {
+    "label": "CAÍDAS",
+    "valor": "−23 %",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Y hubo *quince por ciento menos* de personas que se cayeron *al menos una vez*.",
+   "voz": "Y hubo quince por ciento menos de personas que se cayeron al menos una vez.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "tarjeta": {
+    "label": "PERSONAS QUE SE CAYERON",
+    "valor": "−15 %",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Lo que mejor funcionó: ejercicios de *equilibrio* y *funcionales*, como pararte de una silla o caminar en línea recta.",
+   "voz": "Lo que mejor funcionó: ejercicios de equilibrio y funcionales, como pararte de una silla, o caminar en línea recta.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:aerobicos|EQUILIBRIO: −24 % DE CAÍDAS"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y si los *combinas con fuerza*, probablemente bajan aún más: *treinta y cuatro por ciento*.",
+   "voz": "Y si los combinas con fuerza, probablemente bajan aún más: treinta y cuatro por ciento.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:banda_elastica|EQUILIBRIO + FUERZA",
+   "tarjeta": {
+    "label": "EQUILIBRIO + FUERZA",
+    "valor": "−34 %",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y el *tai chi*, doctor? Mi tía lo practica en el parque.",
+   "voz": "¿Y el tai chi, doctor? Mi tía lo practica en el parque.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:tai_chi|¿Y EL TAI CHI?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "También ayuda: *veinte por ciento menos* de personas que se cayeron.",
+   "voz": "También ayuda: veinte por ciento menos de personas que se cayeron.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "tarjeta": {
+    "label": "TAI CHI",
+    "valor": "−20 % PERSONAS QUE CAEN",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Entonces yo me compro unos *zapatos de ballet*… ¡y a hacer equilibrio en el micro!",
+   "voz": "Entonces yo me compro unos zapatos de ballet… ¡y a hacer equilibrio en el micro!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:equilibrio_arbol|¡EQUILIBRIO EN EL MICRO!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: con *solo caminar*, o solo bailar, los autores *no están seguros* del efecto en las caídas.",
+   "voz": "Ojo: con solo caminar, o solo bailar, los autores no están seguros del efecto en las caídas.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "CAMINAR SOLO: EFECTO INCIERTO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu receta natural, junto a una *silla firme* o una pared:",
+   "voz": "Tu receta natural, junto a una silla firme o una pared:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Párate y siéntate de la silla|Camina en línea recta|Apóyate en un pie, con apoyo cerca|Fuerza con banda elástica|Tai chi, si te gusta"
+  },
+  {
+   "quien": "vita",
+   "texto": "Unos *minutos al día*, y ve subiendo *poco a poco*.",
+   "voz": "Unos minutos al día, y ve subiendo poco a poco.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pantalla": "foto:aerobicos|POCO A POCO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si ya te caíste, te mareas o tienes dolor, *consulta antes* de empezar.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si ya te caíste, te mareas, o tienes dolor, consulta antes de empezar.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA ANTES SI|Ya te caíste antes|Te mareas o pierdes el equilibrio|Tienes dolor o una lesión"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y en casa: *buena luz*, nada de alfombras sueltas en el camino.",
+   "voz": "Y en casa: buena luz, y nada de alfombras sueltas en el camino.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "happy"
+   },
+   "pantalla": "foto:mayores_baston|EN CASA: CAMINO LIBRE",
+   "tarjeta": {
+    "label": "EN CASA",
+    "valor": "BUENA LUZ · SIN ALFOMBRAS SUELTAS",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: *diez veces* párate y siéntate de una silla, sin apurarte.",
+   "voz": "Hoy, tu tarea: diez veces, párate y siéntate de una silla, sin apurarte.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:adulto_mayor_caminando|TAREA: 10 VECES"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con tus *papás* y tus *abuelos*! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con tus papás y tus abuelos! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:tai_chi|¡A PRACTICAR!"
+  }
+ ]
+}

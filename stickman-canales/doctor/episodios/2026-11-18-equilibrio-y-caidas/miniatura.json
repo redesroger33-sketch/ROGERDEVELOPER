@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["EVITA CAÍDAS","EJERCICIOS DE EQUILIBRIO"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"aerobicos","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["stars:bruno"],"sello":{"texto":"−23 %","size":80,"x":880,"y":800},"franja":"108 ENSAYOS · COCHRANE 2019"}
