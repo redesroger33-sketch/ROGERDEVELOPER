@@ -1288,5 +1288,29 @@
   "autor": "MEvalyn",
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Boiled_cassava_roots.jpg"
+ },
+ "yogur": {
+  "title": "File:Joghurt.jpg",
+  "autor": "No machine-readable author provided. Rainer Zenz assumed (ba",
+  "lic": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Joghurt.jpg"
+ },
+ "kefir": {
+  "title": "File:Kefir glass london feb 10 (cropped).jpg",
+  "autor": "secretlondon123",
+  "lic": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kefir_glass_london_feb_10_(cropped).jpg"
+ },
+ "chucrut": {
+  "title": "File:Saurkraut (cropped).JPG",
+  "autor": "Gandydancer (original file) ; cropped by Off-shell",
+  "lic": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Saurkraut_(cropped).JPG"
+ },
+ "kimchi": {
+  "title": "File:Korean Kimchi.jpg",
+  "autor": "AhmadElq",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Korean_Kimchi.jpg"
  }
 }

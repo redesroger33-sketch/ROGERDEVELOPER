@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"ALIMENTO NATURAL CON CIENCIA","titulo":["FERMENTADOS","MÁS VARIEDAD DE MICROBIOS"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"chucrut","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["stars:bruno"],"sello":{"texto":"STANFORD","size":58,"x":880,"y":800},"franja":"ENSAYO CON 36 ADULTOS · 10 SEMANAS"}
