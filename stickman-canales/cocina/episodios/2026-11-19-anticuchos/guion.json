@@ -1,0 +1,330 @@
+{
+ "id": "2026-11-19-anticuchos",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-19_anticuchos.mp4",
+ "fecha": "19 NOV 2026",
+ "seccion": "CLÁSICO CALLEJERO",
+ "titular": [
+  "ANTICUCHOS DE CORAZÓN:",
+  "¡A LA BRASA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:anticuchos_2|ANTICUCHOS DE CORAZÓN",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el palito más querido del Perú: ¡*anticuchos de corazón!*",
+   "voz": "¡Hola, cocineros! Hoy, el palito más querido del Perú: ¡anticuchos de corazón!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:anticuchos_2|ANTICUCHOS DE CORAZÓN"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* lo dice así: en el mundo hay yakitori, satay, kebab… pero para los peruanos, *ningún palito* nos conmueve más.",
+   "voz": "Gastón Acurio dice: hay yakitori, satay, kebab… pero para los peruanos, ningún palito nos conmueve más que un anticucho de corazón.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:anticuchos_3|EL PALITO PERUANO",
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "NINGÚN PALITO NOS CONMUEVE MÁS",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, a mí *ningún palito* me conmueve más… ¡que el del helado!",
+   "voz": "Chef, a mí ningún palito me conmueve más… ¡que el del helado!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "Es uno de los *platos bandera* del Perú. Nació en la *calle*, y hoy está en los restaurantes más prestigiosos.",
+   "voz": "Es uno de los platos bandera del Perú. Nació en la calle, y hoy está en los restaurantes más prestigiosos.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:anticuchos_3|PLATO BANDERA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "La receta original es para *dos kilos*. Para cuatro, la hacemos a la mitad: *un kilo* de corazón de res.",
+   "voz": "La receta original es para dos kilos. Para cuatro, la hacemos a la mitad: un kilo de corazón de res.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:anticuchos|1 KG DE CORAZÓN DE RES",
+   "tarjeta": {
+    "label": "PARA 4",
+    "valor": "MEDIA RECETA",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "El aderezo: *dos tazas* de ají panca licuado y *media taza* de vinagre de vino.",
+   "voz": "El aderezo: dos tazas de ají panca licuado, y media taza de vinagre de vino.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:aji_panca|2 TAZAS DE AJÍ PANCA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "*Una cucharada* de orégano molido, *una* de ajo, *media* de comino, sal y pimienta.",
+   "voz": "Una cucharada de orégano molido, una de ajo, media de comino, sal y pimienta.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:oregano,ajo_0|1 CDA ORÉGANO|1 CDA AJO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: corta el corazón en filetes *gruesitos*. Quítale los *nervios* y la *grasa*.",
+   "voz": "Paso uno: corta el corazón en filetes gruesitos. Quítale los nervios y la grasa.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "pantalla": "lista:PASO 1: EL CORAZÓN|Filetes gruesitos|Sin nervios|Sin grasa"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: pon *tres o cuatro* trozos en cada palito de caña. Calcula *dos o tres* palitos por persona.",
+   "voz": "Paso dos: pon tres o cuatro trozos en cada palito de caña. Calcula dos o tres palitos por persona.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "foto:anticuchos|3 A 4 TROZOS POR PALITO",
+   "tarjeta": {
+    "label": "POR PERSONA",
+    "valor": "2 A 3 PALITOS",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: a *macerar* en el aderezo, *cuatro horas*.",
+   "voz": "Paso tres: a macerar en el aderezo, cuatro horas.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "tarjeta": {
+    "label": "MACERAR",
+    "valor": "4 HORAS",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Cuatro horas! Chef, en ese tiempo yo ya *me comí los palitos*.",
+   "voz": "¡Cuatro horas! Chef, en ese tiempo yo ya me comí los palitos.",
+   "expr": {
+    "beto": "worried",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: *a la brasa*. Y los vas mojando con la misma salsa, usando una escobilla hecha con la *panca del choclo*.",
+   "voz": "Paso cuatro: a la brasa. Y los vas mojando con la misma salsa, usando una escobilla hecha con la panca del choclo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:anticuchos_3|PASO 4: A LA BRASA",
+   "tarjeta": {
+    "label": "EL TRUCO",
+    "valor": "ESCOBILLA DE PANCA",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y hasta cuándo, chef?",
+   "voz": "¿Y hasta cuándo, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "*Término medio*, máximo tres cuartos. Y el gran chef advierte: si los quieres *estilo suela*… es *responsabilidad tuya*.",
+   "voz": "Término medio, máximo tres cuartos. Y Gastón advierte: si los quieres bien cocidos, estilo suela… es responsabilidad tuya.",
+   "expr": {
+    "tito": "laugh",
+    "rosita": "laugh",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "TÉRMINO MEDIO",
+    "delay": 1.0
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Acompaña con *papas en rodajas gruesas*, doradas en la misma parrilla, y *choclo*.",
+   "voz": "Acompaña con papas en rodajas gruesas, doradas en la misma parrilla, y choclo.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:papas_sancochadas,choclo|PAPA A LA PARRILLA|CHOCLO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y como manda la receta, sírvelos con *cremas de ajíes* al costado.",
+   "voz": "Y como manda la receta, sírvelos con cremas de ajíes al costado.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:anticuchos_2|CON CREMAS DE AJÍES"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: una salsa *bien picante*. Licúa *rocoto* con cebolla, cebolla china, ajo, limón y vinagre.",
+   "voz": "Y el secreto de Gastón: una salsa bien picante. Licúa rocoto con cebolla, cebolla china, ajo, limón y vinagre.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "fotos:rocoto,cebolla_roja_2,cebolla_china_3,limon|ROCOTO|CEBOLLA|CEBOLLA CHINA|LIMÓN",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "SALSA DE ROCOTO",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Súmale *más cebolla china*, culantro picadito, sal y pimienta. ¡Y bañas tus anticuchos!",
+   "voz": "Súmale más cebolla china, culantro picadito, sal y pimienta. ¡Y bañas tus anticuchos!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:anticuchos_4|¡A BAÑARLOS!"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Bien picante? Chef, alcánzame *un vaso de chicha*… ¡o dos!",
+   "voz": "¿Bien picante? Chef, alcánzame un vaso de chicha… ¡o dos!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:chicha_morada|¡CHICHA MORADA!"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:anticuchos_2|¡A LA MESA!"
+  }
+ ]
+}
