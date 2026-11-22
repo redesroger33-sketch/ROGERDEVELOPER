@@ -1,0 +1,313 @@
+{
+ "id": "2026-11-22-carapulcra",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-22_carapulcra.mp4",
+ "fecha": "22 NOV 2026",
+ "seccion": "GUISO CRIOLLO",
+ "titular": [
+  "CARAPULCRA:",
+  "¡CON PAPA SECA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:carapulcra|CARAPULCRA",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, uno de los guisos más queridos del Perú: ¡la *carapulcra* con papa seca!",
+   "voz": "¡Hola, cocineros! Hoy, uno de los guisos más queridos del Perú: ¡la carapulcra con papa seca!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:carapulcra|CARAPULCRA"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* dice que cada pueblo tiene *su receta*, y que en esa variedad está lo bello del Perú.",
+   "voz": "Gastón Acurio dice que cada pueblo tiene su receta, y que en esa variedad está lo bello del Perú.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:carapulcra_sopa|CADA PUEBLO, SU RECETA",
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "NO EXISTE UNA SOLA VERDAD",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Él probó una *a la leña* en Huaral, otra en Cañete, y en Chincha descubrió que la hacen con *papa fresca*.",
+   "voz": "Él probó una a la leña en Huaral, otra en Cañete, y en Chincha descubrió que la hacen con papa fresca.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "tarjeta": {
+    "label": "EN CHINCHA",
+    "valor": "CON PAPA FRESCA",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "Entonces la mía también vale… ¡aunque la queme *cada domingo*!",
+   "voz": "Entonces la mía también vale… ¡aunque la queme cada domingo!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para unas cuatro personas: *dos tazas* de papa seca y *medio kilo* de panceta de cerdo en trozos chicos.",
+   "voz": "Para unas cuatro personas: dos tazas de papa seca, y medio kilo de panceta de cerdo en trozos chicos.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "lista:INSUMOS (PARA 4)|2 tazas de papa seca|½ kg de panceta de cerdo|2 cebollas rojas|1 cda de ajo molido"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Además: *media taza* de ají panca licuado, *una taza* de papa blanca en dados y *media taza* de maní tostado y molido.",
+   "voz": "Además: media taza de ají panca licuado, una taza de papa blanca en dados, y media taza de maní tostado y molido.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:aji_panca,mani|½ TAZA AJÍ PANCA|½ TAZA MANÍ"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y para el toque: una pizca de *clavo*, de *anís*, pimienta, sal y comino. Y caldo de *huesos de cerdo*.",
+   "voz": "Y para el toque: una pizca de clavo, de anís, pimienta, sal y comino. Y caldo de huesos de cerdo.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "foto:clavo|UNA PIZCA DE CLAVO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: en una sartén, *tuesta ligeramente* la papa seca. Luego déjala *remojar* en agua tibia.",
+   "voz": "Paso uno: en una sartén, tuesta ligeramente la papa seca. Luego déjala remojar en agua tibia.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 1: LA PAPA SECA|Tostar ligeramente|Remojar en agua tibia"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: suda las cebollas *bien finas* a fuego lento, con el ajo. Suma el ají panca y *dóralo bien*.",
+   "voz": "Paso dos: suda las cebollas bien finas a fuego lento, con el ajo. Suma el ají panca, y dóralo bien.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:aji_panca|PASO 2: EL ADEREZO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: la panceta, a *dorar*. Luego la papa seca con las especias. *Sigue dorando*.",
+   "voz": "Paso tres: la panceta, a dorar. Luego la papa seca con las especias. Sigue dorando.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 3: A DORAR"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y cuándo va el caldo, chef?",
+   "voz": "¿Y cuándo va el caldo, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Ahora. Añade el caldo de huesos, y cuando empiece a *espesar*, suma la papa blanca y el maní.",
+   "voz": "Ahora. Añade el caldo de huesos, y cuando empiece a espesar, suma la papa blanca y el maní.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 4: EL CALDO|Caldo de huesos de cerdo|Cuando espese: papa blanca|Y el maní molido"
+  },
+  {
+   "quien": "tito",
+   "texto": "Deja que tome *punto* a fuego lento.",
+   "voz": "Deja que tome punto a fuego lento.",
+   "expr": {
+    "tito": "serious",
+    "beto": "worried"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "FUEGO LENTO",
+    "delay": 0.8
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿A fuego lento? Chef, yo cocino *a fuego de apuro*.",
+   "voz": "¿A fuego lento? Chef, yo cocino a fuego de apuro.",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Por eso se te quema, Beto. Paciencia.",
+   "voz": "Por eso se te quema, Beto. Paciencia.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Se acompaña con *sopa seca*: tallarines gruesos cocidos en un aderezo con caldo, albahaca y tomate.",
+   "voz": "Se acompaña con sopa seca: tallarines gruesos cocidos en un aderezo con caldo, albahaca y tomate.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:carapulcra_sopa|CON SOPA SECA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: cuando amanece *travieso*, le echa un trozo de *chocolate con maní* al guiso.",
+   "voz": "Y el secreto de Gastón: cuando amanece travieso, le echa un trozo de chocolate con maní al guiso.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:mani|EL SECRETO",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "CHOCOLATE CON MANÍ",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Chocolate en el guiso? Chef, ¡por fin un guiso que me gusta *antes de probarlo*!",
+   "voz": "¿Chocolate en el guiso? Chef, ¡por fin un guiso que me gusta antes de probarlo!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "rosita",
+   "texto": "Sírvela en una fuente con la sopa seca al lado, y su *ají molido* aparte.",
+   "voz": "Sírvela en una fuente con la sopa seca al lado, y su ají molido aparte.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "foto:carapulcra_sopa|¡A SERVIR!"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:carapulcra|¡A LA MESA!"
+  }
+ ]
+}

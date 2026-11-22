@@ -1366,5 +1366,23 @@
   "autor": "pic_p_ter",
   "lic": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Glass_cola.jpg"
+ },
+ "carapulcra": {
+  "title": "File:Carapulcra.jpg",
+  "autor": "No machine-readable author provided. Manuel González Olaeche",
+  "lic": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Carapulcra.jpg"
+ },
+ "carapulcra_2": {
+  "title": "File:Carapulcra definitiva.jpg",
+  "autor": "Jimena Bernal",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Carapulcra_definitiva.jpg"
+ },
+ "carapulcra_sopa": {
+  "title": "File:Carapulcra con Sopa Seca Chinchana 2.jpg",
+  "autor": "Angel Olin from Peru",
+  "lic": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Carapulcra_con_Sopa_Seca_Chinchana_2.jpg"
  }
 }
