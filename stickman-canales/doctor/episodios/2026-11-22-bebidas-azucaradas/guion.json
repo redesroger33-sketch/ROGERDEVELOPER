@@ -1,0 +1,293 @@
+{
+ "id": "2026-11-22-bebidas-azucaradas",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-22_bebidas_azucaradas.mp4",
+ "fecha": "22 NOV 2026",
+ "seccion": "AZÚCAR Y DIABETES",
+ "titular": [
+  "BEBIDAS AZUCARADAS:",
+  "+18 % DE DIABETES"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:gaseosa_vaso_2|BEBIDAS AZUCARADAS",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, un cambio pequeño con gran impacto: *menos bebidas azucaradas*.",
+   "voz": "¡Hola, familia sana! Hoy, un cambio pequeño con gran impacto: menos bebidas azucaradas.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:gaseosa_vaso_2|BEBIDAS AZUCARADAS"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, ¿ni una gaseosita con el almuerzo?",
+   "voz": "Doctor, ¿ni una gaseosita con el almuerzo?",
+   "expr": {
+    "vita": "worried",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "fx": [
+    "sweat:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Mira el dato. Un análisis en la revista *BMJ*, de dos mil quince, reunió *diecisiete* grupos de personas seguidas por años.",
+   "voz": "Mira el dato. Un análisis en la revista BMJ, de dos mil quince, reunió diecisiete grupos de personas seguidas por años.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "BMJ · 2015",
+    "valor": "17 ESTUDIOS · 38 253 CASOS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Cada *porción diaria* de bebida azucarada se asoció con *dieciocho por ciento más* de diabetes tipo dos.",
+   "voz": "Cada porción diaria de bebida azucarada se asoció con dieciocho por ciento más de diabetes tipo dos.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "foto:glucometro_4|DIABETES TIPO 2",
+   "tarjeta": {
+    "label": "1 PORCIÓN AL DÍA",
+    "valor": "+18 % DE DIABETES",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y no será que la gente que toma gaseosa *pesa más*?",
+   "voz": "¿Y no será que la gente que toma gaseosa pesa más?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Buena pregunta. Aun ajustando por el peso, el riesgo seguía *trece por ciento más alto*.",
+   "voz": "Buena pregunta. Aun ajustando por el peso, el riesgo seguía trece por ciento más alto.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "AJUSTADO POR PESO",
+    "valor": "+13 %",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Y los autores calculan que, en *Estados Unidos*, casi *dos millones* de casos en diez años podrían deberse a estas bebidas, si la relación es causal.",
+   "voz": "Y los autores calculan que, en Estados Unidos, casi dos millones de casos en diez años podrían deberse a estas bebidas, si la relación es causal.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "serious"
+   },
+   "tarjeta": {
+    "label": "EE. UU. · 10 AÑOS",
+    "valor": "1,8 MILLONES DE CASOS",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Entonces me paso a la gaseosa *sin azúcar* o al *jugo de caja*, ¿no?",
+   "voz": "Entonces me paso a la gaseosa sin azúcar, o al jugo de caja, ¿no?",
+   "expr": {
+    "vita": "happy",
+    "bruno": "serious"
+   },
+   "pantalla": "foto:jugo_naranja|¿Y EL JUGO?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: los autores dicen que *ni las light ni los jugos* parecen alternativas saludables para prevenir la diabetes.",
+   "voz": "Ojo: los autores dicen que ni las light ni los jugos parecen alternativas saludables para prevenir la diabetes.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "LOS AUTORES",
+    "valor": "NO SON BUENA ALTERNATIVA",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Con honestidad: son estudios de *observación*. Muestran asociación, no prueban la causa.",
+   "voz": "Con honestidad: son estudios de observación. Muestran asociación, no prueban la causa.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pantalla": "lista:CON HONESTIDAD|Estudios de observación|Muestran asociación|No prueban la causa"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y cuánto azúcar al día está bien, doctor?",
+   "voz": "¿Y cuánto azúcar al día está bien, doctor?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:azucar_cubos|¿CUÁNTO AZÚCAR?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "La *OMS* recomienda menos del *diez por ciento* de las calorías en azúcar libre: unas *doce cucharaditas*. Y mejor aún, la mitad.",
+   "voz": "La OMS recomienda menos del diez por ciento de las calorías en azúcar libre: unas doce cucharaditas. Y mejor aún, la mitad.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "OMS · LÍMITE",
+    "valor": "MENOS DE 12 CUCHARADITAS",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Doce cucharaditas! Doctor, yo le pongo eso *solo al café* de la mañana.",
+   "voz": "¡Doce cucharaditas! Doctor, yo le pongo eso solo al café de la mañana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:cafe_taza|¡VITA, EL CAFÉ!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu receta natural:",
+   "voz": "Tu receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:vaso_agua|TU RECETA NATURAL"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Cambia la gaseosa por *agua*. Si quieres sabor, unas gotas de *limón*. Y la chicha casera, con *poca azúcar*.",
+   "voz": "Cambia la gaseosa por agua. Si quieres sabor, unas gotas de limón. Y la chicha casera, con poca azúcar.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Agua en vez de gaseosa|Gotas de limón para el sabor|Chicha casera con poca azúcar|Fruta entera, no jugo"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y la *fruta entera* en vez del jugo. Mantiene la *fibra*.",
+   "voz": "Y la fruta entera, en vez del jugo. Mantiene la fibra.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:mercado_frutas|FRUTA ENTERA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si tienes *diabetes* o el azúcar alto, sigue tu tratamiento y tus controles.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes diabetes, o el azúcar alto, sigue tu tratamiento y tus controles.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA A TU MÉDICO SI|Tienes diabetes|Tienes el azúcar alto|Tienes sed o hambre excesiva"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: *un día* sin gaseosa. Solo agua.",
+   "voz": "Hoy, tu tarea: un día sin gaseosa. Solo agua.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:vaso_agua_2|TAREA: 1 DÍA SIN GASEOSA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con el *gaseosero* de tu familia! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con el gaseosero de tu familia! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:vaso_agua|¡SALUD CON AGUA!"
+  }
+ ]
+}

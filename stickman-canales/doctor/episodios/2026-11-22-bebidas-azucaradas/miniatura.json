@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["BEBIDAS AZUCARADAS","+18 % DE DIABETES"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"gaseosa_vaso_2","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"serious"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["alert:vita"],"sello":{"texto":"1 AL DÍA","size":64,"x":880,"y":800},"franja":"17 ESTUDIOS · BMJ 2015"}
