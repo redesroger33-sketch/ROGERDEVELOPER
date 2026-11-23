@@ -1,0 +1,325 @@
+{
+ "id": "2026-11-23-chupe-de-habas",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-23_chupe_de_habas.mp4",
+ "fecha": "23 NOV 2026",
+ "seccion": "SOPA ANDINA",
+ "titular": [
+  "CHUPE DE HABAS:",
+  "¡CON HUEVO REVENTADO!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:habas|CHUPE DE HABAS",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, una sopa que abraza: ¡*chupe de habas*!",
+   "voz": "¡Hola, cocineros! Hoy, una sopa que abraza: ¡chupe de habas!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:habas|CHUPE DE HABAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* lo dice así: *bienvenidas las sopas, caldos y chupes* a nuestras vidas.",
+   "voz": "Gastón Acurio lo dice así: bienvenidas las sopas, caldos y chupes a nuestras vidas.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "BIENVENIDOS LOS CHUPES",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Él recuerda cuando su papá lo llevaba a una picantería arequipeña por *la reina de las ollas*: el chupe de camarones.",
+   "voz": "Él recuerda cuando su papá lo llevaba a una picantería arequipeña, por la reina de las ollas: el chupe de camarones.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:chupe_camarones|LA REINA DE LAS OLLAS"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y hoy hay camarones, chef? ¡Traje *mi babero*!",
+   "voz": "¿Y hoy hay camarones, chef? ¡Traje mi babero!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "Hoy no, Beto. Hoy, la versión *de habas*, igual de rica.",
+   "voz": "Hoy no, Beto. Hoy, la versión de habas, igual de rica.",
+   "expr": {
+    "tito": "happy",
+    "beto": "worried"
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *cuatro tazas* de habas crudas y peladas, y *cuatro* papas amarillas en cuartos.",
+   "voz": "Para cuatro: cuatro tazas de habas crudas y peladas, y cuatro papas amarillas en cuartos.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:habas|4 TAZAS DE HABAS",
+   "tarjeta": {
+    "label": "Y ADEMÁS",
+    "valor": "4 PAPAS AMARILLAS",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para el aderezo: *una cebolla roja*, *una cucharada* de ajo, *un cuarto de taza* de ají amarillo y *dos cucharadas* de ají panca.",
+   "voz": "Para el aderezo: una cebolla roja, una cucharada de ajo, un cuarto de taza de ají amarillo, y dos cucharadas de ají panca.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:cebolla_roja_2,ajo_0,aji_amarillo_2,aji_panca|1 CEBOLLA ROJA|1 CDA DE AJO|¼ TAZA AJÍ AMARILLO|2 CDAS AJÍ PANCA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y: *media taza* de huacatay, *una taza* de queso fresco, *media taza* de leche evaporada y *cuatro huevos*.",
+   "voz": "Y: media taza de huacatay, una taza de queso fresco, media taza de leche evaporada, y cuatro huevos.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:queso_fresco,leche_evaporada,huevos|1 TAZA QUESO FRESCO|½ TAZA LECHE|4 HUEVOS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: el aderezo. Cebolla bien picadita, ajo y los dos ajíes. *Diez minutos*.",
+   "voz": "Paso uno: el aderezo. Cebolla bien picadita, ajo, y los dos ajíes. Diez minutos.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 1: EL ADEREZO",
+   "tarjeta": {
+    "label": "ADEREZO",
+    "valor": "10 MINUTOS",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: las habas y el *huacatay*. Unos minutos más, y luego las papas, una ramita de *orégano* y caldo de verduras.",
+   "voz": "Paso dos: las habas y el huacatay. Unos minutos más, y luego las papas, una ramita de orégano, y caldo de verduras.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 2: A LA OLLA|Habas y huacatay|Papas amarillas|1 ramita de orégano|Caldo de verduras hasta cubrir"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y cuánto hierve, chef?",
+   "voz": "¿Y cuánto hierve, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "Hasta que tome un punto *ligeramente espeso*. Ahí va el queso, más huacatay, unas rodajas de *rocoto* y la leche.",
+   "voz": "Hasta que tome un punto ligeramente espeso. Ahí va el queso, más huacatay, unas rodajas de rocoto, y la leche.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "fotos:queso_fresco,rocoto,leche_evaporada|QUESO|ROCOTO|LECHE"
+  },
+  {
+   "quien": "tito",
+   "texto": "Sal, pimienta y comino. Un hervor, y ahora lo más lindo: *revienta los cuatro huevos* encima.",
+   "voz": "Sal, pimienta y comino. Un hervor, y ahora lo más lindo: revienta los cuatro huevos encima.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:huevos|REVIENTA 4 HUEVOS"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y los bato bien, chef? ¡Soy experto batiendo!",
+   "voz": "¿Y los bato bien, chef? ¡Soy experto batiendo!",
+   "expr": {
+    "beto": "up",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "*Ni los muevas*, Beto. Déjalos cuajar solitos. ¡Listo!",
+   "voz": "Ni los muevas, Beto. Déjalos cuajar solitos. ¡Listo!",
+   "expr": {
+    "tito": "laugh",
+    "beto": "worried"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "NO MOVER NI BATIR",
+    "delay": 0.8
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y si tienes *ollucos*, *ocas* u otros tubérculos, también puedes sumarlos.",
+   "voz": "Y si tienes ollucos, ocas u otros tubérculos, también puedes sumarlos.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:ollucos_crudos|OLLUCOS, OCAS…"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y un dato: en la misma nota, una nutricionista explica que estas sopas, con tanto *líquido*, también ayudan a *hidratarnos* a cualquier edad.",
+   "voz": "Y un dato: en la misma nota, una nutricionista explica que estas sopas, con tanto líquido, también ayudan a hidratarnos a cualquier edad.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:habas|DATO DE NUTRICIÓN",
+   "tarjeta": {
+    "label": "DATO",
+    "valor": "SOPA QUE HIDRATA",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: *cuidado con el queso*. Si usas queso fresco andino, *saladito*, prueba la sal *al final*.",
+   "voz": "Y el secreto de Gastón: cuidado con el queso. Si usas queso fresco andino, saladito, prueba la sal al final.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:queso_fresco|EL SECRETO",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "LA SAL, AL FINAL",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Por fin un secreto que entiendo: *probar*! Chef, yo pruebo todo… ¡dos veces!",
+   "voz": "¡Por fin un secreto que entiendo: probar! Chef, yo pruebo todo… ¡dos veces!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa, bien calientito! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa, bien calientito! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:habas|¡A LA MESA!"
+  }
+ ]
+}
