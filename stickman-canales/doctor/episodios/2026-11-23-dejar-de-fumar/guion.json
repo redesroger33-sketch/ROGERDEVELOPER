@@ -1,0 +1,282 @@
+{
+ "id": "2026-11-23-dejar-de-fumar",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-23_dejar_de_fumar.mp4",
+ "fecha": "23 NOV 2026",
+ "seccion": "PULMONES Y CORAZÓN",
+ "titular": [
+  "DEJAR DE FUMAR:",
+  "NUNCA ES TARDE"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:no_fumar|NUNCA ES TARDE",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, una buena noticia para quien fuma: *nunca es tarde* para dejarlo.",
+   "voz": "¡Hola, familia sana! Hoy, una buena noticia para quien fuma: nunca es tarde para dejarlo.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:no_fumar|NUNCA ES TARDE"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, mi tío dice: *ya fumé cuarenta años*, ¿para qué dejarlo ahora?",
+   "voz": "Doctor, mi tío dice: ya fumé cuarenta años, ¿para qué dejarlo ahora?",
+   "expr": {
+    "vita": "worried",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "shrug"
+   },
+   "pantalla": "foto:fumador|¿PARA QUÉ DEJARLO?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Mira este estudio histórico: siguieron a *treinta y cuatro mil* médicos británicos durante *cincuenta años*.",
+   "voz": "Mira este estudio histórico: siguieron a treinta y cuatro mil médicos británicos durante cincuenta años.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "BMJ · 2004",
+    "valor": "34 439 MÉDICOS · 50 AÑOS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Los que siguieron fumando cigarrillos murieron, en promedio, unos *diez años antes* que los que nunca fumaron.",
+   "voz": "Los que siguieron fumando cigarrillos murieron, en promedio, unos diez años antes que los que nunca fumaron.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "foto:cenicero|10 AÑOS MENOS DE VIDA",
+   "tarjeta": {
+    "label": "SI SIGUES FUMANDO",
+    "valor": "−10 AÑOS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Diez años! ¿Y los que lo dejaron?",
+   "voz": "¡Diez años! ¿Y los que lo dejaron?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ahí está lo bueno. Dejarlo a los *treinta* ganó unos *diez años* de vida. A los *cuarenta*, unos *nueve*.",
+   "voz": "Ahí está lo bueno. Dejarlo a los treinta ganó unos diez años de vida. A los cuarenta, unos nueve.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "pantalla": "lista:AÑOS DE VIDA GANADOS|Dejarlo a los 30: unos 10|Dejarlo a los 40: unos 9|Dejarlo a los 50: unos 6|Dejarlo a los 60: unos 3"
+  },
+  {
+   "quien": "bruno",
+   "texto": "A los *cincuenta*, unos *seis*. Y aun a los *sesenta*, unos *tres años* más de vida.",
+   "voz": "A los cincuenta, unos seis. Y aun a los sesenta, unos tres años más de vida.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "tarjeta": {
+    "label": "DEJARLO A LOS 60",
+    "valor": "+3 AÑOS",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "O sea que mi tío, a los sesenta, todavía *gana años*.",
+   "voz": "O sea que mi tío, a los sesenta, todavía gana años.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:adulto_mayor_caminando|¡TODAVÍA GANA AÑOS!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Exacto. Dejarlo a los *cincuenta* redujo el riesgo a la *mitad*. Y a los *treinta*, evitó *casi todo* el riesgo extra.",
+   "voz": "Exacto. Dejarlo a los cincuenta redujo el riesgo a la mitad. Y a los treinta, evitó casi todo el riesgo extra.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "DEJARLO A LOS 50",
+    "valor": "RIESGO A LA MITAD",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: el estudio fue solo en *hombres*, médicos británicos. Y la OMS es clara: *no existe* un nivel seguro de tabaco.",
+   "voz": "Ojo: el estudio fue solo en hombres, médicos británicos. Y la OMS es clara: no existe un nivel seguro de tabaco.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:fumador|SOLO HOMBRES MÉDICOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y la OMS dice que el tabaco mata a más de *siete millones* de personas al año. Más de *un millón y medio* ni siquiera fumaban.",
+   "voz": "Y la OMS dice que el tabaco mata a más de siete millones de personas al año. Más de un millón y medio ni siquiera fumaban.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "serious"
+   },
+   "pantalla": "foto:cenicero|EL HUMO AJENO TAMBIÉN DAÑA",
+   "tarjeta": {
+    "label": "OMS",
+    "valor": "+7 MILLONES DE MUERTES AL AÑO",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Yo también dejé algo: *el chisme*… ¡bueno, casi!",
+   "voz": "Yo también dejé algo: el chisme… ¡bueno, casi!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu plan natural:",
+   "voz": "Tu plan natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:caminar_parque_4|TU PLAN"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Elige una *fecha*, cuéntaselo a tu familia, y cuando llegue el antojo, *camina cinco minutos* o toma agua.",
+   "voz": "Elige una fecha, cuéntaselo a tu familia, y cuando llegue el antojo, camina cinco minutos o toma agua.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:PLAN PARA DEJARLO|Elige una fecha|Cuéntaselo a tu familia|Antojo: camina 5 minutos|Toma agua|Pide ayuda profesional"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Él puede darte *apoyo y tratamiento* para que te sea más fácil dejarlo.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Él puede darte apoyo y tratamiento para que te sea más fácil dejarlo.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:PIDE AYUDA SI|Lo intentaste y recaíste|Tienes tos o falta de aire|Tienes problemas del corazón"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y si recaes, no te rindas. Muchos lo logran *después de varios intentos*.",
+   "voz": "Y si recaes, no te rindas. Muchos lo logran después de varios intentos.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: si fumas, *elige tu fecha*. Si no, *anima* a quien fuma.",
+   "voz": "Hoy, tu tarea: si fumas, elige tu fecha. Si no, anima a quien fuma.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:no_fumar|TAREA: ELIGE TU FECHA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con quien necesita escucharlo! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con quien necesita escucharlo! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:caminar_parque_4|¡A RESPIRAR!"
+  }
+ ]
+}

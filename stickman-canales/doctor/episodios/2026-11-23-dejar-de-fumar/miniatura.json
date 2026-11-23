@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["DEJAR DE FUMAR","NUNCA ES TARDE"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"no_fumar","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"happy"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["stars:bruno"],"sello":{"texto":"HASTA +10 AÑOS","size":46,"x":880,"y":800},"franja":"34 439 MÉDICOS · 50 AÑOS"}
