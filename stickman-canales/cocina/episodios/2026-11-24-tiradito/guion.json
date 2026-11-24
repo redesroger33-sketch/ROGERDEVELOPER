@@ -1,0 +1,318 @@
+{
+ "id": "2026-11-24-tiradito",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-24_tiradito.mp4",
+ "fecha": "24 NOV 2026",
+ "seccion": "CLÁSICO MARINO",
+ "titular": [
+  "TIRADITO CRIOLLO:",
+  "¡CÍTRICO Y PICANTE!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:tiradito|TIRADITO CRIOLLO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, el primo elegante del cebiche: ¡el *tiradito criollo*!",
+   "voz": "¡Hola, cocineros! Hoy, el primo elegante del cebiche: ¡el tiradito criollo!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:tiradito|TIRADITO CRIOLLO"
+  },
+  {
+   "quien": "beto",
+   "texto": "Chef, ¿y en qué se diferencia? ¿El tiradito *no tiene cebolla* porque se la tiraron?",
+   "voz": "Chef, ¿y en qué se diferencia? ¿El tiradito no tiene cebolla porque se la tiraron?",
+   "expr": {
+    "beto": "think",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "tito",
+   "texto": "No. Va en *filetitos* y con una salsa *licuada* encima. Hoy seguimos la receta del *gran chef*.",
+   "voz": "No. Va en filetitos, y con una salsa licuada encima. Hoy seguimos la receta de Gastón Acurio.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Él dice que se hace con el pescado *más rico y barato* de la temporada: pejerrey en invierno, *bonito* en verano.",
+   "voz": "Él dice que se hace con el pescado más rico y barato de la temporada: pejerrey en invierno, bonito en verano.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:bonito_pez|PESCADO DE TEMPORADA",
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "SOLO PESCADO FRESQUITO",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *medio kilo* de filete de pescado bien fresco.",
+   "voz": "Para cuatro: medio kilo de filete de pescado bien fresco.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:pescado_fresco|½ KG DE FILETE"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para la salsa: el ají de tu gusto, *dos* si son grandes o *cuatro* si son chicos, y el jugo de *quince limones*.",
+   "voz": "Para la salsa: el ají de tu gusto, dos si son grandes o cuatro si son chicos, y el jugo de quince limones.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:aji_amarillo_2,rocoto,limon|AJÍ AMARILLO|O ROCOTO|15 LIMONES"
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y cuál ají, chef?",
+   "voz": "¿Y cuál ají, chef?",
+   "expr": {
+    "beto": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Según la temporada: *limo*, *rocoto* o el *amarillo* de toda la vida.",
+   "voz": "Según la temporada: limo, rocoto, o el amarillo de toda la vida.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "tarjeta": {
+    "label": "EL AJÍ",
+    "valor": "LIMO · ROCOTO · AMARILLO",
+    "delay": 1.2
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y *un tallo* de culantro, una pizca de ajo, de apio y de kion.",
+   "voz": "Y un tallo de culantro, una pizca de ajo, de apio y de kion.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:culantro_1,apio,kion|1 TALLO CULANTRO|PIZCA DE APIO|PIZCA DE KION"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Quince limones! Chef, voy a terminar con los dedos *arrugados* como pasas.",
+   "voz": "¡Quince limones! Chef, voy a terminar con los dedos arrugados como pasas.",
+   "expr": {
+    "beto": "worried",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "sweat:beto"
+   ],
+   "pantalla": "foto:limon|¡A EXPRIMIR!"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: corta el pescado en *filetitos*, ni muy delgados ni muy gruesos. Sazona con *sal* para darle firmeza. Al refri.",
+   "voz": "Paso uno: corta el pescado en filetitos, ni muy delgados ni muy gruesos. Sazona con sal para darle firmeza. Al refri.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "pantalla": "lista:PASO 1: EL PESCADO|Filetitos, ni gruesos ni delgados|Sal para darle firmeza|Al refrigerador"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: licúa el ají *sin venas ni pepas* con pedacitos de las *puntas* del filete, el culantro, ajo, apio, kion, el limón, sal y pimienta.",
+   "voz": "Paso dos: licúa el ají sin venas ni pepas con pedacitos de las puntas del filete, el culantro, ajo, apio, kion, el limón, sal y pimienta.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "lista:PASO 2: LA SALSA|Ají sin venas ni pepas|Puntas del filete|Culantro, ajo, apio, kion|Jugo de 15 limones"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y las puntitas del pescado van en la salsa, chef?",
+   "voz": "¿Y las puntitas del pescado van en la salsa, chef?",
+   "expr": {
+    "rosita": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Sí, le dan *cuerpo* y sabor. Paso tres: *cuela* la mezcla, prueba la sal y el limón.",
+   "voz": "Sí, le dan cuerpo y sabor. Paso tres: cuela la mezcla, y prueba la sal y el limón.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "tarjeta": {
+    "label": "PASO 3",
+    "valor": "COLAR Y PROBAR",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Tiene que estar *cítrico*, *picante* y *refrescante*. Échale un *hielo* para que esté bien fría.",
+   "voz": "Tiene que estar cítrico, picante y refrescante. Échale un hielo para que esté bien fría.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "CÍTRICO, PICANTE, REFRESCANTE",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: acomoda los filetitos en el plato y *baña* con la salsa. Acompaña con *choclito* desgranado.",
+   "voz": "Paso cuatro: acomoda los filetitos en el plato, y baña con la salsa. Acompaña con choclito desgranado.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "pantalla": "fotos:tiradito,choclo|¡A BAÑAR!|CON CHOCLITO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: antes del limón, sazona el pescado *solo con sal* y trozos de ají, y déjalo reposar *veinte minutos*.",
+   "voz": "Y el secreto de Gastón: antes del limón, sazona el pescado solo con sal y trozos de ají, y déjalo reposar veinte minutos.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:pescado_fresco|EL SECRETO",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "SAL Y AJÍ: 20 MINUTOS",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Veinte minutos! Justo lo que me demoro en *exprimir* los quince limones.",
+   "voz": "¡Veinte minutos! Justo lo que me demoro en exprimir los quince limones.",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "rosita",
+   "texto": "Con pescado crudo, usa siempre pescado *bien fresco* y sírvelo *al momento*.",
+   "voz": "Con pescado crudo, usa siempre pescado bien fresco, y sírvelo al momento.",
+   "expr": {
+    "rosita": "serious",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:bonito_pez|SIEMPRE BIEN FRESCO"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:tiradito|¡A LA MESA!"
+  }
+ ]
+}
