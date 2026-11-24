@@ -1,0 +1,277 @@
+{
+ "id": "2026-11-24-linaza-y-presion",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-24_linaza_y_presion.mp4",
+ "fecha": "24 NOV 2026",
+ "seccion": "PRESIÓN ARTERIAL",
+ "titular": [
+  "LINAZA Y PRESIÓN:",
+  "LO QUE DICE UN ENSAYO"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:linaza|LA LINAZA",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy, una semillita que nuestras abuelas conocían bien: la *linaza*.",
+   "voz": "¡Hola, familia sana! Hoy, una semillita que nuestras abuelas conocían bien: la linaza.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:linaza|LA LINAZA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿La del *emoliente*, doctor? ¿Y qué tiene de especial?",
+   "voz": "¿La del emoliente, doctor? ¿Y qué tiene de especial?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:flor_linaza|PLANTA DE LINAZA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tiene *omega tres* vegetal, *fibra* y unos compuestos llamados *lignanos*. Y un ensayo la probó en la *presión arterial*.",
+   "voz": "Tiene omega tres vegetal, fibra, y unos compuestos llamados lignanos. Y un ensayo la probó en la presión arterial.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:LA LINAZA TIENE|Omega 3 vegetal|Fibra|Lignanos"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Fue en Canadá, publicado en la revista *Hypertension*, en dos mil trece: *ciento diez* pacientes, durante *seis meses*.",
+   "voz": "Fue en Canadá, publicado en la revista Hypertension, en dos mil trece: ciento diez pacientes, durante seis meses.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pantalla": "foto:flor_linaza|ENSAYO EN CANADÁ",
+   "tarjeta": {
+    "label": "HYPERTENSION · 2013",
+    "valor": "110 PACIENTES · 6 MESES",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Por sorteo, la mitad comió alimentos con *treinta gramos de linaza molida* al día. La otra mitad, un placebo.",
+   "voz": "Por sorteo, la mitad comió alimentos con treinta gramos de linaza molida al día. La otra mitad, un placebo.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:pan_integral|30 G DE LINAZA MOLIDA AL DÍA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y qué pasó con la presión?",
+   "voz": "¿Y qué pasó con la presión?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "lista:LA PRESIÓN ARTERIAL|Máxima (sistólica)|Mínima (diastólica)|Se mide en mm Hg"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Con linaza, la presión *máxima* quedó unos *diez* puntos más baja, y la *mínima*, unos *siete*, frente al placebo.",
+   "voz": "Con linaza, la presión máxima quedó unos diez puntos más baja, y la mínima, unos siete, frente al placebo.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "tarjeta": {
+    "label": "FRENTE AL PLACEBO",
+    "valor": "−10 / −7 MM HG",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Y en quienes empezaron con la máxima en *ciento cuarenta o más*, bajó unos *quince* puntos.",
+   "voz": "Y en quienes empezaron con la máxima en ciento cuarenta o más, bajó unos quince puntos.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "tarjeta": {
+    "label": "SI EMPEZABAN EN 140+",
+    "valor": "−15 MM HG",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y ojo: el peso *no cambió* entre los grupos. No fue por bajar de peso.",
+   "voz": "Y ojo: el peso no cambió entre los grupos. No fue por bajar de peso.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Pero con honestidad: eran pacientes con problemas de *arterias en las piernas*, que ya llevaban su *tratamiento*. Fue un estudio *pequeño*.",
+   "voz": "Pero con honestidad: eran pacientes con problemas de arterias en las piernas, que ya llevaban su tratamiento. Fue un estudio pequeño.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CON HONESTIDAD|Pacientes con enfermedad arterial|Ya tomaban su tratamiento|Estudio pequeño: 110 personas"
+  },
+  {
+   "quien": "vita",
+   "texto": "Entonces me como *un kilo* de linaza y me olvido del doctor.",
+   "voz": "Entonces me como un kilo de linaza, y me olvido del doctor.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "worried"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:linaza|¡UN KILO NO, VITA!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Nada de eso! La linaza *suma*, no reemplaza tus medicinas.",
+   "voz": "¡Nada de eso! La linaza suma, no reemplaza tus medicinas.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "laugh"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Tu receta natural:",
+   "voz": "Tu receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:avena|TU RECETA NATURAL"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Usa linaza *molida*, porque entera pasa casi sin digerirse. Ponla en la avena, el yogur o la ensalada. Y toma *agua*.",
+   "voz": "Usa linaza molida, porque entera pasa casi sin digerirse. Ponla en la avena, el yogur o la ensalada. Y toma agua.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Linaza molida, no entera|En avena, yogur o ensalada|Empieza con poco|Toma suficiente agua|Menos sal en la mesa"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y *empieza con poco*, porque mucha fibra de golpe puede *hinchar la barriga*.",
+   "voz": "Y empieza con poco, porque mucha fibra de golpe puede hinchar la barriga.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "fotos:yogur,ensalada|EN EL YOGUR|EN LA ENSALADA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. *No dejes* tus medicinas de la presión. Y si tomas *anticoagulantes*, consúltale antes.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. No dejes tus medicinas de la presión. Y si tomas anticoagulantes, consúltale antes.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA ANTES SI|Tomas medicinas para la presión|Tomas anticoagulantes|Tienes problemas digestivos"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: una cucharada de *linaza molida* en tu desayuno.",
+   "voz": "Hoy, tu tarea: una cucharada de linaza molida en tu desayuno.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:avena|TAREA: 1 CUCHARADA"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con quien se controla la *presión*! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con quien se controla la presión! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:linaza|¡A LA LINAZA!"
+  }
+ ]
+}
