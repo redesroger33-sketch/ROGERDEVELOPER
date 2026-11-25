@@ -1,0 +1,300 @@
+{
+ "id": "2026-11-25-menos-sofa",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-25_menos_sofa.mp4",
+ "fecha": "25 NOV 2026",
+ "seccion": "SEDENTARISMO",
+ "titular": [
+  "MENOS SOFÁ:",
+  "CADA 2 HORAS CUENTAN"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:sofa_tv|EL SOFÁ Y LA TELE",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy hablamos de un enemigo silencioso y muy cómodo: *el sofá frente a la tele*.",
+   "voz": "¡Hola, familia sana! Hoy hablamos de un enemigo silencioso y muy cómodo: el sofá frente a la tele.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:sofa_tv|EL SOFÁ Y LA TELE"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, ¡pero si mi novela me relaja!",
+   "voz": "Doctor, ¡pero si mi novela me relaja!",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Un análisis en la revista *JAMA*, de dos mil once, juntó *ocho* estudios grandes.",
+   "voz": "Un análisis en la revista JAMA, de dos mil once, juntó ocho estudios grandes.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "JAMA · 2011",
+    "valor": "8 ESTUDIOS · MILES DE PERSONAS",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Por cada *dos horas diarias* de tele, el riesgo de *diabetes tipo dos* fue *veinte por ciento* mayor.",
+   "voz": "Por cada dos horas diarias de tele, el riesgo de diabetes tipo dos fue veinte por ciento mayor.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "foto:familia_tv|CADA 2 HORAS DE TELE",
+   "tarjeta": {
+    "label": "DIABETES TIPO 2",
+    "valor": "+20 %",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y el corazón, doctor?",
+   "voz": "¿Y el corazón, doctor?",
+   "expr": {
+    "vita": "worried",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Enfermedad del corazón: *quince por ciento* más. Y muerte por cualquier causa: *trece por ciento* más.",
+   "voz": "Enfermedad del corazón: quince por ciento más. Y muerte por cualquier causa: trece por ciento más.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "worried"
+   },
+   "pantalla": "lista:CADA 2 HORAS DE TELE AL DÍA|Diabetes tipo 2: +20 %|Enfermedad del corazón: +15 %|Muerte por cualquier causa: +13 %"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y el riesgo de muerte se notó más cuando pasaban de *tres horas al día*.",
+   "voz": "Y el riesgo de muerte se notó más cuando pasaban de tres horas al día.",
+   "expr": {
+    "vita": "serious",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:cronometro|MÁS DE 3 HORAS",
+   "tarjeta": {
+    "label": "OJO",
+    "valor": "MÁS DE 3 HORAS AL DÍA",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "En números: unos *ciento setenta y seis* casos más de diabetes por cada *cien mil* personas al año.",
+   "voz": "En números: unos ciento setenta y seis casos más de diabetes por cada cien mil personas al año.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "POR 100 000 PERSONAS AL AÑO",
+    "valor": "+176 CASOS DE DIABETES",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Con honestidad: son estudios de *observación*. Muestran una *asociación*, no prueban que la tele sola sea la causa.",
+   "voz": "Con honestidad: son estudios de observación. Muestran una asociación, no prueban que la tele sola sea la causa.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pantalla": "lista:CON HONESTIDAD|Estudios de observación|Muestran asociación|No prueban la causa"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Pero la *OMS* es clara: *toda actividad cuenta*, y todos deberíamos *limitar el tiempo sentados*.",
+   "voz": "Pero la OMS es clara: toda actividad cuenta, y todos deberíamos limitar el tiempo sentados.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "fx": [
+    "stars:bruno"
+   ],
+   "pantalla": "foto:caminar_parque_4|LA OMS RECOMIENDA",
+   "tarjeta": {
+    "label": "OMS",
+    "valor": "TODA ACTIVIDAD CUENTA",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Y si ya hago ejercicio en la mañana, doctor?",
+   "voz": "¿Y si ya hago ejercicio en la mañana, doctor?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   },
+   "pantalla": "foto:sentadilla|¿Y SI YA HAGO EJERCICIO?"
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Excelente! Pero la OMS pide *las dos cosas*: moverte más y *estar menos sentado*.",
+   "voz": "¡Excelente! Pero la OMS pide las dos cosas: moverte más, y estar menos sentado.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "OMS",
+    "valor": "MOVERTE MÁS + SENTARTE MENOS",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Entonces veo la novela… ¡pero *parada* y bailando en los comerciales!",
+   "voz": "Entonces veo la novela… ¡pero parada, y bailando en los comerciales!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5
+  },
+  {
+   "quien": "bruno",
+   "texto": "¡Esa es la idea! Tu receta natural:",
+   "voz": "¡Esa es la idea! Tu receta natural:",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "foto:caminar_parque_4|TU RECETA NATURAL"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Párate en cada *comercial*. Camina mientras hablas por *teléfono*. Y cambia una hora de tele por una *caminata*.",
+   "voz": "Párate en cada comercial. Camina mientras hablas por teléfono. Y cambia una hora de tele por una caminata.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "lista:RECETA NATURAL|Párate en cada comercial|Camina al hablar por teléfono|Cambia 1 hora de tele por caminata|Usa las escaleras"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y si trabajas sentado, *levántate* un ratito cada hora. Ir por agua ya cuenta.",
+   "voz": "Y si trabajas sentado, levántate un ratito cada hora. Ir por agua ya cuenta.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "foto:vaso_agua|LEVÁNTATE CADA HORA"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si tienes *diabetes*, presión alta o algún problema del corazón, pregúntale cuánta actividad te conviene.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes diabetes, presión alta, o algún problema del corazón, pregúntale cuánta actividad te conviene.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA SI TIENES|Diabetes|Presión alta|Problemas del corazón|Dolor al moverte"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: *una hora menos* de tele, y diez minutos de caminata.",
+   "voz": "Hoy, tu tarea: una hora menos de tele, y diez minutos de caminata.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:escaleras_barranco|TAREA: 1 HORA MENOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con el *rey del control remoto* de tu casa! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con el rey del control remoto de tu casa! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:caminar_parque_4|¡A MOVERSE!"
+  }
+ ]
+}

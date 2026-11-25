@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["MENOS SOFÁ","CADA 2 HORAS CUENTAN"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"sofa_tv","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"serious"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["alert:vita"],"sello":{"texto":"+20 % DIABETES","size":44,"x":880,"y":800},"franja":"8 ESTUDIOS · JAMA 2011"}
