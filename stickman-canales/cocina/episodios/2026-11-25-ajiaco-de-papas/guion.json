@@ -1,0 +1,308 @@
+{
+ "id": "2026-11-25-ajiaco-de-papas",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-25_ajiaco_de_papas.mp4",
+ "fecha": "25 NOV 2026",
+ "seccion": "CLÁSICO ANDINO",
+ "titular": [
+  "AJIACO DE PAPAS:",
+  "¡HOMENAJE A LA PAPA!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:papas_huancayo|AJIACO DE PAPAS",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un homenaje a nuestras papas: ¡el *ajiaco de papas*!",
+   "voz": "¡Hola, cocineros! Hoy, un homenaje a nuestras papas: ¡el ajiaco de papas!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:papas_huancayo|AJIACO DE PAPAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* recuerda que en otoño, en los Andes, se cosechan *cientos de variedades* de papa.",
+   "voz": "Gastón Acurio recuerda que en otoño, en los Andes, se cosechan cientos de variedades de papa.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pantalla": "foto:papas_huancayo_2|CIENTOS DE VARIEDADES",
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "CIENTOS DE PAPAS",
+    "delay": 2.2
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y pide que paguemos *un precio justo* a quienes las cultivan.",
+   "voz": "Y pide que paguemos un precio justo a quienes las cultivan.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "PRECIO JUSTO AL AGRICULTOR",
+    "delay": 1.4
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Yo conozco *dos* variedades, chef: la papa frita… y la papa *más frita*!",
+   "voz": "¡Yo conozco dos variedades, chef: la papa frita… y la papa más frita!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:papas_amarillas_fritas_0|¡PAPA MÁS FRITA!"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *cuatro papas blancas* grandes en cubitos y *cuatro papas amarillas* en cubos más grandes.",
+   "voz": "Para cuatro: cuatro papas blancas grandes en cubitos, y cuatro papas amarillas en cubos más grandes.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:papas_huancayo|4 BLANCAS + 4 AMARILLAS"
+  },
+  {
+   "quien": "rosita",
+   "texto": "El aderezo: *dos tazas* de cebolla roja picada, *dos cucharadas* de ajo y *media taza* de ají amarillo licuado.",
+   "voz": "El aderezo: dos tazas de cebolla roja picada, dos cucharadas de ajo, y media taza de ají amarillo licuado.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:cebolla_roja_2,ajo_0,aji_amarillo_2|2 TAZAS CEBOLLA|2 CDAS AJO|½ TAZA AJÍ AMARILLO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y: *una taza* de habas cocidas, *una taza* de caldo, leche evaporada, *media taza* de queso serrano, huacatay, culantro y hierbabuena.",
+   "voz": "Y: una taza de habas cocidas, una taza de caldo, leche evaporada, media taza de queso serrano, huacatay, culantro y hierbabuena.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:habas,queso_fresco,hierbabuena|1 TAZA HABAS|½ TAZA QUESO|HIERBAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: dora la cebolla a *fuego lento* con un chorro de aceite, hasta que quede *transparente*.",
+   "voz": "Paso uno: dora la cebolla a fuego lento con un chorro de aceite, hasta que quede transparente.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 1: LA CEBOLLA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: el ajo, lentamente. Luego el ají amarillo, y cocina hasta que *la grasa se separe* del aderezo.",
+   "voz": "Paso dos: el ajo, lentamente. Luego el ají amarillo, y cocina hasta que la grasa se separe del aderezo.",
+   "expr": {
+    "tito": "happy",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "fotos:ajo_0,aji_amarillo_2|PASO 2: AJO|AJÍ AMARILLO",
+   "tarjeta": {
+    "label": "EL PUNTO",
+    "valor": "QUE SE SEPARE LA GRASA",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: las papas, las habas y el caldo. Sal, pimienta y comino.",
+   "voz": "Paso tres: las papas, las habas y el caldo. Sal, pimienta y comino.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 3: A LA OLLA|Papas blancas y amarillas|1 taza de habas cocidas|1 taza de caldo|Sal, pimienta, comino"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y las *habas* le suman *fibra* a tu plato, dice la nutricionista del artículo.",
+   "voz": "Y las habas le suman fibra a tu plato, dice la nutricionista del artículo.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "fuego": true,
+   "pantalla": "foto:habas|HABAS: + FIBRA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y cómo queda la textura, chef?",
+   "voz": "¿Y cómo queda la textura, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|¿Y LA TEXTURA?"
+  },
+  {
+   "quien": "tito",
+   "texto": "Remueve con *cuchara de palo* hasta que se haga una especie de *mazamorra con pedacitos*.",
+   "voz": "Remueve con cuchara de palo, hasta que se haga una especie de mazamorra con pedacitos.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "LA TEXTURA",
+    "valor": "MAZAMORRA CON PEDACITOS",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Mazamorra? ¡Chef, me confundí de receta y traje *maíz morado*!",
+   "voz": "¿Mazamorra? ¡Chef, me confundí de receta y traje maíz morado!",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:maiz_morado|¡ESE NO, BETO!"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: un buen chorro de *leche*, el queso, el huacatay, culantro, hierbabuena y una rodaja de *rocoto* para el aroma.",
+   "voz": "Paso cuatro: un buen chorro de leche, el queso, el huacatay, culantro, hierbabuena, y una rodaja de rocoto para el aroma.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:leche_evaporada,rocoto,hierbabuena|LECHE|ROCOTO|HIERBAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Deja reposar y sirve con *arroz* y *salsa criolla*. Y si quieres, con un *huevo frito*.",
+   "voz": "Deja reposar, y sirve con arroz y salsa criolla. Y si quieres, con un huevo frito.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "fotos:arroz_blanco_0,salsa_criolla|ARROZ|SALSA CRIOLLA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: se puede hacer ajiaco *de lo que sea*: habas, caigua, coliflor… Solo hay que ir buscándole *el punto justo*.",
+   "voz": "Y el secreto de Gastón: se puede hacer ajiaco de lo que sea: habas, caigua, coliflor… Solo hay que ir buscándole el punto justo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:ajiaco_olluco|AJIACO DE LO QUE SEA",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "AJIACO DE LO QUE SEA",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Como este *ajiaco de olluco*, con su arrocito al lado.",
+   "voz": "Como este ajiaco de olluco, con su arrocito al lado.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa, cocineros! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa, cocineros! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:papas_huancayo_2|¡A LA MESA!"
+  }
+ ]
+}
