@@ -1,0 +1,4 @@
+{"canal":"doctor","banda":"HÁBITO NATURAL CON CIENCIA","titulo":["ULTRAPROCESADOS","LO QUE DICE LA CIENCIA"],"programa":["DOCTOR","STICKMAN"],
+ "fondo1":"E3F7F9","fondo2":"BFE9EE","locutor":"bruno","elenco":["bruno","vita"],"foto":"papitas_bowl","marco":"0FA3B1",
+ "estados":{"bruno":{"pose":"up","expr":"serious"},"vita":{"pose":"shrug","expr":"surprised"}},
+ "fx":["alert:vita"],"sello":{"texto":"+50 % CORAZÓN","size":44,"x":880,"y":800},"franja":"CASI 10 MILLONES · BMJ 2024"}

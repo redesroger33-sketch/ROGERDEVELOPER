@@ -1,0 +1,283 @@
+{
+ "id": "2026-11-26-ultraprocesados",
+ "canal": "doctor",
+ "archivo": "DoctorStickman_2026-11-26_ultraprocesados.mp4",
+ "fecha": "26 NOV 2026",
+ "seccion": "ALIMENTACIÓN",
+ "titular": [
+  "ULTRAPROCESADOS:",
+  "LO QUE DICE LA CIENCIA"
+ ],
+ "locutor": "bruno",
+ "elenco": [
+  "bruno",
+  "vita"
+ ],
+ "programa": [
+  "DOCTOR",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:papitas_bowl|ULTRAPROCESADOS",
+ "cierre_sub": "Mañana, otro hábito natural con ciencia",
+ "duracion_max": 103.0,
+ "velocidad_voz": {
+  "bruno": 1.0,
+  "vita": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "bruno",
+   "texto": "¡Hola, *familia sana!* Hoy: algo que está en todas las loncheras, *los ultraprocesados*.",
+   "voz": "¡Hola, familia sana! Hoy: algo que está en todas las loncheras, los ultraprocesados.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "vita": "wave"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:papitas_bowl|ULTRAPROCESADOS"
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, ¿y eso qué es? ¿Comida de *otro planeta*?",
+   "voz": "Doctor, ¿y eso qué es? ¿Comida de otro planeta?",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "shrug"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Casi: productos de *fábrica*, con ingredientes raros y muchos *aditivos*.",
+   "voz": "Casi: productos de fábrica, con ingredientes raros y muchos aditivos.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "think"
+   },
+   "pose": {
+    "bruno": "point"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Como *snacks* de paquete, *gaseosas*, *fideos instantáneos* y comidas listas para calentar.",
+   "voz": "Como snacks de paquete, gaseosas, fideos instantáneos y comidas listas para calentar.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pantalla": "lista:EJEMPLOS|Snacks de paquete|Gaseosas|Fideos instantáneos|Comidas listas para calentar"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Una gran revisión en la revista *BMJ*, de 2024, sumó casi *diez millones* de personas.",
+   "voz": "Una gran revisión en la revista BMJ, de dos mil veinticuatro, sumó casi diez millones de personas.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "foto:gaseosa_vaso_2|BMJ · 2024",
+   "tarjeta": {
+    "label": "BMJ · 2024",
+    "valor": "45 ANÁLISIS · 9,9 MILLONES",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Comer más ultraprocesados se asoció con *50 %* más riesgo de morir del *corazón*.",
+   "voz": "Comer más ultraprocesados se asoció con cincuenta por ciento más riesgo de morir del corazón.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "surprised"
+   },
+   "tarjeta": {
+    "label": "MUERTE CARDIOVASCULAR",
+    "valor": "+50 %",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¡¿La *mitad* más?!",
+   "voz": "¡¿La mitad más?!",
+   "expr": {
+    "vita": "surprised",
+    "bruno": "serious"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "alert:vita"
+   ]
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y cada *10 %* más en la dieta, *12 %* más riesgo de *diabetes tipo 2*.",
+   "voz": "Y cada diez por ciento más en la dieta, doce por ciento más riesgo de diabetes tipo dos.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "think"
+   },
+   "tarjeta": {
+    "label": "DIABETES TIPO 2",
+    "valor": "+12 % POR CADA 10 %",
+    "delay": 3.0
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Y casi *50 %* más riesgo de *ansiedad*.",
+   "voz": "Y casi cincuenta por ciento más riesgo de ansiedad.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "sad"
+   },
+   "tarjeta": {
+    "label": "ANSIEDAD",
+    "valor": "+48 %",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "¿Entonces está *comprobado* que causan todo eso?",
+   "voz": "¿Entonces está comprobado que causan todo eso?",
+   "expr": {
+    "vita": "think",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "think"
+   }
+  },
+  {
+   "quien": "bruno",
+   "texto": "Ojo: son *asociaciones*, no prueba de causa, y la evidencia es mayormente *débil*. Pero el patrón se repite en *7 de cada 10* resultados.",
+   "voz": "Ojo: son asociaciones, no prueba de causa, y la evidencia es mayormente débil. Pero el patrón se repite en siete de cada diez resultados.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "tarjeta": {
+    "label": "EL PATRÓN",
+    "valor": "32 DE 45 RESULTADOS (71 %)",
+    "delay": 5.0
+   }
+  },
+  {
+   "quien": "vita",
+   "texto": "Doctor, mi dieta es *balanceada*: ¡una papita en *cada mano*!",
+   "voz": "Doctor, mi dieta es balanceada: ¡una papita en cada mano!",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "laugh"
+   },
+   "pose": {
+    "vita": "up"
+   },
+   "fx": [
+    "ja:bruno"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:papitas_bowl|¡BALANCEADA!"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Receta natural: *comida de verdad*. Menestras, verduras, frutas y pescado, cocinados en casa.",
+   "voz": "Receta natural: comida de verdad. Menestras, verduras, frutas y pescado, cocinados en casa.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pantalla": "fotos:menestras_mix,mercado_frutas,pescado_fresco|MENESTRAS|FRUTAS|PESCADO"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Cambia: *agua* por gaseosa, *fruta* por snack, y comida *casera* por la de microondas.",
+   "voz": "Cambia: agua por gaseosa, fruta por snack, y comida casera por la de microondas.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CAMBIOS SIMPLES|Agua en vez de gaseosa|Fruta en vez de snack|Casera en vez de lista para calentar"
+  },
+  {
+   "quien": "vita",
+   "texto": "Y en la tienda, mira los *octógonos*: si tiene varios, solo de vez en cuando.",
+   "voz": "Y en la tienda, mira los octógonos: si tiene varios, solo de vez en cuando.",
+   "expr": {
+    "vita": "happy",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "point"
+   },
+   "pantalla": "lista:MIRA LOS OCTÓGONOS|Alto en azúcar|Alto en sodio|Alto en grasas saturadas|Contiene grasas trans"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Esto *suma*, pero *no reemplaza a tu médico*. Si tienes diabetes, presión o colesterol alto, sigue tu tratamiento.",
+   "voz": "Esto suma, pero no reemplaza a tu médico. Si tienes diabetes, presión o colesterol alto, sigue tu tratamiento.",
+   "expr": {
+    "bruno": "serious",
+    "vita": "serious"
+   },
+   "pose": {
+    "bruno": "point"
+   },
+   "pantalla": "lista:CONSULTA SI TIENES|Diabetes|Presión alta|Colesterol alto|Enfermedad del riñón"
+  },
+  {
+   "quien": "bruno",
+   "texto": "Hoy, tu tarea: cambia *un* ultraprocesado por comida de verdad.",
+   "voz": "Hoy, tu tarea: cambia un ultraprocesado por comida de verdad.",
+   "expr": {
+    "bruno": "happy",
+    "vita": "happy"
+   },
+   "pose": {
+    "bruno": "up"
+   },
+   "pantalla": "foto:familia_mesa|TAREA: 1 CAMBIO HOY"
+  },
+  {
+   "quien": "vita",
+   "texto": "¡Comparte esto con el *rey de las papitas* de tu casa! Hasta mañana, *familia sana*.",
+   "voz": "¡Compártelo con el rey de las papitas de tu casa! Hasta mañana, familia sana.",
+   "expr": {
+    "vita": "laugh",
+    "bruno": "happy"
+   },
+   "pose": {
+    "vita": "wave",
+    "bruno": "up"
+   },
+   "fx": [
+    "confeti:bruno"
+   ],
+   "pantalla": "foto:mercado_frutas|¡COMIDA DE VERDAD!"
+  }
+ ]
+}
