@@ -1,0 +1,311 @@
+{
+ "id": "2026-11-26-menestron",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-26_menestron.mp4",
+ "fecha": "26 NOV 2026",
+ "seccion": "CLÁSICO CRIOLLO",
+ "titular": [
+  "MENESTRÓN:",
+  "¡EL CLÁSICO DEL DOMINGO!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:menestron|MENESTRÓN DOMINGUERO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un clásico de domingo: ¡el *menestrón*!",
+   "voz": "¡Hola, cocineros! Hoy, un clásico de domingo: ¡el menestrón!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:menestron|MENESTRÓN DOMINGUERO"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* cuenta que llegó de *Liguria*, con los genoveses que se instalaron en el Perú a mediados del siglo diecinueve.",
+   "voz": "Gastón Acurio cuenta que llegó de Liguria, con los genoveses que se instalaron en el Perú a mediados del siglo diecinueve.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "DE GÉNOVA A LIMA",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Entonces es igual al *minestrone* italiano?",
+   "voz": "¿Entonces es igual al minestrone italiano?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "pantalla": "foto:minestrone|¿IGUAL AL MINESTRONE?"
+  },
+  {
+   "quien": "tito",
+   "texto": "¡No! El menestrón lleva trozos de *carne*, *yuca* y *choclo*. Una cosa es minestrone, y otra, *menestrón*.",
+   "voz": "¡No! El menestrón lleva trozos de carne, yuca y choclo. Una cosa es minestrone, y otra, menestrón.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "foto:menestron_2|CARNE + YUCA + CHOCLO"
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Yo pensé que el menestrón era una *menestra*… pero *grandota*!",
+   "voz": "¡Yo pensé que el menestrón era una menestra… pero grandota!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:menestras_mix|¿MENESTRA GRANDOTA?"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *seiscientos cincuenta gramos* de asado de tira con hueso, y otros *seiscientos cincuenta* de punta de pecho.",
+   "voz": "Para cuatro: seiscientos cincuenta gramos de asado de tira con hueso, y otros seiscientos cincuenta de punta de pecho.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:carne_res_0|650 G + 650 G DE RES"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Las verduras, *dos tercios de taza* de cada una: nabo, pallar verde, frejol tierno, zanahoria, apio, cebolla, arvejas, garbanzo remojado y col.",
+   "voz": "Las verduras, dos tercios de taza de cada una: nabo, pallar verde, frejol tierno, zanahoria, apio, cebolla, arvejas, garbanzo remojado y col.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:zanahoria,arvejas,garbanzos|ZANAHORIA|ARVEJAS|GARBANZO",
+   "tarjeta": {
+    "label": "VERDURAS",
+    "valor": "⅔ DE TAZA DE CADA UNA",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y además: un *choclo* en rodajas, yuca, *dos papas* blancas, fideos canutos, espinaca, *albahaca* y queso.",
+   "voz": "Y además: un choclo en rodajas, yuca, dos papas blancas, fideos canutos, espinaca, albahaca y queso.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:choclo,albahaca,parmesano|CHOCLO|ALBAHACA|QUESO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: hierve las carnes en una olla, hasta que estén *suaves*.",
+   "voz": "Paso uno: hierve las carnes en una olla, hasta que estén suaves.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:carne_res_0|PASO 1: LAS CARNES"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: agrega las verduras y el choclo. Si quieres, un poquito de *tocino*. Cocina y espesa *ligeramente*.",
+   "voz": "Paso dos: agrega las verduras y el choclo. Si quieres, un poquito de tocino. Cocina y espesa ligeramente.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 2: LAS VERDURAS|Nabo, pallar, frejol tierno|Zanahoria, apio, cebolla|Arvejas, garbanzo y col|Choclo (tocino opcional)"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: la yuca en dados grandes, las papas en mitades y los *fideos canutos*. Deja que se cocinen.",
+   "voz": "Paso tres: la yuca en dados grandes, las papas en mitades, y los fideos canutos. Deja que se cocinen.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 3: A LA OLLA|⅔ de taza de yuca en dados|2 papas blancas en mitades|170 g de fideos canutos"
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y por qué el menestrón es *verde*, chef?",
+   "voz": "¿Y por qué el menestrón es verde, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true,
+   "pantalla": "foto:menestron_2|¿POR QUÉ ES VERDE?"
+  },
+  {
+   "quien": "tito",
+   "texto": "Por la *espinaca* y la *albahaca*: se cocinan en aceite de oliva, se *licúan* y van a la olla.",
+   "voz": "Por la espinaca y la albahaca: se cocinan en aceite de oliva, se licúan, y van a la olla.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "fuego": true,
+   "pantalla": "foto:albahaca|ESPINACA + ALBAHACA LICUADAS"
+  },
+  {
+   "quien": "rosita",
+   "texto": "La nutricionista del programa dice que la albahaca es mejor *fresca*, y aporta vitaminas *K* y *C*.",
+   "voz": "La nutricionista del programa dice que la albahaca es mejor fresca, y aporta vitaminas K y C.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "tarjeta": {
+    "label": "ALBAHACA",
+    "valor": "VITAMINAS K Y C",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Al final: *parmesano*, queso fresco, prueba la sal y un chorrito de *aceite de oliva*.",
+   "voz": "Al final: parmesano, queso fresco, prueba la sal, y un chorrito de aceite de oliva.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "fotos:parmesano,queso_fresco|PARMESANO|QUESO FRESCO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto, según los amigos expertos del *gran chef*: clava una *cuchara de palo* en la olla.",
+   "voz": "Y el secreto, según los amigos expertos de Gastón: clava una cuchara de palo en la olla.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:menestron_3|EL SECRETO DEL GRAN CHEF"
+  },
+  {
+   "quien": "tito",
+   "texto": "Si la cuchara se queda *parada*, está espeso y *listo* para servir.",
+   "voz": "Si la cuchara se queda parada, está espeso y listo para servir.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "¡LA CUCHARA SE QUEDA PARADA!",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Y si la cuchara se *hunde*, chef?",
+   "voz": "¿Y si la cuchara se hunde, chef?",
+   "expr": {
+    "beto": "surprised",
+    "tito": "happy"
+   },
+   "pose": {
+    "beto": "shrug"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Le falta, Beto! Sigue cocinando hasta que espese.",
+   "voz": "¡Le falta, Beto! Sigue cocinando hasta que espese.",
+   "expr": {
+    "tito": "laugh",
+    "beto": "laugh",
+    "rosita": "laugh"
+   },
+   "fx": [
+    "ja:beto"
+   ],
+   "sonido": [
+    "rimshot"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa, cocineros! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa, cocineros! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:menestron|¡A LA MESA!"
+  }
+ ]
+}
