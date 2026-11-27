@@ -2160,6 +2160,59 @@ def synth_audio(ep, timeline, total, path):
         out *= np.minimum(1, np.linspace(3, 0, m))
         add(np.diff(np.concatenate([[0], out])), at, 0.5)
 
+    # --- sonidos de gancho (Cocina): sartén, cuchillo, golpe, redoble, "uau" ---
+    def chisporroteo(at, dur=2.0):
+        # sartén chisporroteando: crepitar de chispas + siseo de aceite
+        m = int(dur * SR)
+        r = np.random.default_rng(11)
+        hiss = r.standard_normal(m)
+        hiss = np.diff(np.concatenate([[0], hiss]))  # brillo (agudos)
+        env = np.minimum(1, np.arange(m) / (0.05 * SR)) * np.minimum(1, (m - np.arange(m)) / (0.4 * SR))
+        out = hiss * 0.35 * env
+        for _ in range(int(dur * 90)):
+            i0 = r.integers(0, max(1, m - 600))
+            L = int(r.uniform(80, 400))
+            out[i0:i0 + L] += r.standard_normal(L) * np.exp(-np.arange(L) / (L / 4)) * r.uniform(0.5, 1.6)
+        add(out, at, 0.32)
+
+    def cuchillo(at, golpes=5):
+        # cuchillo picando sobre tabla: toques secos y rápidos
+        r = np.random.default_rng(7)
+        for j in range(golpes):
+            L = int(0.06 * SR)
+            x = np.arange(L) / SR
+            s = np.sin(2 * np.pi * 900 * x) * np.exp(-x * 90) + r.standard_normal(L) * np.exp(-x * 120) * 0.8
+            add(s, at + j * 0.16, 0.45)
+
+    def golpe(at):
+        # impacto grave tipo "boom" de tráiler
+        L = int(0.9 * SR)
+        x = np.arange(L) / SR
+        f = 110 * np.exp(-x * 3) + 38
+        s = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-x * 4.5)
+        add(s, at, 0.5)
+        add(rng.standard_normal(int(0.08 * SR)) * np.exp(-np.arange(int(0.08 * SR)) / SR * 50), at, 0.3)
+
+    def redoble(at, dur=1.4):
+        # redoble de tambor que crece (suspenso)
+        t_ = 0.0
+        while t_ < dur:
+            L = int(0.05 * SR)
+            x = np.arange(L) / SR
+            amp = 0.1 + 0.3 * (t_ / dur)
+            add(rng.standard_normal(L) * np.exp(-x * 60) + 0.6 * np.sin(2 * np.pi * 200 * x) * np.exp(-x * 40), at + t_, amp)
+            t_ += max(0.035, 0.09 - 0.055 * (t_ / dur))
+        golpe(at + dur)
+
+    def uau(at):
+        # "¡uuuh!" de público sorprendido (barrido vocal grave → agudo)
+        L = int(0.9 * SR)
+        x = np.arange(L) / SR
+        f = 180 + 160 * x / 0.9
+        s = sum(np.sin(2 * np.pi * np.cumsum(f * k) / SR) / k for k in (1, 2, 3, 4))
+        s *= np.sin(np.pi * x / 0.9) ** 2
+        add(s, at, 0.25)
+
     # intro sting
     for i, f in enumerate((523.3, 659.3, 784.0, 1046.5)):
         add(ding(f), 0.05 + i * 0.09, 0.22)
@@ -2182,6 +2235,16 @@ def synth_audio(ep, timeline, total, path):
                 rimshot(add_t)
             if snd == "aplausos":
                 aplausos(a + 0.3, 1.8)
+            if snd == "chisporroteo":
+                chisporroteo(a + 0.02, min(2.5, b - a))
+            if snd == "cuchillo":
+                cuchillo(a + 0.1)
+            if snd == "golpe":
+                golpe(a + 0.02)
+            if snd == "redoble":
+                redoble(a + 0.05, min(1.6, b - a))
+            if snd == "uau":
+                uau(a + 0.1)
         for f in sc.get("fx", []):
             if f.startswith("plop"):
                 add(boing(), a + 0.05, 0.4)
