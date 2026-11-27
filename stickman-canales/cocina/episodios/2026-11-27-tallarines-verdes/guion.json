@@ -1,0 +1,306 @@
+{
+ "id": "2026-11-27-tallarines-verdes",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-27_tallarines_verdes.mp4",
+ "fecha": "27 NOV 2026",
+ "seccion": "CLÁSICO CASERO",
+ "titular": [
+  "TALLARINES VERDES:",
+  "¡CON APANADO!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:tallarin_verde_4|TALLARINES VERDES",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un clásico de casa: ¡*tallarines verdes* con apanado!",
+   "voz": "¡Hola, cocineros! Hoy, un clásico de casa: ¡tallarines verdes con apanado!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:tallarin_verde_4|TALLARINES VERDES"
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* lo llama un plato casero, *hijo del mestizaje* con la lejana Génova.",
+   "voz": "Gastón Acurio lo llama un plato casero, hijo del mestizaje con la lejana Génova.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "HIJO DEL MESTIZAJE",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¡Como el *menestrón* de ayer!",
+   "voz": "¡Como el menestrón de ayer!",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, mis tallarines también salen *verdes*… pero de *moho*!",
+   "voz": "¡Chef, mis tallarines también salen verdes… pero de moho!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:tallarin_verde_2|¡ESE VERDE NO, BETO!"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *cuatro filetes* de lomo de cadera de *doscientos gramos*, y *medio kilo* de fideos canuto o spaghetti grueso.",
+   "voz": "Para cuatro: cuatro filetes de lomo de cadera de doscientos gramos, y medio kilo de fideos canuto o spaghetti grueso.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "lista:PARA 4|4 filetes de 200 g|½ kg de fideos canuto|Harina, huevo, pan molido"
+  },
+  {
+   "quien": "rosita",
+   "texto": "La salsa: *una taza* de albahaca, *dos tazas* de espinaca, *cuatro dientes* de ajo y una cebolla roja.",
+   "voz": "La salsa: una taza de albahaca, dos tazas de espinaca, cuatro dientes de ajo, y una cebolla roja.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:albahaca,espinaca,ajo_0|1 TAZA ALBAHACA|2 TAZAS ESPINACA|4 DIENTES DE AJO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y además: queso fresco, *parmesano* y leche evaporada.",
+   "voz": "Y además: queso fresco, parmesano, y leche evaporada.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:queso_fresco,parmesano,leche_evaporada|QUESO FRESCO|PARMESANO|LECHE"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: *chanca* los filetes y sazónalos con sal, pimienta, un punto de ajo y gotas de vino.",
+   "voz": "Paso uno: chanca los filetes, y sazónalos con sal, pimienta, un punto de ajo, y gotas de vino.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "pantalla": "lista:PASO 1: LOS FILETES|Chánchalos bien|Sal y pimienta|Un punto de ajo|Gotas de vino"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: pásalos por *harina*, luego por *huevo* batido y al final por *pan molido*. Aplasta bien y guárdalos en la refri.",
+   "voz": "Paso dos: pásalos por harina, luego por huevo batido, y al final por pan molido. Aplasta bien, y guárdalos en la refri.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "pantalla": "fotos:harina,huevos|HARINA|HUEVO",
+   "tarjeta": {
+    "label": "EL APANADO",
+    "valor": "HARINA · HUEVO · PAN",
+    "delay": 3.0
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: *licúa* la albahaca, la espinaca y el ajo.",
+   "voz": "Paso tres: licúa la albahaca, la espinaca y el ajo.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:espinaca|PASO 3: ¡A LICUAR!"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso cuatro: dora la cebolla en capas finas por *cinco minutos*. Agrega lo licuado y cocina *un minuto*.",
+   "voz": "Paso cuatro: dora la cebolla en capas finas por cinco minutos. Agrega lo licuado, y cocina un minuto.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 4: LA SALSA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Luego el queso fresco, la leche, sal, pimienta y parmesano. Deja que llegue a su punto.",
+   "voz": "Luego el queso fresco, la leche, sal, pimienta y parmesano. Deja que llegue a su punto.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "LA SALSA",
+    "valor": "QUESO + LECHE + PARMESANO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "Mientras, los fideos en agua abundante con sal, ¡*ligeramente al dente*!",
+   "voz": "Mientras, los fideos en agua abundante con sal, ¡ligeramente al dente!",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "up"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "LOS FIDEOS",
+    "valor": "AL DENTE",
+    "delay": 1.8
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso final: dora los apanados *rapidito* en la sartén.",
+   "voz": "Paso final: dora los apanados rapidito en la sartén.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:milanesa_sarten|PASO 5: EL APANADO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Mezcla la salsa verde con los fideos, pon el apanado encima y un chorrito de *huancaína* alrededor.",
+   "voz": "Mezcla la salsa verde con los fideos, pon el apanado encima, y un chorrito de huancaína alrededor.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "foto:tallarin_verde|+ HUANCAÍNA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y la espinaca, dice la nutricionista del programa, trae vitaminas *A, C, E y K*, y minerales como el *hierro*.",
+   "voz": "Y la espinaca, dice la nutricionista del programa, trae vitaminas A, C, E y K, y minerales como el hierro.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pantalla": "foto:espinaca|ESPINACA",
+   "tarjeta": {
+    "label": "ESPINACA",
+    "valor": "VITAMINAS A · C · E · K",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: prueba este apanado con *hígado de res* en vez de carne. ¡Queda *delicioso*!",
+   "voz": "Y el secreto de Gastón: prueba este apanado con hígado de res en vez de carne. ¡Queda delicioso!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:tallarin_verde_higado|EL SECRETO DEL GRAN CHEF",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "¡CON HÍGADO DE RES!",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Hígado? Chef, ¡ese secreto me lo como *con gusto*!",
+   "voz": "¿Hígado? Chef, ¡ese secreto me lo como con gusto!",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "sonido": [
+    "rimshot"
+   ]
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa, cocineros! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa, cocineros! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:tallarin_verde_4|¡A LA MESA!"
+  }
+ ]
+}
