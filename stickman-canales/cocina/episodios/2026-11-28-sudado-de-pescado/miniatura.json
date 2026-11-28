@@ -1,0 +1,4 @@
+{"canal":"cocina","banda":"SECRETOS DE UN CHEF PERUANO","titulo":["SUDADO DE PESCADO","¡EN SU PROPIO JUGO!"],"programa":["COCINA","STICKMAN"],
+ "fondo1":"FFF1DC","fondo2":"FFD7A8","locutor":"tito","elenco":["rosita","tito","beto"],"foto":"sudado","marco":"E63946",
+ "estados":{"rosita":{"pose":"up","expr":"surprised"},"tito":{"pose":"rest","expr":"happy"},"beto":{"pose":"up","expr":"laugh"}},
+ "fx":["stars:tito"],"sello":{"texto":"¡SIN CALDO!","size":48,"x":880,"y":800},"franja":"EL SECRETO DEL GRAN CHEF"}

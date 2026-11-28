@@ -1,0 +1,312 @@
+{
+ "id": "2026-11-28-sudado-de-pescado",
+ "canal": "cocina",
+ "archivo": "StickmanCocina_2026-11-28_sudado_de_pescado.mp4",
+ "fecha": "28 NOV 2026",
+ "seccion": "CLÁSICO MARINO",
+ "titular": [
+  "SUDADO DE PESCADO:",
+  "¡EN SU PROPIO JUGO!"
+ ],
+ "locutor": "tito",
+ "elenco": [
+  "rosita",
+  "tito",
+  "beto"
+ ],
+ "programa": [
+  "COCINA",
+  "STICKMAN"
+ ],
+ "pantalla_inicial": "foto:sudado|SUDADO DE PESCADO",
+ "cierre_sub": "Mañana, otra receta peruana de verdad",
+ "duracion_max": 117.5,
+ "velocidad_voz": {
+  "tito": 1.0,
+  "rosita": 1.0,
+  "beto": 1.0
+ },
+ "escenas": [
+  {
+   "quien": "tito",
+   "texto": "¡Hola, *cocineros!* Hoy, un clásico del mar: ¡el *sudado de pescado*!",
+   "voz": "¡Hola, cocineros! Hoy, un clásico del mar: ¡el sudado de pescado!",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "wave"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:sudado|SUDADO DE PESCADO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Chef, ¿el sudado es *sopa* o es *guiso*?",
+   "voz": "Chef, ¿el sudado es sopa, o es guiso?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "El *gran chef* lo explica: ni sopa ni guiso. No lleva caldo, y el pescado se cocina en *su propio jugo*.",
+   "voz": "Gastón Acurio lo explica: ni sopa ni guiso. No lleva caldo, y el pescado se cocina en su propio jugo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "tarjeta": {
+    "label": "EL GRAN CHEF",
+    "valor": "¡NI SOPA NI GUISO!",
+    "delay": 2.0
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¿Sudado? ¡Así quedo *yo* cuando subo las escaleras del *mercado*!",
+   "voz": "¿Sudado? ¡Así quedo yo cuando subo las escaleras del mercado!",
+   "expr": {
+    "beto": "laugh",
+    "rosita": "laugh",
+    "tito": "laugh"
+   },
+   "pose": {
+    "beto": "shrug"
+   },
+   "fx": [
+    "ja:rosita"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.5,
+   "pantalla": "foto:mercado_frutas|¡ESE SUDADO NO, BETO!"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Para cuatro: *cuatro trozos* de pescado, con piel y hueso, que tenga mucha *gelatina*: cabrilla, merluza o chita.",
+   "voz": "Para cuatro: cuatro trozos de pescado, con piel y hueso, que tenga mucha gelatina: cabrilla, merluza o chita.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "point"
+   },
+   "pantalla": "foto:pescado_fresco|4 TROZOS DE PESCADO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "El aderezo: una *cebolla roja* picada, ají molido, y *una taza* de ají amarillo licuado.",
+   "voz": "El aderezo: una cebolla roja picada, ají molido, y una taza de ají amarillo licuado.",
+   "expr": {
+    "rosita": "happy",
+    "beto": "surprised"
+   },
+   "pantalla": "fotos:cebolla_roja_2,aji_amarillo_2|1 CEBOLLA ROJA|1 TAZA AJÍ AMARILLO"
+  },
+  {
+   "quien": "rosita",
+   "texto": "Y además: tomates, cebolla china, *cuatro ramas* de culantro, rocoto y un chorrito de *chicha de jora*.",
+   "voz": "Y además: tomates, cebolla china, cuatro ramas de culantro, rocoto, y un chorrito de chicha de jora.",
+   "expr": {
+    "rosita": "happy",
+    "tito": "happy"
+   },
+   "pantalla": "fotos:tomate_1,culantro_1,chicha_jora|TOMATE|CULANTRO|CHICHA DE JORA"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso uno: en una sartén honda, con poco aceite, cocina el aderezo *cinco minutos*.",
+   "voz": "Paso uno: en una sartén honda, con poco aceite, cocina el aderezo cinco minutos.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:wok_fuego_0|PASO 1: EL ADEREZO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso dos: encima, una cebolla, ají amarillo y tomate en *tiras gruesas*, dos cabezas de cebolla china, el culantro y una rodaja de rocoto.",
+   "voz": "Paso dos: encima, una cebolla, ají amarillo y tomate en tiras gruesas, dos cabezas de cebolla china, el culantro, y una rodaja de rocoto.",
+   "expr": {
+    "tito": "happy",
+    "beto": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:sudado_olla|PASO 2: LA CAMA DE VERDURAS"
+  },
+  {
+   "quien": "tito",
+   "texto": "Paso tres: los *cuatro trozos* de pescado, sazonados con sal y pimienta.",
+   "voz": "Paso tres: los cuatro trozos de pescado, sazonados con sal y pimienta.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "foto:pescado_fresco|PASO 3: EL PESCADO"
+  },
+  {
+   "quien": "tito",
+   "texto": "Cubre con otra cebolla, *dos tomates*, un ají y cebolla china.",
+   "voz": "Cubre con otra cebolla, dos tomates, un ají y cebolla china.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "fuego": true,
+   "pantalla": "lista:PASO 4: A CUBRIR|1 cebolla roja en tiras|2 tomates|1 ají amarillo|Cebolla china"
+  },
+  {
+   "quien": "tito",
+   "texto": "Rocía *chicha de jora*, echa sal, tapa y cocina *diez minutos* a fuego lento.",
+   "voz": "Rocía chicha de jora, echa sal, tapa, y cocina diez minutos a fuego lento.",
+   "expr": {
+    "tito": "serious",
+    "beto": "surprised"
+   },
+   "fuego": true,
+   "pantalla": "foto:chicha_jora|CHICHA DE JORA",
+   "tarjeta": {
+    "label": "TAPADO",
+    "valor": "10 MIN A FUEGO LENTO",
+    "delay": 2.4
+   }
+  },
+  {
+   "quien": "rosita",
+   "texto": "¿Y no le echamos *caldo*, chef?",
+   "voz": "¿Y no le echamos caldo, chef?",
+   "expr": {
+    "rosita": "think",
+    "tito": "happy"
+   },
+   "pose": {
+    "rosita": "think"
+   },
+   "fuego": true
+  },
+  {
+   "quien": "tito",
+   "texto": "¡Nada de caldo! Alteraría su *aroma natural*. El pescado y las verduras sueltan su propio jugo.",
+   "voz": "¡Nada de caldo! Alteraría su aroma natural. El pescado y las verduras sueltan su propio jugo.",
+   "expr": {
+    "tito": "serious",
+    "rosita": "surprised"
+   },
+   "pose": {
+    "tito": "point"
+   },
+   "fuego": true,
+   "tarjeta": {
+    "label": "SIN CALDO",
+    "valor": "SU PROPIO JUGO",
+    "delay": 1.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Destapa, mueve, otra rodaja de *rocoto*, y sirve con *yuca cocida*.",
+   "voz": "Destapa, mueve, otra rodaja de rocoto, y sirve con yuca cocida.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "happy"
+   },
+   "pantalla": "fotos:rocoto,yuca_cocida|ROCOTO|YUCA COCIDA"
+  },
+  {
+   "quien": "rosita",
+   "texto": "La nutricionista del programa recomienda pescado *dos o tres veces* por semana. Y si es oscuro, ¡más *omega tres*!",
+   "voz": "La nutricionista del programa recomienda pescado dos o tres veces por semana. Y si es oscuro, ¡más omega tres!",
+   "expr": {
+    "rosita": "happy",
+    "beto": "happy"
+   },
+   "pose": {
+    "rosita": "up"
+   },
+   "pantalla": "foto:pescado_fresco|PESCADO 2 A 3 VECES",
+   "tarjeta": {
+    "label": "PESCADO",
+    "valor": "2 A 3 VECES POR SEMANA",
+    "delay": 2.6
+   }
+  },
+  {
+   "quien": "tito",
+   "texto": "Y el secreto del gran chef: el fuego no debe ser *agresivo*, sino *dócil y suave*, para que el pescado se mezcle con todo.",
+   "voz": "Y el secreto de Gastón: el fuego no debe ser agresivo, sino dócil y suave, para que el pescado se mezcle con todo.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "surprised",
+    "beto": "surprised"
+   },
+   "pose": {
+    "tito": "up"
+   },
+   "fx": [
+    "stars:tito"
+   ],
+   "pantalla": "foto:sudado|EL SECRETO DEL GRAN CHEF",
+   "tarjeta": {
+    "label": "EL SECRETO DEL GRAN CHEF",
+    "valor": "FUEGO DÓCIL Y SUAVE",
+    "delay": 3.0
+   }
+  },
+  {
+   "quien": "beto",
+   "texto": "¡Chef, mi fuego es tan dócil que se *apaga* solito!",
+   "voz": "¡Chef, mi fuego es tan dócil que se apaga solito!",
+   "expr": {
+    "beto": "laugh",
+    "tito": "laugh",
+    "rosita": "laugh"
+   },
+   "pose": {
+    "beto": "up"
+   },
+   "fx": [
+    "ja:tito"
+   ],
+   "zoom": true,
+   "sonido": [
+    "rimshot"
+   ],
+   "pausa": 0.4
+  },
+  {
+   "quien": "tito",
+   "texto": "¡A la mesa, cocineros! Like, suscríbete y dime qué plato cocinamos mañana.",
+   "voz": "¡A la mesa, cocineros! Like, suscríbete, y dime qué plato cocinamos mañana.",
+   "expr": {
+    "tito": "happy",
+    "rosita": "laugh",
+    "beto": "laugh"
+   },
+   "pose": {
+    "rosita": "wave",
+    "beto": "up"
+   },
+   "fx": [
+    "confeti:tito"
+   ],
+   "pantalla": "foto:sudado|¡A LA MESA!"
+  }
+ ]
+}
